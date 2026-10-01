@@ -1,0 +1,20 @@
+{
+  "snapshot_date": "2026-10-02",
+  "complete_original_topic_files": 47057,
+  "complete_original_topic_bytes": 2302566412,
+  "public_asset_notes": 28,
+  "upstream_repo_locks": 24,
+  "paper_locks": 15,
+  "site_files": 9,
+  "temporary_artifacts": 38,
+  "redactions": {
+    "local_user": 21,
+    "remote_user": 644,
+    "gpu_uuid": 407,
+    "secret_value": 0,
+    "private_key": 0,
+    "private_ip": 10
+  },
+  "source_topic_modified": false,
+  "remote_actions": []
+}

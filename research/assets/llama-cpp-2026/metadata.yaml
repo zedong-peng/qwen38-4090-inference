@@ -1,0 +1,179 @@
+schema_version: 1
+reference:
+  title: llama.cpp：Qwen3.8 4090 的 GGUF 与 CUDA baseline
+  slug: llama-cpp-2026
+  topic: llm-inference
+  kind: software
+  canonical_url: https://github.com/ggml-org/llama.cpp
+assets:
+- kind: api_metadata
+  path: supplementary/github-api-commit.json
+  status: downloaded
+  bytes: 55843
+  sha256: 9e53c3489b0694c78943ecb6d6cd3ffa86705bd4487fec96e7c48870447fa812
+  retrieved_at: '2026-10-01'
+  filename_provenance: derived
+  url: https://api.github.com/repos/ggml-org/llama.cpp/commits/a4d880fd5c7f88713ded6db9f0111893bd78afa6
+  resolved_url: null
+  version: null
+  original_filename: null
+  format: json
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+- kind: api_metadata
+  path: supplementary/github-api-repository.json
+  status: downloaded
+  bytes: 6807
+  sha256: 5f56a421fb4fd3bcfedffd08de98eed1a5abcdfe788cb3f83d7d83b9e22e3fbe
+  retrieved_at: '2026-10-01'
+  filename_provenance: derived
+  url: https://api.github.com/repos/ggml-org/llama.cpp
+  resolved_url: null
+  version: null
+  original_filename: null
+  format: json
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+- kind: repository_source
+  path: github-repo/llama.cpp/README.md
+  url: https://github.com/ggml-org/llama.cpp/blob/a4d880fd5c7f88713ded6db9f0111893bd78afa6/README.md
+  bytes: 7351
+  sha256: e58520857253729851cc02313883c9d2a8b2ae86abe212aaf1bcbd7db8bfefb4
+  status: cached
+  retrieved_at: '2026-10-01'
+  version: a4d880fd5c7f88713ded6db9f0111893bd78afa6
+  resolved_url: null
+  original_filename: null
+  filename_provenance: derived
+  format: markdown
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+- kind: repository_source
+  path: github-repo/llama.cpp/CMakeLists.txt
+  url: https://github.com/ggml-org/llama.cpp/blob/a4d880fd5c7f88713ded6db9f0111893bd78afa6/CMakeLists.txt
+  bytes: 10918
+  sha256: cc74926303df70623265bd8439680adca32d4ed5aba8af1cdb64911e473e5c21
+  status: cached
+  retrieved_at: '2026-10-01'
+  version: a4d880fd5c7f88713ded6db9f0111893bd78afa6
+  resolved_url: null
+  original_filename: null
+  filename_provenance: derived
+  format: text/plain
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+- kind: repository_source
+  path: github-repo/llama.cpp/docs/speculative.md
+  url: https://github.com/ggml-org/llama.cpp/blob/a4d880fd5c7f88713ded6db9f0111893bd78afa6/docs/speculative.md
+  bytes: 23799
+  sha256: f2d69e906e20c7c5f0059c8ba0e09638511fd730d6e104dc79d75716a6ff568c
+  status: cached
+  retrieved_at: '2026-10-01'
+  version: a4d880fd5c7f88713ded6db9f0111893bd78afa6
+  resolved_url: null
+  original_filename: null
+  filename_provenance: derived
+  format: markdown
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+- kind: repository_source
+  path: github-repo/llama.cpp/tools/server/README.md
+  url: https://github.com/ggml-org/llama.cpp/blob/a4d880fd5c7f88713ded6db9f0111893bd78afa6/tools/server/README.md
+  bytes: 107765
+  sha256: 37866b6b348e49a44205f776467afc16322d136bfa06c4448354a6c93b74f52e
+  status: cached
+  retrieved_at: '2026-10-01'
+  version: a4d880fd5c7f88713ded6db9f0111893bd78afa6
+  resolved_url: null
+  original_filename: null
+  filename_provenance: derived
+  format: markdown
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+- kind: repository_source
+  path: github-repo/llama.cpp/src/models/qwen35.cpp
+  url: https://github.com/ggml-org/llama.cpp/blob/a4d880fd5c7f88713ded6db9f0111893bd78afa6/src/models/qwen35.cpp
+  bytes: 28105
+  sha256: ef973e9c789eb52ef27a77e0b1f36c6f41a378733a994d41b5924e3be012f671
+  status: cached
+  retrieved_at: '2026-10-01'
+  version: a4d880fd5c7f88713ded6db9f0111893bd78afa6
+  resolved_url: null
+  original_filename: null
+  filename_provenance: derived
+  format: null
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+repositories:
+- url: https://github.com/ggml-org/llama.cpp
+  path: github-repo/llama.cpp
+  commit: a4d880fd5c7f88713ded6db9f0111893bd78afa6
+  branch: master
+  retrieved_at: '2026-10-01'
+  stars_observed: 129984
+  pushed_at_observed: '2026-09-30T20:20:08Z'
+  status: inspected
+  execution: not_run
+  submodule_status: none_declared
+  inspection_scope:
+  - path: README.md
+    scope: selected documentation/interfaces/results; not complete repository audit
+  - path: CMakeLists.txt
+    scope: selected documentation/interfaces/results; not complete repository audit
+  - path: docs/speculative.md
+    scope: selected documentation/interfaces/results; not complete repository audit
+  - path: tools/server/README.md
+    scope: selected documentation/interfaces/results; not complete repository audit
+  - path: src/models/qwen35.cpp
+    scope: selected documentation/interfaces/results; not complete repository audit
+reading:
+  status: partial
+  source: repository_and_primary_author_documents
+  paths:
+  - github-repo/llama.cpp/README.md
+  - github-repo/llama.cpp/CMakeLists.txt
+  - github-repo/llama.cpp/docs/speculative.md
+  - github-repo/llama.cpp/tools/server/README.md
+  - github-repo/llama.cpp/src/models/qwen35.cpp
+  note: Selective source and results reading; authors benchmark measurements are not
+    local reproductions.
+reproduction:
+  status: not_run
+  note: No downloaded source, build, model inference, benchmark, conversion or training
+    was executed for this archival task. Remote g4090 work is recorded separately.
+ingest:
+  status: extracted
+  updated_at: '2026-10-01'
+  exceptions:
+  - Partial inspection; complete-repository audit not claimed.
+  - Navigation integration handled in parent task.
+retrieval_failures: []
+archive_distribution:
+  snapshot_date: '2026-10-02'
+  original_cache: .local/originals/llm-inference/assets/llama-cpp-2026
+  original_metadata: .local/originals/llm-inference/assets/llama-cpp-2026/metadata.yaml
+  source_hash_semantics: Original asset sha256/bytes are preserved as historical provenance.
+    Public sanitized file hashes are in archives/public-files.json.
+  full_papers_and_upstream_repos: local_only; recover from canonical URLs and fixed
+    revisions in archives/

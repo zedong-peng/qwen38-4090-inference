@@ -1,0 +1,77 @@
+schema_version: 1
+reference:
+  title: Qwen3.8-27B RTX4090 paper-search raw evidence
+  type: search-corpus
+  date: '2026-10-01'
+assets:
+- kind: supplementary
+  path: supplementary/qwen38-paper-search-installed.log
+  format: text/plain
+  retrieved_at: '2026-10-01'
+  bytes: 10334
+  sha256: 03b5c0bc9f99d342adeb0939e5f2ab34297ce3d3700332b0e944c0b4fa4a7ff8
+  status: downloaded
+  source_run: installed
+  url: null
+  resolved_url: null
+  version: null
+  original_filename: null
+  filename_provenance: derived
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+- kind: supplementary
+  path: supplementary/qwen38-paper-search-researchstudio.log
+  format: text/plain
+  retrieved_at: '2026-10-01'
+  bytes: 40145
+  sha256: 2fe4341fa07cf549585a393075fb0080642dff2dc145c0e63cd4b61b04d94743
+  status: downloaded
+  source_run: researchstudio-py39
+  url: null
+  resolved_url: null
+  version: null
+  original_filename: null
+  filename_provenance: derived
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+- kind: supplementary
+  path: supplementary/qwen38-paper-search-researchstudio-py311.log
+  format: text/plain
+  retrieved_at: '2026-10-01'
+  bytes: 38337
+  sha256: 23e658dbd22efc0c18cfbb3a40583fbc5176cb1d29074c950f6ed928231e52e5
+  status: downloaded
+  source_run: researchstudio-py311
+  url: null
+  resolved_url: null
+  version: null
+  original_filename: null
+  filename_provenance: derived
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+execution:
+  type: metadata_search_only
+  paper_code: not_run
+  gpu_inference: not_run
+limitations:
+- APIs contain false positives and uncertain citation/venue fields; all raw hits retained
+- Original Python3.9 installed-skill OpenAlex import failed; ResearchStudio Python3.11
+  OpenAlex succeeded
+- DBLP errors, Semantic Scholar429 in ResearchStudio runs, OpenReview zero results
+archive_distribution:
+  snapshot_date: '2026-10-02'
+  original_cache: .local/originals/llm-inference/assets/qwen38-4090-paper-search-2026
+  original_metadata: .local/originals/llm-inference/assets/qwen38-4090-paper-search-2026/metadata.yaml
+  source_hash_semantics: Original asset sha256/bytes are preserved as historical provenance.
+    Public sanitized file hashes are in archives/public-files.json.
+  full_papers_and_upstream_repos: local_only; recover from canonical URLs and fixed
+    revisions in archives/

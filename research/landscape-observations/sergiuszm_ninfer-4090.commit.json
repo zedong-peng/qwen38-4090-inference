@@ -1,0 +1,101 @@
+{
+  "sha": "aeeba414459d5d6989d57d8487c9d7a2f54bddd3",
+  "node_id": "C_kwDOT5HQfNoAKGFlZWJhNDE0NDU5ZDVkNjk4OWQ1N2Q4NDg3YzlkN2EyZjU0YmRkZDM",
+  "commit": {
+    "author": {
+      "name": "Sergiusz Michalik",
+      "email": "lsm@sikom.no",
+      "date": "2026-09-23T12:51:55Z"
+    },
+    "committer": {
+      "name": "Sergiusz Michalik",
+      "email": "lsm@sikom.no",
+      "date": "2026-09-23T12:51:55Z"
+    },
+    "message": "docs(ledger): record the per-item vision budget fix",
+    "tree": {
+      "sha": "70b64ab09cc994d554b862b2b8291f271a969f83",
+      "url": "https://api.github.com/repos/sergiuszm/ninfer-4090/git/trees/70b64ab09cc994d554b862b2b8291f271a969f83"
+    },
+    "url": "https://api.github.com/repos/sergiuszm/ninfer-4090/git/commits/aeeba414459d5d6989d57d8487c9d7a2f54bddd3",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/sergiuszm/ninfer-4090/commits/aeeba414459d5d6989d57d8487c9d7a2f54bddd3",
+  "html_url": "https://github.com/sergiuszm/ninfer-4090/commit/aeeba414459d5d6989d57d8487c9d7a2f54bddd3",
+  "comments_url": "https://api.github.com/repos/sergiuszm/ninfer-4090/commits/aeeba414459d5d6989d57d8487c9d7a2f54bddd3/comments",
+  "author": {
+    "login": "sergiuszm",
+    "id": 2063962,
+    "node_id": "MDQ6VXNlcjIwNjM5NjI=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/2063962?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/sergiuszm",
+    "html_url": "https://github.com/sergiuszm",
+    "followers_url": "https://api.github.com/users/sergiuszm/followers",
+    "following_url": "https://api.github.com/users/sergiuszm/following{/other_user}",
+    "gists_url": "https://api.github.com/users/sergiuszm/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/sergiuszm/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/sergiuszm/subscriptions",
+    "organizations_url": "https://api.github.com/users/sergiuszm/orgs",
+    "repos_url": "https://api.github.com/users/sergiuszm/repos",
+    "events_url": "https://api.github.com/users/sergiuszm/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/sergiuszm/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "sergiuszm",
+    "id": 2063962,
+    "node_id": "MDQ6VXNlcjIwNjM5NjI=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/2063962?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/sergiuszm",
+    "html_url": "https://github.com/sergiuszm",
+    "followers_url": "https://api.github.com/users/sergiuszm/followers",
+    "following_url": "https://api.github.com/users/sergiuszm/following{/other_user}",
+    "gists_url": "https://api.github.com/users/sergiuszm/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/sergiuszm/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/sergiuszm/subscriptions",
+    "organizations_url": "https://api.github.com/users/sergiuszm/orgs",
+    "repos_url": "https://api.github.com/users/sergiuszm/repos",
+    "events_url": "https://api.github.com/users/sergiuszm/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/sergiuszm/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "328d9aa82d0c4a6d3540b65dfca7f41c8dec0cc4",
+      "url": "https://api.github.com/repos/sergiuszm/ninfer-4090/commits/328d9aa82d0c4a6d3540b65dfca7f41c8dec0cc4",
+      "html_url": "https://github.com/sergiuszm/ninfer-4090/commit/328d9aa82d0c4a6d3540b65dfca7f41c8dec0cc4"
+    }
+  ],
+  "stats": {
+    "total": 18,
+    "additions": 18,
+    "deletions": 0
+  },
+  "files": [
+    {
+      "sha": "2d54c0553bbb4422dfcf7307a681745ba9481038",
+      "filename": "docs/maintainer/port-ledger.md",
+      "status": "modified",
+      "additions": 18,
+      "deletions": 0,
+      "changes": 18,
+      "blob_url": "https://github.com/sergiuszm/ninfer-4090/blob/aeeba414459d5d6989d57d8487c9d7a2f54bddd3/docs%2Fmaintainer%2Fport-ledger.md",
+      "raw_url": "https://github.com/sergiuszm/ninfer-4090/raw/aeeba414459d5d6989d57d8487c9d7a2f54bddd3/docs%2Fmaintainer%2Fport-ledger.md",
+      "contents_url": "https://api.github.com/repos/sergiuszm/ninfer-4090/contents/docs%2Fmaintainer%2Fport-ledger.md?ref=aeeba414459d5d6989d57d8487c9d7a2f54bddd3",
+      "patch": "@@ -233,6 +233,24 @@ Deliberately NOT taken: nothing dropped this time. Upstream PR #211 (the stream-\n membership publish we carry as `e565fe50`) was closed unmerged by its author on 09-10 and master\n still publishes unordered - the patch stays fork-only.\n \n+## Vision budget per item, 2026-09-23 (`328d9aa8`)\n+\n+A pi session on production failed every turn with `media_budget_exceeded` \"vision raw patches\n+exceed processor budget\" after its eleventh 1282x665 screenshot (request log: 10 images\n+admitted, 11 rejected). Agent clients send every earlier image again with each turn, and the\n+processor counts all of them. Cause: our `73b42127` (2026-08-18) tied the aggregate prompt\n+budget to `--vision-max-tokens` (8192), which was right while the encoder held a whole request.\n+Upstream `fc5c4834` (2026-08-24, catch-up #3) encodes one item at a time and splits the budgets\n+into 32768 per prompt and 16384 per item; the lockstep survived the merge. The fix restores the\n+upstream aggregate and applies `--vision-max-tokens` to the single-item budget, which is what\n+the encode workspace holds. Frontend test added (4 x 768 tokens admitted at a 1024 cap, one\n+1280-token item rejected). Deployed 2026-09-23 12:50Z as `visbudget-328d9aa8`, rollback\n+`bin/ninfer-serve.pre-visbudget-328d9aa8-20260923-1250`. Live check: 12 x 1282x665 (10,080\n+tokens) returned 200 with the correct count; one 3200x3200 image (10,000 tokens) returned 400\n+`media_budget_exceeded` \"single media item raw patches exceed Vision execution capacity\". The\n+remaining wall is the 32768 aggregate, about 39 such screenshots or 8 images at pi's\n+2000x2000 resize cap in one conversation.\n+\n ## Community triage 2026-09-22 (issues and PRs opened on this fork)\n \n Six issues and four PRs had accumulated since 2026-08-30 without a reply; the fork was not"
+    }
+  ]
+}

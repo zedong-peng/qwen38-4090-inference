@@ -1,0 +1,16 @@
+{
+  "mode": "ar",
+  "target": "/home/REMOTE_USER/qwen38-4090/models/Qwen3.8-27B-EXL3-4.00bpw",
+  "draft": "/home/REMOTE_USER/qwen38-4090/models/Qwen3.8-27B-DFlash2-EXL3-4.00bpw",
+  "draft_tokens": 0,
+  "context": 4096,
+  "max_tokens": 512,
+  "reps": 3,
+  "workloads": {
+    "json": "Return ONLY a JSON object (no prose, no code fence) describing a fictional city with keys: name (string), founded (integer year), population (integer), districts (array of exactly 3 objects each with name and area_km2), climate {summer_c: number, winter_c: number}, coastal (boolean).",
+    "code": "Write a complete Python module implementing an LRU cache class with get, put and delete, followed by at most five concise unittest test methods that exercise eviction order. Put everything in one ```python block and end the block with: if __name__ == '__main__': unittest.main()",
+    "prose": "Write a 500-word short story about a lighthouse keeper who receives a letter from the future."
+  },
+  "cold_prefix": "fresh process per request",
+  "gpu_operations": "none"
+}

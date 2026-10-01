@@ -1,0 +1,27 @@
+ -- Loading /home/REMOTE_USER/qwen38-4090/models/Qwen3.8-27B-DFlash2-EXL3-4.00bpw
+
+ -- Loading /home/REMOTE_USER/qwen38-4090/models/Qwen3.8-27B-EXL3-4.00bpw
+
+ -- Warming up...
+
+ -- Loading tokenizer...
+Traceback (most recent call last):
+  File "/home/REMOTE_USER/qwen38-4090/repos/exllamav3-git/benchmark_qwen38.py", line 198, in <module>
+    main()
+  File "/home/REMOTE_USER/qwen38-4090/repos/exllamav3-git/benchmark_qwen38.py", line 150, in main
+    worker(args, helper)
+  File "/home/REMOTE_USER/qwen38-4090/repos/exllamav3-git/benchmark_qwen38.py", line 78, in worker
+    completion, raw = generator.generate(
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/home/REMOTE_USER/qwen38-4090/repos/exllamav3-git/exllamav3/generator/generator.py", line 1629, in generate
+    results = self.iterate()
+              ^^^^^^^^^^^^^^
+  File "/home/REMOTE_USER/qwen38-4090/tools/exl3-env/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/REMOTE_USER/qwen38-4090/repos/exllamav3-git/exllamav3/generator/generator.py", line 555, in iterate
+    draft_tokens = self.iterate_draftmodel_dflash_gen(results)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/REMOTE_USER/qwen38-4090/repos/exllamav3-git/exllamav3/generator/generator.py", line 911, in iterate_draftmodel_dflash_gen
+    self.draft_ids_pinned[:batch_size, :window].copy_(new_ids[:batch_size, :window])
+RuntimeError: The size of tensor a (15) must match the size of tensor b (7) at non-singleton dimension 1

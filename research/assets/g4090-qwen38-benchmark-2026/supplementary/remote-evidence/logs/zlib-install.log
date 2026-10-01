@@ -1,0 +1,44 @@
+Using Cached Shard Index for conda-forge/linux-64                                                   ✔ Done
+Using Cached Shard Index for conda-forge/noarch                                                     ✔ Done
+Fetching and Parsing Packages' Shards                                                           ⧖ Starting
+Fetching and Parsing Packages' Shards                                                     ✔ Done (0.7 sec)
+
+Pinned packages:
+
+  - python=3.12
+
+Resolving Environment                                                                           ⧖ Starting
+Resolving Environment                                                                     ✔ Done (0.9 sec)
+
+Transaction
+
+  Prefix: /home/REMOTE_USER/qwen38-4090/tools/build-env
+
+  Updating specs:
+
+   - zlib
+
+
+  Package  Version  Build       Channel         Size
+──────────────────────────────────────────────────────
+  Install:
+──────────────────────────────────────────────────────
+
+  + zlib     1.3.2  h25fd6f3_3  conda-forge     96kB
+
+  Summary:
+
+  Install: 1 packages
+
+  Total download: 96kB
+
+──────────────────────────────────────────────────────
+
+
+warning  libmamba Security Warning: This transaction includes executing package scripts (pre/post-link/unlink) if present. These scripts can contain arbitrary code. Please ensure you trust the package sources.
+
+Transaction starting
+Linking zlib-1.3.2-h25fd6f3_3
+
+Transaction finished
+

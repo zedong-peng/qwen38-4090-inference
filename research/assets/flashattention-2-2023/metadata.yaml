@@ -1,0 +1,98 @@
+schema_version: 1
+paper:
+  title: 'FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning'
+  slug: flashattention-2-2023
+  topic: llm-inference
+  arxiv_id: '2307.08691'
+  doi: null
+  selected_version: v1
+  authors:
+  - Dao, Tri
+  canonical_url: https://arxiv.org/abs/2307.08691v1
+  publication_note: 本次证据版本为 arXiv 2023 v1；后续 ICLR 2024 发表信息未独立复核
+assets:
+- kind: tex_source
+  url: https://arxiv.org/src/2307.08691v1
+  resolved_url: https://arxiv.org/src/2307.08691v1
+  version: v1
+  path: paper-tex/archives/2307.08691v1.tar.gz
+  original_filename: null
+  filename_provenance: derived
+  format: tar.gz
+  retrieved_at: '2026-09-14T09:34:25.450216+00:00'
+  bytes: 1454638
+  sha256: 5aea21e5eaa54ebb043336351611454998422e89add584e3d268f0a2f6630bcd
+  status: downloaded
+  error: null
+  extraction:
+    status: extracted
+    path: paper-tex/extracted/2307.08691v1
+    error: null
+  filename_note: Derived from arXiv identifier, selected version and detected format;
+    original response filename not captured.
+- kind: pdf
+  url: https://arxiv.org/pdf/2307.08691v1
+  resolved_url: https://arxiv.org/pdf/2307.08691v1
+  version: v1
+  path: paper-pdf/2307.08691v1.pdf
+  original_filename: null
+  filename_provenance: derived
+  format: pdf
+  retrieved_at: '2026-09-14T09:34:28.960949+00:00'
+  bytes: 1660578
+  sha256: 4aa8935dfacaf6ae8c68f772ca92f730154a0dd0e1bceeb59c7bc56c512d5868
+  status: downloaded
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  filename_note: Derived from arXiv identifier, selected version and detected format;
+    original response filename not captured.
+repositories: []
+reading:
+  status: partial
+  source: tex
+  paths:
+  - paper-tex/extracted/2307.08691v1/src/abstract.tex
+  - paper-tex/extracted/2307.08691v1/src/intro.tex
+  - paper-tex/extracted/2307.08691v1/src/background.tex
+  - paper-tex/extracted/2307.08691v1/src/algo.tex
+  - paper-tex/extracted/2307.08691v1/src/experiments.tex
+  - paper-tex/extracted/2307.08691v1/src/discussion.tex
+  scope:
+  - src/abstract.tex
+  - src/intro.tex
+  - src/background.tex
+  - src/algo.tex
+  - src/experiments.tex
+  - src/discussion.tex
+  fallback_reason: null
+  note: Focused reading of methods, evaluation and listed sections; not a complete
+    paper/appendix audit. Formal note records only observed scope.
+ingest:
+  status: extracted
+  updated_at: '2026-09-14'
+  exceptions:
+  - 'Partial reading: do not label processed until remaining paper sections are read.'
+shared_repository: ../flashattention-2022/github-repo/flash-attention
+identity_evidence:
+  path: abstract.html
+  url: https://arxiv.org/abs/2307.08691
+  retrieved_at: '2026-09-14'
+  bytes: 43026
+  sha256: be8152457ea7296acd4ba988e54625b386541f44bc5de5d7dda49c40b00fdbcd
+  method: citation_title/citation_author and submission-history version IDs; matched
+    PDF first-page title
+reproduction:
+  status: not_run
+  note: No downloaded code, build, model inference, training, simulator or benchmark
+    executed.
+archive_distribution:
+  snapshot_date: '2026-10-02'
+  original_cache: .local/originals/llm-inference/assets/flashattention-2-2023
+  original_metadata: .local/originals/llm-inference/assets/flashattention-2-2023/metadata.yaml
+  source_hash_semantics: Original asset sha256/bytes are preserved as historical provenance.
+    Public sanitized file hashes are in archives/public-files.json.
+  full_papers_and_upstream_repos: local_only; recover from canonical URLs and fixed
+    revisions in archives/

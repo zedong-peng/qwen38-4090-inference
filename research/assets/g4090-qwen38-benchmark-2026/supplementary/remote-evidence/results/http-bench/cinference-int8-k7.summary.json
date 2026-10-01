@@ -1,0 +1,89 @@
+[
+  {
+    "label": "cinference-int8-k7",
+    "workload": "json",
+    "successful_reps": 3,
+    "failed_reps": 0,
+    "median_decode_tps": 229.84712480117457,
+    "median_end_to_end_output_tps": 202.09387990204436,
+    "median_prefill_tps": 756.3412485198058,
+    "median_server_prompt_ms": 101.805898,
+    "median_draft_acceptance": 0.7397959183673469,
+    "finish_reasons": [
+      "stop",
+      "stop",
+      "stop"
+    ],
+    "quality_checks": [
+      {
+        "valid_json": true,
+        "three_districts": true
+      },
+      {
+        "valid_json": true,
+        "three_districts": true
+      },
+      {
+        "valid_json": true,
+        "three_districts": true
+      }
+    ]
+  },
+  {
+    "label": "cinference-int8-k7",
+    "workload": "code",
+    "successful_reps": 3,
+    "failed_reps": 0,
+    "median_decode_tps": 202.8950569176778,
+    "median_end_to_end_output_tps": 195.15819519229208,
+    "median_prefill_tps": 682.2085102486207,
+    "median_server_prompt_ms": 101.142098,
+    "median_draft_acceptance": 0.629742033383915,
+    "finish_reasons": [
+      "length",
+      "length",
+      "length"
+    ],
+    "quality_checks": [
+      {
+        "python_syntax": false,
+        "semantic_tests": "not_run"
+      },
+      {
+        "python_syntax": false,
+        "semantic_tests": "not_run"
+      },
+      {
+        "python_syntax": false,
+        "semantic_tests": "not_run"
+      }
+    ]
+  },
+  {
+    "label": "cinference-int8-k7",
+    "workload": "prose",
+    "successful_reps": 3,
+    "failed_reps": 0,
+    "median_decode_tps": 88.16192942772466,
+    "median_end_to_end_output_tps": 87.07247051257072,
+    "median_prefill_tps": 420.76794754122636,
+    "median_server_prompt_ms": 80.80463400000001,
+    "median_draft_acceptance": 0.18867924528301888,
+    "finish_reasons": [
+      "length",
+      "length",
+      "length"
+    ],
+    "quality_checks": [
+      {
+        "words": 393
+      },
+      {
+        "words": 393
+      },
+      {
+        "words": 393
+      }
+    ]
+  }
+]

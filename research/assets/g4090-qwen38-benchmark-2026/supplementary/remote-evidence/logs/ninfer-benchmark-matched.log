@@ -1,0 +1,21 @@
+{"label": "ninfer-erik-int8-k0", "workload": "warmup", "rep": 0, "completion_tokens": 10, "server_decode_tps": 52.0524281078323, "end_to_end_output_tps": 42.24661559834592, "error": null}
+{"label": "ninfer-erik-int8-k0", "workload": "json", "rep": 0, "completion_tokens": 170, "server_decode_tps": 52.01163357811284, "end_to_end_output_tps": 50.57441647606437, "error": null}
+{"label": "ninfer-erik-int8-k0", "workload": "json", "rep": 1, "completion_tokens": 170, "server_decode_tps": 52.02162896064303, "end_to_end_output_tps": 50.594484019366455, "error": null}
+{"label": "ninfer-erik-int8-k0", "workload": "json", "rep": 2, "completion_tokens": 170, "server_decode_tps": 52.0062796062441, "end_to_end_output_tps": 50.595790401621905, "error": null}
+{"label": "ninfer-erik-int8-k0", "workload": "code", "rep": 0, "completion_tokens": 512, "server_decode_tps": 51.92304975981052, "end_to_end_output_tps": 51.444168796261955, "error": null}
+{"label": "ninfer-erik-int8-k0", "workload": "code", "rep": 1, "completion_tokens": 512, "server_decode_tps": 51.86789017717092, "end_to_end_output_tps": 51.388281876825545, "error": null}
+{"label": "ninfer-erik-int8-k0", "workload": "code", "rep": 2, "completion_tokens": 512, "server_decode_tps": 51.84739101912329, "end_to_end_output_tps": 51.3701167992054, "error": null}
+{"label": "ninfer-erik-int8-k0", "workload": "prose", "rep": 0, "completion_tokens": 512, "server_decode_tps": 51.82824838401208, "end_to_end_output_tps": 51.49414671376757, "error": null}
+{"label": "ninfer-erik-int8-k0", "workload": "prose", "rep": 1, "completion_tokens": 512, "server_decode_tps": 51.84711147386945, "end_to_end_output_tps": 51.54190155318338, "error": null}
+{"label": "ninfer-erik-int8-k0", "workload": "prose", "rep": 2, "completion_tokens": 512, "server_decode_tps": 51.84489866971574, "end_to_end_output_tps": 51.540385154675924, "error": null}
+{"label": "ninfer-erik-int8-k3", "workload": "warmup", "rep": 0, "completion_tokens": 10, "server_decode_tps": 134.57430379628727, "end_to_end_output_tps": 75.67298472832483, "error": null}
+{"label": "ninfer-erik-int8-k3", "workload": "json", "rep": 0, "completion_tokens": 170, "server_decode_tps": 153.84632849009705, "end_to_end_output_tps": 140.05544791655032, "error": null}
+{"label": "ninfer-erik-int8-k3", "workload": "json", "rep": 1, "completion_tokens": 170, "server_decode_tps": 153.48938708304613, "end_to_end_output_tps": 139.83345476034555, "error": null}
+{"label": "ninfer-erik-int8-k3", "workload": "json", "rep": 2, "completion_tokens": 170, "server_decode_tps": 153.64801225089244, "end_to_end_output_tps": 140.1202311244266, "error": null}
+{"label": "ninfer-erik-int8-k3", "workload": "code", "rep": 0, "completion_tokens": 512, "server_decode_tps": 157.76547988829665, "end_to_end_output_tps": 152.72486035758754, "error": null}
+{"label": "ninfer-erik-int8-k3", "workload": "code", "rep": 1, "completion_tokens": 512, "server_decode_tps": 157.55164278465875, "end_to_end_output_tps": 152.527693131175, "error": null}
+{"label": "ninfer-erik-int8-k3", "workload": "code", "rep": 2, "completion_tokens": 512, "server_decode_tps": 157.37329098638375, "end_to_end_output_tps": 152.3677307176254, "error": null}
+{"label": "ninfer-erik-int8-k3", "workload": "prose", "rep": 0, "completion_tokens": 512, "server_decode_tps": 101.06088278023182, "end_to_end_output_tps": 99.58240190289334, "error": null}
+{"label": "ninfer-erik-int8-k3", "workload": "prose", "rep": 1, "completion_tokens": 512, "server_decode_tps": 101.03062812750059, "end_to_end_output_tps": 99.6348267511318, "error": null}
+{"label": "ninfer-erik-int8-k3", "workload": "prose", "rep": 2, "completion_tokens": 512, "server_decode_tps": 100.99203046570416, "end_to_end_output_tps": 99.59600297138212, "error": null}
+ninfer-erik-int8-k7: startup failed; inspect /home/REMOTE_USER/qwen38-4090/results/http-bench-matched/ninfer-erik-int8-k7.server.log

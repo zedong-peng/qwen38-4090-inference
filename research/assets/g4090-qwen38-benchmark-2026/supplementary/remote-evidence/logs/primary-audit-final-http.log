@@ -1,0 +1,39 @@
+Saved /home/REMOTE_USER/qwen38-4090/results/primary-benchmark-audit.json
+initial_diagnostic complete: cinference-int8-k0, cinference-int8-k3, cinference-int8-k7 pending: none
+cinference-int8-k0 json decode= 53.64882334240444 e2e= 52.3276706743325 failed= 0 penalty0= False cached0= True
+cinference-int8-k0 code decode= 53.61274352469672 e2e= 53.173719378053285 failed= 0 penalty0= False cached0= True
+cinference-int8-k0 prose decode= 53.56477634882576 e2e= 53.232351312456046 failed= 0 penalty0= False cached0= True
+cinference-int8-k3 json decode= 156.88875364562583 e2e= 144.05285967158673 failed= 0 penalty0= False cached0= True
+cinference-int8-k3 code decode= 160.16244225275364 e2e= 155.5414361857433 failed= 0 penalty0= False cached0= True
+cinference-int8-k3 prose decode= 101.25635021298996 e2e= 99.86381032525605 failed= 0 penalty0= False cached0= True
+cinference-int8-k7 json decode= 229.84712480117457 e2e= 202.09387990204436 failed= 0 penalty0= False cached0= True
+cinference-int8-k7 code decode= 202.8950569176778 e2e= 195.15819519229208 failed= 0 penalty0= False cached0= True
+cinference-int8-k7 prose decode= 88.16192942772466 e2e= 87.07247051257072 failed= 0 penalty0= False cached0= True
+primary_matched complete: cinference-int8-k0, cinference-int8-k3, cinference-int8-k7, llama-udq4-k0, llama-udq4-k3, llama-udq4-k7, ninfer-erik-int8-k0, ninfer-erik-int8-k3, ninfer-erik-int8-k5 pending: none
+cinference-int8-k0 json decode= 53.65264023840998 e2e= 52.341254561238685 failed= 0 penalty0= True cached0= True
+cinference-int8-k0 code decode= 53.594924941624946 e2e= 53.15626472548328 failed= 0 penalty0= True cached0= True
+cinference-int8-k0 prose decode= 53.57365205771607 e2e= 53.23728213510375 failed= 0 penalty0= True cached0= True
+cinference-int8-k3 json decode= 157.06012413593558 e2e= 144.27780633438974 failed= 0 penalty0= True cached0= True
+cinference-int8-k3 code decode= 163.01844274825643 e2e= 158.25691033358407 failed= 0 penalty0= True cached0= True
+cinference-int8-k3 prose decode= 100.2413894656181 e2e= 98.88657276114732 failed= 0 penalty0= True cached0= True
+cinference-int8-k7 json decode= 238.61825380731943 e2e= 208.45182436016276 failed= 0 penalty0= True cached0= True
+cinference-int8-k7 code decode= 213.9382981667909 e2e= 205.3511492011972 failed= 0 penalty0= True cached0= True
+cinference-int8-k7 prose decode= 92.8183232463741 e2e= 91.60248979755838 failed= 0 penalty0= True cached0= True
+llama-udq4-k0 json decode= 48.278555265662035 e2e= 42.69313894904608 failed= 0 penalty0= True cached0= True
+llama-udq4-k0 code decode= 48.25290945686204 e2e= 47.23848721865696 failed= 0 penalty0= True cached0= True
+llama-udq4-k0 prose decode= 48.151945300897836 e2e= 47.217018556149426 failed= 0 penalty0= True cached0= True
+llama-udq4-k3 json decode= 117.76552118211495 e2e= 86.39162720281917 failed= 0 penalty0= True cached0= True
+llama-udq4-k3 code decode= 115.27502342158377 e2e= 109.54810471452443 failed= 0 penalty0= True cached0= True
+llama-udq4-k3 prose decode= 75.25022910086874 e2e= 72.7618189235618 failed= 0 penalty0= True cached0= True
+llama-udq4-k7 json decode= 138.66473247142397 e2e= 96.4604373289826 failed= 0 penalty0= True cached0= True
+llama-udq4-k7 code decode= 124.77748828532289 e2e= 116.7099196070197 failed= 0 penalty0= True cached0= True
+llama-udq4-k7 prose decode= 61.04896700607981 e2e= 59.37766439875506 failed= 0 penalty0= True cached0= True
+ninfer-erik-int8-k0 json decode= 52.01163357811284 e2e= 50.594484019366455 failed= 0 penalty0= True cached0= True
+ninfer-erik-int8-k0 code decode= 51.86789017717092 e2e= 51.388281876825545 failed= 0 penalty0= True cached0= True
+ninfer-erik-int8-k0 prose decode= 51.84489866971574 e2e= 51.540385154675924 failed= 0 penalty0= True cached0= True
+ninfer-erik-int8-k3 json decode= 153.64801225089244 e2e= 140.05544791655032 failed= 0 penalty0= True cached0= True
+ninfer-erik-int8-k3 code decode= 157.55164278465875 e2e= 152.527693131175 failed= 0 penalty0= True cached0= True
+ninfer-erik-int8-k3 prose decode= 101.03062812750059 e2e= 99.59600297138212 failed= 0 penalty0= True cached0= True
+ninfer-erik-int8-k5 json decode= 170.00199156830158 e2e= 153.12975542031157 failed= 0 penalty0= True cached0= True
+ninfer-erik-int8-k5 code decode= 160.64201744805757 e2e= 155.349359290293 failed= 0 penalty0= True cached0= True
+ninfer-erik-int8-k5 prose decode= 84.60481030934045 e2e= 83.62812192727041 failed= 0 penalty0= True cached0= True

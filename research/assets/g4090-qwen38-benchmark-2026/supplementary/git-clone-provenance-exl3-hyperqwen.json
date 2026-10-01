@@ -1,0 +1,20 @@
+[
+  {
+    "repository_url": "https://github.com/turboderp-org/exllamav3.git",
+    "commit": "d3739fd393337b1ff4d6c2a342b12f0c87a9592f",
+    "clone_path": "/home/REMOTE_USER/qwen38-4090/repos/exllamav3-git",
+    "git_metadata_included": true,
+    "clone_method": "git clone --no-local --depth 1 file:// shallow bare mirror of readonly official-source archive",
+    "standalone_objects": true,
+    "mirror_archive_sha256": "2116eadd86d10e54df8b1b0309a5747785878af4caa95c6e03100f8758d0e4b5"
+  },
+  {
+    "repository_url": "https://github.com/syv-ai/HyperQwen.git",
+    "commit": "e1459c7631774f56de2f9425437d54e7e72ea688",
+    "clone_path": "/home/REMOTE_USER/qwen38-4090/repos/HyperQwen-git",
+    "git_metadata_included": true,
+    "clone_method": "git clone --no-local --depth 1 file:// shallow bare mirror of readonly official-source archive",
+    "standalone_objects": true,
+    "mirror_archive_sha256": "6d34f702c6c06242fbe8b028aafb1b2716ef24a9f1c3a3c12472e1ad1fbcf389"
+  }
+]

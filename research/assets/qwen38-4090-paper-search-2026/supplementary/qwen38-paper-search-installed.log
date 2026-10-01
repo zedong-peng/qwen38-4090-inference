@@ -1,0 +1,183 @@
+/Users/LOCAL_USER/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[open_alex] unavailable (import failed: unsupported operand type(s) for |: 'type' and 'NoneType'); skipping this source.
+Rate limited. Waiting 3 seconds...
+[dblp] Error: Expecting value: line 1 column 1 (char 0)
+Rate limited. Waiting 3 seconds...
+Getting V1 Notes:   0%|          | 0/3792 [00:00<?, ?it/s]Getting V1 Notes:  26%|██▋       | 1000/3792 [00:00<00:02, 1034.16it/s]Getting V1 Notes:  53%|█████▎    | 1999/3792 [00:01<00:01, 1062.26it/s]Getting V1 Notes:  79%|███████▉  | 2998/3792 [00:02<00:00, 1123.06it/s]Getting V1 Notes: 100%|█████████▉| 3788/3792 [00:03<00:00, 1232.80it/s]
+
+============================================================
+  open_alex: 0 papers found
+============================================================
+
+============================================================
+  dblp: 0 papers found
+============================================================
+
+============================================================
+  arxiv: 10 papers found
+============================================================
+  [1] Tutorial Proposal: Speculative Decoding for Efficient LLM Inference
+      Authors: Heming Xia, Cunxiao Du, Yongqi Li...
+      Year: 2025  Citations: 0  Venue: arXiv
+      URL: http://arxiv.org/abs/2503.00491v1
+
+  [2] Speculative Safety-Aware Decoding
+      Authors: Xuekang Wang, Shengyu Zhu, Xueqi Cheng
+      Year: 2025  Citations: 0  Venue: arXiv
+      URL: http://arxiv.org/abs/2508.17739v2
+
+  [3] Speculative Decoding: Exploiting Speculative Execution for Accelerating Seq2seq Generation
+      Authors: Heming Xia, Tao Ge, Peiyi Wang...
+      Year: 2022  Citations: 0  Venue: arXiv
+      URL: http://arxiv.org/abs/2203.16487v6
+
+  [4] Component-Aware Self-Speculative Decoding in Hybrid Language Models
+      Authors: Hector Borobia, Elies Seguí-Mas, Guillermina Tormo-Carbó
+      Year: 2026  Citations: 0  Venue: arXiv
+      URL: http://arxiv.org/abs/2605.01106v1
+
+  [5] SpecQuant: Speculative Decoding with Multi-Parent Quantization for Adaptive LLM Inference
+      Authors: Harish KB, Jagadeeswaran M, Pradheep P...
+      Year: 2026  Citations: 0  Venue: arXiv
+      URL: http://arxiv.org/abs/2609.21704v1
+
+  [6] Accelerating LLM Inference with Staged Speculative Decoding
+      Authors: Benjamin Spector, Chris Re
+      Year: 2023  Citations: 0  Venue: arXiv
+      URL: http://arxiv.org/abs/2308.04623v1
+
+  [7] SpecExec: Massively Parallel Speculative Decoding for Interactive LLM Inference on Consumer Devices
+      Authors: Ruslan Svirschevski, Avner May, Zhuoming Chen...
+      Year: 2024  Citations: 0  Venue: arXiv
+      URL: http://arxiv.org/abs/2406.02532v3
+
+  [8] FlowSpec: Continuous Pipelined Speculative Decoding for Efficient Distributed LLM Inference
+      Authors: Xing Liu, Lizhuo Luo, Ming Tang...
+      Year: 2025  Citations: 0  Venue: arXiv
+      URL: http://arxiv.org/abs/2507.02620v3
+
+  [9] LLM-42: Enabling Determinism in LLM Inference with Verified Speculation
+      Authors: Raja Gond, Aditya K Kamath, Ramachandran Ramjee...
+      Year: 2026  Citations: 0  Venue: arXiv
+      URL: http://arxiv.org/abs/2601.17768v2
+
+  [10] Dovetail: A CPU/GPU Heterogeneous Speculative Decoding for LLM inference
+      Authors: Libo Zhang, Zhaoning Zhang, Baizhou Xu...
+      Year: 2024  Citations: 0  Venue: arXiv
+      URL: http://arxiv.org/abs/2412.18934v2
+
+
+============================================================
+  crossref: 10 papers found
+============================================================
+  [1] Multi-Tenant Edge-Cloud Hybrid LLM Serving using Speculative Decoding and Quantization
+      Authors: Jui-Yu Lin
+      Year: None  Citations: 0  Venue: 
+      URL: https://doi.org/10.21203/rs.3.rs-10319218/v1
+
+  [2] SpecQuant – Speculative Decoding with Multi-Parent Quantization for Adaptive LLM Inference
+      Authors: Harish KB, Jagadeeswaran M, Pradheep P...
+      Year: 2026  Citations: 0  Venue: 2026 Fifth International Conference on Power, Control and Computing Technologies (ICPC2T)
+      URL: https://doi.org/10.1109/icpc2t68221.2026.11646348
+
+  [3] Dovetail: A CPU/GPU Heterogeneous Speculative Decoding for LLM inference
+      Authors: Libo Zhang, Zhaoning Zhang, Xubaizhou...
+      Year: 2025  Citations: 3  Venue: Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing
+      URL: https://doi.org/10.18653/v1/2025.emnlp-main.879
+
+  [4] Weight-Only Quantization Does Not Always Save Energy: An Empirical Study of LLM Inference Across NVIDIA GPU Platforms
+      Authors: Hongping Zhang
+      Year: None  Citations: 0  Venue: 
+      URL: https://doi.org/10.2139/ssrn.6854700
+
+  [5] Communication-Efficient Collaborative LLM Inference via Distributed Speculative Decoding
+      Authors: Ce Zheng, Tingting Yang
+      Year: 2025  Citations: 7  Venue: 2025 Seventeenth International Conference on Wireless Communications and Signal Processing (WCSP)
+      URL: https://doi.org/10.1109/wcsp68525.2025.1010651
+
+  [6] VecInfer: Efficient LLM Inference with Low-Bit KV Cache via Outlier-Suppressed Vector Quantization
+      Authors: Dingyu Yao, Chenxu Yang, Zhengyang Tong...
+      Year: 2026  Citations: 0  Venue: Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)
+      URL: https://doi.org/10.18653/v1/2026.acl-long.1454
+
+  [7] Speculative Decoding with CTC-based Draft Model for LLM Inference Acceleration
+      Authors: Zhuofan Wen, Shangtong Gui, Yang Feng
+      Year: 2024  Citations: 0  Venue: Advances in Neural Information Processing Systems 37
+      URL: https://doi.org/10.52202/079017-2923
+
+  [8] It Takes Two: Embracing Sparsity and Speculative Decoding for Efficient LLM Inference
+      Authors: Haolin Chu, Changyu Chen, Wei Liu...
+      Year: 2026  Citations: 0  Venue: 2026 IEEE/ACM International Symposium on Quality of Service (IWQoS)
+      URL: https://doi.org/10.1109/iwqos70441.2026.11661086
+
+  [9] PELM: Power Efficient On-Device LLM Inference with Speculative Decoding and Dynamic Voltage Frequency Scaling
+      Authors: Weisi Yang, Stephen Xia
+      Year: 2026  Citations: 0  Venue: Proceedings of the 2026 ACM/IEEE International Conference on Embedded Artificial Intelligence and Sensing Systems
+      URL: https://doi.org/10.1145/3774906.3802783
+
+  [10] Efficient LLM Inference Over Heterogeneous Edge Networks With Speculative Decoding
+      Authors: Bingjie Zhu, Zhixiong Chen, Liqiang Zhao...
+      Year: 2026  Citations: 0  Venue: IEEE Transactions on Communications
+      URL: https://doi.org/10.1109/tcomm.2026.3712530
+
+
+============================================================
+  semantic_scholar: 10 papers found
+============================================================
+  [1] DecDEC: A Systems Approach to Advancing Low-Bit LLM Quantization
+      Authors: Yeonhong Park, Jake Hyun, Hojoon Kim...
+      Year: 2024  Citations: 11  Venue: USENIX Symposium on Operating Systems Design and Implementation
+      URL: https://www.semanticscholar.org/paper/e2584f00b9d5c6263f5c201e53a1390c534aa436
+
+  [2] SingularBit: Exploiting Synergy of Singular Value Decomposition and Low-Bit Quantization for Weight and KV Compression in LLM Inference
+      Authors: Seongyon Hong, Hyundeok Kong, Jungwan Lee...
+      Year: 2026  Citations: 0  Venue: International Symposium on Computer Architecture
+      URL: https://www.semanticscholar.org/paper/e69310937deff1de01f24fe2b74114bf183c4814
+
+  [3] 70% Size, 100% Accuracy: Lossless LLM Compression for Efficient GPU Inference via Dynamic-Length Float
+      Authors: Tianyi Zhang, Mohsen Hariri, Yang Sui...
+      Year: 2025  Citations: 33  Venue: Neural Information Processing Systems
+      URL: https://www.semanticscholar.org/paper/f3028fb503a280c71df0e314cfd82c575f529dac
+
+  [4] FlashQuant: Sparse-Dense Fusion for Memory-Efficient Outlier-Aware LLM Inference
+      Authors: Jun-Qing Lin, Jing-Wei Sun, Zhengding Hu...
+      Year: 2026  Citations: 0  Venue: 
+      URL: https://www.semanticscholar.org/paper/21b5b26abba4b69a8e531c68ccde48d50041102e
+
+  [5] TFLOP: Towards Energy-Efficient LLM Inference An FPGA-Affinity Accelerator with Unified LUT-based OPtimization
+      Authors: Zongwu Wang, Zhongyi Tang, Fang-Xin Liu...
+      Year: 2026  Citations: 0  Venue: Asia and South Pacific Design Automation Conference
+      URL: https://www.semanticscholar.org/paper/f6efc61b2656d856b22c51e6564f091d8ae730d3
+
+  [6] Progressive Mixed-Precision Decoding for Efficient LLM Inference
+      Authors: H. Chen, Fuwen Tan, Alexandros Kouris...
+      Year: 2024  Citations: 19  Venue: International Conference on Learning Representations
+      URL: https://www.semanticscholar.org/paper/d16008cb55bd7b38e4ba8d13754926c9a8b37182
+
+  [7] UnionSparse: An Index-Efficient Sparsity Framework for Low-Bit Sparse LLM Inference on Edge
+      Authors: Tianhao Jiang, Hang Gu, Teng Wang...
+      Year: 2026  Citations: 0  Venue: 
+      URL: https://www.semanticscholar.org/paper/95cbde8d97d87fa60a3e6749e467368452f7f050
+
+  [8] CubicQuant: Parametric Non-Uniform Codebooks for High-Throughput LLM Inference with 1-8-Bit Weights
+      Authors: Xu Gao
+      Year: 2026  Citations: 0  Venue: 
+      URL: https://www.semanticscholar.org/paper/51279fb5caaec6989f2acf25f71d11832e70bc38
+
+  [9] DeFT: Decoding with Flash Tree-attention for Efficient Tree-structured LLM Inference
+      Authors: Jinwei Yao, Kaiqi Chen, Kexun Zhang...
+      Year: 2024  Citations: 19  Venue: International Conference on Learning Representations
+      URL: https://www.semanticscholar.org/paper/50f250b0b41b0e7f55daadd4a231e7ad79c46b52
+
+  [10] MixPE: Quantization and Hardware Co-design for Efficient LLM Inference
+      Authors: Yu Zhang, Mingzi Wang, Lancheng Zou...
+      Year: 2024  Citations: 13  Venue: arXiv.org
+      URL: https://www.semanticscholar.org/paper/1281e1ffdce1bb6c6eb4180c6cb8aa00c5f69848
+
+
+============================================================
+  openreview: 0 papers found
+============================================================
+
+Total: 30 papers from 6 sources.

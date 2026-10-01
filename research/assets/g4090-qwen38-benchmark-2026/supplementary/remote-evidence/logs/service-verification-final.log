@@ -1,0 +1,93 @@
+{
+  "base_url": "http://127.0.0.1:18038",
+  "context": 16384,
+  "draft_tokens": 7,
+  "gpu": 3,
+  "scope": "deployment smoke; not repeated performance or semantic correctness benchmark",
+  "health": {
+    "status": 200,
+    "body": {
+      "status": "ok"
+    }
+  },
+  "readiness_poll_s": 0.0030929315835237503,
+  "systemd": "MainPID=2332782\nExecMainStatus=0\nActiveState=active\nSubState=running\n",
+  "models": {
+    "data": [
+      {
+        "created": 1790805291,
+        "id": "qwen3.8-27b",
+        "max_model_len": 16384,
+        "object": "model",
+        "owned_by": "ninfer"
+      }
+    ],
+    "object": "list"
+  },
+  "json": {
+    "completion_tokens": 170,
+    "finish_reason": "stop",
+    "checks": {
+      "valid_json": true,
+      "three_districts": true
+    }
+  },
+  "code": {
+    "completion_tokens": 1449,
+    "finish_reason": "stop",
+    "checks": {
+      "python_syntax": true,
+      "semantic_tests": "not_run"
+    }
+  },
+  "stream": {
+    "done": true,
+    "events": 6,
+    "request": {
+      "model": "qwen3.8-27b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Count from one to five separated by commas."
+        }
+      ],
+      "temperature": 0,
+      "seed": 42,
+      "presence_penalty": 0,
+      "frequency_penalty": 0,
+      "enable_thinking": false,
+      "max_tokens": 64,
+      "stream": true
+    }
+  },
+  "responses": {
+    "response_type": null,
+    "status": "completed",
+    "content": [
+      {
+        "content": [
+          {
+            "annotations": [],
+            "text": "Ready.",
+            "type": "output_text"
+          }
+        ],
+        "id": "msg_5d256984f7e78021259f0b95ca654784",
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ]
+  },
+  "anthropic": {
+    "response_type": "message",
+    "status": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "Ready."
+      }
+    ]
+  },
+  "gpu_snapshot": "3, GPU-REDACTED, 18569, 5523, 89, 379.27, 49"
+}

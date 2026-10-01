@@ -1,0 +1,230 @@
+[
+  {
+    "name": "g4090-cc-direct-download.py",
+    "bytes": 1448,
+    "original_sha256": "34a7466f77d570723f2d39ca5e9998b0baafd82a4f2ba4fca3103d7ba4240f77",
+    "local_copy": ".local/originals/temporary/g4090-cc-direct-download.py"
+  },
+  {
+    "name": "qwen38-aa-models.html",
+    "bytes": 2446788,
+    "original_sha256": "0848f29dddc35ba80bc3b09c236c7e6b6e24c482908b272d8325ee1ad496ff7d",
+    "local_copy": ".local/originals/temporary/qwen38-aa-models.html"
+  },
+  {
+    "name": "qwen38-aa-sitemap.xml",
+    "bytes": 5638825,
+    "original_sha256": "f077d9b9a01efe577b83888ba2082f6ec44899c042fbe592f8850ca5f33868f1",
+    "local_copy": ".local/originals/temporary/qwen38-aa-sitemap.xml"
+  },
+  {
+    "name": "qwen38-archive.log",
+    "bytes": 1524,
+    "original_sha256": "4395f8ae73151ef6751df80442ba8fddc83f799adcde6b39ecaa85c7fad4e868",
+    "local_copy": ".local/originals/temporary/qwen38-archive.log"
+  },
+  {
+    "name": "qwen38-assets-qa-after.json",
+    "bytes": 278,
+    "original_sha256": "c8b36bc27bde59fb00ed95d11e8fb3c35a16aa73d391320fd7be5b33a2229cda",
+    "local_copy": ".local/originals/temporary/qwen38-assets-qa-after.json"
+  },
+  {
+    "name": "qwen38-assets-qa-before.json",
+    "bytes": 29976,
+    "original_sha256": "13823a08c4c2e7a14e43dc058c4f7aed921f2fa187a82fb906cc93638a37d84a",
+    "local_copy": ".local/originals/temporary/qwen38-assets-qa-before.json"
+  },
+  {
+    "name": "qwen38-browser-check.json",
+    "bytes": 2072,
+    "original_sha256": "eae5a6ce47a784263c950f0b78de3b761fa3cf030781737c56c696b1a9f79d55",
+    "local_copy": ".local/originals/temporary/qwen38-browser-check.json"
+  },
+  {
+    "name": "qwen38-browser-check.py",
+    "bytes": 6453,
+    "original_sha256": "383ecd9b9ba00e51f0d42751e27840493d0cbd93ea0c64921dc50f79a985555a",
+    "local_copy": ".local/originals/temporary/qwen38-browser-check.py"
+  },
+  {
+    "name": "qwen38-cinference-4090.tar.gz",
+    "bytes": 20915579,
+    "original_sha256": "afae7713d2985fbb6e674453aada7ed966d0f0e4a7b8f94f46adc7825e1c887e",
+    "local_copy": ".local/originals/temporary/qwen38-cinference-4090.tar.gz"
+  },
+  {
+    "name": "qwen38-docker-build-v2.log",
+    "bytes": 3229,
+    "original_sha256": "2afc7d53428c03ae6fdd623bd536a29b5310963c168ff32a6eaef6b78ace8fbf",
+    "local_copy": ".local/originals/temporary/qwen38-docker-build-v2.log"
+  },
+  {
+    "name": "qwen38-docker-final-build.log",
+    "bytes": 22980,
+    "original_sha256": "d672bcad6cc88e8daf07e4c8fe72ebeb4253690ea1e4d6cd81f9227ef94b8243",
+    "local_copy": ".local/originals/temporary/qwen38-docker-final-build.log"
+  },
+  {
+    "name": "qwen38-docker-install-build.log",
+    "bytes": 22882,
+    "original_sha256": "6743be09b14488757d7a33f19cfeba9906bc9e5bd5b363dc5b48c9816c02110b",
+    "local_copy": ".local/originals/temporary/qwen38-docker-install-build.log"
+  },
+  {
+    "name": "qwen38-final-service-and-build-evidence.tar.gz",
+    "bytes": 433815,
+    "original_sha256": "32ffd8b413adc29aaa17620d44d05a590cf4565604086c7fb340a3d9aeb50636",
+    "local_copy": ".local/originals/temporary/qwen38-final-service-and-build-evidence.tar.gz"
+  },
+  {
+    "name": "qwen38-http-and-build-evidence.tar.gz",
+    "bytes": 364013,
+    "original_sha256": "5efb4c8eb3427ab31a02f3b4dfd872b8008ddac076439924f051a7849663e46c",
+    "local_copy": ".local/originals/temporary/qwen38-http-and-build-evidence.tar.gz"
+  },
+  {
+    "name": "qwen38-jekyll-build.log",
+    "bytes": 0,
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local_copy": ".local/originals/temporary/qwen38-jekyll-build.log"
+  },
+  {
+    "name": "qwen38-leaderboard-bing.html",
+    "bytes": 97226,
+    "original_sha256": "3ec7f8ee53a5611dd65ab1c4ea5ea62fd7daeff939f00fa4eb78e96f984e96b3",
+    "local_copy": ".local/originals/temporary/qwen38-leaderboard-bing.html"
+  },
+  {
+    "name": "qwen38-leaderboard-ddg.html",
+    "bytes": 14308,
+    "original_sha256": "47b4065abea01261179c265081ca7ac251df7aa1279464265bdab2663642a9e5",
+    "local_copy": ".local/originals/temporary/qwen38-leaderboard-ddg.html"
+  },
+  {
+    "name": "qwen38-leaderboard-desktop.png",
+    "bytes": 121751,
+    "original_sha256": "2247c9ad1554fc96723487956fc2456cda3b17259646bd5af3f6748832b5f0d7",
+    "local_copy": ".local/originals/temporary/qwen38-leaderboard-desktop.png"
+  },
+  {
+    "name": "qwen38-leaderboard-google.html",
+    "bytes": 92460,
+    "original_sha256": "a8a2f1fb4a5a5cdd804406c03632291851235242bae4e71c040c3066ab08c142",
+    "local_copy": ".local/originals/temporary/qwen38-leaderboard-google.html"
+  },
+  {
+    "name": "qwen38-leaderboard-mobile-dark.png",
+    "bytes": 69077,
+    "original_sha256": "d0f95a446e20470e3244a8e6ef758275536b2aca932e2293532d1f39a99bee35",
+    "local_copy": ".local/originals/temporary/qwen38-leaderboard-mobile-dark.png"
+  },
+  {
+    "name": "qwen38-leaderboard-mobile-light.png",
+    "bytes": 63022,
+    "original_sha256": "5315a1e6503f63156169f6ac1187055652c3e62bf6f0cc86af66181c99f3fc72",
+    "local_copy": ".local/originals/temporary/qwen38-leaderboard-mobile-light.png"
+  },
+  {
+    "name": "qwen38-leaderboard-mobile.png",
+    "bytes": 69074,
+    "original_sha256": "a2607d18076f6f34b646dfc354fd19aa7709856d9a22e0bc4a2c90844271b9a5",
+    "local_copy": ".local/originals/temporary/qwen38-leaderboard-mobile.png"
+  },
+  {
+    "name": "qwen38-leaderboard-publish-manifest.json",
+    "bytes": 3162,
+    "original_sha256": "07be9c39a816af45571d73839ebd44c5ca850cd722ce7d00fe4e0ac16e550467",
+    "local_copy": ".local/originals/temporary/qwen38-leaderboard-publish-manifest.json"
+  },
+  {
+    "name": "qwen38-llama-cpp-source.tar.gz",
+    "bytes": 37805201,
+    "original_sha256": "9aa681ba62b6cba9715123b2172cb52a1641e7d6c1351f5be62efb9342a6a8cf",
+    "local_copy": ".local/originals/temporary/qwen38-llama-cpp-source.tar.gz"
+  },
+  {
+    "name": "qwen38-llama-git-clone-remote.log",
+    "bytes": 3588,
+    "original_sha256": "26cb6b6c63d1bdf0d6ec62f0b5a662fcca82aa14c0b78ca4bdac1f68cb58ca9e",
+    "local_copy": ".local/originals/temporary/qwen38-llama-git-clone-remote.log"
+  },
+  {
+    "name": "qwen38-llama-reference-mirror.tar.gz",
+    "bytes": 37734031,
+    "original_sha256": "e0dd30c8b3ceee42dc845d6a1d48784a83e72bf53cb3e03d3ed522f26343a352",
+    "local_copy": ".local/originals/temporary/qwen38-llama-reference-mirror.tar.gz"
+  },
+  {
+    "name": "qwen38-llama-reference.bundle",
+    "bytes": 37995845,
+    "original_sha256": "6170c8f41213ee62809dca54ab8353b591eab912ce41deaf177998da1e40c3e5",
+    "local_copy": ".local/originals/temporary/qwen38-llama-reference.bundle"
+  },
+  {
+    "name": "qwen38-ninfer-4090.tar.gz",
+    "bytes": 20331419,
+    "original_sha256": "e968aab55635e8fd9fa6955bab857b891cd813d82b33a1aa50b8abc1fb6ad34e",
+    "local_copy": ".local/originals/temporary/qwen38-ninfer-4090.tar.gz"
+  },
+  {
+    "name": "qwen38-ninfer-source.tar.gz",
+    "bytes": 10376323,
+    "original_sha256": "decd8444a4f2d61d341391f971e2c46985f6ecf9b2f2a863550d96db6ef2bb4e",
+    "local_copy": ".local/originals/temporary/qwen38-ninfer-source.tar.gz"
+  },
+  {
+    "name": "qwen38-paper-search-installed.log",
+    "bytes": 10334,
+    "original_sha256": "03b5c0bc9f99d342adeb0939e5f2ab34297ce3d3700332b0e944c0b4fa4a7ff8",
+    "local_copy": ".local/originals/temporary/qwen38-paper-search-installed.log"
+  },
+  {
+    "name": "qwen38-paper-search-researchstudio-py311.log",
+    "bytes": 38337,
+    "original_sha256": "23e658dbd22efc0c18cfbb3a40583fbc5176cb1d29074c950f6ed928231e52e5",
+    "local_copy": ".local/originals/temporary/qwen38-paper-search-researchstudio-py311.log"
+  },
+  {
+    "name": "qwen38-paper-search-researchstudio.log",
+    "bytes": 40145,
+    "original_sha256": "2fe4341fa07cf549585a393075fb0080642dff2dc145c0e63cd4b61b04d94743",
+    "local_copy": ".local/originals/temporary/qwen38-paper-search-researchstudio.log"
+  },
+  {
+    "name": "qwen38-prepare-public-archive.py",
+    "bytes": 10784,
+    "original_sha256": "0b4df71222f7f2e2cdcb58282713be76d65051fe9e30639bff7efd466d385819",
+    "local_copy": ".local/originals/temporary/qwen38-prepare-public-archive.py"
+  },
+  {
+    "name": "qwen38-preview-server.json",
+    "bytes": 139,
+    "original_sha256": "96462020a71e26fad70627967d0a5b2b6581290f8acd4c22cd24cfbcebffe77d",
+    "local_copy": ".local/originals/temporary/qwen38-preview-server.json"
+  },
+  {
+    "name": "qwen38-reviewed-build.log",
+    "bytes": 21717,
+    "original_sha256": "f17519b05dfe92243ea6d336444fe4e1d3d9d15d6da8ff3a29d9007e576834a1",
+    "local_copy": ".local/originals/temporary/qwen38-reviewed-build.log"
+  },
+  {
+    "name": "qwen38_archive_papers.py",
+    "bytes": 6460,
+    "original_sha256": "f220d27dd82c07e2c2184e80948f55d4832ac1b3029a187bb5ba03698fa648a9",
+    "local_copy": ".local/originals/temporary/qwen38_archive_papers.py"
+  },
+  {
+    "name": "qwen38_write_notes.py",
+    "bytes": 13576,
+    "original_sha256": "83493e4c2842f99941c9f83cf6b3f0dd9b571a2762f361d0a4f1abad9fb89066",
+    "local_copy": ".local/originals/temporary/qwen38_write_notes.py"
+  },
+  {
+    "name": "qwen38_write_search_thread.py",
+    "bytes": 20691,
+    "original_sha256": "386bef2f97d3d3ffa23d38be1a67b302493ad3852b89a9d9d74a60dadd35a9b0",
+    "local_copy": ".local/originals/temporary/qwen38_write_search_thread.py"
+  }
+]

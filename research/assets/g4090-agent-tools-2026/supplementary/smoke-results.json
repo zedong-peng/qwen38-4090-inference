@@ -1,0 +1,32 @@
+{
+  "claude": {
+    "resolved_path": "/home/REMOTE_USER/.local/bin/claude",
+    "version": "2.1.286 (Claude Code)",
+    "version_exit": 0,
+    "help_exit": 0
+  },
+  "codex": {
+    "resolved_path": "/home/REMOTE_USER/.local/bin/codex",
+    "version": "codex-cli 0.159.2",
+    "version_exit": 0,
+    "help_exit": 0
+  },
+  "opencode": {
+    "resolved_path": "/home/REMOTE_USER/.local/bin/opencode",
+    "version": "1.18.33",
+    "version_exit": 0,
+    "help_exit": 0
+  },
+  "cc-switch": {
+    "resolved_path": "/home/REMOTE_USER/.local/bin/cc-switch",
+    "version": "cc-switch 5.10.5",
+    "version_exit": 0,
+    "help_exit": 0
+  },
+  "cc-switch-gui-runtime": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "AppImage runtime version: https://github.com/AppImage/type2-runtime/commit/75849dc",
+    "display_available": false
+  }
+}

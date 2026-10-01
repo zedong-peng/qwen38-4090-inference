@@ -1,0 +1,89 @@
+[
+  {
+    "label": "ninfer-erik-int8-k3",
+    "workload": "json",
+    "successful_reps": 3,
+    "failed_reps": 0,
+    "median_decode_tps": 153.64801225089244,
+    "median_end_to_end_output_tps": 140.05544791655032,
+    "median_prefill_tps": 689.9415553196573,
+    "median_server_prompt_ms": 111.603656,
+    "median_draft_acceptance": 0.8299319727891157,
+    "finish_reasons": [
+      "stop",
+      "stop",
+      "stop"
+    ],
+    "quality_checks": [
+      {
+        "valid_json": true,
+        "three_districts": true
+      },
+      {
+        "valid_json": true,
+        "three_districts": true
+      },
+      {
+        "valid_json": true,
+        "three_districts": true
+      }
+    ]
+  },
+  {
+    "label": "ninfer-erik-int8-k3",
+    "workload": "code",
+    "successful_reps": 3,
+    "failed_reps": 0,
+    "median_decode_tps": 157.55164278465875,
+    "median_end_to_end_output_tps": 152.527693131175,
+    "median_prefill_tps": 620.4426743384793,
+    "median_server_prompt_ms": 111.210919,
+    "median_draft_acceptance": 0.851508120649652,
+    "finish_reasons": [
+      "length",
+      "length",
+      "length"
+    ],
+    "quality_checks": [
+      {
+        "python_syntax": false,
+        "semantic_tests": "not_run"
+      },
+      {
+        "python_syntax": false,
+        "semantic_tests": "not_run"
+      },
+      {
+        "python_syntax": false,
+        "semantic_tests": "not_run"
+      }
+    ]
+  },
+  {
+    "label": "ninfer-erik-int8-k3",
+    "workload": "prose",
+    "successful_reps": 3,
+    "failed_reps": 0,
+    "median_decode_tps": 101.03062812750059,
+    "median_end_to_end_output_tps": 99.59600297138212,
+    "median_prefill_tps": 430.4786370418359,
+    "median_server_prompt_ms": 78.981852,
+    "median_draft_acceptance": 0.4277198211624441,
+    "finish_reasons": [
+      "length",
+      "length",
+      "length"
+    ],
+    "quality_checks": [
+      {
+        "words": 396
+      },
+      {
+        "words": 396
+      },
+      {
+        "words": 396
+      }
+    ]
+  }
+]

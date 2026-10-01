@@ -1,0 +1,173 @@
+{
+  "sha": "d44ab58408aa389728cd8b1ee50179527e1f3e0d",
+  "node_id": "C_kwDOTGJOJtoAKGQ0NGFiNTg0MDhhYTM4OTcyOGNkOGIxZWU1MDE3OTUyN2UxZjNlMGQ",
+  "commit": {
+    "author": {
+      "name": "Neroued",
+      "email": "neroued@gmail.com",
+      "date": "2026-09-29T09:51:09Z"
+    },
+    "committer": {
+      "name": "Neroued",
+      "email": "neroued@gmail.com",
+      "date": "2026-09-29T09:51:09Z"
+    },
+    "message": "perf(attention): extend grouped small prefill",
+    "tree": {
+      "sha": "4b095965010903e7eed6cfb52eff2acce7faff8b",
+      "url": "https://api.github.com/repos/Neroued/ninfer/git/trees/4b095965010903e7eed6cfb52eff2acce7faff8b"
+    },
+    "url": "https://api.github.com/repos/Neroued/ninfer/git/commits/d44ab58408aa389728cd8b1ee50179527e1f3e0d",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/Neroued/ninfer/commits/d44ab58408aa389728cd8b1ee50179527e1f3e0d",
+  "html_url": "https://github.com/Neroued/ninfer/commit/d44ab58408aa389728cd8b1ee50179527e1f3e0d",
+  "comments_url": "https://api.github.com/repos/Neroued/ninfer/commits/d44ab58408aa389728cd8b1ee50179527e1f3e0d/comments",
+  "author": {
+    "login": "Neroued",
+    "id": 142312170,
+    "node_id": "U_kgDOCHuC6g",
+    "avatar_url": "https://avatars.githubusercontent.com/u/142312170?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/Neroued",
+    "html_url": "https://github.com/Neroued",
+    "followers_url": "https://api.github.com/users/Neroued/followers",
+    "following_url": "https://api.github.com/users/Neroued/following{/other_user}",
+    "gists_url": "https://api.github.com/users/Neroued/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/Neroued/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/Neroued/subscriptions",
+    "organizations_url": "https://api.github.com/users/Neroued/orgs",
+    "repos_url": "https://api.github.com/users/Neroued/repos",
+    "events_url": "https://api.github.com/users/Neroued/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/Neroued/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "Neroued",
+    "id": 142312170,
+    "node_id": "U_kgDOCHuC6g",
+    "avatar_url": "https://avatars.githubusercontent.com/u/142312170?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/Neroued",
+    "html_url": "https://github.com/Neroued",
+    "followers_url": "https://api.github.com/users/Neroued/followers",
+    "following_url": "https://api.github.com/users/Neroued/following{/other_user}",
+    "gists_url": "https://api.github.com/users/Neroued/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/Neroued/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/Neroued/subscriptions",
+    "organizations_url": "https://api.github.com/users/Neroued/orgs",
+    "repos_url": "https://api.github.com/users/Neroued/repos",
+    "events_url": "https://api.github.com/users/Neroued/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/Neroued/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "4201b5d2d0f6afe235f4ed8e70cd753800770eca",
+      "url": "https://api.github.com/repos/Neroued/ninfer/commits/4201b5d2d0f6afe235f4ed8e70cd753800770eca",
+      "html_url": "https://github.com/Neroued/ninfer/commit/4201b5d2d0f6afe235f4ed8e70cd753800770eca"
+    }
+  ],
+  "stats": {
+    "total": 138,
+    "additions": 93,
+    "deletions": 45
+  },
+  "files": [
+    {
+      "sha": "b8b26e36eab01cafa14414ab0c4d9da0e767ee80",
+      "filename": "src/ops/softmax_attention/dense/causal_cache/bf16/plan.cpp",
+      "status": "modified",
+      "additions": 16,
+      "deletions": 15,
+      "changes": 31,
+      "blob_url": "https://github.com/Neroued/ninfer/blob/d44ab58408aa389728cd8b1ee50179527e1f3e0d/src%2Fops%2Fsoftmax_attention%2Fdense%2Fcausal_cache%2Fbf16%2Fplan.cpp",
+      "raw_url": "https://github.com/Neroued/ninfer/raw/d44ab58408aa389728cd8b1ee50179527e1f3e0d/src%2Fops%2Fsoftmax_attention%2Fdense%2Fcausal_cache%2Fbf16%2Fplan.cpp",
+      "contents_url": "https://api.github.com/repos/Neroued/ninfer/contents/src%2Fops%2Fsoftmax_attention%2Fdense%2Fcausal_cache%2Fbf16%2Fplan.cpp?ref=d44ab58408aa389728cd8b1ee50179527e1f3e0d",
+      "patch": "@@ -5,6 +5,9 @@\n #include <stdexcept>\n \n namespace ninfer::ops::detail {\n+namespace {\n+constexpr int kGroupedPrefillMaxWidth = 256;\n+} // namespace\n \n Bf16KvCausalPlan make_bf16_kv_causal_plan(int heads, int width, int batch,\n                                           CausalAttentionExecutionEnvelope envelope) {\n@@ -16,28 +19,27 @@ Bf16KvCausalPlan make_bf16_kv_causal_plan(int heads, int width, int batch,\n     const int kv_heads = heads == 24 ? 4 : 2, group = heads / kv_heads;\n     const auto ceil_div = [](int a, int b) { return (a + b - 1) / b; };\n     const int visible   = envelope.max_visible_keys;\n-    if (width > 128 / group) {\n+    if (width > kGroupedPrefillMaxWidth) {\n         const auto instance =\n             heads == 16 && width >= 1024 && width % 128 == 0 && visible - width >= 8192\n                 ? Bf16KvInstance::Tiled128\n                 : Bf16KvInstance::Tiled64;\n         return {instance, {}, heads, width, batch, envelope};\n     }\n-    const int rows         = width * group;\n-    const auto instance    = width == 1   ? Bf16KvInstance::GroupedDecode\n-                             : rows <= 32 ? Bf16KvInstance::Grouped32\n-                                          : Bf16KvInstance::Grouped64;\n-    const auto description = bf16_kv_instance_description(instance);\n-    const int tiles        = ceil_div(rows, description.query_rows);\n-    // Two SM waves suffice for short partitions. For long contexts, preserve\n-    // per-head parallelism until the whole grid reaches six waves on RTX 5090.\n+    const int rows                  = width * group;\n+    const auto instance             = width == 1   ? Bf16KvInstance::GroupedDecode\n+                                      : rows <= 32 ? Bf16KvInstance::Grouped32\n+                                                   : Bf16KvInstance::Grouped64;\n+    const auto description          = bf16_kv_instance_description(instance);\n+    const int tiles                 = ceil_div(rows, description.query_rows);\n     const int independent_tiles     = batch * kv_heads * tiles;\n     const bool many_memory_tiles    = description.query_rows == 32 && independent_tiles >= 16;\n     const bool multiple_query_tiles = tiles > 1;\n-    const int long_ctas             = many_memory_tiles || multiple_query_tiles\n-                                          ? std::clamp(85 * independent_tiles, (2 * kCausalAttentionSmCount),\n-                                                       (6 * kCausalAttentionSmCount))\n-                                          : (2 * kCausalAttentionSmCount);\n+    // Small-query partitions may use up to six waves; wider prefill targets two.\n+    const int long_ctas = width <= 128 / group && (many_memory_tiles || multiple_query_tiles)\n+                              ? std::clamp(85 * independent_tiles, (2 * kCausalAttentionSmCount),\n+                                           (6 * kCausalAttentionSmCount))\n+                              : (2 * kCausalAttentionSmCount);\n     Bf16KvPartition partition{\n         1, std::clamp((2 * kCausalAttentionSmCount) / independent_tiles, 1, 256),\n         std::clamp(long_ctas / independent_tiles, 1, 256), description.key_rows};\n@@ -52,8 +54,7 @@ Bf16KvCausalPlan make_bf16_kv_causal_plan(int heads, int width, int batch,\n std::size_t bf16_kv_workspace_bytes(int heads, int batch, int min_width, int max_width,\n                                     CausalAttentionExecutionEnvelope envelope) {\n     std::size_t maximum = 0;\n-    const int group     = heads == 24 ? 6 : 8;\n-    for (int width = min_width; width <= std::min(max_width, 128 / group); ++width) {\n+    for (int width = min_width; width <= std::min(max_width, kGroupedPrefillMaxWidth); ++width) {\n         const auto plan = make_bf16_kv_causal_plan(heads, width, batch, envelope);\n         WorkspaceLayoutBuilder layout;\n         (void)allocate_causal_partials(layout, heads, width, plan.partition.capacity, batch);"
+    },
+    {
+      "sha": "578e055d00bbdc8588421754f806cf0b67140226",
+      "filename": "src/ops/softmax_attention/dense/causal_cache/fp8/plan.cpp",
+      "status": "modified",
+      "additions": 10,
+      "deletions": 6,
+      "changes": 16,
+      "blob_url": "https://github.com/Neroued/ninfer/blob/d44ab58408aa389728cd8b1ee50179527e1f3e0d/src%2Fops%2Fsoftmax_attention%2Fdense%2Fcausal_cache%2Ffp8%2Fplan.cpp",
+      "raw_url": "https://github.com/Neroued/ninfer/raw/d44ab58408aa389728cd8b1ee50179527e1f3e0d/src%2Fops%2Fsoftmax_attention%2Fdense%2Fcausal_cache%2Ffp8%2Fplan.cpp",
+      "contents_url": "https://api.github.com/repos/Neroued/ninfer/contents/src%2Fops%2Fsoftmax_attention%2Fdense%2Fcausal_cache%2Ffp8%2Fplan.cpp?ref=d44ab58408aa389728cd8b1ee50179527e1f3e0d",
+      "patch": "@@ -5,6 +5,9 @@\n #include <stdexcept>\n \n namespace ninfer::ops::detail {\n+namespace {\n+constexpr int kGroupedPrefillMaxWidth = 80;\n+} // namespace\n \n Fp8KvCausalPlan make_fp8_kv_causal_plan(int heads, int width, int batch,\n                                         CausalAttentionExecutionEnvelope envelope) {\n@@ -14,9 +17,9 @@ Fp8KvCausalPlan make_fp8_kv_causal_plan(int heads, int width, int batch,\n         envelope.max_visible_keys > kCausalAttentionMaximumVisibleKeys)\n         throw std::invalid_argument(\"FP8 attention: invalid plan inputs\");\n     constexpr int grouped_limit = Fp8KvCausalPlan::kTokenTile;\n-    const auto family           = width <= grouped_limit ? Fp8KvFamily::Grouped\n-                                  : width <= 16          ? Fp8KvFamily::ParallelGrouped\n-                                                         : Fp8KvFamily::Tiled;\n+    const auto family           = width <= grouped_limit             ? Fp8KvFamily::Grouped\n+                                  : width <= kGroupedPrefillMaxWidth ? Fp8KvFamily::ParallelGrouped\n+                                                                     : Fp8KvFamily::Tiled;\n     if (family == Fp8KvFamily::Tiled)\n         return {family, heads,    width,\n                 batch,  envelope, mxfp8_tiled_partition(heads, width, envelope.max_visible_keys)};\n@@ -39,16 +42,17 @@ Fp8KvCausalPlan make_fp8_kv_causal_plan(int heads, int width, int batch,\n std::size_t fp8_kv_workspace_bytes(int heads, int batch, int min_width, int max_width,\n                                    CausalAttentionExecutionEnvelope envelope) {\n     std::size_t maximum = 0;\n-    for (int width = min_width; width <= std::min(max_width, 16); ++width) {\n+    for (int width = min_width; width <= std::min(max_width, kGroupedPrefillMaxWidth); ++width) {\n         const auto plan = make_fp8_kv_causal_plan(heads, width, batch, envelope);\n         if (plan.family == Fp8KvFamily::Tiled) continue;\n         const int splits = plan.partition.capacity;\n         WorkspaceLayoutBuilder layout;\n         (void)allocate_causal_partials(layout, heads, width, splits, batch);\n         maximum = std::max(maximum, layout.peak_bytes(1));\n     }\n-    return std::max(maximum, mxfp8_tiled_workspace_bytes(heads, min_width, max_width,\n-                                                         envelope.max_visible_keys));\n+    return std::max(maximum, mxfp8_tiled_workspace_bytes(\n+                                 heads, std::max(min_width, kGroupedPrefillMaxWidth + 1), max_width,\n+                                 envelope.max_visible_keys));\n }\n \n } // namespace ninfer::ops::detail"
+    },
+    {
+      "sha": "96ecf84d698b4ffdffbd4619aaf23233f357820f",
+      "filename": "src/ops/softmax_attention/dense/causal_cache/int8/plan.cpp",
+      "status": "modified",
+      "additions": 7,
+      "deletions": 4,
+      "changes": 11,
+      "blob_url": "https://github.com/Neroued/ninfer/blob/d44ab58408aa389728cd8b1ee50179527e1f3e0d/src%2Fops%2Fsoftmax_attention%2Fdense%2Fcausal_cache%2Fint8%2Fplan.cpp",
+      "raw_url": "https://github.com/Neroued/ninfer/raw/d44ab58408aa389728cd8b1ee50179527e1f3e0d/src%2Fops%2Fsoftmax_attention%2Fdense%2Fcausal_cache%2Fint8%2Fplan.cpp",
+      "contents_url": "https://api.github.com/repos/Neroued/ninfer/contents/src%2Fops%2Fsoftmax_attention%2Fdense%2Fcausal_cache%2Fint8%2Fplan.cpp?ref=d44ab58408aa389728cd8b1ee50179527e1f3e0d",
+      "patch": "@@ -4,6 +4,9 @@\n #include <stdexcept>\n \n namespace ninfer::ops::detail {\n+namespace {\n+constexpr int kGroupedPrefillMaxWidth = 256;\n+} // namespace\n \n Int8KvCausalPlan make_int8_kv_causal_plan(int heads, int width, int batch,\n                                           CausalAttentionExecutionEnvelope envelope) {\n@@ -13,9 +16,9 @@ Int8KvCausalPlan make_int8_kv_causal_plan(int heads, int width, int batch,\n         envelope.max_visible_keys > kCausalAttentionMaximumVisibleKeys)\n         throw std::invalid_argument(\"INT8 attention: invalid plan inputs\");\n     constexpr int grouped_limit = Int8KvCausalPlan::kTokenTile;\n-    const auto family           = width <= grouped_limit ? Int8KvFamily::Grouped\n-                                  : width <= 16          ? Int8KvFamily::ParallelGrouped\n-                                                         : Int8KvFamily::Tiled;\n+    const auto family           = width <= grouped_limit             ? Int8KvFamily::Grouped\n+                                  : width <= kGroupedPrefillMaxWidth ? Int8KvFamily::ParallelGrouped\n+                                                                     : Int8KvFamily::Tiled;\n     const int tiles =\n         family == Int8KvFamily::ParallelGrouped ? (width + grouped_limit - 1) / grouped_limit : 1;\n     const int independent_tiles = batch * (heads == 24 ? 4 : 2) * tiles;\n@@ -33,7 +36,7 @@ Int8KvCausalPlan make_int8_kv_causal_plan(int heads, int width, int batch,\n std::size_t int8_kv_workspace_bytes(int heads, int batch, int min_width, int max_width,\n                                     CausalAttentionExecutionEnvelope envelope) {\n     std::size_t maximum = 0;\n-    for (int width = min_width; width <= std::min(max_width, 16); ++width) {\n+    for (int width = min_width; width <= std::min(max_width, kGroupedPrefillMaxWidth); ++width) {\n         const auto plan = make_int8_kv_causal_plan(heads, width, batch, envelope);\n         if (plan.family == Int8KvFamily::Tiled) continue;\n         const int splits = plan.partition.capacity;"
+    },
+    {
+      "sha": "bd49242319a00f5444ff1c5013685915240e28e2",
+      "filename": "src/ops/softmax_attention/dense/causal_cache/k8v4/plan.cpp",
+      "status": "modified",
+      "additions": 13,
+      "deletions": 8,
+      "changes": 21,
+      "blob_url": "https://github.com/Neroued/ninfer/blob/d44ab58408aa389728cd8b1ee50179527e1f3e0d/src%2Fops%2Fsoftmax_attention%2Fdense%2Fcausal_cache%2Fk8v4%2Fplan.cpp",
+      "raw_url": "https://github.com/Neroued/ninfer/raw/d44ab58408aa389728cd8b1ee50179527e1f3e0d/src%2Fops%2Fsoftmax_attention%2Fdense%2Fcausal_cache%2Fk8v4%2Fplan.cpp",
+      "contents_url": "https://api.github.com/repos/Neroued/ninfer/contents/src%2Fops%2Fsoftmax_attention%2Fdense%2Fcausal_cache%2Fk8v4%2Fplan.cpp?ref=d44ab58408aa389728cd8b1ee50179527e1f3e0d",
+      "patch": "@@ -5,6 +5,9 @@\n #include <stdexcept>\n \n namespace ninfer::ops::detail {\n+namespace {\n+constexpr int kGroupedPrefillMaxWidth = 80;\n+} // namespace\n \n K8V4KvCausalPlan make_k8v4_kv_causal_plan(int heads, int width, int batch,\n                                           CausalAttentionExecutionEnvelope envelope) {\n@@ -14,9 +17,9 @@ K8V4KvCausalPlan make_k8v4_kv_causal_plan(int heads, int width, int batch,\n         envelope.max_visible_keys > kCausalAttentionMaximumVisibleKeys)\n         throw std::invalid_argument(\"K8V4 attention: invalid plan inputs\");\n     constexpr int grouped_limit = K8V4KvCausalPlan::kTokenTile;\n-    const auto family           = width <= grouped_limit ? K8V4KvFamily::Grouped\n-                                  : width <= 16          ? K8V4KvFamily::ParallelGrouped\n-                                                         : K8V4KvFamily::Tiled;\n+    const auto family           = width <= grouped_limit             ? K8V4KvFamily::Grouped\n+                                  : width <= kGroupedPrefillMaxWidth ? K8V4KvFamily::ParallelGrouped\n+                                                                     : K8V4KvFamily::Tiled;\n     if (family == K8V4KvFamily::Tiled)\n         return {family,\n                 heads,\n@@ -27,8 +30,9 @@ K8V4KvCausalPlan make_k8v4_kv_causal_plan(int heads, int width, int batch,\n                 mxfp8_tiled_partition(heads, width, envelope.max_visible_keys)};\n     const int tiles =\n         family == K8V4KvFamily::ParallelGrouped ? (width + grouped_limit - 1) / grouped_limit : 1;\n-    const int query_tile =\n-        family == K8V4KvFamily::ParallelGrouped ? (width + 1) / 2 : std::min(width, grouped_limit);\n+    const int query_tile        = family == K8V4KvFamily::ParallelGrouped && width <= 16\n+                                      ? (width + 1) / 2\n+                                      : std::min(width, grouped_limit);\n     const int independent_tiles = batch * (heads == 24 ? 4 : 2) * tiles;\n     // Decode permits two resident CTAs per SM. Spec uses one; add a wave when\n     // rounding to complete query tiles would leave over 10% of the 170 SMs idle.\n@@ -46,16 +50,17 @@ K8V4KvCausalPlan make_k8v4_kv_causal_plan(int heads, int width, int batch,\n std::size_t k8v4_kv_workspace_bytes(int heads, int batch, int min_width, int max_width,\n                                     CausalAttentionExecutionEnvelope envelope) {\n     std::size_t maximum = 0;\n-    for (int width = min_width; width <= std::min(max_width, 16); ++width) {\n+    for (int width = min_width; width <= std::min(max_width, kGroupedPrefillMaxWidth); ++width) {\n         const auto plan = make_k8v4_kv_causal_plan(heads, width, batch, envelope);\n         if (plan.family == K8V4KvFamily::Tiled) continue;\n         const int splits = plan.partition.capacity;\n         WorkspaceLayoutBuilder layout;\n         (void)allocate_causal_partials(layout, heads, width, splits, batch);\n         maximum = std::max(maximum, layout.peak_bytes(1));\n     }\n-    return std::max(maximum, mxfp8_tiled_workspace_bytes(heads, min_width, max_width,\n-                                                         envelope.max_visible_keys));\n+    return std::max(maximum, mxfp8_tiled_workspace_bytes(\n+                                 heads, std::max(min_width, kGroupedPrefillMaxWidth + 1), max_width,\n+                                 envelope.max_visible_keys));\n }\n \n } // namespace ninfer::ops::detail"
+    },
+    {
+      "sha": "b68821a46345c60f03cc37f231927bea80c6bc05",
+      "filename": "src/ops/softmax_attention/dense/causal_cache/nvfp4/plan.cpp",
+      "status": "modified",
+      "additions": 13,
+      "deletions": 9,
+      "changes": 22,
+      "blob_url": "https://github.com/Neroued/ninfer/blob/d44ab58408aa389728cd8b1ee50179527e1f3e0d/src%2Fops%2Fsoftmax_attention%2Fdense%2Fcausal_cache%2Fnvfp4%2Fplan.cpp",
+      "raw_url": "https://github.com/Neroued/ninfer/raw/d44ab58408aa389728cd8b1ee50179527e1f3e0d/src%2Fops%2Fsoftmax_attention%2Fdense%2Fcausal_cache%2Fnvfp4%2Fplan.cpp",
+      "contents_url": "https://api.github.com/repos/Neroued/ninfer/contents/src%2Fops%2Fsoftmax_attention%2Fdense%2Fcausal_cache%2Fnvfp4%2Fplan.cpp?ref=d44ab58408aa389728cd8b1ee50179527e1f3e0d",
+      "patch": "@@ -4,6 +4,9 @@\n #include <stdexcept>\n \n namespace ninfer::ops::detail {\n+namespace {\n+constexpr int kGroupedPrefillMaxWidth = 192;\n+} // namespace\n \n Nvfp4KvCausalPlan make_nvfp4_kv_causal_plan(int heads, int width, int batch,\n                                             CausalAttentionExecutionEnvelope envelope) {\n@@ -14,17 +17,18 @@ Nvfp4KvCausalPlan make_nvfp4_kv_causal_plan(int heads, int width, int batch,\n         throw std::invalid_argument(\"NVFP4 attention: invalid plan inputs\");\n     constexpr int grouped_limit = Nvfp4KvCausalPlan::kTokenTile;\n     const auto family           = width <= grouped_limit ? Nvfp4KvFamily::Grouped\n-                                  : width <= 16          ? Nvfp4KvFamily::ParallelGrouped\n-                                                         : Nvfp4KvFamily::Tiled;\n+                                  : width <= kGroupedPrefillMaxWidth ? Nvfp4KvFamily::ParallelGrouped\n+                                                                     : Nvfp4KvFamily::Tiled;\n     const int tiles =\n         family == Nvfp4KvFamily::ParallelGrouped ? (width + grouped_limit - 1) / grouped_limit : 1;\n     const int independent_tiles = batch * (heads == 24 ? 4 : 2) * tiles;\n-    const int query_tile =\n-        family == Nvfp4KvFamily::ParallelGrouped ? (width + 1) / 2 : std::min(width, grouped_limit);\n-    const int row_tiles = (query_tile * (heads == 24 ? 6 : 8) + 15) / 16;\n-    constexpr int sms   = kCausalAttentionSmCount;\n-    const int wave_ctas = (sms / independent_tiles) * independent_tiles;\n-    const int budget    = row_tiles <= 2 || wave_ctas < sms * 9 / 10 ? 2 * sms : sms;\n+    const int query_tile        = family == Nvfp4KvFamily::ParallelGrouped && width <= 16\n+                                      ? (width + 1) / 2\n+                                      : std::min(width, grouped_limit);\n+    const int row_tiles         = (query_tile * (heads == 24 ? 6 : 8) + 15) / 16;\n+    constexpr int sms           = kCausalAttentionSmCount;\n+    const int wave_ctas         = (sms / independent_tiles) * independent_tiles;\n+    const int budget            = row_tiles <= 2 || wave_ctas < sms * 9 / 10 ? 2 * sms : sms;\n     CausalKvPartition partition{\n         1, std::clamp(budget / independent_tiles, 1, CausalKvPartition::kMaxSplits)};\n     // Bound partial traffic by keeping enough KV work in each split.\n@@ -36,7 +40,7 @@ Nvfp4KvCausalPlan make_nvfp4_kv_causal_plan(int heads, int width, int batch,\n std::size_t nvfp4_kv_workspace_bytes(int heads, int batch, int min_width, int max_width,\n                                      CausalAttentionExecutionEnvelope envelope) {\n     std::size_t maximum = 0;\n-    for (int width = min_width; width <= std::min(max_width, 16); ++width) {\n+    for (int width = min_width; width <= std::min(max_width, kGroupedPrefillMaxWidth); ++width) {\n         const auto plan = make_nvfp4_kv_causal_plan(heads, width, batch, envelope);\n         if (plan.family == Nvfp4KvFamily::Tiled) continue;\n         const int splits = plan.partition.capacity;"
+    },
+    {
+      "sha": "f83290f96fdd9fefe27e5ad1be10bfedae87790f",
+      "filename": "tests/models/qwen3_5/test_engine_prefix_real.cpp",
+      "status": "modified",
+      "additions": 7,
+      "deletions": 2,
+      "changes": 9,
+      "blob_url": "https://github.com/Neroued/ninfer/blob/d44ab58408aa389728cd8b1ee50179527e1f3e0d/tests%2Fmodels%2Fqwen3_5%2Ftest_engine_prefix_real.cpp",
+      "raw_url": "https://github.com/Neroued/ninfer/raw/d44ab58408aa389728cd8b1ee50179527e1f3e0d/tests%2Fmodels%2Fqwen3_5%2Ftest_engine_prefix_real.cpp",
+      "contents_url": "https://api.github.com/repos/Neroued/ninfer/contents/tests%2Fmodels%2Fqwen3_5%2Ftest_engine_prefix_real.cpp?ref=d44ab58408aa389728cd8b1ee50179527e1f3e0d",
+      "patch": "@@ -2207,22 +2207,27 @@ int exercise_attention_integration(const char* artifact) {\n     if (batch > 1 && after.decode_row_rounds - before.decode_row_rounds <=\n                          after.decode_rounds - before.decode_rounds)\n         throw std::runtime_error(\"attention integration did not execute a multi-row decode round\");\n-    continuation.push_back(seed.back());\n+    continuation.insert(continuation.end(), 33, seed.back());\n     const auto reused = engine.generate(engine.prepare_tokens(continuation), fixed_output(8));\n     const auto fresh = engine.generate(engine.prepare_tokens(continuation), fixed_output(8, false));\n     validate(reused, 8);\n     validate(fresh, 8);\n     if (reused.reused_prompt_tokens == 0 || fresh.reused_prompt_tokens != 0)\n         throw std::runtime_error(\n             \"attention integration prefix continuation did not follow reuse policy\");\n+    const auto appended = reused.prompt.prompt_tokens - reused.reused_prompt_tokens;\n+    if (appended <= 16 || appended > 256)\n+        throw std::runtime_error(\"attention integration did not exercise small prefix append\");\n     const auto memory = engine.memory_summary();\n     if (memory.workspace_logical_peak_bytes == 0 ||\n         memory.workspace_logical_peak_bytes > memory.workspace.capacity_bytes)\n         throw std::runtime_error(\"attention integration exceeded its planned workspace\");\n     std::cout << \"attention integration KV=\" << setting(\"NINFER_TEST_KV_DTYPE\", \"bf16\")\n               << \" backend=\" << backend_name << \" B=\" << batch\n               << \" workspace_peak=\" << memory.workspace_logical_peak_bytes\n-              << \" graph_allowance=\" << memory.cuda_graph_allowance_bytes << '\\n';\n+              << \" graph_allowance=\" << memory.cuda_graph_allowance_bytes\n+              << \" appended=\" << appended\n+              << \" append_prefill_ms=\" << reused.timings.prefill_seconds * 1000 << '\\n';\n     return 0;\n }\n "
+    },
+    {
+      "sha": "cd96513fc084f38e3513f8c4c8cff093ef91ac75",
+      "filename": "tests/ops/softmax_attention/causal_cache.cpp",
+      "status": "modified",
+      "additions": 27,
+      "deletions": 1,
+      "changes": 28,
+      "blob_url": "https://github.com/Neroued/ninfer/blob/d44ab58408aa389728cd8b1ee50179527e1f3e0d/tests%2Fops%2Fsoftmax_attention%2Fcausal_cache.cpp",
+      "raw_url": "https://github.com/Neroued/ninfer/raw/d44ab58408aa389728cd8b1ee50179527e1f3e0d/tests%2Fops%2Fsoftmax_attention%2Fcausal_cache.cpp",
+      "contents_url": "https://api.github.com/repos/Neroued/ninfer/contents/tests%2Fops%2Fsoftmax_attention%2Fcausal_cache.cpp?ref=d44ab58408aa389728cd8b1ee50179527e1f3e0d",
+      "patch": "@@ -2564,7 +2564,7 @@ int verify_workspace_capacity_contract(KvCacheStorage storage) {\n         ++failures;\n     }\n \n-    if (storage == KvCacheStorage::Fp8E4M3Row256 || storage == KvCacheStorage::Fp8KeyNvfp4Value) {\n+    {\n         // Prefill split counts can decrease as query width grows. The interval\n         // query must still cover every supported point, including before a drop.\n         for (const auto& item : kGeometries) {\n@@ -2618,6 +2618,31 @@ int run_numerical_profile_cases(KvCacheStorage storage) {\n     return failures;\n }\n \n+int run_small_prefill_cases(KvCacheStorage storage) {\n+    int failures = 0;\n+    const std::array<int, 4> append_queries{0, 7, 16, 33};\n+    const std::array<int, 4> cached_queries{0, 63, 64, 128};\n+    const std::array<int, 3> boundary_queries{0, 127, 256};\n+    for (const auto& geometry : kGeometries) {\n+        failures += run_a1_case(geometry, storage, {34, 8191, 32768, 1301u, false, true},\n+                                MappingPattern::Fragmented, append_queries);\n+        failures += run_a3_case(geometry, storage,\n+                                {129, 32768, 131072, 1302u, false, false, 1.8f * std::sqrt(3.0f)},\n+                                MappingPattern::Fragmented, cached_queries);\n+        failures += run_a3_case(geometry, storage, {257, 8192, 16384, 1303u},\n+                                MappingPattern::Offset, boundary_queries);\n+        failures += run_batch_case(\n+            geometry, storage, {65, {8191}, {17}, {0}, MappingPattern::Fragmented, 1304u}, 32768);\n+        if (storage == KvCacheStorage::Fp8E4M3Row256 ||\n+            storage == KvCacheStorage::Fp8KeyNvfp4Value) {\n+            failures += run_a3_case(geometry, storage,\n+                                    {34, 8192, 32768, 1305u, false, false, 1.8f * std::sqrt(3.0f)},\n+                                    MappingPattern::Fragmented, append_queries);\n+        }\n+    }\n+    return failures;\n+}\n+\n int run_storage_cases(KvCacheStorage storage) {\n     int failures = verify_workspace_capacity_contract(storage);\n     if (storage == KvCacheStorage::Nvfp4Group16) {\n@@ -2647,6 +2672,7 @@ int run_storage_cases(KvCacheStorage storage) {\n     failures += run_graph_envelope_cases(storage);\n     failures += run_verify_width_cases(storage);\n     failures += run_numerical_profile_cases(storage);\n+    failures += run_small_prefill_cases(storage);\n     return failures;\n }\n "
+    }
+  ]
+}

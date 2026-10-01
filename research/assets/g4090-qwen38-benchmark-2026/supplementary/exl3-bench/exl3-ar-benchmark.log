@@ -1,0 +1,9 @@
+{"mode": "ar", "workload": "json", "rep": 0, "exl3_native_generation_tps": 53.47459579009432, "generation_call_output_tps": 12.889127180868929, "error": null}
+{"mode": "ar", "workload": "json", "rep": 1, "exl3_native_generation_tps": 53.522373996948915, "generation_call_output_tps": 51.56783282351305, "error": null}
+{"mode": "ar", "workload": "json", "rep": 2, "exl3_native_generation_tps": 53.58840529985967, "generation_call_output_tps": 51.797551214838336, "error": null}
+{"mode": "ar", "workload": "code", "rep": 0, "exl3_native_generation_tps": 53.49455360267326, "generation_call_output_tps": 52.89836110732788, "error": null}
+{"mode": "ar", "workload": "code", "rep": 1, "exl3_native_generation_tps": 53.536130020568, "generation_call_output_tps": 52.84378546614367, "error": null}
+{"mode": "ar", "workload": "code", "rep": 2, "exl3_native_generation_tps": 53.334831968667345, "generation_call_output_tps": 52.72727066823453, "error": null}
+{"mode": "ar", "workload": "prose", "rep": 0, "exl3_native_generation_tps": 53.39653794352068, "generation_call_output_tps": 51.23432483029071, "error": null}
+{"mode": "ar", "workload": "prose", "rep": 1, "exl3_native_generation_tps": 53.390155178207, "generation_call_output_tps": 53.027761874649286, "error": null}
+{"mode": "ar", "workload": "prose", "rep": 2, "exl3_native_generation_tps": 53.394401777496384, "generation_call_output_tps": 53.026641255420444, "error": null}

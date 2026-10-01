@@ -1,0 +1,119 @@
+schema_version: 1
+paper:
+  title: 'Splitwise: Efficient generative LLM inference using phase splitting'
+  slug: splitwise-2024
+  topic: llm-inference
+  arxiv_id: '2311.18677'
+  doi: null
+  selected_version: v2
+  authors:
+  - Patel, Pratyush
+  - Choukse, Esha
+  - Zhang, Chaojie
+  - Shah, Aashaka
+  - Goiri, Íñigo
+  - Maleki, Saeed
+  - Bianchini, Ricardo
+  canonical_url: https://arxiv.org/abs/2311.18677v2
+  publication_note: ISCA 2024 线索；本次阅读 arXiv v2，未另外下载 proceedings 版本
+assets:
+- kind: tex_source
+  url: https://arxiv.org/src/2311.18677v2
+  resolved_url: https://arxiv.org/src/2311.18677v2
+  version: v2
+  path: paper-tex/archives/2311.18677v2.tar.gz
+  original_filename: null
+  filename_provenance: derived
+  format: tar.gz
+  retrieved_at: '2026-09-14T09:35:03.361010+00:00'
+  bytes: 2647860
+  sha256: 1c050624d484cd4024b6e148fe8f346a073edc62c55bf48897674e8d931a9b12
+  status: downloaded
+  error: null
+  extraction:
+    status: extracted
+    path: paper-tex/extracted/2311.18677v2
+    error: null
+  filename_note: Derived from arXiv identifier, selected version and detected format;
+    original response filename not captured.
+- kind: pdf
+  url: https://arxiv.org/pdf/2311.18677v2
+  resolved_url: https://arxiv.org/pdf/2311.18677v2
+  version: v2
+  path: paper-pdf/2311.18677v2.pdf
+  original_filename: null
+  filename_provenance: derived
+  format: pdf
+  retrieved_at: '2026-09-14T09:35:07.991786+00:00'
+  bytes: 2154278
+  sha256: c7baf19039f7b760c5d83fb61324ec4ffdf384e8a047bd46f2c4e2ad85e3531d
+  status: downloaded
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  filename_note: Derived from arXiv identifier, selected version and detected format;
+    original response filename not captured.
+repositories:
+- url: https://github.com/Mutinifni/splitwise-sim
+  path: github-repo/splitwise-sim
+  commit: 8f99e7dc9b407f4ce2488d03dd44c0b8b946dab0
+  branch: main
+  retrieved_at: '2026-09-14'
+  submodule_status: none_declared
+  status: inspected
+  execution: not_run
+  inspection_scope:
+  - path: README.md
+    scope: selected interfaces/methods; not a complete repository audit
+  - path: run.py
+    scope: selected interfaces/methods; not a complete repository audit
+  - path: configs/config.yaml
+    scope: selected interfaces/methods; not a complete repository audit
+reading:
+  status: partial
+  source: tex
+  paths:
+  - paper-tex/extracted/2311.18677v2/sections/splitwise.tex
+  - paper-tex/extracted/2311.18677v2/sections/evalnew.tex
+  - paper-tex/extracted/2311.18677v2/sections/discussion.tex
+  - paper-tex/extracted/2311.18677v2/sections/artifact.tex
+  scope:
+  - sections/splitwise.tex
+  - sections/evalnew.tex
+  - sections/discussion.tex
+  - sections/artifact.tex
+  fallback_reason: null
+  note: Focused reading of methods, evaluation and listed sections; not a complete
+    paper/appendix audit. Formal note records only observed scope.
+ingest:
+  status: extracted
+  updated_at: '2026-09-14'
+  exceptions:
+  - 'Partial reading: do not label processed until remaining paper sections are read.'
+related_artifacts:
+- url: https://github.com/vllm-project/vllm/pull/2809
+  status: identified_not_cached
+- url: https://doi.org/10.5281/zenodo.11003049
+  status: identified_not_cached
+identity_evidence:
+  path: abstract.html
+  url: https://arxiv.org/abs/2311.18677
+  retrieved_at: '2026-09-14'
+  bytes: 44419
+  sha256: c0a9555a99b350a34829912c270a684f167014edadbcefdb705d8cf45f26feb8
+  method: citation_title/citation_author and submission-history version IDs; matched
+    PDF first-page title
+reproduction:
+  status: not_run
+  note: No downloaded code, build, model inference, training, simulator or benchmark
+    executed.
+archive_distribution:
+  snapshot_date: '2026-10-02'
+  original_cache: .local/originals/llm-inference/assets/splitwise-2024
+  original_metadata: .local/originals/llm-inference/assets/splitwise-2024/metadata.yaml
+  source_hash_semantics: Original asset sha256/bytes are preserved as historical provenance.
+    Public sanitized file hashes are in archives/public-files.json.
+  full_papers_and_upstream_repos: local_only; recover from canonical URLs and fixed
+    revisions in archives/

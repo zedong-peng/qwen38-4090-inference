@@ -1,0 +1,38 @@
+[
+  {
+    "repo": "syv-ai/qwen38-27b-rtx3090",
+    "stars": 1785,
+    "commit": "e1459c7631774f56de2f9425437d54e7e72ea688",
+    "size": 15214
+  },
+  {
+    "repo": "signalnine/q27",
+    "stars": 44,
+    "commit": "e30304df10f9f16bd35403f1e35e8e7d1959dcbb",
+    "size": 47033
+  },
+  {
+    "repo": "Ninnix/q36",
+    "stars": 59,
+    "commit": "1305843c735380f912619548b121cba8601f2f85",
+    "size": 59058
+  },
+  {
+    "repo": "Anbeeld/beellama.cpp",
+    "stars": 1141,
+    "commit": "58a1629274d8d74ea5a6acf34f30fb5946c2422b",
+    "size": 14817
+  },
+  {
+    "repo": "MiaAI-Lab/Qwen3.8-27B-DFlash2-EXL3-5.0bpw",
+    "stars": 230,
+    "commit": "1242187390f780dba907e30659f1639fd0b491c8",
+    "size": 10829
+  },
+  {
+    "repo": "r0b0tlab/qwen38-exl3-dflash2",
+    "stars": 22,
+    "commit": "75d4ec5a4829d39d515fc442ee8ee4664246797c",
+    "size": 6907
+  }
+]

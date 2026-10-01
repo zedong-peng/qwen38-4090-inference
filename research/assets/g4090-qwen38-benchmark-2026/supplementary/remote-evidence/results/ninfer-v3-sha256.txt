@@ -1,0 +1,1 @@
+efec7393d517dc3cdda1f8fa0f3333bd03ffe61610418f059d6758afcaece006  /home/REMOTE_USER/qwen38-4090/models/qwen3_8_27b.v3.ninfer

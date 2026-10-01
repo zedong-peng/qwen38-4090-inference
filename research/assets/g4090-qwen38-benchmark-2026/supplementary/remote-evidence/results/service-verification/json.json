@@ -1,0 +1,65 @@
+{
+  "request": {
+    "model": "qwen3.8-27b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Return ONLY a JSON object (no prose, no code fence) describing a fictional city with keys: name (string), founded (integer year), population (integer), districts (array of exactly 3 objects each with name and area_km2), climate {summer_c: number, winter_c: number}, coastal (boolean)."
+      }
+    ],
+    "temperature": 0,
+    "seed": 42,
+    "presence_penalty": 0,
+    "frequency_penalty": 0,
+    "enable_thinking": false,
+    "max_tokens": 512,
+    "stream": false
+  },
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"name\": \"Aethelgard\",\n  \"founded\": 1245,\n  \"population\": 850000,\n  \"districts\": [\n    {\n      \"name\": \"Old Quarter\",\n      \"area_km2\": 12.5\n    },\n    {\n      \"name\": \"Harbor District\",\n      \"area_km2\": 8.2\n    },\n    {\n      \"name\": \"Northern Heights\",\n      \"area_km2\": 25.7\n    }\n  ],\n  \"climate\": {\n    \"summer_c\": 24.5,\n    \"winter_c\": 3.1\n  },\n  \"coastal\": true\n}",
+          "refusal": null,
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1790805291,
+    "id": "chatcmpl-5609368544c081e8",
+    "model": "qwen3.8-27b",
+    "object": "chat.completion",
+    "timings": {
+      "cache_n": 68,
+      "draft_n": 189,
+      "draft_n_accepted": 144,
+      "predicted_ms": 707.717634,
+      "predicted_n": 170,
+      "predicted_per_second": 238.79580199919113,
+      "predicted_per_token_ms": 4.187678307692307,
+      "prompt_ms": 117.413731,
+      "prompt_n": 9,
+      "prompt_per_second": 76.6520229222594,
+      "prompt_per_token_ms": 13.04597011111111
+    },
+    "usage": {
+      "completion_tokens": 170,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 77,
+      "prompt_tokens_details": {
+        "cached_tokens": 68
+      },
+      "total_tokens": 247
+    }
+  },
+  "wall_s": 0.8333441019058228,
+  "checks": {
+    "valid_json": true,
+    "three_districts": true
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "binary": "/home/REMOTE_USER/qwen38-4090/repos/qwen38-cinference-4090/build-sm89/apps/ninfer-serve",
+  "binary_bytes": 440140912,
+  "binary_sha256": "b2c1d3a98a87b1b7b1aafcf89e766bdbb2a6ef4b2f16bbdce7af781ebba58808",
+  "commit": "70ebb1290dc7abe246c20696a24d21f77faee8d4",
+  "canonical_origin": "https://github.com/jram4/ninfer-4090.git",
+  "tracked_status": "",
+  "unit_enabled": "enabled"
+}

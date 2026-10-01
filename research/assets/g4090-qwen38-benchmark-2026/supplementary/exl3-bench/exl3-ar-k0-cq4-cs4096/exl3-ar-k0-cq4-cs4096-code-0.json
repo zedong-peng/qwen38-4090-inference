@@ -1,0 +1,86 @@
+{
+  "label": "exl3-ar-k0-cq4-cs4096",
+  "mode": "ar",
+  "workload": "code",
+  "rep": 0,
+  "utc": "2026-09-30T21:34:47.768614+00:00",
+  "model_flags": [
+    "-m",
+    "/home/REMOTE_USER/qwen38-4090/models/Qwen3.8-27B-EXL3-4.00bpw",
+    "-cs",
+    "4096",
+    "-cq",
+    "4",
+    "-temp",
+    "0",
+    "-ndt",
+    "0"
+  ],
+  "torch": "2.10.0+cu128",
+  "torch_cuda": "12.8",
+  "cold_prefix_method": "fresh process and fresh Generator per request",
+  "cases_helper_sha256": "3d1a196fd59fe3fc4e5855a24b1f06d5229674cea9b2e2fbb08fc31f3767a38e",
+  "source": {
+    "repository_url": "https://github.com/turboderp-org/exllamav3.git",
+    "commit": "d3739fd393337b1ff4d6c2a342b12f0c87a9592f",
+    "clone_path": "/home/REMOTE_USER/qwen38-4090/repos/exllamav3-git",
+    "git_metadata_included": true,
+    "clone_method": "git clone --no-local --depth 1 file:// shallow bare mirror of readonly official-source archive",
+    "standalone_objects": true,
+    "mirror_archive_sha256": "2116eadd86d10e54df8b1b0309a5747785878af4caa95c6e03100f8758d0e4b5"
+  },
+  "gpu_before": "3, GPU-REDACTED, 20, 24073, 0, 42.24, 45",
+  "model_load_and_warmup_s": 10.526109686121345,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Write a complete Python module implementing an LRU cache class with get, put and delete, followed by at most five concise unittest test methods that exercise eviction order. Put everything in one ```python block and end the block with: if __name__ == '__main__': unittest.main()"
+    }
+  ],
+  "enable_thinking": false,
+  "max_tokens": 512,
+  "seed": 42,
+  "temperature": 0,
+  "rendered_prompt": "<|im_start|>user\nWrite a complete Python module implementing an LRU cache class with get, put and delete, followed by at most five concise unittest test methods that exercise eviction order. Put everything in one ```python block and end the block with: if __name__ == '__main__': unittest.main()<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "rendered_prompt_sha256": "299b8ccf98c729abe1309914d607d0c2a6e3495a27fd1efb6ce512d7b622be06",
+  "chat_template_sha256": "c3cf9e34abf4f9e36c2d72165aa9c132d3e2a725b6c2586aaa3a8af9d7a81041",
+  "generation_call_wall_s": 9.678938804194331,
+  "raw_result": {
+    "stage": "streaming",
+    "eos": true,
+    "serial": 0,
+    "eos_reason": "max_new_tokens",
+    "text": "1",
+    "token_ids": [
+      [
+        16
+      ]
+    ],
+    "full_completion": "```python\nimport unittest\nfrom collections import OrderedDict\n\n\nclass LRUCache:\n    \"\"\"\n    An LRU (Least Recently Used) cache implementation using OrderedDict.\n    Supports get, put, and delete operations with O(1) time complexity.\n    \"\"\"\n\n    def __init__(self, capacity: int):\n        if capacity <= 0:\n            raise ValueError(\"Capacity must be positive\")\n        self.capacity = capacity\n        self.cache = OrderedDict()\n\n    def get(self, key):\n        \"\"\"\n        Retrieve the value for the given key.\n        If key exists, move it to the end (most recently used) and return its value.\n        If key does not exist, return None.\n        \"\"\"\n        if key not in self.cache:\n            return None\n        # Move to end to mark as most recently used\n        self.cache.move_to_end(key)\n        return self.cache[key]\n\n    def put(self, key, value):\n        \"\"\"\n        Insert or update the key-value pair.\n        If key already exists, update its value and move to end.\n        If key does not exist and cache is at capacity, evict the least recently used item.\n        \"\"\"\n        if key in self.cache:\n            # Update value and move to end\n            self.cache[key] = value\n            self.cache.move_to_end(key)\n        else:\n            if len(self.cache) >= self.capacity:\n                # Evict the least recently used item (first item in OrderedDict)\n                self.cache.popitem(last=False)\n            self.cache[key] = value\n\n    def delete(self, key):\n        \"\"\"\n        Remove the key from the cache if it exists.\n        Returns True if the key was present and removed, False otherwise.\n        \"\"\"\n        if key in self.cache:\n            del self.cache[key]\n            return True\n        return False\n\n\nclass TestLRUCache(unittest.TestCase):\n    \"\"\"\n    Test cases for LRUCache focusing on eviction order.\n    \"\"\"\n\n    def test_basic_eviction_order(self):\n        \"\"\"\n        Test that the least recently used item is evicted first.\n        \"\"\"\n        cache = LRUCache(2)\n        cache.put(1, 'a')\n        cache.put(2, 'b')\n        # Access key 1, making it most recently used\n        self.assertEqual(cache.get(1",
+    "new_tokens": 512,
+    "prompt_tokens": 69,
+    "time_enqueued": 0.0013353824615478516,
+    "time_prefill": 0.10283112525939941,
+    "time_generate": 9.571067810058594,
+    "cached_pages": 0,
+    "cached_tokens": 0
+  },
+  "completion": "```python\nimport unittest\nfrom collections import OrderedDict\n\n\nclass LRUCache:\n    \"\"\"\n    An LRU (Least Recently Used) cache implementation using OrderedDict.\n    Supports get, put, and delete operations with O(1) time complexity.\n    \"\"\"\n\n    def __init__(self, capacity: int):\n        if capacity <= 0:\n            raise ValueError(\"Capacity must be positive\")\n        self.capacity = capacity\n        self.cache = OrderedDict()\n\n    def get(self, key):\n        \"\"\"\n        Retrieve the value for the given key.\n        If key exists, move it to the end (most recently used) and return its value.\n        If key does not exist, return None.\n        \"\"\"\n        if key not in self.cache:\n            return None\n        # Move to end to mark as most recently used\n        self.cache.move_to_end(key)\n        return self.cache[key]\n\n    def put(self, key, value):\n        \"\"\"\n        Insert or update the key-value pair.\n        If key already exists, update its value and move to end.\n        If key does not exist and cache is at capacity, evict the least recently used item.\n        \"\"\"\n        if key in self.cache:\n            # Update value and move to end\n            self.cache[key] = value\n            self.cache.move_to_end(key)\n        else:\n            if len(self.cache) >= self.capacity:\n                # Evict the least recently used item (first item in OrderedDict)\n                self.cache.popitem(last=False)\n            self.cache[key] = value\n\n    def delete(self, key):\n        \"\"\"\n        Remove the key from the cache if it exists.\n        Returns True if the key was present and removed, False otherwise.\n        \"\"\"\n        if key in self.cache:\n            del self.cache[key]\n            return True\n        return False\n\n\nclass TestLRUCache(unittest.TestCase):\n    \"\"\"\n    Test cases for LRUCache focusing on eviction order.\n    \"\"\"\n\n    def test_basic_eviction_order(self):\n        \"\"\"\n        Test that the least recently used item is evicted first.\n        \"\"\"\n        cache = LRUCache(2)\n        cache.put(1, 'a')\n        cache.put(2, 'b')\n        # Access key 1, making it most recently used\n        self.assertEqual(cache.get(1",
+  "output_sha256": "fd3111e98bb2181fe4388c88a14043f8f6d558539af4e4a4836c8edc836f5a7b",
+  "quality_check": {
+    "python_syntax": false,
+    "semantic_tests": "not_run"
+  },
+  "gpu_after": "3, GPU-REDACTED, 14957, 9135, 96, 353.20, 61",
+  "cold_prefix_verified": true,
+  "exl3_native_generation_tps": 53.49455360267326,
+  "generation_call_output_tps": 52.89836110732788,
+  "draft_acceptance": null,
+  "metric_definition": {
+    "exl3_native_generation_tps": "new_tokens / time_generate; EXL3 N convention",
+    "time_generate": "first generation/draft forward start to EOS; includes first decode, excludes bulk prefill",
+    "generation_call_wall_s": "in-process generate call including tokenization, prefill and decode; excludes model load/warmup",
+    "time_prefill": "native bulk-prefill interval, not measured client TTFT",
+    "http_comparable": false
+  }
+}

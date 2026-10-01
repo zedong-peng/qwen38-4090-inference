@@ -1,0 +1,101 @@
+{
+  "sha": "e30304df10f9f16bd35403f1e35e8e7d1959dcbb",
+  "node_id": "C_kwDOTK89LdoAKGUzMDMwNGRmMTBmOWYxNmJkMzU0MDNmMWUzNWU4ZTdkMTk1OWRjYmI",
+  "commit": {
+    "author": {
+      "name": "Gabe Ortiz",
+      "email": "gabe@signalnine.net",
+      "date": "2026-09-28T01:06:24Z"
+    },
+    "committer": {
+      "name": "Gabe Ortiz",
+      "email": "gabe@signalnine.net",
+      "date": "2026-09-28T01:06:24Z"
+    },
+    "message": "BUILDLOG (ay): n-gram drafting ideas replayed on campaign traffic -- incremental suffix index shipped, cross-session and frequency fallbacks measured and not built",
+    "tree": {
+      "sha": "f89e085206cbeece6c06aed3dc7de1231056b713",
+      "url": "https://api.github.com/repos/signalnine/q27/git/trees/f89e085206cbeece6c06aed3dc7de1231056b713"
+    },
+    "url": "https://api.github.com/repos/signalnine/q27/git/commits/e30304df10f9f16bd35403f1e35e8e7d1959dcbb",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/signalnine/q27/commits/e30304df10f9f16bd35403f1e35e8e7d1959dcbb",
+  "html_url": "https://github.com/signalnine/q27/commit/e30304df10f9f16bd35403f1e35e8e7d1959dcbb",
+  "comments_url": "https://api.github.com/repos/signalnine/q27/commits/e30304df10f9f16bd35403f1e35e8e7d1959dcbb/comments",
+  "author": {
+    "login": "signalnine",
+    "id": 243361,
+    "node_id": "MDQ6VXNlcjI0MzM2MQ==",
+    "avatar_url": "https://avatars.githubusercontent.com/u/243361?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/signalnine",
+    "html_url": "https://github.com/signalnine",
+    "followers_url": "https://api.github.com/users/signalnine/followers",
+    "following_url": "https://api.github.com/users/signalnine/following{/other_user}",
+    "gists_url": "https://api.github.com/users/signalnine/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/signalnine/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/signalnine/subscriptions",
+    "organizations_url": "https://api.github.com/users/signalnine/orgs",
+    "repos_url": "https://api.github.com/users/signalnine/repos",
+    "events_url": "https://api.github.com/users/signalnine/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/signalnine/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "signalnine",
+    "id": 243361,
+    "node_id": "MDQ6VXNlcjI0MzM2MQ==",
+    "avatar_url": "https://avatars.githubusercontent.com/u/243361?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/signalnine",
+    "html_url": "https://github.com/signalnine",
+    "followers_url": "https://api.github.com/users/signalnine/followers",
+    "following_url": "https://api.github.com/users/signalnine/following{/other_user}",
+    "gists_url": "https://api.github.com/users/signalnine/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/signalnine/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/signalnine/subscriptions",
+    "organizations_url": "https://api.github.com/users/signalnine/orgs",
+    "repos_url": "https://api.github.com/users/signalnine/repos",
+    "events_url": "https://api.github.com/users/signalnine/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/signalnine/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "206aead74bdc7468f1352d7044b97af7726c9645",
+      "url": "https://api.github.com/repos/signalnine/q27/commits/206aead74bdc7468f1352d7044b97af7726c9645",
+      "html_url": "https://github.com/signalnine/q27/commit/206aead74bdc7468f1352d7044b97af7726c9645"
+    }
+  ],
+  "stats": {
+    "total": 30,
+    "additions": 30,
+    "deletions": 0
+  },
+  "files": [
+    {
+      "sha": "2faa10a1e01d162f1f990d759cf0ab83b37c8f2b",
+      "filename": "docs/BUILDLOG.md",
+      "status": "modified",
+      "additions": 30,
+      "deletions": 0,
+      "changes": 30,
+      "blob_url": "https://github.com/signalnine/q27/blob/e30304df10f9f16bd35403f1e35e8e7d1959dcbb/docs%2FBUILDLOG.md",
+      "raw_url": "https://github.com/signalnine/q27/raw/e30304df10f9f16bd35403f1e35e8e7d1959dcbb/docs%2FBUILDLOG.md",
+      "contents_url": "https://api.github.com/repos/signalnine/q27/contents/docs%2FBUILDLOG.md?ref=e30304df10f9f16bd35403f1e35e8e7d1959dcbb",
+      "patch": "@@ -15714,6 +15714,36 @@ Remaining (optional): server flag Q27_DFLASH2 for live-CC + the suffix\n composition A/B; and the ~2 ms eager drafter tail (graphing needs a\n device-indexed embedding). Commit chain adds fbb19b6 (P4).\n \n+## 2026-09-27 (ay): llama.cpp's n-gram drafting ideas, replayed on our traffic -- only the index rebuild was worth taking\n+\n+Prompted by jadidbourbaki's prompt-lookup post (llama.cpp's n-gram drafter,\n+165 -> 1.2 us per draft) and its threshold pre-check PR. Our suffix drafter\n+already proposes in ~0.05 us against a ~14 ms verify round, so the latency\n+work does not transfer; what cost us was **rebuilding the match index over the\n+whole prompt on every request** (2-34 ms at 32-200K tokens, on the TTFT path).\n+`SuffixDraft::sync()` keeps the index of the prefix the slot's stream shares\n+with the new prompt, unindexes the rest and indexes the tail: 0.16-0.19 ms at\n+32-200K, the same index as a rebuild (test_suffixdraft: digest + proposals over\n+1,200 random multi-turn syncs incl. small-vocab eviction cases; eviction past\n+the prefix falls back to a rebuild). Server gate (3090, T3+MTP pack, 3-turn\n+re-emit conversation, suffix firing at 7.8-9.4 tok/round): texts and round\n+counts identical before/after (92/42/36). Commit 206aead.\n+\n+**Replay of the post's other ideas** (offline, the three 09-18 Bonsai campaign\n+legs from REQBODY_LOG: 36 sessions, 1,246 turns, 786K output tokens; a\n+simplified render, so A/B/C are comparable to each other, not to the engine):\n+\n+    variant                                     fires           covered      accepted/fire\n+    A  suffix drafter as shipped (L>=12, K=16)  ~2% of rounds   12.5-14.9%   7.4-8.0\n+    B  + cross-session index (dynamic cache)    +0.2%           +0.5%        2.35-2.62\n+    C  + llama.cpp n-gram frequency fallback    +~28%           +28-31%      1.15-1.28\n+\n+A round without a suffix proposal gets the model drafter's 2.85 (Bonsai MTP\n+ladder) to 3.8-4.0 (DFlash2) tokens, so C would replace good drafts with\n+1.2-token ones on 28% of rounds and B is both rare and below that bar. Not\n+built. The n-gram frequency drafter is a no-draft-model tool; with one, the\n+long-match suffix echo is the part that earns its verify width.\n+\n ## 2026-09-25 (ax): gemv_t3 passes gemv_t2 -- subtract-form digit pop + hoisted addressing; T3 decode 72-74 -> 79-82 t/s on the 3090, still bitwise\n \n Prompted by an agentic-CUDA-optimizer repo (not used: no license, OpenAI-only,"
+    }
+  ]
+}

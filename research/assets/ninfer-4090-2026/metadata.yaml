@@ -1,0 +1,156 @@
+schema_version: 1
+reference:
+  title: NInfer RTX 4090：原始量化模型、MTP 与长上下文
+  slug: ninfer-4090-2026
+  topic: llm-inference
+  kind: software
+  canonical_url: https://github.com/sergiuszm/ninfer-4090
+assets:
+- kind: api_metadata
+  path: supplementary/github-api-commit.json
+  status: downloaded
+  bytes: 6418
+  sha256: 56d3bcbe07036b302680c5c23a2b55a3602b1b9da7952f1b50f5f25241c8cacf
+  retrieved_at: '2026-10-01'
+  filename_provenance: derived
+  url: https://api.github.com/repos/sergiuszm/ninfer-4090/commits/aeeba414459d5d6989d57d8487c9d7a2f54bddd3
+  resolved_url: null
+  version: null
+  original_filename: null
+  format: json
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+- kind: api_metadata
+  path: supplementary/github-api-repository.json
+  status: downloaded
+  bytes: 17813
+  sha256: 2a63e9cbc3355fa9a999813a84a7df89e0ba1487fc8529e8c85aebcaa24b2268
+  retrieved_at: '2026-10-01'
+  filename_provenance: derived
+  url: https://api.github.com/repos/sergiuszm/ninfer-4090
+  resolved_url: null
+  version: null
+  original_filename: null
+  format: json
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+- kind: api_metadata
+  path: supplementary/landscape-github-observations.json
+  status: downloaded
+  bytes: 21788
+  sha256: 06aa8022553ba5be4d5d31b3b4492dd6943f0169c736054ebea0be886734acad
+  retrieved_at: '2026-10-01'
+  filename_provenance: derived
+  url: null
+  resolved_url: null
+  version: null
+  original_filename: null
+  format: json
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+- kind: repository_source
+  path: github-repo/ninfer-4090/README.md
+  url: https://github.com/sergiuszm/ninfer-4090/blob/aeeba414459d5d6989d57d8487c9d7a2f54bddd3/README.md
+  bytes: 28670
+  sha256: 5c0c1435750722f524310312f5da075a61af44db710756431af03ff54d8fd435
+  status: cached
+  retrieved_at: '2026-10-01'
+  version: aeeba414459d5d6989d57d8487c9d7a2f54bddd3
+  resolved_url: null
+  original_filename: null
+  filename_provenance: derived
+  format: markdown
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+- kind: repository_source
+  path: github-repo/ninfer-4090/docs/maintainer/port-ledger.md
+  url: https://github.com/sergiuszm/ninfer-4090/blob/aeeba414459d5d6989d57d8487c9d7a2f54bddd3/docs/maintainer/port-ledger.md
+  bytes: 55955
+  sha256: ecc0521bbeb1c3e305a069d9795b1d2928f9ead618d897cc34d87b38681d339e
+  status: cached
+  retrieved_at: '2026-10-01'
+  version: aeeba414459d5d6989d57d8487c9d7a2f54bddd3
+  resolved_url: null
+  original_filename: null
+  filename_provenance: derived
+  format: markdown
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+- kind: repository_source
+  path: github-repo/ninfer-4090/CMakeLists.txt
+  url: https://github.com/sergiuszm/ninfer-4090/blob/aeeba414459d5d6989d57d8487c9d7a2f54bddd3/CMakeLists.txt
+  bytes: 3804
+  sha256: 3bd3f6901b5c94c726bd5b2b08373cda7e1c6d7ae2a6cae6f7341610410b23a6
+  status: cached
+  retrieved_at: '2026-10-01'
+  version: aeeba414459d5d6989d57d8487c9d7a2f54bddd3
+  resolved_url: null
+  original_filename: null
+  filename_provenance: derived
+  format: text/plain
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+repositories:
+- url: https://github.com/sergiuszm/ninfer-4090
+  path: github-repo/ninfer-4090
+  commit: aeeba414459d5d6989d57d8487c9d7a2f54bddd3
+  branch: rtx4090-port
+  retrieved_at: '2026-10-01'
+  stars_observed: 179
+  pushed_at_observed: '2026-09-23T12:51:56Z'
+  status: inspected
+  execution: not_run
+  submodule_status: none_declared
+  inspection_scope:
+  - path: README.md
+    scope: selected documentation/interfaces/results; not complete repository audit
+  - path: docs/maintainer/port-ledger.md
+    scope: selected documentation/interfaces/results; not complete repository audit
+  - path: CMakeLists.txt
+    scope: selected documentation/interfaces/results; not complete repository audit
+reading:
+  status: partial
+  source: repository_and_primary_author_documents
+  paths:
+  - github-repo/ninfer-4090/README.md
+  - github-repo/ninfer-4090/docs/maintainer/port-ledger.md
+  - github-repo/ninfer-4090/CMakeLists.txt
+  note: Selective source and results reading; authors benchmark measurements are not
+    local reproductions.
+reproduction:
+  status: not_run
+  note: No downloaded source, build, model inference, benchmark, conversion or training
+    was executed for this archival task. Remote g4090 work is recorded separately.
+ingest:
+  status: extracted
+  updated_at: '2026-10-01'
+  exceptions:
+  - Partial inspection; complete-repository audit not claimed.
+  - Navigation integration handled in parent task.
+retrieval_failures: []
+archive_distribution:
+  snapshot_date: '2026-10-02'
+  original_cache: .local/originals/llm-inference/assets/ninfer-4090-2026
+  original_metadata: .local/originals/llm-inference/assets/ninfer-4090-2026/metadata.yaml
+  source_hash_semantics: Original asset sha256/bytes are preserved as historical provenance.
+    Public sanitized file hashes are in archives/public-files.json.
+  full_papers_and_upstream_repos: local_only; recover from canonical URLs and fixed
+    revisions in archives/

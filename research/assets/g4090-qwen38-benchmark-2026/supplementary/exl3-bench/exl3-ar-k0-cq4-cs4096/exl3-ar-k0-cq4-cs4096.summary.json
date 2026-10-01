@@ -1,0 +1,62 @@
+[
+  {
+    "mode": "ar",
+    "workload": "json",
+    "successful_reps": 3,
+    "median_exl3_native_generation_tps": 53.522373996948915,
+    "median_generation_call_output_tps": 51.56783282351305,
+    "quality_checks": [
+      {
+        "valid_json": true,
+        "three_districts": true
+      },
+      {
+        "valid_json": true,
+        "three_districts": true
+      },
+      {
+        "valid_json": true,
+        "three_districts": true
+      }
+    ]
+  },
+  {
+    "mode": "ar",
+    "workload": "code",
+    "successful_reps": 3,
+    "median_exl3_native_generation_tps": 53.49455360267326,
+    "median_generation_call_output_tps": 52.84378546614367,
+    "quality_checks": [
+      {
+        "python_syntax": false,
+        "semantic_tests": "not_run"
+      },
+      {
+        "python_syntax": false,
+        "semantic_tests": "not_run"
+      },
+      {
+        "python_syntax": false,
+        "semantic_tests": "not_run"
+      }
+    ]
+  },
+  {
+    "mode": "ar",
+    "workload": "prose",
+    "successful_reps": 3,
+    "median_exl3_native_generation_tps": 53.394401777496384,
+    "median_generation_call_output_tps": 53.026641255420444,
+    "quality_checks": [
+      {
+        "words": 392
+      },
+      {
+        "words": 392
+      },
+      {
+        "words": 392
+      }
+    ]
+  }
+]

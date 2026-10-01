@@ -1,0 +1,13 @@
+{
+  "counts": {
+    "metadata": 17,
+    "file_hashes": 98,
+    "reading_paths": 48,
+    "repo_heads_and_clean_status": 15,
+    "archive_files_compared": 108,
+    "pdf_signatures": 5
+  },
+  "errors": [],
+  "benchmark_skipped": true,
+  "local_links_validated_in_first_pass": 135
+}

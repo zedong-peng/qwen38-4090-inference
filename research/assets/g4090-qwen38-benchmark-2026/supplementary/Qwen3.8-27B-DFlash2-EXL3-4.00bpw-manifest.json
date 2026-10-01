@@ -1,0 +1,43 @@
+{
+  "repo_id": "r0b0tlab/Qwen3.8-27B-DFlash2-EXL3-4.00bpw",
+  "revision": "265b5240592907d2d55ff0dc4d5f66569692604d",
+  "retrieved_at": "2026-10-01",
+  "files": [
+    {
+      "type": "file",
+      "oid": "50bbb90c56f7da6c41ef378fa235a891daf5a238",
+      "size": 1581,
+      "path": ".gitattributes"
+    },
+    {
+      "type": "file",
+      "oid": "81ac11a89848fe46525c41620e6d83fefa5f1f6c",
+      "size": 1775,
+      "path": "README.md"
+    },
+    {
+      "type": "file",
+      "oid": "754938273ceadcfdf308f1f6bd9cb8ade7f0bf39",
+      "size": 1686,
+      "path": "config.json"
+    },
+    {
+      "type": "file",
+      "oid": "580ecd01b3b2bc048c8ca8b77671b9c5721f633a",
+      "size": 1254647206,
+      "lfs": {
+        "oid": "e278f218318565562af07fc333045e411ffa0d83523f8224fc8c2d24d5a68223",
+        "size": 1254647206,
+        "pointerSize": 135
+      },
+      "xetHash": "6f6a0c688afce03ee815118e0c59f6576894da06dabc34f39b97be4bf31ceb90",
+      "path": "model.safetensors"
+    },
+    {
+      "type": "file",
+      "oid": "4f83c9e2dcb4275a4b218687b6775641bfd4d779",
+      "size": 53190,
+      "path": "quantization_config.json"
+    }
+  ]
+}

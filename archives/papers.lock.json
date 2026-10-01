@@ -1,0 +1,856 @@
+[
+  {
+    "asset": "awq-2024",
+    "title": "AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration",
+    "slug": "awq-2024",
+    "topic": "llm-inference",
+    "arxiv_id": "2306.00978",
+    "doi": null,
+    "selected_version": "v6",
+    "authors": [
+      "Lin, Ji",
+      "Tang, Jiaming",
+      "Tang, Haotian",
+      "Yang, Shang",
+      "Chen, Wei-Ming",
+      "Wang, Wei-Chen",
+      "Xiao, Guangxuan",
+      "Dang, Xingyu",
+      "Gan, Chuang",
+      "Han, Song"
+    ],
+    "canonical_url": "https://arxiv.org/abs/2306.00978v6",
+    "publication_note": "MLSys 2024；arXiv comments 标记 Best Paper Award；本次 v6 含后续实验",
+    "pdf_title": "AWQ: Activation-aware Weight Quantization for On-Device LLM Compression and Acceleration",
+    "reading": {
+      "status": "partial",
+      "source": "tex",
+      "paths": [
+        "paper-tex/extracted/2306.00978v6/text/3_approach.tex",
+        "paper-tex/extracted/2306.00978v6/text/4_system.tex",
+        "paper-tex/extracted/2306.00978v6/text/5_experiments.tex"
+      ],
+      "scope": [
+        "text/3_approach.tex",
+        "text/4_system.tex",
+        "text/5_experiments.tex"
+      ],
+      "fallback_reason": null,
+      "note": "Focused reading of methods, evaluation and listed sections; not a complete paper/appendix audit. Formal note records only observed scope."
+    },
+    "downloads": [
+      {
+        "kind": "tex_source",
+        "url": "https://arxiv.org/src/2306.00978v6",
+        "version": "v6",
+        "path": "paper-tex/archives/2306.00978v6.tar.gz",
+        "sha256": "56d1b2b129aced8a2df855b0a669e0346587caa0bc83058f29aeb3de6fc68f84",
+        "bytes": 18617993,
+        "status": "downloaded"
+      },
+      {
+        "kind": "pdf",
+        "url": "https://arxiv.org/pdf/2306.00978v6",
+        "version": "v6",
+        "path": "paper-pdf/2306.00978v6.pdf",
+        "sha256": "6e35c8fe7af1f18a5c48dd2524629d859a2013a91d4b3666b554705287a17764",
+        "bytes": 19804976,
+        "status": "downloaded"
+      }
+    ]
+  },
+  {
+    "asset": "dflash-2026",
+    "title": "DFlash: Block Diffusion for Flash Speculative Decoding",
+    "slug": "dflash-2026",
+    "topic": "llm-inference",
+    "arxiv_id": "2602.06036",
+    "doi": null,
+    "selected_version": "v2",
+    "canonical_url": "https://arxiv.org/abs/2602.06036v2",
+    "authors": [
+      "Chen, Jian",
+      "Liang, Yesheng",
+      "Liu, Zhijian"
+    ],
+    "publication_note": "ICML 2026，camera-ready；证据 arXiv 2602.06036v2（2026-05-28）。此论文介绍DFlash第一代，DFlash2另有2026-08-18官方博客。",
+    "reading": {
+      "status": "partial",
+      "source": "tex",
+      "paths": [
+        "paper-tex/extracted/2602.06036v2/sections/method.tex",
+        "paper-tex/extracted/2602.06036v2/sections/exp.tex"
+      ],
+      "scope": [
+        "方法/训练定向阅读",
+        "setup、Instruct Models、长context与SGLang数据/部分消融定向阅读；未完整读全部结果表和附录"
+      ],
+      "fallback_reason": null,
+      "note": "TeX source-first targeted reading; PDF first-page title/author/version identity checked with PyMuPDF. No complete-paper or appendix reading claim."
+    },
+    "downloads": [
+      {
+        "kind": "tex_source",
+        "url": "https://arxiv.org/src/2602.06036v2",
+        "version": "v2",
+        "path": "paper-tex/archives/2602.06036v2.tar.gz",
+        "sha256": "576eae469e35a5c23ba5096c9dc96b9d81b7af39cc99f18d2c3389c65e86988d",
+        "bytes": 146838,
+        "status": "downloaded"
+      },
+      {
+        "kind": "pdf",
+        "url": "https://arxiv.org/pdf/2602.06036v2",
+        "version": "v2",
+        "path": "paper-pdf/2602.06036v2.pdf",
+        "sha256": "ffa514e6ce180eb1f7a39c49372f3b8170b99f8bc142d4a4daa0f087bf2ceb91",
+        "bytes": 499459,
+        "status": "downloaded"
+      }
+    ]
+  },
+  {
+    "asset": "distserve-2024",
+    "title": "DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving",
+    "slug": "distserve-2024",
+    "topic": "llm-inference",
+    "arxiv_id": "2401.09670",
+    "doi": null,
+    "selected_version": "v3",
+    "authors": [
+      "Zhong, Yinmin",
+      "Liu, Shengyu",
+      "Chen, Junda",
+      "Hu, Jianbo",
+      "Zhu, Yibo",
+      "Liu, Xuanzhe",
+      "Jin, Xin",
+      "Zhang, Hao"
+    ],
+    "canonical_url": "https://arxiv.org/abs/2401.09670v3",
+    "publication_note": "OSDI 2024；arXiv comments 明确标记",
+    "reading": {
+      "status": "partial",
+      "source": "tex",
+      "paths": [
+        "paper-tex/extracted/2401.09670v3/sections/design.tex",
+        "paper-tex/extracted/2401.09670v3/sections/implementation.tex",
+        "paper-tex/extracted/2401.09670v3/sections/evaluation.tex",
+        "paper-tex/extracted/2401.09670v3/sections/discussion.tex"
+      ],
+      "scope": [
+        "sections/design.tex",
+        "sections/implementation.tex",
+        "sections/evaluation.tex",
+        "sections/discussion.tex"
+      ],
+      "fallback_reason": null,
+      "note": "Focused reading of methods, evaluation and listed sections; not a complete paper/appendix audit. Formal note records only observed scope."
+    },
+    "downloads": [
+      {
+        "kind": "tex_source",
+        "url": "https://arxiv.org/src/2401.09670v3",
+        "version": "v3",
+        "path": "paper-tex/archives/2401.09670v3.tar.gz",
+        "sha256": "546779899fa205c9aec54398f22bba53ebf00affd373be92e3e1097639ea7543",
+        "bytes": 279841,
+        "status": "downloaded"
+      },
+      {
+        "kind": "pdf",
+        "url": "https://arxiv.org/pdf/2401.09670v3",
+        "version": "v3",
+        "path": "paper-pdf/2401.09670v3.pdf",
+        "sha256": "3ef8776301629419e97d7f6dc08b9a46f3577e05e96538a17dd4a526762f42f0",
+        "bytes": 647352,
+        "status": "downloaded"
+      }
+    ]
+  },
+  {
+    "asset": "eagle-3-2025",
+    "title": "EAGLE-3: Scaling up Inference Acceleration of Large Language Models via Training-Time Test",
+    "slug": "eagle-3-2025",
+    "topic": "llm-inference",
+    "arxiv_id": "2503.01840",
+    "doi": null,
+    "selected_version": "v3",
+    "canonical_url": "https://arxiv.org/abs/2503.01840v3",
+    "authors": [
+      "Li, Yuhui",
+      "Wei, Fangyun",
+      "Zhang, Chao",
+      "Zhang, Hongyang"
+    ],
+    "publication_note": "NeurIPS 2025（官方README Update确认）；证据 arXiv 2503.01840v3。",
+    "reading": {
+      "status": "partial",
+      "source": "tex",
+      "paths": [
+        "paper-tex/extracted/2503.01840v3/paper.tex"
+      ],
+      "scope": [
+        "§3、§4实现/结果、§4 SGLang/vLLM（189–241、302–342、355–422行）定向阅读；未完整读全部表/附录"
+      ],
+      "fallback_reason": null,
+      "note": "TeX source-first targeted reading; PDF first-page title/author/version identity checked with PyMuPDF. No complete-paper or appendix reading claim."
+    },
+    "downloads": [
+      {
+        "kind": "tex_source",
+        "url": "https://arxiv.org/src/2503.01840v3",
+        "version": "v3",
+        "path": "paper-tex/archives/2503.01840v3.tar.gz",
+        "sha256": "556059b677f9028b4791597b11825211aa4b71dcc0574df82affe77bc28e8bc3",
+        "bytes": 717691,
+        "status": "downloaded"
+      },
+      {
+        "kind": "pdf",
+        "url": "https://arxiv.org/pdf/2503.01840v3",
+        "version": "v3",
+        "path": "paper-pdf/2503.01840v3.pdf",
+        "sha256": "8a178337a1b05067907167dd81a43a7184596d71d4b795d6a0c73e6235fe1a27",
+        "bytes": 946062,
+        "status": "downloaded"
+      }
+    ]
+  },
+  {
+    "asset": "flashattention-2-2023",
+    "title": "FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning",
+    "slug": "flashattention-2-2023",
+    "topic": "llm-inference",
+    "arxiv_id": "2307.08691",
+    "doi": null,
+    "selected_version": "v1",
+    "authors": [
+      "Dao, Tri"
+    ],
+    "canonical_url": "https://arxiv.org/abs/2307.08691v1",
+    "publication_note": "本次证据版本为 arXiv 2023 v1；后续 ICLR 2024 发表信息未独立复核",
+    "reading": {
+      "status": "partial",
+      "source": "tex",
+      "paths": [
+        "paper-tex/extracted/2307.08691v1/src/abstract.tex",
+        "paper-tex/extracted/2307.08691v1/src/intro.tex",
+        "paper-tex/extracted/2307.08691v1/src/background.tex",
+        "paper-tex/extracted/2307.08691v1/src/algo.tex",
+        "paper-tex/extracted/2307.08691v1/src/experiments.tex",
+        "paper-tex/extracted/2307.08691v1/src/discussion.tex"
+      ],
+      "scope": [
+        "src/abstract.tex",
+        "src/intro.tex",
+        "src/background.tex",
+        "src/algo.tex",
+        "src/experiments.tex",
+        "src/discussion.tex"
+      ],
+      "fallback_reason": null,
+      "note": "Focused reading of methods, evaluation and listed sections; not a complete paper/appendix audit. Formal note records only observed scope."
+    },
+    "downloads": [
+      {
+        "kind": "tex_source",
+        "url": "https://arxiv.org/src/2307.08691v1",
+        "version": "v1",
+        "path": "paper-tex/archives/2307.08691v1.tar.gz",
+        "sha256": "5aea21e5eaa54ebb043336351611454998422e89add584e3d268f0a2f6630bcd",
+        "bytes": 1454638,
+        "status": "downloaded"
+      },
+      {
+        "kind": "pdf",
+        "url": "https://arxiv.org/pdf/2307.08691v1",
+        "version": "v1",
+        "path": "paper-pdf/2307.08691v1.pdf",
+        "sha256": "4aa8935dfacaf6ae8c68f772ca92f730154a0dd0e1bceeb59c7bc56c512d5868",
+        "bytes": 1660578,
+        "status": "downloaded"
+      }
+    ]
+  },
+  {
+    "asset": "flashattention-2022",
+    "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+    "slug": "flashattention-2022",
+    "topic": "llm-inference",
+    "arxiv_id": "2205.14135",
+    "doi": null,
+    "selected_version": "v2",
+    "authors": [
+      "Dao, Tri",
+      "Fu, Daniel Y.",
+      "Ermon, Stefano",
+      "Rudra, Atri",
+      "Ré, Christopher"
+    ],
+    "canonical_url": "https://arxiv.org/abs/2205.14135v2",
+    "publication_note": "NeurIPS 2022；归档 TeX 使用 NeurIPS 2022 模板；出版信息未另外查 proceedings",
+    "reading": {
+      "status": "partial",
+      "source": "tex",
+      "paths": [
+        "paper-tex/extracted/2205.14135v2/src/algo.tex",
+        "paper-tex/extracted/2205.14135v2/src/theory.tex",
+        "paper-tex/extracted/2205.14135v2/src/experiments.tex",
+        "paper-tex/extracted/2205.14135v2/src/discussion.tex"
+      ],
+      "scope": [
+        "src/algo.tex",
+        "src/theory.tex",
+        "src/experiments.tex",
+        "src/discussion.tex"
+      ],
+      "fallback_reason": null,
+      "note": "Focused reading of methods, evaluation and listed sections; not a complete paper/appendix audit. Formal note records only observed scope."
+    },
+    "downloads": [
+      {
+        "kind": "tex_source",
+        "url": "https://arxiv.org/src/2205.14135v2",
+        "version": "v2",
+        "path": "paper-tex/archives/2205.14135v2.tar.gz",
+        "sha256": "2c66572466c11c0c4287afb2fc6eb35ebfe20fa99092cd18fc86eecd2f49a87f",
+        "bytes": 1693119,
+        "status": "downloaded"
+      },
+      {
+        "kind": "pdf",
+        "url": "https://arxiv.org/pdf/2205.14135v2",
+        "version": "v2",
+        "path": "paper-pdf/2205.14135v2.pdf",
+        "sha256": "ca7f9fda10b90fc05dd291a3accc85e9c1a4a860b99b31928dab03ed3fcb14e4",
+        "bytes": 2630825,
+        "status": "downloaded"
+      }
+    ]
+  },
+  {
+    "asset": "flashinfer-2025",
+    "title": "FlashInfer: Efficient and Customizable Attention Engine for LLM Inference Serving",
+    "slug": "flashinfer-2025",
+    "topic": "llm-inference",
+    "arxiv_id": "2501.01005",
+    "doi": null,
+    "selected_version": "v2",
+    "authors": [
+      "Ye, Zihao",
+      "Chen, Lequn",
+      "Lai, Ruihang",
+      "Lin, Wuwei",
+      "Zhang, Yineng",
+      "Wang, Stephanie",
+      "Chen, Tianqi",
+      "Kasikci, Baris",
+      "Grover, Vinod",
+      "Krishnamurthy, Arvind",
+      "Ceze, Luis"
+    ],
+    "canonical_url": "https://arxiv.org/abs/2501.01005v2",
+    "publication_note": "MLSys 2025；arXiv comments 明确 Accepted by MLSys 2025",
+    "reading": {
+      "status": "partial",
+      "source": "tex",
+      "paths": [
+        "paper-tex/extracted/2501.01005v2/sections/design.tex",
+        "paper-tex/extracted/2501.01005v2/sections/evaluation.tex",
+        "paper-tex/extracted/2501.01005v2/sections/discussions.tex"
+      ],
+      "scope": [
+        "sections/design.tex",
+        "sections/evaluation.tex",
+        "sections/discussions.tex"
+      ],
+      "fallback_reason": null,
+      "note": "Focused reading of methods, evaluation and listed sections; not a complete paper/appendix audit. Formal note records only observed scope."
+    },
+    "downloads": [
+      {
+        "kind": "tex_source",
+        "url": "https://arxiv.org/src/2501.01005v2",
+        "version": "v2",
+        "path": "paper-tex/archives/2501.01005v2.tar.gz",
+        "sha256": "ff12cd2ae7af2fc56abcef31527dd3e640bc4b2e258acebe4bc0624394903d5b",
+        "bytes": 1409101,
+        "status": "downloaded"
+      },
+      {
+        "kind": "pdf",
+        "url": "https://arxiv.org/pdf/2501.01005v2",
+        "version": "v2",
+        "path": "paper-pdf/2501.01005v2.pdf",
+        "sha256": "6995874b7a43b0693ba0da805c4d99327a4cb4013edbea3e36f4c42949e63303",
+        "bytes": 1882193,
+        "status": "downloaded"
+      }
+    ]
+  },
+  {
+    "asset": "gptq-2023",
+    "title": "GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers",
+    "slug": "gptq-2023",
+    "topic": "llm-inference",
+    "arxiv_id": "2210.17323",
+    "doi": null,
+    "selected_version": "v2",
+    "canonical_url": "https://arxiv.org/abs/2210.17323v2",
+    "authors": [
+      "Frantar, Elias",
+      "Ashkboos, Saleh",
+      "Hoefler, Torsten",
+      "Alistarh, Dan"
+    ],
+    "publication_note": "ICLR 2023；证据为 arXiv 2210.17323v2（2023-03-22）。",
+    "reading": {
+      "status": "partial",
+      "source": "tex",
+      "paths": [
+        "paper-tex/extracted/2210.17323v2/gptq.tex"
+      ],
+      "scope": [
+        "§3（算法）、§4 setup/practical improvements、Appendix benchmarking-setup定向阅读；未完整读全部精度表/附录"
+      ],
+      "fallback_reason": null,
+      "note": "TeX source-first targeted reading; PDF first-page title/author/version identity checked with PyMuPDF. No complete-paper or appendix reading claim."
+    },
+    "downloads": [
+      {
+        "kind": "tex_source",
+        "url": "https://arxiv.org/src/2210.17323v2",
+        "version": "v2",
+        "path": "paper-tex/archives/2210.17323v2.tar.gz",
+        "sha256": "a7df36bc0a82c4dadb5cf527d5a9f2ff032d0ee388cb7120f065c181a6a2ec54",
+        "bytes": 193300,
+        "status": "downloaded"
+      },
+      {
+        "kind": "pdf",
+        "url": "https://arxiv.org/pdf/2210.17323v2",
+        "version": "v2",
+        "path": "paper-pdf/2210.17323v2.pdf",
+        "sha256": "35e339171cd48bbf8dda246bd018b11aa33a5cda0c4a1587cdae574208f56396",
+        "bytes": 521818,
+        "status": "downloaded"
+      }
+    ]
+  },
+  {
+    "asset": "marlin-2024",
+    "title": "MARLIN: Mixed-Precision Auto-Regressive Parallel Inference on Large Language Models",
+    "slug": "marlin-2024",
+    "topic": "llm-inference",
+    "arxiv_id": "2408.11743",
+    "doi": null,
+    "selected_version": "v1",
+    "canonical_url": "https://arxiv.org/abs/2408.11743v1",
+    "authors": [
+      "Frantar, Elias",
+      "Castro, Roberto L.",
+      "Chen, Jiale",
+      "Hoefler, Torsten",
+      "Alistarh, Dan"
+    ],
+    "publication_note": "arXiv 2408.11743v1（2024-08-21）；检索API还返回 PPoPP 2025 DOI 10.1145/3710848.3710871，但本地证据版本仍是v1。",
+    "reading": {
+      "status": "partial",
+      "source": "tex",
+      "paths": [
+        "paper-tex/extracted/2408.11743v1/marlin.tex"
+      ],
+      "scope": [
+        "§3 Kernel Design（340–460行）与§5（573–603、683–791行）定向阅读；其余段落/全部图表未完整阅读"
+      ],
+      "fallback_reason": null,
+      "note": "TeX source-first targeted reading; PDF first-page title/author/version identity checked with PyMuPDF. No complete-paper or appendix reading claim."
+    },
+    "downloads": [
+      {
+        "kind": "tex_source",
+        "url": "https://arxiv.org/src/2408.11743v1",
+        "version": "v1",
+        "path": "paper-tex/archives/2408.11743v1.tar.gz",
+        "sha256": "4ab2b0b88001fdf0d393151dd27438e672df2fdfb24fd5bb9916ca85a54524c7",
+        "bytes": 610930,
+        "status": "downloaded"
+      },
+      {
+        "kind": "pdf",
+        "url": "https://arxiv.org/pdf/2408.11743v1",
+        "version": "v1",
+        "path": "paper-pdf/2408.11743v1.pdf",
+        "sha256": "bd010465d8f41447674e8f844d6b6e333fc474e81b84e7ea734639c97334fdeb",
+        "bytes": 890112,
+        "status": "downloaded"
+      }
+    ]
+  },
+  {
+    "asset": "qtip-2024",
+    "title": "QTIP: Quantization with Trellises and Incoherence Processing",
+    "slug": "qtip-2024",
+    "topic": "llm-inference",
+    "arxiv_id": "2406.11235",
+    "doi": null,
+    "selected_version": "v4",
+    "canonical_url": "https://arxiv.org/abs/2406.11235v4",
+    "authors": [
+      "Tseng, Albert",
+      "Sun, Qingyao",
+      "Hou, David",
+      "De Sa, Christopher"
+    ],
+    "publication_note": "NeurIPS 2024 Spotlight；证据 arXiv 2406.11235v4（2025-06-18），含后续Llama3.1/3.2结果。",
+    "reading": {
+      "status": "partial",
+      "source": "tex",
+      "paths": [
+        "paper-tex/extracted/2406.11235v4/sections/qtip.tex",
+        "paper-tex/extracted/2406.11235v4/sections/experiments.tex"
+      ],
+      "scope": [
+        "bitshift trellis、computed/HYB codes、tail-biting定向阅读",
+        "HYB setup与Inference Speed及其限制；未完整阅读所有被include的精度表/附录"
+      ],
+      "fallback_reason": null,
+      "note": "TeX source-first targeted reading; PDF first-page title/author/version identity checked with PyMuPDF. No complete-paper or appendix reading claim."
+    },
+    "downloads": [
+      {
+        "kind": "tex_source",
+        "url": "https://arxiv.org/src/2406.11235v4",
+        "version": "v4",
+        "path": "paper-tex/archives/2406.11235v4.tar.gz",
+        "sha256": "901f949d1fc6abd4f7d66ba080a461daf0cd361a5568878a9fc75a9209def535",
+        "bytes": 1647102,
+        "status": "downloaded"
+      },
+      {
+        "kind": "pdf",
+        "url": "https://arxiv.org/pdf/2406.11235v4",
+        "version": "v4",
+        "path": "paper-pdf/2406.11235v4.pdf",
+        "sha256": "ba94913ba62f355e0427a33556970dcf8abaab2b2f11c97614d672fc86cd5a8d",
+        "bytes": 1312806,
+        "status": "downloaded"
+      }
+    ]
+  },
+  {
+    "asset": "sarathi-serve-2024",
+    "title": "Taming Throughput-Latency Tradeoff in LLM Inference with Sarathi-Serve",
+    "slug": "sarathi-serve-2024",
+    "topic": "llm-inference",
+    "arxiv_id": "2403.02310",
+    "doi": null,
+    "selected_version": "v3",
+    "authors": [
+      "Agrawal, Amey",
+      "Kedia, Nitin",
+      "Panwar, Ashish",
+      "Mohan, Jayashree",
+      "Kwatra, Nipun",
+      "Gulavani, Bhargav S.",
+      "Tumanov, Alexey",
+      "Ramjee, Ramachandran"
+    ],
+    "canonical_url": "https://arxiv.org/abs/2403.02310v3",
+    "publication_note": "OSDI 2024；官方仓库链接到 USENIX presentation/agrawal",
+    "reading": {
+      "status": "partial",
+      "source": "tex",
+      "paths": [
+        "paper-tex/extracted/2403.02310v3/main.tex",
+        "paper-tex/extracted/2403.02310v3/4-design.tex",
+        "paper-tex/extracted/2403.02310v3/5-eval.tex",
+        "paper-tex/extracted/2403.02310v3/5.1-eval-capacity.tex",
+        "paper-tex/extracted/2403.02310v3/5.2-eval-pp-viability.tex",
+        "paper-tex/extracted/2403.02310v3/5.3-eval-ablation.tex"
+      ],
+      "scope": [
+        "main.tex",
+        "4-design.tex",
+        "5-eval.tex",
+        "5.1-eval-capacity.tex",
+        "5.2-eval-pp-viability.tex",
+        "5.3-eval-ablation.tex"
+      ],
+      "fallback_reason": null,
+      "note": "Focused reading of methods, evaluation and listed sections; not a complete paper/appendix audit. Formal note records only observed scope."
+    },
+    "downloads": [
+      {
+        "kind": "tex_source",
+        "url": "https://arxiv.org/src/2403.02310v3",
+        "version": "v3",
+        "path": "paper-tex/archives/2403.02310v3.tar.gz",
+        "sha256": "72d848242fa13827cfcfded9779af29214204442b50cb52cc57fc26a941a02a2",
+        "bytes": 1755586,
+        "status": "downloaded"
+      },
+      {
+        "kind": "pdf",
+        "url": "https://arxiv.org/pdf/2403.02310v3",
+        "version": "v3",
+        "path": "paper-pdf/2403.02310v3.pdf",
+        "sha256": "45f59f4474de29baf4d315c785b850625548b69a9bc7be2e036d6fc59f54b54a",
+        "bytes": 1945812,
+        "status": "downloaded"
+      }
+    ]
+  },
+  {
+    "asset": "sglang-2024",
+    "title": "SGLang: Efficient Execution of Structured Language Model Programs",
+    "slug": "sglang-2024",
+    "topic": "llm-inference",
+    "arxiv_id": "2312.07104",
+    "doi": "10.52202/079017-2000",
+    "selected_version": "v2",
+    "authors": [
+      "Zheng, Lianmin",
+      "Yin, Liangsheng",
+      "Xie, Zhiqiang",
+      "Sun, Chuyue",
+      "Huang, Jeff",
+      "Yu, Cody Hao",
+      "Cao, Shiyi",
+      "Kozyrakis, Christos",
+      "Stoica, Ion",
+      "Gonzalez, Joseph E.",
+      "Barrett, Clark",
+      "Sheng, Ying"
+    ],
+    "canonical_url": "https://arxiv.org/abs/2312.07104v2",
+    "publication_note": "NeurIPS 2024；Crossref proceedings 记录，首个 arXiv 版本于 2023 年",
+    "reading": {
+      "status": "read",
+      "source": "tex",
+      "paths": [
+        "paper-tex/extracted/2312.07104v2/neurips_2024.tex",
+        "paper-tex/extracted/2312.07104v2/sec-intro.tex",
+        "paper-tex/extracted/2312.07104v2/sec-programming-model.tex",
+        "paper-tex/extracted/2312.07104v2/sec-radix-attention.tex",
+        "paper-tex/extracted/2312.07104v2/sec-compressed-fsm.tex",
+        "paper-tex/extracted/2312.07104v2/sec-endpoint-spec.tex",
+        "paper-tex/extracted/2312.07104v2/sec-eval.tex",
+        "paper-tex/extracted/2312.07104v2/sec-related-work.tex",
+        "paper-tex/extracted/2312.07104v2/sec-conclusion.tex",
+        "paper-tex/extracted/2312.07104v2/appendix.tex"
+      ],
+      "scope": [
+        "neurips_2024.tex",
+        "sec-intro.tex",
+        "sec-programming-model.tex",
+        "sec-radix-attention.tex",
+        "sec-compressed-fsm.tex",
+        "sec-endpoint-spec.tex",
+        "sec-eval.tex",
+        "sec-related-work.tex",
+        "sec-conclusion.tex",
+        "appendix.tex"
+      ],
+      "fallback_reason": null,
+      "note": "Main text and appendix read; bibliography used as source pointers, not all cited works read.",
+      "figures_inspected": [
+        "paper-tex/extracted/2312.07104v2/figures/example_radix_attn.pdf"
+      ]
+    },
+    "downloads": [
+      {
+        "kind": "tex_source",
+        "url": "https://arxiv.org/src/2312.07104v2",
+        "version": "v2",
+        "path": "paper-tex/archives/2312.07104v2.tar.gz",
+        "sha256": "5d411c22fcadb44c1aaf5569aeb31bffe6fb88da0a31ec18aba1eda172febbdd",
+        "bytes": 823092,
+        "status": "downloaded"
+      },
+      {
+        "kind": "pdf",
+        "url": "https://arxiv.org/pdf/2312.07104v2",
+        "version": "v2",
+        "path": "paper-pdf/2312.07104v2.pdf",
+        "sha256": "161e0a0123a89cd8a57d68734ae704680b0e577fee41e1e7e1029c37a9d99b57",
+        "bytes": 1383463,
+        "status": "downloaded"
+      }
+    ]
+  },
+  {
+    "asset": "speculative-decoding-2023",
+    "title": "Fast Inference from Transformers via Speculative Decoding",
+    "slug": "speculative-decoding-2023",
+    "topic": "llm-inference",
+    "arxiv_id": "2211.17192",
+    "doi": null,
+    "selected_version": "v2",
+    "authors": [
+      "Leviathan, Yaniv",
+      "Kalman, Matan",
+      "Matias, Yossi"
+    ],
+    "canonical_url": "https://arxiv.org/abs/2211.17192v2",
+    "publication_note": "ICML 2023；归档 main.tex 包含 ICML 2023 接收版设置，首个 arXiv 版本为2022年",
+    "reading": {
+      "status": "partial",
+      "source": "tex",
+      "paths": [
+        "paper-tex/extracted/2211.17192v2/main.tex"
+      ],
+      "scope": [
+        "main.tex"
+      ],
+      "fallback_reason": null,
+      "note": "Focused reading of methods, evaluation and listed sections; not a complete paper/appendix audit. Formal note records only observed scope."
+    },
+    "downloads": [
+      {
+        "kind": "tex_source",
+        "url": "https://arxiv.org/src/2211.17192v2",
+        "version": "v2",
+        "path": "paper-tex/archives/2211.17192v2.tar.gz",
+        "sha256": "d1bb88f5562a94c2a294d69c63915e6eede23181a53c9f4951800aa57d2a7d60",
+        "bytes": 444137,
+        "status": "downloaded"
+      },
+      {
+        "kind": "pdf",
+        "url": "https://arxiv.org/pdf/2211.17192v2",
+        "version": "v2",
+        "path": "paper-pdf/2211.17192v2.pdf",
+        "sha256": "8967e2daab74178b8a73a6f0b0780c5cbb40f9f6dcbd5c456b24a89c128c52ed",
+        "bytes": 574982,
+        "status": "downloaded"
+      }
+    ]
+  },
+  {
+    "asset": "splitwise-2024",
+    "title": "Splitwise: Efficient generative LLM inference using phase splitting",
+    "slug": "splitwise-2024",
+    "topic": "llm-inference",
+    "arxiv_id": "2311.18677",
+    "doi": null,
+    "selected_version": "v2",
+    "authors": [
+      "Patel, Pratyush",
+      "Choukse, Esha",
+      "Zhang, Chaojie",
+      "Shah, Aashaka",
+      "Goiri, Íñigo",
+      "Maleki, Saeed",
+      "Bianchini, Ricardo"
+    ],
+    "canonical_url": "https://arxiv.org/abs/2311.18677v2",
+    "publication_note": "ISCA 2024 线索；本次阅读 arXiv v2，未另外下载 proceedings 版本",
+    "reading": {
+      "status": "partial",
+      "source": "tex",
+      "paths": [
+        "paper-tex/extracted/2311.18677v2/sections/splitwise.tex",
+        "paper-tex/extracted/2311.18677v2/sections/evalnew.tex",
+        "paper-tex/extracted/2311.18677v2/sections/discussion.tex",
+        "paper-tex/extracted/2311.18677v2/sections/artifact.tex"
+      ],
+      "scope": [
+        "sections/splitwise.tex",
+        "sections/evalnew.tex",
+        "sections/discussion.tex",
+        "sections/artifact.tex"
+      ],
+      "fallback_reason": null,
+      "note": "Focused reading of methods, evaluation and listed sections; not a complete paper/appendix audit. Formal note records only observed scope."
+    },
+    "downloads": [
+      {
+        "kind": "tex_source",
+        "url": "https://arxiv.org/src/2311.18677v2",
+        "version": "v2",
+        "path": "paper-tex/archives/2311.18677v2.tar.gz",
+        "sha256": "1c050624d484cd4024b6e148fe8f346a073edc62c55bf48897674e8d931a9b12",
+        "bytes": 2647860,
+        "status": "downloaded"
+      },
+      {
+        "kind": "pdf",
+        "url": "https://arxiv.org/pdf/2311.18677v2",
+        "version": "v2",
+        "path": "paper-pdf/2311.18677v2.pdf",
+        "sha256": "c7baf19039f7b760c5d83fb61324ec4ffdf384e8a047bd46f2c4e2ad85e3531d",
+        "bytes": 2154278,
+        "status": "downloaded"
+      }
+    ]
+  },
+  {
+    "asset": "vllm-2023",
+    "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+    "slug": "vllm-2023",
+    "topic": "llm-inference",
+    "arxiv_id": "2309.06180",
+    "doi": "10.1145/3600006.3613165",
+    "selected_version": "v1",
+    "authors": [
+      "Kwon, Woosuk",
+      "Li, Zhuohan",
+      "Zhuang, Siyuan",
+      "Sheng, Ying",
+      "Zheng, Lianmin",
+      "Yu, Cody Hao",
+      "Gonzalez, Joseph E.",
+      "Zhang, Hao",
+      "Stoica, Ion"
+    ],
+    "canonical_url": "https://arxiv.org/abs/2309.06180v1",
+    "publication_note": "SOSP 2023；主 TeX 含会议元数据与 DOI 10.1145/3600006.3613165",
+    "reading": {
+      "status": "read",
+      "source": "tex",
+      "paths": [
+        "paper-tex/extracted/2309.06180v1/main.tex",
+        "paper-tex/extracted/2309.06180v1/intro.tex",
+        "paper-tex/extracted/2309.06180v1/eval.tex",
+        "paper-tex/extracted/2309.06180v1/discussion.tex",
+        "paper-tex/extracted/2309.06180v1/related_work.tex",
+        "paper-tex/extracted/2309.06180v1/conclusion.tex"
+      ],
+      "scope": [
+        "main.tex",
+        "intro.tex",
+        "eval.tex",
+        "discussion.tex",
+        "related_work.tex",
+        "conclusion.tex"
+      ],
+      "fallback_reason": null,
+      "note": "Main text and appendix read; bibliography used as source pointers, not all cited works read.",
+      "figures_inspected": [
+        "paper-tex/extracted/2309.06180v1/figures/logical-and-physical-block-table.pdf"
+      ]
+    },
+    "downloads": [
+      {
+        "kind": "tex_source",
+        "url": "https://arxiv.org/src/2309.06180v1",
+        "version": "v1",
+        "path": "paper-tex/archives/2309.06180v1.tar.gz",
+        "sha256": "82f82c338a4df3a5548e0770da9ef2c7a6d3e8feddbfdfb744ecf12cde30c4f2",
+        "bytes": 850947,
+        "status": "downloaded"
+      },
+      {
+        "kind": "pdf",
+        "url": "https://arxiv.org/pdf/2309.06180v1",
+        "version": "v1",
+        "path": "paper-pdf/2309.06180v1.pdf",
+        "sha256": "55b3b324d779a67c59dac2519445e3b07c14e6ff5c656fadb47a3d7b5997469e",
+        "bytes": 1459631,
+        "status": "downloaded"
+      }
+    ]
+  }
+]

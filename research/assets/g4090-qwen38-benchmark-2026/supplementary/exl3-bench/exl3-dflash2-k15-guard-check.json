@@ -1,0 +1,18 @@
+{
+  "exit_code": 2,
+  "stderr": "usage: benchmark_qwen38.py [-h] --mode {ar,mtp,dflash2} [--label LABEL]\n                           [--target TARGET] [--draft DRAFT] [--repo REPO]\n                           [--cases-helper CASES_HELPER] --out OUT [--gpu GPU]\n                           [--reps REPS] [--max-tokens MAX_TOKENS]\n                           [--context CONTEXT] [--draft-tokens DRAFT_TOKENS]\n                           [--timeout TIMEOUT] [--dry-run]\nbenchmark_qwen38.py: error: DFlash2 draft_tokens must be 1..7 for this model (block_size=8); got 15\n",
+  "command": [
+    "/home/REMOTE_USER/qwen38-4090/tools/exl3-env/bin/python",
+    "/home/REMOTE_USER/qwen38-4090/repos/exllamav3-git/benchmark_qwen38.py",
+    "--mode",
+    "dflash2",
+    "--draft-tokens",
+    "15",
+    "--cases-helper",
+    "/home/REMOTE_USER/qwen38-4090/benchmark_http.py",
+    "--out",
+    "/home/REMOTE_USER/qwen38-4090/results/guard-cpu-only",
+    "--dry-run"
+  ],
+  "gpu_operations": "none"
+}

@@ -1,0 +1,137 @@
+{
+  "sha": "1abe35e6e6e777e858bbfbba283667ee8d516801",
+  "node_id": "C_kwDOJ0Z1PtoAKDFhYmUzNWU2ZTZlNzc3ZTg1OGJiZmJiYTI4MzY2N2VlOGQ1MTY4MDE",
+  "commit": {
+    "author": {
+      "name": "Parth Sareen",
+      "email": "parth.sareen@ollama.com",
+      "date": "2026-09-30T02:33:23Z"
+    },
+    "committer": {
+      "name": "GitHub",
+      "email": "noreply@github.com",
+      "date": "2026-09-30T02:33:23Z"
+    },
+    "message": "docs: document System One API (#18702)",
+    "tree": {
+      "sha": "86d0c768638cf7ffe20cdde6c084416f53cf0d61",
+      "url": "https://api.github.com/repos/ollama/ollama/git/trees/86d0c768638cf7ffe20cdde6c084416f53cf0d61"
+    },
+    "url": "https://api.github.com/repos/ollama/ollama/git/commits/1abe35e6e6e777e858bbfbba283667ee8d516801",
+    "comment_count": 0,
+    "verification": {
+      "verified": true,
+      "reason": "valid",
+      "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqvHTzCRC1aQ7uu5UhlAAA7aEQALDVftXvqvH+6Q6f1aj236dq\n1Y5AAfSXWg09206t2PU/VmwcoeB8l98JOFy+3QSSnnPsPU8JgOICUZc4/KFWaazB\nS5RenbxlewkuVFRJJjtQVFUn4yEAEc/4ogfjEudZDaHBCBNHONPGbJrJrmhKi87Y\nXkpFHQbXP++3T4QKVMEN0C2m5tWoTh2jkS4/XI5FqVfWBWofX9XFnq1+Gkg2viBJ\nIlqroW8bcSsr/dAM6qtkTA5odSn47k8Wocont+atSx7r8nLrluQyog4wYAYSTaY8\nUZnKQNKu/6h7n72kIi0sFcnX/jbmZFO9xCzkdLwtXIZeknbbSp7AHqdx46L6BG1x\n/A8NWZDwfTkI6gUSlP6sWJRasd7Va2Us4amObcC5R638kVeFKbVBcRwL0L9iv5Yp\nHc6w2yoy1IkZTZwUO/s2Qz4tVoFXfmpr2AzjscWTUpbO49FOBwoDUytAV/yIXcq4\nPUsxwq20TKVnmsCq+3vUK6uKniByo0KbfewUQiupEVw4Mv+BRHC1Xc6+J5+7gmW7\n17pLx06Ny8ICBtniTNob5aI7GVUZVzaof5ef8TK6BaAU/sVI2yAWLUEOLKwCwQU9\n8u7AN9t3fszUJeH48Qq+ujppjodASIQZ3ckydDZ+ljkLIVHnMbLieOex7Bojoqnk\n7shgLhKjrrHHozW06Hqn\n=D8Tb\n-----END PGP SIGNATURE-----\n",
+      "payload": "tree 86d0c768638cf7ffe20cdde6c084416f53cf0d61\nparent b3f78b77328bccc4f5af336d16efee69407dbcb1\nauthor Parth Sareen <parth.sareen@ollama.com> 1790735603 -0700\ncommitter GitHub <noreply@github.com> 1790735603 -0700\n\ndocs: document System One API (#18702)",
+      "verified_at": "2026-09-30T02:33:23Z"
+    }
+  },
+  "url": "https://api.github.com/repos/ollama/ollama/commits/1abe35e6e6e777e858bbfbba283667ee8d516801",
+  "html_url": "https://github.com/ollama/ollama/commit/1abe35e6e6e777e858bbfbba283667ee8d516801",
+  "comments_url": "https://api.github.com/repos/ollama/ollama/commits/1abe35e6e6e777e858bbfbba283667ee8d516801/comments",
+  "author": {
+    "login": "ParthSareen",
+    "id": 29360864,
+    "node_id": "MDQ6VXNlcjI5MzYwODY0",
+    "avatar_url": "https://avatars.githubusercontent.com/u/29360864?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/ParthSareen",
+    "html_url": "https://github.com/ParthSareen",
+    "followers_url": "https://api.github.com/users/ParthSareen/followers",
+    "following_url": "https://api.github.com/users/ParthSareen/following{/other_user}",
+    "gists_url": "https://api.github.com/users/ParthSareen/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/ParthSareen/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/ParthSareen/subscriptions",
+    "organizations_url": "https://api.github.com/users/ParthSareen/orgs",
+    "repos_url": "https://api.github.com/users/ParthSareen/repos",
+    "events_url": "https://api.github.com/users/ParthSareen/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/ParthSareen/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "web-flow",
+    "id": 19864447,
+    "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/web-flow",
+    "html_url": "https://github.com/web-flow",
+    "followers_url": "https://api.github.com/users/web-flow/followers",
+    "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+    "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+    "organizations_url": "https://api.github.com/users/web-flow/orgs",
+    "repos_url": "https://api.github.com/users/web-flow/repos",
+    "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/web-flow/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "b3f78b77328bccc4f5af336d16efee69407dbcb1",
+      "url": "https://api.github.com/repos/ollama/ollama/commits/b3f78b77328bccc4f5af336d16efee69407dbcb1",
+      "html_url": "https://github.com/ollama/ollama/commit/b3f78b77328bccc4f5af336d16efee69407dbcb1"
+    }
+  ],
+  "stats": {
+    "total": 403,
+    "additions": 402,
+    "deletions": 1
+  },
+  "files": [
+    {
+      "sha": "2d7a73d4b8fa09b547f7c44315f5488d3fb4193a",
+      "filename": "docs/api/introduction.mdx",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1,
+      "changes": 2,
+      "blob_url": "https://github.com/ollama/ollama/blob/1abe35e6e6e777e858bbfbba283667ee8d516801/docs%2Fapi%2Fintroduction.mdx",
+      "raw_url": "https://github.com/ollama/ollama/raw/1abe35e6e6e777e858bbfbba283667ee8d516801/docs%2Fapi%2Fintroduction.mdx",
+      "contents_url": "https://api.github.com/repos/ollama/ollama/contents/docs%2Fapi%2Fintroduction.mdx?ref=1abe35e6e6e777e858bbfbba283667ee8d516801",
+      "patch": "@@ -22,7 +22,7 @@ The Anthropic client appends `/v1/messages` to its base URL.\n \n Cloud requests need an API key. Local requests do not. To use cloud models through your local server, [sign in to Ollama](/api/authentication#signing-in).\n \n-Creating or deleting models requires a local Ollama server. For supported API features, see [OpenAI compatibility](/api/openai-compatibility) and [Anthropic compatibility](/api/anthropic-compatibility).\n+Creating or deleting models requires a local Ollama server. [System One](/capabilities/decision) also requires a local server and is not yet available on Ollama Cloud. For supported API features, see [OpenAI compatibility](/api/openai-compatibility) and [Anthropic compatibility](/api/anthropic-compatibility).\n \n ## Ollama API example\n "
+    },
+    {
+      "sha": "5ba05daf2f9e70932735ecd27ba1c106e74889fd",
+      "filename": "docs/capabilities/decision.mdx",
+      "status": "added",
+      "additions": 113,
+      "deletions": 0,
+      "changes": 113,
+      "blob_url": "https://github.com/ollama/ollama/blob/1abe35e6e6e777e858bbfbba283667ee8d516801/docs%2Fcapabilities%2Fdecision.mdx",
+      "raw_url": "https://github.com/ollama/ollama/raw/1abe35e6e6e777e858bbfbba283667ee8d516801/docs%2Fcapabilities%2Fdecision.mdx",
+      "contents_url": "https://api.github.com/repos/ollama/ollama/contents/docs%2Fcapabilities%2Fdecision.mdx?ref=1abe35e6e6e777e858bbfbba283667ee8d516801",
+      "patch": "@@ -0,0 +1,113 @@\n+---\n+title: Decision\n+description: Classify text, estimate yes/no probabilities, and score ordered criteria.\n+---\n+\n+<Note>\n+Currently available locally in Ollama.\n+</Note>\n+\n+Use System One to classify text, answer yes/no questions, or score text against a rubric.\n+\n+## Setup\n+\n+Start [Ollama](/quickstart) v0.35.0 or later, then download [Nimble](https://ollama.com/library/nimble):\n+\n+```shell setup.sh\n+ollama pull nimble\n+```\n+\n+Local requests do not need an API key.\n+\n+## Choose a label\n+\n+Put your input in `state` and describe the possible answers in `criteria`:\n+\n+```shell choice.sh\n+curl http://localhost:11434/v1/systemone \\\n+  -H 'Content-Type: application/json' \\\n+  -d '{\n+    \"model\": \"nimble\",\n+    \"state\": \"Our checkout has returned 500 errors since 9am.\",\n+    \"questions\": {\n+      \"label\": {\n+        \"type\": \"choice\",\n+        \"instructions\": \"Which label fits this ticket?\",\n+        \"criteria\": {\n+          \"billing\": \"Payments and refunds\",\n+          \"bug\": \"Software errors\",\n+          \"account\": \"Login and account access\"\n+        }\n+      }\n+    }\n+  }'\n+```\n+\n+Example response:\n+\n+```json\n+{\n+  \"model\": \"nimble\",\n+  \"answers\": {\n+    \"label\": {\n+      \"type\": \"choice\",\n+      \"choice\": \"bug\",\n+      \"probabilities\": {\"billing\": 0.0125, \"bug\": 0.9781, \"account\": 0.0093},\n+      \"confidence\": 0.8906\n+    }\n+  },\n+  \"usage\": {\"input_tokens\": 174, \"output_tokens\": 1}\n+}\n+```\n+\n+## Question types\n+\n+| Type | Criteria | Result |\n+| --- | --- | --- |\n+| `choice` | 2\u201326 named options with descriptions | The most likely option and each option's probability |\n+| `noul` | Descriptions for `\"false\"` and `\"true\"` | The probability of `true`, from 0 to 1 |\n+| `score` | 2\u201326 descriptions, ordered from lowest to highest | The probability-weighted average of the zero-based levels |\n+\n+For the urgency criteria below:\n+\n+```text\n+score = 0 \u00d7 P(Routine) + 1 \u00d7 P(Soon) + 2 \u00d7 P(Immediate)\n+```\n+\n+For `choice` and `score`, `confidence` measures how strongly the model favors one answer over the others, from 0 to 1. A higher value does not guarantee the answer is correct.\n+\n+## Ask multiple questions\n+\n+Combine question types in one request. Here, both questions use the same ticket:\n+\n+```shell multiple.sh\n+curl http://localhost:11434/v1/systemone \\\n+  -H 'Content-Type: application/json' \\\n+  -d '{\n+    \"model\": \"nimble\",\n+    \"state\": {\"ticket\": \"I was charged twice. Please refund the extra payment.\"},\n+    \"questions\": {\n+      \"refund\": {\n+        \"type\": \"noul\",\n+        \"instructions\": \"Is the customer requesting a refund?\",\n+        \"criteria\": {\n+          \"false\": \"No refund is requested\",\n+          \"true\": \"The customer requests a refund\"\n+        }\n+      },\n+      \"urgency\": {\n+        \"type\": \"score\",\n+        \"instructions\": \"How urgently does this ticket need a response?\",\n+        \"criteria\": [\n+          \"Routine: no time pressure\",\n+          \"Soon: a customer is inconvenienced\",\n+          \"Immediate: a critical service is unavailable\"\n+        ]\n+      }\n+    }\n+  }'\n+```\n+\n+This returns a refund probability of `0.9989` and an urgency score of `0.8308` on the 0\u20132 scale (rounded). Results can vary with the model and configuration.\n+\n+See the [API reference](/api/systemone) for request fields, limits, errors, and token usage."
+    },
+    {
+      "sha": "44a655bcd9eeeddbdad3aa817ebac3aecc520c40",
+      "filename": "docs/docs.json",
+      "status": "modified",
+      "additions": 2,
+      "deletions": 0,
+      "changes": 2,
+      "blob_url": "https://github.com/ollama/ollama/blob/1abe35e6e6e777e858bbfbba283667ee8d516801/docs%2Fdocs.json",
+      "raw_url": "https://github.com/ollama/ollama/raw/1abe35e6e6e777e858bbfbba283667ee8d516801/docs%2Fdocs.json",
+      "contents_url": "https://api.github.com/repos/ollama/ollama/contents/docs%2Fdocs.json?ref=1abe35e6e6e777e858bbfbba283667ee8d516801",
+      "patch": "@@ -128,6 +128,7 @@\n               \"/capabilities/streaming\",\n               \"/capabilities/thinking\",\n               \"/capabilities/structured-outputs\",\n+              \"/capabilities/decision\",\n               \"/capabilities/vision\",\n               \"/capabilities/embeddings\",\n               \"/capabilities/tool-calling\",\n@@ -249,6 +250,7 @@\n               \"POST /api/generate\",\n               \"POST /api/chat\",\n               \"POST /api/embed\",\n+              \"POST /v1/systemone\",\n               \"GET /api/tags\",\n               \"GET /api/ps\",\n               \"POST /api/show\","
+    },
+    {
+      "sha": "655d1ec5b1bcdd503ec509e955dbed8ef985698e",
+      "filename": "docs/openapi.yaml",
+      "status": "modified",
+      "additions": 286,
+      "deletions": 0,
+      "changes": 286,
+      "blob_url": "https://github.com/ollama/ollama/blob/1abe35e6e6e777e858bbfbba283667ee8d516801/docs%2Fopenapi.yaml",
+      "raw_url": "https://github.com/ollama/ollama/raw/1abe35e6e6e777e858bbfbba283667ee8d516801/docs%2Fopenapi.yaml",
+      "contents_url": "https://api.github.com/repos/ollama/ollama/contents/docs%2Fopenapi.yaml?ref=1abe35e6e6e777e858bbfbba283667ee8d516801",
+      "patch": "@@ -828,13 +828,299 @@ components:\n           items:\n             $ref: \"#/components/schemas/TokenLogprob\"\n           description: Most likely tokens and their log probabilities at this position\n+    SystemOneContent:\n+      description: A nonempty string, or an object or array serialized as JSON text. Not interpreted as chat messages or multimodal input.\n+      oneOf:\n+        - type: string\n+          pattern: '\\S'\n+        - type: object\n+          additionalProperties: true\n+        - type: array\n+          items: {}\n+    SystemOneChoiceQuestion:\n+      title: Choice\n+      type: object\n+      required: [type, instructions, criteria]\n+      properties:\n+        type:\n+          type: string\n+          enum: [choice]\n+        instructions:\n+          $ref: \"#/components/schemas/SystemOneContent\"\n+        criteria:\n+          type: object\n+          description: Option keys mapped to descriptions. A null description uses the key itself. Keys must not be blank; ties select the first option in request order.\n+          minProperties: 2\n+          maxProperties: 26\n+          propertyNames:\n+            pattern: '\\S'\n+          additionalProperties:\n+            type: [string, \"null\"]\n+    SystemOneNoulQuestion:\n+      title: Noul\n+      type: object\n+      required: [type, instructions]\n+      properties:\n+        type:\n+          type: string\n+          enum: [noul]\n+        instructions:\n+          $ref: \"#/components/schemas/SystemOneContent\"\n+        criteria:\n+          type: object\n+          description: Optional descriptions for the two outcomes. Omitted entries use No and Yes.\n+          properties:\n+            \"false\":\n+              type: string\n+              default: \"No\"\n+            \"true\":\n+              type: string\n+              default: \"Yes\"\n+          additionalProperties: false\n+    SystemOneScoreQuestion:\n+      title: Score\n+      type: object\n+      required: [type, instructions, criteria]\n+      properties:\n+        type:\n+          type: string\n+          enum: [score]\n+        instructions:\n+          $ref: \"#/components/schemas/SystemOneContent\"\n+        criteria:\n+          type: array\n+          description: Descriptions ordered from the lowest score (index 0) to the highest. Defines a scale from 0 to the number of criteria minus 1.\n+          minItems: 2\n+          maxItems: 26\n+          items:\n+            type: string\n+    SystemOneRequest:\n+      type: object\n+      required: [model, state, questions]\n+      properties:\n+        model:\n+          type: string\n+          pattern: '\\S'\n+          description: Local model trained for System One, such as nimble. Requires compatible GGUF weights and a scoring-capable runner; cloud and MLX/Safetensors models are not supported.\n+        state:\n+          $ref: \"#/components/schemas/SystemOneContent\"\n+        questions:\n+          type: object\n+          description: Named questions about the shared state. Each is scored separately against the full state and question schema; answers are not passed to later questions.\n+          minProperties: 1\n+          maxProperties: 64\n+          propertyNames:\n+            pattern: '\\S'\n+          additionalProperties:\n+            oneOf:\n+              - $ref: \"#/components/schemas/SystemOneChoiceQuestion\"\n+              - $ref: \"#/components/schemas/SystemOneNoulQuestion\"\n+              - $ref: \"#/components/schemas/SystemOneScoreQuestion\"\n+        keep_alive:\n+          oneOf:\n+            - type: string\n+            - type: number\n+          description: How long to keep the model loaded after the request, as a duration string (such as 5m) or seconds. Zero unloads after the request; a negative value keeps it loaded. Defaults to the server's keep-alive setting (5m unless configured otherwise).\n+    SystemOneProbabilities:\n+      type: object\n+      description: Probabilities normalized over the supplied candidates, summing to 1 subject to floating-point precision.\n+      additionalProperties:\n+        type: number\n+        minimum: 0\n+        maximum: 1\n+    SystemOneConfidence:\n+      type: number\n+      minimum: 0\n+      maximum: 1\n+      description: Distribution concentration, calculated as 1 - H(p) / ln(N), where H(p) is entropy and N is the candidate count. Zero means uniform probabilities; values near 1 mean one candidate dominates. Not calibrated correctness.\n+    SystemOneChoiceAnswer:\n+      title: Choice\n+      type: object\n+      required: [type, choice, probabilities, confidence]\n+      properties:\n+        type:\n+          type: string\n+          enum: [choice]\n+        choice:\n+          type: string\n+          description: Option key with the highest probability. Ties select the first option in request order.\n+        probabilities:\n+          $ref: \"#/components/schemas/SystemOneProbabilities\"\n+        confidence:\n+          $ref: \"#/components/schemas/SystemOneConfidence\"\n+    SystemOneNoulAnswer:\n+      title: Noul\n+      type: object\n+      required: [type, noul]\n+      properties:\n+        type:\n+          type: string\n+          enum: [noul]\n+        noul:\n+          type: number\n+          minimum: 0\n+          maximum: 1\n+          description: Probability of true among the false and true candidates. This is a number, not a Boolean.\n+    SystemOneScoreAnswer:\n+      title: Score\n+      type: object\n+      required: [type, score, legend, probabilities, confidence]\n+      properties:\n+        type:\n+          type: string\n+          enum: [score]\n+        score:\n+          type: number\n+          minimum: 0\n+          maximum: 25\n+          description: Probability-weighted average of the zero-based criterion indices, from 0 to the number of criteria minus 1. Not rounded to a level or normalized to 0\u20131.\n+        legend:\n+          type: object\n+          description: Zero-based indices as string keys mapped to the criterion descriptions.\n+          additionalProperties:\n+            type: string\n+        probabilities:\n+          $ref: \"#/components/schemas/SystemOneProbabilities\"\n+          description: Probabilities keyed by zero-based criterion indices as strings.\n+        confidence:\n+          $ref: \"#/components/schemas/SystemOneConfidence\"\n+    SystemOneResponse:\n+      type: object\n+      required: [model, answers, usage]\n+      properties:\n+        model:\n+          type: string\n+          description: Model name from the request.\n+        answers:\n+          type: object\n+          description: Answers keyed by the question names in the request.\n+          additionalProperties:\n+            oneOf:\n+              - $ref: \"#/components/schemas/SystemOneChoiceAnswer\"\n+              - $ref: \"#/components/schemas/SystemOneNoulAnswer\"\n+              - $ref: \"#/components/schemas/SystemOneScoreAnswer\"\n+        usage:\n+          type: object\n+          required: [input_tokens, output_tokens]\n+          properties:\n+            input_tokens:\n+              type: integer\n+              minimum: 0\n+              description: Sum of full rendered prompt lengths across all questions, including repeated shared context even when cached.\n+            output_tokens:\n+              type: integer\n+              minimum: 0\n+              description: Tokens generated internally for scoring, including prefix preparation and retries. May exceed the question count; not the length of the JSON response.\n     ErrorResponse:\n       type: object\n       properties:\n         error:\n           type: string\n           description: Error message describing what went wrong\n paths:\n+  /v1/systemone:\n+    post:\n+      summary: Answer typed questions\n+      description: |\n+        Answer choice, yes/no, and scoring questions with a local System One model. Requires Ollama v0.35.0 or later. See the [decision guide](/capabilities/decision) for examples.\n+      operationId: systemone\n+      x-mint:\n+        href: /api/systemone\n+        metadata:\n+          title: System One\n+          sidebarTitle: System One\n+        content: |\n+          <Note>\n+          Currently available locally in Ollama.\n+          </Note>\n+\n+          - Returns one JSON response; streaming, images, tools, and generation controls are not supported.\n+          - Requests must fit within 64 KiB. Each rendered prompt must fit the loaded context window with two token positions left for scoring. Input is never truncated.\n+      x-codeSamples:\n+        - lang: bash\n+          label: Choose a label\n+          source: |\n+            curl http://localhost:11434/v1/systemone \\\n+              -H 'Content-Type: application/json' \\\n+              -d '{\n+                \"model\": \"nimble\",\n+                \"state\": \"Our checkout has returned 500 errors since 9am.\",\n+                \"questions\": {\n+                  \"label\": {\n+                    \"type\": \"choice\",\n+                    \"instructions\": \"Which label fits this ticket?\",\n+                    \"criteria\": {\n+                      \"billing\": \"Payments and refunds\",\n+                      \"bug\": \"Software errors\",\n+                      \"account\": \"Login and account access\"\n+                    }\n+                  }\n+                }\n+              }'\n+      requestBody:\n+        required: true\n+        content:\n+          application/json:\n+            schema:\n+              $ref: \"#/components/schemas/SystemOneRequest\"\n+            example:\n+              model: nimble\n+              state: Our checkout has returned 500 errors since 9am.\n+              questions:\n+                label:\n+                  type: choice\n+                  instructions: Which label fits this ticket?\n+                  criteria:\n+                    billing: Payments and refunds\n+                    bug: Software errors\n+                    account: Login and account access\n+      responses:\n+        \"200\":\n+          description: Answers and token usage for all questions. Example probabilities and confidence are rounded to four decimal places; results and usage can vary with the model and server configuration.\n+          content:\n+            application/json:\n+              schema:\n+                $ref: \"#/components/schemas/SystemOneResponse\"\n+              example:\n+                model: nimble\n+                answers:\n+                  label:\n+                    type: choice\n+                    choice: bug\n+                    probabilities:\n+                      billing: 0.0125\n+                      bug: 0.9781\n+                      account: 0.0093\n+                    confidence: 0.8906\n+                usage:\n+                  input_tokens: 174\n+                  output_tokens: 1\n+        \"400\":\n+          description: Invalid request, unsupported model or runner, or a rendered prompt that exceeds the loaded context. Cloud models are rejected.\n+          content:\n+            application/json:\n+              schema:\n+                $ref: \"#/components/schemas/ErrorResponse\"\n+        \"404\":\n+          description: Local model not found. Download the model before making a request.\n+          content:\n+            application/json:\n+              schema:\n+                $ref: \"#/components/schemas/ErrorResponse\"\n+        \"413\":\n+          description: Request body exceeds 64 KiB.\n+          content:\n+            application/json:\n+              schema:\n+                $ref: \"#/components/schemas/ErrorResponse\"\n+              example:\n+                error: request body must not exceed 64 KiB\n+        \"500\":\n+          description: Model loading, rendering, or scoring failed.\n+          content:\n+            application/json:\n+              schema:\n+                $ref: \"#/components/schemas/ErrorResponse\"\n   /api/generate:\n     post:\n       summary: Generate a response"
+    }
+  ]
+}

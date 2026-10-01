@@ -1,0 +1,11 @@
+{
+  "initial_http_status": 400,
+  "error_code": "unknown_parameter",
+  "initial_invalid_field": "enable_thinking",
+  "correct_responses_field": {
+    "reasoning": {
+      "effort": "none"
+    }
+  },
+  "scope": "Verifier request corrected; engine source not changed"
+}

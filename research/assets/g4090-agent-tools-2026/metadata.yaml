@@ -1,0 +1,136 @@
+schema_version: 1
+reference:
+  title: g4090 agent tools installation
+  slug: g4090-agent-tools-2026
+  topic: llm-inference
+  type: software-installation
+  date: '2026-10-01'
+sources:
+- name: Claude Code official setup
+  url: https://code.claude.com/docs/en/setup#install-with-npm
+- name: OpenAI Codex official CLI
+  url: https://learn.chatgpt.com/docs/codex/cli
+- name: OpenAI official npm installation example
+  url: https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex
+- name: OpenCode official docs
+  url: https://opencode.ai/docs/
+- name: CC Switch desktop official repository
+  url: https://github.com/farion1231/cc-switch
+- name: CC Switch CLI community project recommended by desktop repository
+  url: https://github.com/SaladDay/cc-switch-cli
+- name: Node.js official release checksums
+  url: https://nodejs.org/dist/v24.21.0/SHASUMS256.txt
+assets:
+- kind: supplementary
+  path: supplementary/agent_tools_install_20261001_retry.log
+  original_filename: agent_tools_install_20261001_retry.log
+  format: log
+  bytes: 826
+  sha256: b064357cf2294a3cec68f95972ea39dd8c70d265d92c3fbc4661aa823bcac8bc
+  retrieved_at: '2026-10-01'
+  status: downloaded
+  url: null
+  resolved_url: null
+  version: null
+  filename_provenance: derived
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+- kind: supplementary
+  path: supplementary/install-manifest.json
+  original_filename: install-manifest.json
+  format: json
+  bytes: 1397
+  sha256: b0667034c3655b7490894f177953902d0dd01802a53c1fae5cb6242c5451cb3d
+  retrieved_at: '2026-10-01'
+  status: downloaded
+  url: null
+  resolved_url: null
+  version: null
+  filename_provenance: derived
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+- kind: supplementary
+  path: supplementary/install_agent_tools.py
+  original_filename: install_agent_tools.py
+  format: py
+  bytes: 7575
+  sha256: 3f268f84541f11105be67dee6d2a9a6ec004a5be5112b41534e04b8fcf9bd522
+  retrieved_at: '2026-10-01'
+  status: generated
+  url: null
+  resolved_url: null
+  version: null
+  filename_provenance: derived
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+- kind: supplementary
+  path: supplementary/npm-package-manifest.json
+  original_filename: npm-package-manifest.json
+  format: json
+  bytes: 8432
+  sha256: 009f3466ce1b72a94ee6489f2440e67cd80c0fad80e9cc277ece3db4672bbc51
+  retrieved_at: '2026-10-01'
+  status: downloaded
+  url: null
+  resolved_url: null
+  version: null
+  filename_provenance: derived
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+- kind: supplementary
+  path: supplementary/smoke-results.json
+  original_filename: smoke-results.json
+  format: json
+  bytes: 815
+  sha256: 77cf8506a4ac3208b5f1b53d4e44cb608591e097af53c6ef587112b142c7ada3
+  retrieved_at: '2026-10-01'
+  status: downloaded
+  url: null
+  resolved_url: null
+  version: null
+  filename_provenance: derived
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+remote_execution:
+  status: installed_and_smoke_verified
+  host_alias: g4090
+  platform: Ubuntu 22.04.5 Linux x86_64
+  credentials_configured: false
+  gpu_used: false
+  gui_application_started: false
+  scope:
+  - four CLI tools version checks
+  - four CLI tools help checks
+  - AppImage runtime check
+  - SHA256 release-artifact verification
+  limitations:
+  - No graphical session in SSH; desktop GUI not launched
+  - No online model requests or account authentication tested
+archive:
+  status: complete
+  updated_at: '2026-10-01'
+  note: Operational software record, not a paper-reading record; navigation integration
+    handled by parent agent.
+archive_distribution:
+  snapshot_date: '2026-10-02'
+  original_cache: .local/originals/llm-inference/assets/g4090-agent-tools-2026
+  original_metadata: .local/originals/llm-inference/assets/g4090-agent-tools-2026/metadata.yaml
+  source_hash_semantics: Original asset sha256/bytes are preserved as historical provenance.
+    Public sanitized file hashes are in archives/public-files.json.
+  full_papers_and_upstream_repos: local_only; recover from canonical URLs and fixed
+    revisions in archives/

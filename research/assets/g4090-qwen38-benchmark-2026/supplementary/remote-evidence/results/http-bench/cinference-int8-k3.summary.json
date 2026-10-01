@@ -1,0 +1,89 @@
+[
+  {
+    "label": "cinference-int8-k3",
+    "workload": "json",
+    "successful_reps": 3,
+    "failed_reps": 0,
+    "median_decode_tps": 156.88875364562583,
+    "median_end_to_end_output_tps": 144.05285967158673,
+    "median_prefill_tps": 782.0204202390865,
+    "median_server_prompt_ms": 98.462902,
+    "median_draft_acceptance": 0.8367346938775511,
+    "finish_reasons": [
+      "stop",
+      "stop",
+      "stop"
+    ],
+    "quality_checks": [
+      {
+        "valid_json": true,
+        "three_districts": true
+      },
+      {
+        "valid_json": true,
+        "three_districts": true
+      },
+      {
+        "valid_json": true,
+        "three_districts": true
+      }
+    ]
+  },
+  {
+    "label": "cinference-int8-k3",
+    "workload": "code",
+    "successful_reps": 3,
+    "failed_reps": 0,
+    "median_decode_tps": 160.16244225275364,
+    "median_end_to_end_output_tps": 155.5414361857433,
+    "median_prefill_tps": 705.5904875112836,
+    "median_server_prompt_ms": 97.79043399999999,
+    "median_draft_acceptance": 0.8472222222222222,
+    "finish_reasons": [
+      "length",
+      "length",
+      "length"
+    ],
+    "quality_checks": [
+      {
+        "python_syntax": false,
+        "semantic_tests": "not_run"
+      },
+      {
+        "python_syntax": false,
+        "semantic_tests": "not_run"
+      },
+      {
+        "python_syntax": false,
+        "semantic_tests": "not_run"
+      }
+    ]
+  },
+  {
+    "label": "cinference-int8-k3",
+    "workload": "prose",
+    "successful_reps": 3,
+    "failed_reps": 0,
+    "median_decode_tps": 101.25635021298996,
+    "median_end_to_end_output_tps": 99.86381032525605,
+    "median_prefill_tps": 437.02403342976777,
+    "median_server_prompt_ms": 77.79892500000001,
+    "median_draft_acceptance": 0.41228070175438597,
+    "finish_reasons": [
+      "length",
+      "length",
+      "length"
+    ],
+    "quality_checks": [
+      {
+        "words": 387
+      },
+      {
+        "words": 387
+      },
+      {
+        "words": 387
+      }
+    ]
+  }
+]

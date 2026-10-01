@@ -1,0 +1,146 @@
+KVarN KV Cache: Implementation and Benchmarks - Anbeeld (https://anbeeld.com/articles/kvarn-kv-cache-implementation-and-benchmarks)
+citeturn40view0 [wordlim: 200] Crawled: today; Content type: text/html; Source: open({"ref_id":"https://anbeeld.com/articles/kvarn-kv-cache-implementation-and-benchmarks","lineno":null}); Total lines: 372
+L0: cite0†Anbeeld L1: 
+L2: cite0†Projects cite1†Articles cite2†Support cite3†Contact L3: # KVarN KV Cache: Implementation and Benchmarks
+L4: 
+L5: KVarN, a Variance-Normalized KV-Cache Quantization from Huawei, improves KLD vs standard llama.cpp quants at every tested width on Qwen 3.6 27B and Gemma 4 31B.
+L6:   1. cite4†1. Where KVarN Comes From L7:   2. cite5†2. What KVarN Stores L8:     1. cite6†2.1 Sink, Body, And Tail L9:     2. cite7†2.2 What This Implementation Changes L10:   3. cite8†3. Matching The Baseline L11:   4. cite9†4. Where The Standard Ladder Runs Out L12:   5. cite10†5. Changing Only The Format L13:   6. cite11†6. Splitting K And V L14:   7. cite12†7. Gemma Changes The Tradeoff L15:   8. cite13†8. What This Does Not Prove L16:   9. cite14†9. Method L17:   10. cite15†10. Full Benchmark Data L18:     1. cite16†10.1 Qwen 3.6 27B Q5_K_S 64k L19:     2. cite17†10.2 Gemma 4 31B Q5_K_S 16k L20: ## 1. Where KVarN Comes From
+L21: KVarN is a KV cache quantizer from Huawei, published as cite18†KVarN: Variance-Normalized KV-Cache Quantization Mitigates Error Accumulation in Reasoning Tasks†arxiv.org (arXiv 2606.03458), with a reference implementation released as a cite19†vLLM fork†github.com . Its starting observation is about how KV quantizers are usually judged. Most are measured on prefill-shaped work, where a whole context is scored in one pass, while a reasoning model spends most of its time generating one token at a time.
+L22: The paper argues that quantization error behaves differently in that second regime, building up across timesteps, and that the buildup is driven mainly by badly estimated per-token scales.
+L23: The proposed fix needs no calibration data and has two stages. A Hadamard rotation is applied per head to K and V after RoPE. Rotating mixes every channel of a head into every other, so a single outlier channel no longer stretches the quantization range for the whole head. The query is rotated by the same matrix, which leaves the QK product unchanged, so attention can run in the rotated frame and the result is rotated back once per token rather than per stored token.
+L24: A variance normalization then rescales both axes of each matrix before rounding, which is the stage aimed at the token-scale errors directly. The method runs that normalization as 16 Sinkhorn iterations. On the paper's own benchmarks the combination sets a two-bit state of the art on MATH500, AIME24, and HumanEval.
+L25: The subject here is cite20†BeeLlama†github.com 's implementation of that method rather than the reference, and the measurement is teacher-forced Wikitext KLD rather than the reasoning benchmarks the paper reports. Those are different questions, and a result in one does not transfer to the other.
+L26: ## 2. What KVarN Stores
+L27: ### 2.1 Sink, Body, And Tail
+L28: KVarN is a structured K/V cache format rather than another standard block type, and its precision depends on where a token sits in the sequence. The first 128 tokens stay exact permanently, which preserves the attention-sink behavior models rely on. Everything after that is quantized in groups of 128 tokens, and a group is quantized at the moment its last token arrives. Each group is rotated and normalized before quantization, and the layout stores the quantized payload with its scale metadata.
+L29: Attention paths that support the format read these records directly; others convert to a standard cache layout first.
+L30: The newest tokens have not filled a group yet, so they stay exact until they do. That trailing exact span is what this article calls the tail: a run of the most recent tokens held at higher precision than the rest of the cache. A standard cache treats every token alike, so a tail there is a feature you switch on. In KVarN it is a consequence of the group size, and it is never entirely absent.
+L31: In the published design the tail is nothing more than that partial group. It grows from empty toward the group size and collapses each time a group seals, so the number of exact recent tokens is whatever has arrived since the last flush. The paper names the region R and sets it to 128 alongside a group size of 128, and the reference implementation sizes its F16 side buffer for two blocks per request per layer: the permanent sink and the one in-progress tail.
+L32: ### 2.2 What This Implementation Changes
+L33: BeeLlama does not let the region shrink. It floors the effective tail at one full group and then routes KVarN through the same precision-tail machinery that serves standard caches, so the cache holds at least 128 recent tokens exact rather than however many happen to have arrived. That floor is why a request of `--kv-tail-tokens 0` resolves to 128, and it is what makes a stated suffix length comparable between the two families at all.
+L34: It is a deviation from the reference, and it moves in KVarN's favor, so the rows below describe this arrangement rather than the published one.
+L35: Two further details matter for the comparison. This implementation keeps the prefix sink on non-sliding-window layers only; sliding-window layers have no permanent sink, though they still carry their local exact suffix. And the matched tables hold suffix length constant while other properties still differ: standard tails use BF16 in these runs, KVarN tails use F16, and non-SWA KVarN carries the prefix sink.
+L36: ## 3. Matching The Baseline
+L37: 
+L38: Because KVarN always carries that exact suffix, a comparison against a tail-free standard cache does not result in an honest measurement of quantizers. Wikitext KLD scores the next token at every position, so an exact recent region is worth a great deal to it, and the standard cache can be given the same region for a known price.
+L39: Cache  | tail 0  | tail 128  | Change
+L40: --- | --- | --- | ---
+L41: `q2_0`  | 0.019374  | 0.007521  | −61.2%
+L42: `q4_0`  | 0.001846  | 0.001206  | −34.7%
+L43: `q8_0`  | 0.000909  | 0.000901  | −0.9%
+L44: No quantizer changed between those columns; the cache simply stopped compressing its newest 128 tokens. What that is worth depends on how good the body underneath already is, from 61.2% at two bits down to 0.9% at eight, and Gemma runs the same shape from 55.0% to 0.4%. None of it is a claim about output. Only 128 tokens of a 65536-token cache change hands, and scoring every position rewards exact recent context far more heavily than most real work does.
+L45: The tail sweep is its own subject, covered in the cite21†precision-tail article ; here it exists only to make the two families comparable.
+L46: That gradient is why an unmatched comparison misleads worst exactly where KVarN is most interesting. Place a KVarN two-bit row beside a tail-free standard two-bit row and most of the visible gap is the suffix, not the format. At eight bits the same confound is worth under 1% on either model.
+L47: So every comparison from here on holds the suffix constant, which gives three published row types. Standard tail 0 is the diagnostic control above. Standard tail 128 is the matched comparator. KVarN tail 128* is the deployable configuration measured against it, and it has no tail 0 counterpart because that configuration can not exist.
+L48: ## 4. Where The Standard Ladder Runs Out
+L49: 
+L50: First, let's take a look at where KVarN lands among the standard tiers. Both sides of every row below carry the same 128-token suffix. At four bits `kvarn4` sits between standard `q4_0` and `q5_0` at 1184.00 MiB, gaining precision over its own width for less memory than a full standard step up to 1416.00.
+L51: Cache  | KV cache (MiB)  | Median KLD
+L52: --- | --- | ---
+L53: `q4_0` tail 128  | 1160.00  | 0.001206
+L54: `kvarn4` tail 128*  | 1184.00  | 0.001111
+L55: `q5_0` tail 128  | 1416.00  | 0.00097
+L56: `kvarn5` tail 128*  | 1440.00  | 0.000927
+L57: `q6_0` tail 128  | 1672.00  | 0.000913
+L58: `kvarn6` tail 128*  | 1696.00  | 0.000889
+L59: `q8_0` tail 128  | 2184.00  | 0.000901
+L60: `kvarn8` tail 128*  | 2208.00  | 0.000871
+L61: The absolute KLD deltas between standard tiers shrink as the type widens. On Qwen one bit from `q4_0` to `q5_0` buys 0.000236 of median KLD, the next bit to `q6_0` buys 0.000057, and the two bits from `q6_0` to `q8_0` buy 0.000012. Gemma runs the same curve at a coarser scale, 0.033947 then 0.007506 then 0.001672. That non-linearity reflects how fast lower bit widths degrade, not how close the top of the ladder sits to BF16.
+L62: `q8_0` itself agrees with the BF16 baseline on the top token 98.0% of the time on Qwen and 80.5% on Gemma, so every width is a precision tier worth improving, and the question at each is whether KVarN delivers that improvement for comparable memory.
+L63: Across all 48 standard pairs at this suffix, on both models, the best row is `q8_0` itself: 0.000901 on Qwen and 0.036941 on Gemma. No mixture of standard K and V types goes lower at any memory size, so `q8_0` sets the standard floor.
+L64: Model  | Cache  | KV cache (MiB)  | Median KLD
+L65: --- | --- | --- | ---
+L66: Qwen  | `q8_0` tail 128  | 2184.00  | 0.000901
+L67: Qwen  | `kvarn6-kvarn5` tail 128*  | 1568.00  | 0.000899
+L68: Qwen  | `kvarn6` tail 128*  | 1696.00  | 0.000889
+L69: Qwen  | `kvarn8-kvarn5` tail 128*  | 1824.00  | 0.000899
+L70: Qwen  | `kvarn8-kvarn6` tail 128*  | 1952.00  | 0.000874
+L71: Qwen  | `kvarn8` tail 128*  | 2208.00  | 0.000871
+L72: Gemma  | `q8_0` tail 128  | 1428.36  | 0.036941
+L73: Gemma  | `kvarn6` tail 128*  | 1318.98  | 0.036528
+L74: Gemma  | `kvarn8-kvarn6` tail 128*  | 1473.98  | 0.036229
+L75: Gemma  | `kvarn8` tail 128*  | 1628.98  | 0.035682
+L76: Five Qwen configurations and three Gemma ones sit under that floor. Qwen `kvarn6-kvarn5` clears the entire standard family at 1568.00 MiB against `q8_0`'s 2184.00, saving 616.00 MiB over a row it beats outright. On Gemma `kvarn6` does it at 1318.98 against 1428.36, saving 109.38 MiB.
+L77: The exact margin below `q8_0` is harder to pin down. One teacher-forced pass per configuration does not separate close rows with statistical confidence, and there is no standard tier above `q8_0` to calibrate the distance against. That these KVarN configurations read lower than the standard best is established by the data; a tighter bound on how much lower would take either more runs or a benchmark with headroom above the standard formats.
+L78: On Qwen most KVarN rows also undercut the cheapest standard row matching their median, six of them by exactly 104.00 MiB. On Gemma none do: every Gemma KVarN row a standard cache can match is matched more cheaply, so the format pays there only at the top, where no standard configuration can match it.
+L79: ## 5. Changing Only The Format
+L80: Section 4 compares configurations of different sizes, which leaves room to read KVarN's position as bought with memory rather than earned by the format. The same-width rows close that off, because they change one variable. At four bits Qwen `kvarn4` records a median KLD of 0.001111 against `q4_0`'s 0.001206 while its quantized body is the smaller of the two, 1136.00 MiB against 1152.00. The 24.00 MiB that makes the KVarN total larger is exact overlay, which neither configuration compresses.
+L81: Whatever produces the difference is happening inside a body with fewer bytes in it.
+L82: Width  | Standard median  | KVarN median  | Median  | Standard MiB  | KVarN MiB  | Prefill
+L83: --- | --- | --- | --- | --- | --- | ---
+L84: 2-bit  | 0.007521  | 0.007108  | −5.5%  | 648.00  | 672.00  | −5.8%
+L85: 3-bit  | 0.002057  | 0.001797  | −12.6%  | 904.00  | 928.00  | −5.1%
+L86: 4-bit  | 0.001206  | 0.001111  | −7.9%  | 1160.00  | 1184.00  | −5.6%
+L87: 5-bit  | 0.00097  | 0.000927  | −4.4%  | 1416.00  | 1440.00  | −5.5%
+L88: 6-bit  | 0.000913  | 0.000889  | −2.6%  | 1672.00  | 1696.00  | −6.4%
+L89: 8-bit  | 0.000901  | 0.000871  | −3.3%  | 2184.00  | 2208.00  | −6.7%
+L90: KVarN improves the Qwen median at every tested symmetric width, but not by a smooth function of width. The gain peaks at 12.6% at three bits and is smallest at 2.6% at six. Neither extreme sits at an endpoint: two bits returns 5.5%, eight bits 3.3%, and four bits 7.9%.
+L91: Those percentages are smaller than the effect they stand for, and the control in section 3 shows why. Making the newest 128 tokens exact moves the Qwen four-bit median by 0.000640. Swapping the quantizer underneath moves the same median by 0.000095. This benchmark responds nearly seven times more strongly to which tokens are exact than to which format compresses the rest, and both rows already include the exact suffix.
+L92: The same-width column is a reading taken on ground that tilts away from the thing being measured.
+L93: The untilted version cannot be run, because KVarN has no tail-free configuration and the table without a suffix does not exist. Nor does the tilt have a consistent sign, which rules out correcting for it: across the cite21†tail sweep the Qwen advantage widens with a longer tail at two and three bits and narrows at eight. Read these percentages as what this measurement can see, not as the true difference between the formats.
+L94: ## 6. Splitting K And V
+L95: 
+L96: Width is not the only dial. K and V can take different types, which fills the gaps between whole widths, and the balance between them often matters more than the total. `kvarn5-kvarn4` uses 1312.00 MiB and records 0.000995 median KLD, between `kvarn4` at 1184.00 and `kvarn5` at 1440.00, filling a gap that whole widths leave open.
+L97: Cache  | KV cache (MiB)  | Median KLD
+L98: --- | --- | ---
+L99: `kvarn3-kvarn2`  | 800.00  | 0.00402
+L100: `kvarn3`  | 928.00  | 0.001797
+L101: `kvarn4-kvarn2`  | 928.00  | 0.00357
+L102: `kvarn4`  | 1184.00  | 0.001111
+L103: `kvarn5-kvarn3`  | 1184.00  | 0.001269
+L104: `kvarn5-kvarn4`  | 1312.00  | 0.000995
+L105: `kvarn5`  | 1440.00  | 0.000927
+L106: `kvarn6-kvarn4`  | 1440.00  | 0.000962
+L107: `kvarn6-kvarn5`  | 1568.00  | 0.000899
+L108: A one-bit step lands where you would want it. Wherever a two-bit pair meets a symmetric row at the same allocation the symmetric row wins, and by a wide margin at the bottom: `kvarn4-kvarn2` records 0.00357 against 0.001797 for `kvarn3` at the same 928.00 MiB, roughly twice the error for the same memory.
+L109: Three pairs are worth keeping as presets on this evidence. `kvarn6-kvarn5` at 1568.00 MiB and 0.000899 is the quality-first compressed choice, sitting inside the same unresolved group as `kvarn6` for 128.00 MiB less. `kvarn5-kvarn4` is the balanced middle. `kvarn3-kvarn2` at 800.00 MiB and 0.00402 is an emergency-compression step, and the two-bit end improves its own tier without reliably replacing the next standard tier.
+L110: The pattern across the whole matrix, symmetric proof points with near-balanced asymmetric rows filling the staircase between them, is the subject of the cite22†full KV cache matrix .
+L111: ## 7. Gemma Changes The Tradeoff
+L112: 
+L113: Gemma behaves differently. Its 50 sliding-window layers and ten full-attention layers create a discontinuity when an exact suffix covers the visible 1024-token window, and even at 128 tokens the accounting has already diverged from Qwen's. Standard `q4_0` uses 808.36 MiB at median KLD 0.080066, while `kvarn4` tail 128* uses 1008.98 MiB at 0.058185: a 27.3% lower median at four bits, against 7.9% on Qwen, for 200.62 MiB more.
+L114: Width  | Standard median  | KVarN median  | Median  | Standard MiB  | KVarN MiB  | Prefill
+L115: --- | --- | --- | --- | --- | --- | ---
+L116: 2-bit  | 1.329847  | 2.091697  | +57.3%  | 498.36  | 698.98  | −6.9%
+L117: 3-bit  | 0.266479  | 0.250445  | −6.0%  | 653.36  | 853.98  | −7.8%
+L118: 4-bit  | 0.080066  | 0.058185  | −27.3%  | 808.36  | 1008.98  | −9.5%
+L119: 5-bit  | 0.046119  | 0.041262  | −10.5%  | 963.36  | 1163.98  | −10.2%
+L120: 6-bit  | 0.038613  | 0.036528  | −5.4%  | 1118.36  | 1318.98  | −11.4%
+L121: 8-bit  | 0.036941  | 0.035682  | −3.4%  | 1428.36  | 1628.98  | −14.0%
+L122: That 200.62 MiB is fixed across all six widths, as the 24.00 MiB is on Qwen, but it is charged somewhere else. Gemma's exact overlay is 110.86 MiB on both sides of the comparison, so the entire premium is in the quantized body: 898.12 MiB against 697.50 at four bits, where the Qwen body ran 16.00 MiB in the other direction. Prefill is more expensive too, falling from 6.9% at two bits to 14.0% at eight against 5.1% to 6.7% on Qwen.
+L123: Longer tails change the memory arithmetic again, which is why the practical comparison belongs with the cite21†full tail sweep rather than here.
+L124: Two bits reverses the outcome outright. At the matched suffix `kvarn2` tail 128* records 2.091697 median KLD against 1.329847 for standard `q2_0`, 57.3% worse for 200.62 MiB more. This is the only symmetric width in either model where a KVarN row records a higher median KLD than its same-width standard counterpart at the same published tail, and on Gemma the advantage only starts at three bits.
+L125: This is why the recommendation cannot be copied between models. Qwen offers a smooth body-width ladder for a near-fixed 24.00 MiB and about 6% of its prefill throughput. Gemma charges 200.62 MiB and as much as 14.0% of throughput for the same move, so a standard high-bit body can remain the better default there even where the compressed row records the lower median.
+L126: ## 8. What This Does Not Prove
+L127: 
+L128: This is one teacher-forced Wikitext-2 pass per configuration, not a coding-agent evaluation. It does not measure retrieval of an old symbol, adherence to repository instructions, correct tool selection, valid JSON, edit quality, or accumulated autoregressive error. KLD, perplexity, same-top probability, prefill throughput, and decode throughput are related observations, not interchangeable quality scores.
+L129: Every row here holds its newest 128 tokens exact, so none of them says much about a decision made tens of thousands of tokens earlier. The KVarN prefix sink, the tail floor this implementation adds on top of the published design, F16 versus BF16 tail representation, one GPU, and the unrecovered binary hash of the quality runs are further limits. Close high-bit rows are best treated as a band.
+L130: ## 9. Method
+L131: The quality matrix uses one RTX 3090 on Windows 11, cite20†BeeLlama v0.4.0†github.com , CUDA 13.1 build. The two models are Qwen 3.6 27B Q5_K_S at 65536 context and Gemma 4 31B Q5_K_S at 16384 context. Both use Wikitext-2 raw, batch size 2048, micro-batch size 512, seed 1, FlashAttention, unified KV, no mmap, mlock, and no host offload. Every row is measured against its model's BF16-cache baseline.
+L132: The complete standalone view contains BF16, all 48 standard pairs at tails 0 and 128, and all 15 selected KVarN pairs at tail 128* for each model.
+L133: Median KLD ranks the typical scored position, and the mean and upper percentiles show whether a similar median hides a heavier error tail. Same-top probability asks whether the most likely token still agrees with the BF16-cache baseline. Tok/s is prompt processing measured inside the run, not generation speed.
+L134: KV cache cells show the persistent total, reconstructed from each selected run's runtime buffer accounting. Where a cache pair also has a tail 0 row, a smaller `(Δ...)` gives the difference from that tail 0 total. KVarN tail 128* is its own requested-0 baseline and carries no delta, because its exact overlay is already inside the total.
+L135: ## 10. Full Benchmark Data
+L136: ### 10.1 Qwen 3.6 27B Q5_K_S 64k
+L137: 
+L138: Filters[Input] Standard[Input] KVarN[Input] tail 0[Input] tail 128
+L139: Cache  | Tail  | KV cache (MiB)  | Median KLD  | Mean KLD  | KLD +/-  | 90% KLD  | 95% KLD  | 99% KLD  | 99.9% KLD  | Maximum KLD  | Same top p  | Tok/s  | Elapsed (s)
+L140: --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
+L141: `bf16`  | 0  | 4096.00  | 0  | 0  | 0  | 0.000016  | 0.000023  | 0.000037  | 0.00005  | 0.000065  | 99.995% +/- 0.002%  | 887.82  | 334.479
+L142: `q8_0`  | 0  | 2176.00  | 0.000909  | 0.002754  | 0.000247  | 0.004262  | 0.006775  | 0.019907  | 0.093029  | 22.259039  | 97.93% +/- 0.039%  | 886.04  | 333.999
+L143: `q8_0`  | 128  | 2184.00 (Δ8.00)  | 0.000901  | 0.00253  | 0.00017  | 0.004231  | 0.006683  | 0.019529  | 0.090395  | 11.783675  | 98% +/- 0.039%  | 874.94  | 343.638
+L144: `q8_0-q6_1`  | 0  | 1984.00  | 0.00092  | 0.002777  | 0.000251  | 0.004259  | 0.006722  | 0.019411  | 0.085679  | 19.695711  | 97.984% +/- 0.039%  | 882.71  | 335.117
+L145: `q8_0-q6_1`  | 128  | 1992.00 (Δ8.00)  | 0.000905  | 0.002586  | 0.000214  | 0.004225  | 0.006642  | 0.019411  | 0.082675  | 20.589348  | 97.996% +/- 0.039%  | 870.86  | 334.14
+L146: `q8_0-q6_0`  | 0  | 1920.00  | 0.000937  | 0.00267  | 0.00018  | 0.004299  | 0.006739  | 0.019253  | 0.093575  | 15.611868  | 97.974% +/- 0.039%  | 883.41  | 334.807
+L147: `q8_0-q6_0`  | 128  | 1928.00 (Δ8.00)  | 0.000908  | 0.002609  | 0.000195  | 0.004212  | 0.006588  | 0.019631  | 0.084215  | 15.289563  | 98.002% +/- 0.039%  | 870.46  | 333.961
+L148: `q8_0-q5_1`  | 0  | 1856.00  | 0.001005  | 0.002835  | 0.000205  | 0.004582  | 0.007216  | 0.020726  | 0.089817  | 15.353727  | 97.909% +/- 0.04%  | 883.69  | 334.643
+L149: `q8_0-q5_1`  | 128  | 1864.00 (Δ8.00)  | 0.000913  | 0.002707  | 0.000198  | 0.004277  | 0.006793  | 0.019754  | 0.08666  | 14.87865  | 97.98% +/- 0.039%  | 869.76  | 334.362
+L150: `q8_0-q5_0`  | 0  | 1792.00  | 0.00103  | 0.003078  | 0.000263  | 0.004711  | 0.007301  | 0.020893  | 0.093322  | 18.082804  | 97.848% +/- 0.04%  | 885.28  | 334.155
+L151: `q8_0-q5_0`  | 128  | 1800.00 (Δ8.00)  | 0.000919  | 0.002603  | 0.000212  | 0.004283  | 0.006753  | 0.018965  | 0.091472  | 20.037359  | 98.031% +/- 0.038%  | 870.31  | 334.24
+L152: `kvarn8`  | 128*  | 2208.00  | 0.000871  | 0.002472  | 0.00016  | 0.004099  | 0.006477  | 0.018442  | 0.088652  | 11.741246  | 98.039% +/- 0.038%  | 816.51  | 359.779
+L153: `kvarn8-kvarn6`  | 128*  | 1952.00  | 0.000874  | 0.002548  | 0.000176  | 0.004123  | 0.006494  | 0.018983  | 0.087413  | 14.987466  | 98.012% +/- 0.039%  | 812.61  | 361.129
+L154: `kvarn8-kvarn5`  | 128*  | 1824.00  | 0.000899  | 0.002603  | 0.0002  | 0.004198  | 0.00667  | 0.019303  | 0.089016  | 16.316221  | 97.963% +/- 0.039%  | 812.84  | 360.884
+L155: `q6_1`  | 0  | 1792.00  | 0.00095  | 0.002941  | 0.000287  | 0.004433  | 0.007011  | 0.019964  | 0.087622  | 21.414415  | 97.976% +/- 0.039%  | 884.41  | 334.494
+L156: `q6_1`  | 128  | 1800.00 (Δ8.00)  | 0.000912  | 0.002744  | 0.00023  | 0.004305  | 0.006743  | 0.019552  | 0.088572  | 19.139778  | 97.976% +/- 0.039%  | 869.7  | 334.481
+--------------------------------------------------------------------------------
+Qwen3.8 at Day 0: 2.4T-Scale Inference with TokenSpeed | LightSeek Foundation (https://lightseek.org/blog/tokenspeed-qwen3-8.html)
+citeturn40view1 [wordlim: 200] Crawled: today; Content type: text/html; Source: open({"ref_id":"https://lightseek.org/blog/tokenspeed-qwen3-8.html","lineno":null}); Total lines: 102

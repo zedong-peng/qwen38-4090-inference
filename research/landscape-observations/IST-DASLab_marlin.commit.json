@@ -1,0 +1,101 @@
+{
+  "sha": "1f25790bdd49fba53106164a24666dade68d7c90",
+  "node_id": "C_kwDOLGBjctoAKDFmMjU3OTBiZGQ0OWZiYTUzMTA2MTY0YTI0NjY2ZGFkZTY4ZDdjOTA",
+  "commit": {
+    "author": {
+      "name": "Dan Alistarh",
+      "email": "d.alistarh@gmail.com",
+      "date": "2024-09-04T13:35:00Z"
+    },
+    "committer": {
+      "name": "GitHub",
+      "email": "noreply@github.com",
+      "date": "2024-09-04T13:35:00Z"
+    },
+    "message": "Update README.md to point to arxiv paper",
+    "tree": {
+      "sha": "24b7186520d4ca042dca3761456bb631138a19f8",
+      "url": "https://api.github.com/repos/IST-DASLab/marlin/git/trees/24b7186520d4ca042dca3761456bb631138a19f8"
+    },
+    "url": "https://api.github.com/repos/IST-DASLab/marlin/git/commits/1f25790bdd49fba53106164a24666dade68d7c90",
+    "comment_count": 0,
+    "verification": {
+      "verified": true,
+      "reason": "valid",
+      "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJm2GIECRC1aQ7uu5UhlAAAA8sQABoJvM0pyVHHQWz5b8Q4jjaR\nyWfEA5OIncjMXoQw/DozfHxCv5Y5EZykva1b09y1in6PkjRCzH4OEd4rdBIwabfJ\ng5V6vsmotdEZJMfe75qaUqLCRel4Af66x6dA6g6oV2XlqItmyLlfouGaPerbT3HC\nMJa43hMB6DgPrssqeyW9x3tckJNzbTxuQBBlsWEhVT6OnkaSKJ4QJfN7OON71BvH\ndUcEDZvv1xOu1bDQ3tTiiWdsDo0jYjQDi3923G3GbNybsYdlgKUVo6HNswOnC2/i\nuyw21jXhO28B4fLIa44jSOoP2lXEdDvV2MjxWRz1ChlT7C//9n6wB+/lcJZwKjwF\np8RrPLdiVO3KevI2IZY6HmqdSZDl9yTfMLkT1fedDN15HuQ7qcS9UdwxWOzw+gMj\nnwId5z8eyFN3U/BheCM5P6jXD0OBUrKvmB5hg6KWspAAymbAfU+rgAaQj8TLL1S7\njFWDI1muopPNIMItXVICYxUjvk+x5ueuy/OmrbUAy87zxkswha0i2LiyHSLd0G1x\nygrduCcA4p4vIF/TNk1ewgIilnWM7wGhyZZAuuyKx07bwW7KPFyzexSbgBUI55lU\nDbGwYPGu1ie3Bxe6kS1nNYZWsXW3O6LsV/ltKgB2DzgImL12cvDTRU/6Hf3IABAi\nokhNWjhUVrS1KgNaC2U/\n=irnM\n-----END PGP SIGNATURE-----\n",
+      "payload": "tree 24b7186520d4ca042dca3761456bb631138a19f8\nparent 2f6d7c10e124b3c5fa29ff8d77d568bd7af3274c\nauthor Dan Alistarh <d.alistarh@gmail.com> 1725456900 +0200\ncommitter GitHub <noreply@github.com> 1725456900 +0200\n\nUpdate README.md to point to arxiv paper",
+      "verified_at": "2024-11-05T19:32:20Z"
+    }
+  },
+  "url": "https://api.github.com/repos/IST-DASLab/marlin/commits/1f25790bdd49fba53106164a24666dade68d7c90",
+  "html_url": "https://github.com/IST-DASLab/marlin/commit/1f25790bdd49fba53106164a24666dade68d7c90",
+  "comments_url": "https://api.github.com/repos/IST-DASLab/marlin/commits/1f25790bdd49fba53106164a24666dade68d7c90/comments",
+  "author": {
+    "login": "dalistarh",
+    "id": 16536782,
+    "node_id": "MDQ6VXNlcjE2NTM2Nzgy",
+    "avatar_url": "https://avatars.githubusercontent.com/u/16536782?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/dalistarh",
+    "html_url": "https://github.com/dalistarh",
+    "followers_url": "https://api.github.com/users/dalistarh/followers",
+    "following_url": "https://api.github.com/users/dalistarh/following{/other_user}",
+    "gists_url": "https://api.github.com/users/dalistarh/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/dalistarh/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/dalistarh/subscriptions",
+    "organizations_url": "https://api.github.com/users/dalistarh/orgs",
+    "repos_url": "https://api.github.com/users/dalistarh/repos",
+    "events_url": "https://api.github.com/users/dalistarh/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/dalistarh/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "web-flow",
+    "id": 19864447,
+    "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/web-flow",
+    "html_url": "https://github.com/web-flow",
+    "followers_url": "https://api.github.com/users/web-flow/followers",
+    "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+    "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+    "organizations_url": "https://api.github.com/users/web-flow/orgs",
+    "repos_url": "https://api.github.com/users/web-flow/repos",
+    "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/web-flow/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "2f6d7c10e124b3c5fa29ff8d77d568bd7af3274c",
+      "url": "https://api.github.com/repos/IST-DASLab/marlin/commits/2f6d7c10e124b3c5fa29ff8d77d568bd7af3274c",
+      "html_url": "https://github.com/IST-DASLab/marlin/commit/2f6d7c10e124b3c5fa29ff8d77d568bd7af3274c"
+    }
+  ],
+  "stats": {
+    "total": 12,
+    "additions": 5,
+    "deletions": 7
+  },
+  "files": [
+    {
+      "sha": "ae24af61fed1ede9f06ca8f3b3b2985a1d93f12a",
+      "filename": "README.md",
+      "status": "modified",
+      "additions": 5,
+      "deletions": 7,
+      "changes": 12,
+      "blob_url": "https://github.com/IST-DASLab/marlin/blob/1f25790bdd49fba53106164a24666dade68d7c90/README.md",
+      "raw_url": "https://github.com/IST-DASLab/marlin/raw/1f25790bdd49fba53106164a24666dade68d7c90/README.md",
+      "contents_url": "https://api.github.com/repos/IST-DASLab/marlin/contents/README.md?ref=1f25790bdd49fba53106164a24666dade68d7c90",
+      "patch": "@@ -139,12 +139,10 @@ We note that this GPTQ example is currently intended mostly as a demonstration o\n If you found this work useful, please consider citing:\n \n ```\n-@misc{frantar2024marlin,\n-  author = {Frantar, Elias and Alistarh, Dan},\n-  title = {Marlin: a fast 4-bit inference kernel for medium batchsizes},\n-  year = {2024},\n-  publisher = {GitHub},\n-  journal = {GitHub repository},\n-  howpublished = {\\url{https://github.com/IST-DASLab/marlin}}\n+@article{frantar2024marlin,\n+  title={MARLIN: Mixed-Precision Auto-Regressive Parallel Inference on Large Language Models},\n+  author={Frantar, Elias and Castro, Roberto L and Chen, Jiale and Hoefler, Torsten and Alistarh, Dan},\n+  journal={arXiv preprint arXiv:2408.11743},\n+  year={2024}\n }\n ```"
+    }
+  ]
+}

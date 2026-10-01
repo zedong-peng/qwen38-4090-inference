@@ -1,0 +1,123 @@
+schema_version: 1
+paper:
+  title: Efficient Memory Management for Large Language Model Serving with PagedAttention
+  slug: vllm-2023
+  topic: llm-inference
+  arxiv_id: '2309.06180'
+  doi: 10.1145/3600006.3613165
+  selected_version: v1
+  authors:
+  - Kwon, Woosuk
+  - Li, Zhuohan
+  - Zhuang, Siyuan
+  - Sheng, Ying
+  - Zheng, Lianmin
+  - Yu, Cody Hao
+  - Gonzalez, Joseph E.
+  - Zhang, Hao
+  - Stoica, Ion
+  canonical_url: https://arxiv.org/abs/2309.06180v1
+  publication_note: SOSP 2023；主 TeX 含会议元数据与 DOI 10.1145/3600006.3613165
+assets:
+- kind: tex_source
+  url: https://arxiv.org/src/2309.06180v1
+  resolved_url: https://arxiv.org/src/2309.06180v1
+  version: v1
+  path: paper-tex/archives/2309.06180v1.tar.gz
+  original_filename: null
+  filename_provenance: derived
+  format: tar.gz
+  retrieved_at: '2026-09-14T09:34:25.469396+00:00'
+  bytes: 850947
+  sha256: 82f82c338a4df3a5548e0770da9ef2c7a6d3e8feddbfdfb744ecf12cde30c4f2
+  status: downloaded
+  error: null
+  extraction:
+    status: extracted
+    path: paper-tex/extracted/2309.06180v1
+    error: null
+  filename_note: Derived from arXiv identifier, selected version and detected format;
+    original response filename not captured.
+- kind: pdf
+  url: https://arxiv.org/pdf/2309.06180v1
+  resolved_url: https://arxiv.org/pdf/2309.06180v1
+  version: v1
+  path: paper-pdf/2309.06180v1.pdf
+  original_filename: null
+  filename_provenance: derived
+  format: pdf
+  retrieved_at: '2026-09-14T09:34:28.538450+00:00'
+  bytes: 1459631
+  sha256: 55b3b324d779a67c59dac2519445e3b07c14e6ff5c656fadb47a3d7b5997469e
+  status: downloaded
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  filename_note: Derived from arXiv identifier, selected version and detected format;
+    original response filename not captured.
+repositories:
+- url: https://github.com/vllm-project/vllm
+  path: github-repo/vllm
+  commit: 79f0be21ff4044d53f0a6f911422b9f52064639c
+  branch: main
+  retrieved_at: '2026-09-14'
+  submodule_status: none_declared
+  inspection_scope:
+  - path: README.md
+    scope: selected interfaces/methods; not a complete repository audit
+  - path: vllm/v1/core/kv_cache_manager.py
+    scope: selected interfaces/methods; not a complete repository audit
+  - path: vllm/v1/core/sched/scheduler.py
+    scope: selected interfaces/methods; not a complete repository audit
+  - path: vllm/config/scheduler.py
+    scope: selected interfaces/methods; not a complete repository audit
+  status: inspected
+  execution: not_run
+reading:
+  status: read
+  source: tex
+  paths:
+  - paper-tex/extracted/2309.06180v1/main.tex
+  - paper-tex/extracted/2309.06180v1/intro.tex
+  - paper-tex/extracted/2309.06180v1/eval.tex
+  - paper-tex/extracted/2309.06180v1/discussion.tex
+  - paper-tex/extracted/2309.06180v1/related_work.tex
+  - paper-tex/extracted/2309.06180v1/conclusion.tex
+  scope:
+  - main.tex
+  - intro.tex
+  - eval.tex
+  - discussion.tex
+  - related_work.tex
+  - conclusion.tex
+  fallback_reason: null
+  note: Main text and appendix read; bibliography used as source pointers, not all
+    cited works read.
+  figures_inspected:
+  - paper-tex/extracted/2309.06180v1/figures/logical-and-physical-block-table.pdf
+ingest:
+  status: processed
+  updated_at: '2026-09-14'
+  exceptions: []
+identity_evidence:
+  path: abstract.html
+  url: https://arxiv.org/abs/2309.06180
+  retrieved_at: '2026-09-14'
+  bytes: 43425
+  sha256: de9353854db4e16af0c63f73502f7e463f03bdc4f3c98f3fcd377fe1c625ed08
+  method: citation_title/citation_author and submission-history version IDs; matched
+    PDF first-page title
+reproduction:
+  status: not_run
+  note: No downloaded code, build, model inference, training, simulator or benchmark
+    executed.
+archive_distribution:
+  snapshot_date: '2026-10-02'
+  original_cache: .local/originals/llm-inference/assets/vllm-2023
+  original_metadata: .local/originals/llm-inference/assets/vllm-2023/metadata.yaml
+  source_hash_semantics: Original asset sha256/bytes are preserved as historical provenance.
+    Public sanitized file hashes are in archives/public-files.json.
+  full_papers_and_upstream_repos: local_only; recover from canonical URLs and fixed
+    revisions in archives/

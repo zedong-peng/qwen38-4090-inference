@@ -1,0 +1,94 @@
+{
+  "gpu_execution": false,
+  "runner_sha256": "57671c8682c815c1182d15e625e1c780f1010ce4350f520581b5881296ae0a47",
+  "remote_py_compile": [
+    "run_ninfer_modes.py",
+    "benchmark_http.py"
+  ],
+  "active_foreign_listener": {
+    "passed": true,
+    "server_spawned": false,
+    "foreign_listener_still_active": true
+  },
+  "old_bind_guard_error": 98,
+  "time_wait": {
+    "passed": true,
+    "linux_state_06_verified": true,
+    "serial_mock_modes": [
+      0,
+      3
+    ],
+    "events": [
+      {
+        "label": "timewait-accepted-k0",
+        "command": [
+          "/mock/no-gpu-server",
+          "/mock/no-model",
+          "--host",
+          "127.0.0.1",
+          "--port",
+          "46531",
+          "--model-id",
+          "qwen3.8-27b",
+          "--max-context",
+          "4096",
+          "--kv-capacity",
+          "4096",
+          "--max-concurrency",
+          "1",
+          "--prefill-chunk",
+          "1024",
+          "--kv-dtype",
+          "int8",
+          "--no-prefix-reuse",
+          "--greedy",
+          "--request-log-jsonl",
+          "/tmp/qwen38-runner-guard-w34aywiu/timewait/timewait-accepted-k0.requests.jsonl"
+        ],
+        "visible_gpu": 3,
+        "startup_s": 8.483976125717163e-05,
+        "ready": true,
+        "benchmark_exit_code": 0,
+        "server_exit_code": 0
+      },
+      {
+        "label": "timewait-accepted-k3",
+        "command": [
+          "/mock/no-gpu-server",
+          "/mock/no-model",
+          "--host",
+          "127.0.0.1",
+          "--port",
+          "46531",
+          "--model-id",
+          "qwen3.8-27b",
+          "--max-context",
+          "4096",
+          "--kv-capacity",
+          "4096",
+          "--max-concurrency",
+          "1",
+          "--prefill-chunk",
+          "1024",
+          "--kv-dtype",
+          "int8",
+          "--no-prefix-reuse",
+          "--greedy",
+          "--request-log-jsonl",
+          "/tmp/qwen38-runner-guard-w34aywiu/timewait/timewait-accepted-k3.requests.jsonl",
+          "--spec",
+          "mtp",
+          "--draft-tokens",
+          "3",
+          "--lm-head-draft"
+        ],
+        "visible_gpu": 3,
+        "startup_s": 6.496906280517578e-05,
+        "ready": true,
+        "benchmark_exit_code": 0,
+        "server_exit_code": 0
+      }
+    ]
+  },
+  "request_penalties_zero": true
+}

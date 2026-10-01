@@ -1,0 +1,122 @@
+[
+  {
+    "repo": "Neroued/ninfer",
+    "stars": 2552,
+    "pushed": "2026-09-30T02:50:22Z",
+    "commit": "d44ab58408aa389728cd8b1ee50179527e1f3e0d",
+    "branch": "master"
+  },
+  {
+    "repo": "sergiuszm/ninfer-4090",
+    "stars": 179,
+    "pushed": "2026-09-23T12:51:56Z",
+    "commit": "aeeba414459d5d6989d57d8487c9d7a2f54bddd3",
+    "branch": "rtx4090-port"
+  },
+  {
+    "repo": "jram4/ninfer-4090",
+    "stars": 11,
+    "pushed": "2026-09-24T17:47:19Z",
+    "commit": "70ebb1290dc7abe246c20696a24d21f77faee8d4",
+    "branch": "main"
+  },
+  {
+    "repo": "turboderp-org/exllamav3",
+    "stars": 1561,
+    "pushed": "2026-09-30T19:55:34Z",
+    "commit": "d3739fd393337b1ff4d6c2a342b12f0c87a9592f",
+    "branch": "master"
+  },
+  {
+    "repo": "theroyallab/tabbyAPI",
+    "stars": 1448,
+    "pushed": "2026-09-28T17:40:35Z",
+    "commit": "be74bf0a00bcb3a518e6feb7606f150c189be637",
+    "branch": "main"
+  },
+  {
+    "repo": "ikawrakow/ik_llama.cpp",
+    "stars": 3270,
+    "pushed": "2026-09-30T05:16:35Z",
+    "commit": "32cddbfcefed93896a39c64e7c38c119de8682e6",
+    "branch": "main"
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "stars": 129984,
+    "pushed": "2026-09-30T20:20:08Z",
+    "commit": "a4d880fd5c7f88713ded6db9f0111893bd78afa6",
+    "branch": "master"
+  },
+  {
+    "repo": "LostRuins/koboldcpp",
+    "stars": 11913,
+    "pushed": "2026-09-30T16:08:41Z",
+    "commit": "4959b8d3695cf740c1e2d508bedabdea70cbbd44",
+    "branch": "concedo"
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "stars": 36673,
+    "pushed": "2026-09-30T20:14:33Z",
+    "commit": "4407a21f3c390b4c34c367ac8a7eddaa45138f56",
+    "branch": "main"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "stars": 92999,
+    "pushed": "2026-09-30T19:43:14Z",
+    "commit": "3eb6cec22ad9bb098393021b956feaa97081fc85",
+    "branch": "main"
+  },
+  {
+    "repo": "NVIDIA/TensorRT-LLM",
+    "stars": 14749,
+    "pushed": "2026-09-30T18:50:22Z",
+    "commit": "14863787ca197b138fbea5c2c501ad0b64bf6922",
+    "branch": "main"
+  },
+  {
+    "repo": "InternLM/lmdeploy",
+    "stars": 8101,
+    "pushed": "2026-09-28T07:04:58Z",
+    "commit": "110965c7706bbbeb31e21df5d7ef2531fe01c935",
+    "branch": "main"
+  },
+  {
+    "repo": "mlc-ai/mlc-llm",
+    "stars": 23201,
+    "pushed": "2026-09-30T17:15:46Z",
+    "commit": "5dbf75d8521a08b5169ecf63ac4698ddd0901aca",
+    "branch": "main"
+  },
+  {
+    "repo": "Tiiny-AI/PowerInfer",
+    "stars": 9814,
+    "pushed": "2026-05-11T06:48:06Z",
+    "commit": "8bd56d69906c9d2dba4d3bf6899763401e01a9a4",
+    "branch": "main"
+  },
+  {
+    "repo": "ollama/ollama",
+    "stars": 181970,
+    "pushed": "2026-09-30T02:33:25Z",
+    "commit": "1abe35e6e6e777e858bbfbba283667ee8d516801",
+    "branch": "main"
+  },
+  {
+    "repo": "LMStudio-ai/lmstudio-python",
+    "stars": 877,
+    "pushed": "2025-10-27T02:07:44Z",
+    "commit": "16796832c1665985c73f5a9e938cbf17b40adf02",
+    "branch": "main"
+  },
+  {
+    "repo": "jram4/Cinference",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "repo": "WaveCut/ninfer-all",
+    "error": "HTTP Error 404: Not Found"
+  }
+]

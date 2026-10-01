@@ -1,0 +1,102 @@
+schema_version: 1
+paper:
+  title: 'DFlash: Block Diffusion for Flash Speculative Decoding'
+  slug: dflash-2026
+  topic: llm-inference
+  arxiv_id: '2602.06036'
+  doi: null
+  selected_version: v2
+  canonical_url: https://arxiv.org/abs/2602.06036v2
+  authors:
+  - Chen, Jian
+  - Liang, Yesheng
+  - Liu, Zhijian
+  publication_note: ICML 2026，camera-ready；证据 arXiv 2602.06036v2（2026-05-28）。此论文介绍DFlash第一代，DFlash2另有2026-08-18官方博客。
+assets:
+- kind: tex_source
+  url: https://arxiv.org/src/2602.06036v2
+  resolved_url: https://arxiv.org/src/2602.06036v2
+  version: v2
+  path: paper-tex/archives/2602.06036v2.tar.gz
+  original_filename: null
+  filename_provenance: derived
+  format: tar.gz
+  retrieved_at: '2026-09-30T20:24:11.902592+00:00'
+  bytes: 146838
+  sha256: 576eae469e35a5c23ba5096c9dc96b9d81b7af39cc99f18d2c3389c65e86988d
+  status: downloaded
+  error: null
+  extraction:
+    status: extracted
+    path: paper-tex/extracted/2602.06036v2
+    error: null
+- kind: pdf
+  url: https://arxiv.org/pdf/2602.06036v2
+  resolved_url: https://arxiv.org/pdf/2602.06036v2
+  version: v2
+  path: paper-pdf/2602.06036v2.pdf
+  original_filename: null
+  filename_provenance: derived
+  format: pdf
+  retrieved_at: '2026-09-30T20:24:11.902592+00:00'
+  bytes: 499459
+  sha256: ffa514e6ce180eb1f7a39c49372f3b8170b99f8bc142d4a4daa0f087bf2ceb91
+  status: downloaded
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+repositories:
+- url: https://github.com/z-lab/dflash
+  path: github-repo/dflash
+  commit: 07ebd93db9f472af339b644bb70221ad8428328a
+  branch: main
+  retrieved_at: '2026-09-30T20:24:11.902592+00:00'
+  submodule_status: none_declared
+  inspection_scope:
+  - path: README.md
+    scope: README or selected entry point/interfaces; not a full implementation audit
+  - path: dflash/benchmark.py
+    scope: README or selected entry point/interfaces; not a full implementation audit
+  - path: dflash/model.py
+    scope: README or selected entry point/interfaces; not a full implementation audit
+  status: inspected
+  execution: not_run
+reading:
+  status: partial
+  source: tex
+  paths:
+  - paper-tex/extracted/2602.06036v2/sections/method.tex
+  - paper-tex/extracted/2602.06036v2/sections/exp.tex
+  scope:
+  - 方法/训练定向阅读
+  - setup、Instruct Models、长context与SGLang数据/部分消融定向阅读；未完整读全部结果表和附录
+  fallback_reason: null
+  note: TeX source-first targeted reading; PDF first-page title/author/version identity
+    checked with PyMuPDF. No complete-paper or appendix reading claim.
+ingest:
+  status: extracted
+  updated_at: '2026-10-01'
+  exceptions:
+  - Partial reading; navigation/log integration handled by parent task; do not mark
+    processed.
+reproduction:
+  status: not_run
+  note: Paper-archive task did not execute downloaded code or GPU inference.
+identity_evidence:
+  path: abstract.html
+  url: https://arxiv.org/abs/2602.06036
+  retrieved_at: '2026-09-30T20:24:11.902592+00:00'
+  bytes: 41293
+  sha256: 142506d0a05a56448704f849938aa54197b678212507ae2c09cebb9b630ae113
+  method: arXiv HTML identifier/version/authors + downloaded PDF first-page title
+    and author verification + selected TeX title
+archive_distribution:
+  snapshot_date: '2026-10-02'
+  original_cache: .local/originals/llm-inference/assets/dflash-2026
+  original_metadata: .local/originals/llm-inference/assets/dflash-2026/metadata.yaml
+  source_hash_semantics: Original asset sha256/bytes are preserved as historical provenance.
+    Public sanitized file hashes are in archives/public-files.json.
+  full_papers_and_upstream_repos: local_only; recover from canonical URLs and fixed
+    revisions in archives/

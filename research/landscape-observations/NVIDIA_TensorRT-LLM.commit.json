@@ -1,0 +1,113 @@
+{
+  "sha": "14863787ca197b138fbea5c2c501ad0b64bf6922",
+  "node_id": "C_kwDOKH5No9oAKDE0ODYzNzg3Y2ExOTdiMTM4ZmJlYTVjMmM1MDFhZDBiNjRiZjY5MjI",
+  "commit": {
+    "author": {
+      "name": "Chulian Zhang",
+      "email": "zhangcl@users.noreply.github.com",
+      "date": "2026-09-30T18:28:49Z"
+    },
+    "committer": {
+      "name": "GitHub",
+      "email": "noreply@github.com",
+      "date": "2026-09-30T18:28:49Z"
+    },
+    "message": "[None][fix] Move the CuteDSL locality domain weight split into staged hooks (#19644)\n\nSigned-off-by: Chulian Zhang <851104+zhangcl@users.noreply.github.com>\nCo-authored-by: Chulian Zhang <851104+zhangcl@users.noreply.github.com>",
+    "tree": {
+      "sha": "7ad1f892209b1c4d72dffc891b8993b9bd1b3554",
+      "url": "https://api.github.com/repos/NVIDIA/TensorRT-LLM/git/trees/7ad1f892209b1c4d72dffc891b8993b9bd1b3554"
+    },
+    "url": "https://api.github.com/repos/NVIDIA/TensorRT-LLM/git/commits/14863787ca197b138fbea5c2c501ad0b64bf6922",
+    "comment_count": 0,
+    "verification": {
+      "verified": true,
+      "reason": "valid",
+      "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqvVThCRC1aQ7uu5UhlAAAN6wQAFy/EkMLG37nmOzv8g4vGyJV\n1qYiaBI3X4KqCne0wof7XmW6qhPhnIDJ2SDy/8lXNhRaXgesOGnuF6DyHiqTuZl+\njYScuAT+ZKmQNAxL+9J72WAlMJ0T9Otak/2bUHhK9toUxKJss1mRZq3ZFgbfrmn5\npv3n1ssuZqooiwxZq6pQ7hL8ycBHCLyjYEtA3glOo1ShM3LbrhWZaQhsvoCqBVUB\ndg5mPbhWmpfu4+UROcykG6EIHrHvdljh4igMcZuC5WbeC/VGiOmdQYZxU9SwT3un\neWapKRohDu0rNPO3YU+xe7uy3VeNzjT0wmMBOC+ffHVA6N224GnBcGjb1eamqmky\n6W5cU8AiY8Gxf1+wfLemGd2Cm2dKnXO+/OPH8pbuWGAjam4U4f/2CC5Tykwzyy2J\n1zVRlEV1PF5Qio0SuHLokQ5sYrHk9Hb2FPgjITuykNw28+bmlv19So47tS8Gf21K\ng7Lipu2ugFnNv8ryJ1/Cayea10QotSXU5avTO0wI6HJTEsiO6gnNbrTB1AJv0IzN\nLHdVSMTzIcH7AEVj6/KeSqF0hJpSpUhnrF0vukrTUJEvdAQp8es+a2Bkx4zfN0jz\nzha9sDEvg7Z0CG5QPPbHGPZwduvXfXSSWFUu82twNBFdXgVfEmkonTxv6GhjekK+\ngTxHi4Lu1BLb3iPXqYs8\n=R4XO\n-----END PGP SIGNATURE-----\n",
+      "payload": "tree 7ad1f892209b1c4d72dffc891b8993b9bd1b3554\nparent f937cdec45010845de6e801860ec931072b725bd\nauthor Chulian Zhang <zhangcl@users.noreply.github.com> 1790792929 -0700\ncommitter GitHub <noreply@github.com> 1790792929 +0800\n\n[None][fix] Move the CuteDSL locality domain weight split into staged hooks (#19644)\n\nSigned-off-by: Chulian Zhang <851104+zhangcl@users.noreply.github.com>\nCo-authored-by: Chulian Zhang <851104+zhangcl@users.noreply.github.com>",
+      "verified_at": "2026-09-30T18:28:50Z"
+    }
+  },
+  "url": "https://api.github.com/repos/NVIDIA/TensorRT-LLM/commits/14863787ca197b138fbea5c2c501ad0b64bf6922",
+  "html_url": "https://github.com/NVIDIA/TensorRT-LLM/commit/14863787ca197b138fbea5c2c501ad0b64bf6922",
+  "comments_url": "https://api.github.com/repos/NVIDIA/TensorRT-LLM/commits/14863787ca197b138fbea5c2c501ad0b64bf6922/comments",
+  "author": {
+    "login": "zhangcl",
+    "id": 851104,
+    "node_id": "MDQ6VXNlcjg1MTEwNA==",
+    "avatar_url": "https://avatars.githubusercontent.com/u/851104?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/zhangcl",
+    "html_url": "https://github.com/zhangcl",
+    "followers_url": "https://api.github.com/users/zhangcl/followers",
+    "following_url": "https://api.github.com/users/zhangcl/following{/other_user}",
+    "gists_url": "https://api.github.com/users/zhangcl/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/zhangcl/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/zhangcl/subscriptions",
+    "organizations_url": "https://api.github.com/users/zhangcl/orgs",
+    "repos_url": "https://api.github.com/users/zhangcl/repos",
+    "events_url": "https://api.github.com/users/zhangcl/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/zhangcl/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "web-flow",
+    "id": 19864447,
+    "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/web-flow",
+    "html_url": "https://github.com/web-flow",
+    "followers_url": "https://api.github.com/users/web-flow/followers",
+    "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+    "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+    "organizations_url": "https://api.github.com/users/web-flow/orgs",
+    "repos_url": "https://api.github.com/users/web-flow/repos",
+    "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/web-flow/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "f937cdec45010845de6e801860ec931072b725bd",
+      "url": "https://api.github.com/repos/NVIDIA/TensorRT-LLM/commits/f937cdec45010845de6e801860ec931072b725bd",
+      "html_url": "https://github.com/NVIDIA/TensorRT-LLM/commit/f937cdec45010845de6e801860ec931072b725bd"
+    }
+  ],
+  "stats": {
+    "total": 47,
+    "additions": 33,
+    "deletions": 14
+  },
+  "files": [
+    {
+      "sha": "e50f7a3623126a8eb716eec401367b385e6e96d6",
+      "filename": "tensorrt_llm/_torch/moe/fused_moe/fused_moe_cute_dsl.py",
+      "status": "modified",
+      "additions": 20,
+      "deletions": 7,
+      "changes": 27,
+      "blob_url": "https://github.com/NVIDIA/TensorRT-LLM/blob/14863787ca197b138fbea5c2c501ad0b64bf6922/tensorrt_llm%2F_torch%2Fmoe%2Ffused_moe%2Ffused_moe_cute_dsl.py",
+      "raw_url": "https://github.com/NVIDIA/TensorRT-LLM/raw/14863787ca197b138fbea5c2c501ad0b64bf6922/tensorrt_llm%2F_torch%2Fmoe%2Ffused_moe%2Ffused_moe_cute_dsl.py",
+      "contents_url": "https://api.github.com/repos/NVIDIA/TensorRT-LLM/contents/tensorrt_llm%2F_torch%2Fmoe%2Ffused_moe%2Ffused_moe_cute_dsl.py?ref=14863787ca197b138fbea5c2c501ad0b64bf6922",
+      "patch": "@@ -924,9 +924,9 @@ def __init__(\n \n         self.scaling_vector_size = 16\n         # locality domain: fork/join with _locality_domain kernel variants + shared output buffers.\n-        # Weight splitting happens in post_load_weights after normal loading.\n+        # Weight splitting happens in transform_weights after normal loading.\n         self._locality_domain_runtime = None\n-        self._locality_domain_weight_shards = None  # set in post_load_weights\n+        self._locality_domain_weight_shards = None  # set in transform_weights\n         planner = LocalityDomainExecutionPlanner(\n             model_config.locality_domain_policy)\n         self._locality_domain_plan = planner.plan_moe(\n@@ -2040,21 +2040,34 @@ def load_weights(self,\n                              allow_partial_loading=allow_partial_loading)\n         # Keep DWDP registration after base weight loading. This preserves\n         # loaded tensors for collector setup and remains compatible with the\n-        # later locality domain post_load_weights splitting flow.\n+        # later locality domain transform_weights splitting flow.\n         dwdp_handle_collector = getattr(self, \"dwdp_handle_collector\", None)\n         if dwdp_handle_collector is not None:\n             dwdp_handle_collector.register_weights(self)\n \n-    def post_load_weights(self):\n-        super().post_load_weights()\n+    def transform_weights(self) -> None:\n+        if getattr(self, \"_weights_transformed\", False):\n+            return\n+        super().transform_weights()\n         # Split full weights into per-partition halves on localized memory\n         if self._locality_domain_runtime is not None:\n             self._locality_domain_weight_shards = self._split_weights_for_locality_domain(\n             )\n+            self._release_full_weights_after_locality_domain_split()\n+\n+    def cache_derived_state(self) -> None:\n+        super().cache_derived_state()\n+        if self._locality_domain_runtime is not None:\n+            # Staged loads (e.g. GMS read-only, MX receiver) skip transform_weights,\n+            # which builds the shards, and do not carry them over from the source.\n+            if self._locality_domain_weight_shards is None:\n+                raise NotImplementedError(\n+                    \"Locality domain CuteDslFusedMoE requires transform_weights() \"\n+                    \"to build its weight shards; staged loads that skip it are \"\n+                    \"not supported\")\n             # Weight splitting initializes the process-lifetime locality domain resource.\n             # Resolve the borrowed remainder stream now, never during capture.\n             self._get_reserved_moe_output_memset_stream()\n-            self._release_full_weights_after_locality_domain_split()\n \n     def _release_full_weights_after_locality_domain_split(self):\n         \"\"\"Release full tensors that are replaced by localized locality domain shards.\"\"\"\n@@ -2077,7 +2090,7 @@ def _release_full_weights_after_locality_domain_split(self):\n     def _split_weights_for_locality_domain(self):\n         \"\"\"Split full N-dimension weights into per-partition halves.\n \n-        After normal load_weights + post_load_weights, the full weights\n+        After normal load_weights + the base transform_weights, the full weights\n         are on self. Split them along dim=1 (N) and allocate halves on\n         each locality domain partition's localized memory.\n         \"\"\""
+    },
+    {
+      "sha": "2747d89a870c37b82b65849ad92fde22863c91c6",
+      "filename": "tests/unittest/_torch/thop/parallel/test_cute_dsl_moe.py",
+      "status": "modified",
+      "additions": 13,
+      "deletions": 7,
+      "changes": 20,
+      "blob_url": "https://github.com/NVIDIA/TensorRT-LLM/blob/14863787ca197b138fbea5c2c501ad0b64bf6922/tests%2Funittest%2F_torch%2Fthop%2Fparallel%2Ftest_cute_dsl_moe.py",
+      "raw_url": "https://github.com/NVIDIA/TensorRT-LLM/raw/14863787ca197b138fbea5c2c501ad0b64bf6922/tests%2Funittest%2F_torch%2Fthop%2Fparallel%2Ftest_cute_dsl_moe.py",
+      "contents_url": "https://api.github.com/repos/NVIDIA/TensorRT-LLM/contents/tests%2Funittest%2F_torch%2Fthop%2Fparallel%2Ftest_cute_dsl_moe.py?ref=14863787ca197b138fbea5c2c501ad0b64bf6922",
+      "patch": "@@ -4213,9 +4213,7 @@ def create_module(enable_locality_domains: bool):\n                     \"fc1_weight_block\": backend.quant_scales.fc1_weight_block.untyped_storage().data_ptr(),\n                     \"fc2_weight_block\": backend.quant_scales.fc2_weight_block.untyped_storage().data_ptr(),\n                 }\n-            # The locality domain split only runs in the backend's post_load_weights.\n-            # TODO: Follow-up PR to move it into the staged hooks and call moe.post_load_weights().\n-            backend.post_load_weights()\n+            moe.post_load_weights()\n             moe.cuda()\n             return moe, source_storage_ptrs\n \n@@ -4303,7 +4301,7 @@ def test_moe_module_bf16_locality_domain_lifecycle_and_forward_rubin():\n         pretrained_config.intermediate_size = intermediate_size\n         pretrained_config.torch_dtype = dtype\n \n-        def create_module(enable_locality_domains: bool):\n+        def create_module(enable_locality_domains: bool, post_load: bool = True):\n             model_config = ModelConfig(\n                 pretrained_config=pretrained_config,\n                 quant_config=quant_config,\n@@ -4334,9 +4332,8 @@ def create_module(enable_locality_domains: bool):\n                     backend.w3_w1_weight.untyped_storage().data_ptr(),\n                     backend.w2_weight.untyped_storage().data_ptr(),\n                 )\n-            # The locality domain split only runs in the backend's post_load_weights.\n-            # TODO: Follow-up PR to move it into the staged hooks and call moe.post_load_weights().\n-            backend.post_load_weights()\n+            if post_load:\n+                moe.post_load_weights()\n             moe.cuda()\n             return moe, full_w3_w1, full_w2, source_storage_ptrs\n \n@@ -4357,6 +4354,10 @@ def create_module(enable_locality_domains: bool):\n         assert locality_domain_backend.w3_w1_weight.numel() == 0\n         assert locality_domain_backend.w2_weight.numel() == 0\n \n+        # The split is a one-time transform: a repeated post-load keeps the shards.\n+        locality_domain_moe.post_load_weights()\n+        assert locality_domain_backend._locality_domain_weight_shards is shards\n+\n         # Keep the production-shape lifecycle and public ConfigurableMoE\n         # forward integration here. Broad accuracy, autotune, capture, and\n         # outer-tile replay are covered by the unified backend matrix.\n@@ -4367,6 +4368,11 @@ def create_module(enable_locality_domains: bool):\n         torch.cuda.synchronize()\n         torch.testing.assert_close(base_output, locality_domain_output, rtol=1e-2, atol=0.15)\n \n+        # A staged load skips transform_weights and only refreshes derived state.\n+        staged_moe, _, _, _ = create_module(True, post_load=False)\n+        with pytest.raises(NotImplementedError, match=\"staged loads\"):\n+            staged_moe.cache_derived_state()\n+\n \n @pytest.mark.skipif(\n     get_sm_version() != 107,"
+    }
+  ]
+}

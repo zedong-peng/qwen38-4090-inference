@@ -1,0 +1,125 @@
+{
+  "sha": "96788348627b6a079fcc3ef7fc6676a970965d7b",
+  "node_id": "C_kwDOTL-bn9oAKDk2Nzg4MzQ4NjI3YjZhMDc5ZmNjM2VmN2ZjNjY3NmE5NzA5NjVkN2I",
+  "commit": {
+    "author": {
+      "name": "Ettore Di Giacinto",
+      "email": "mudler@localai.io",
+      "date": "2026-09-30T17:00:33Z"
+    },
+    "committer": {
+      "name": "Ettore Di Giacinto",
+      "email": "mudler@localai.io",
+      "date": "2026-09-30T17:05:39Z"
+    },
+    "message": "fix(engine): let the outer eos win in the from_model_config fallback\n\nThe fresh review of 53d58da46 failed it on one finding. When no\ngeneration_config.json exists, the new model_config_eos_ids always read the\ntext config's eos_token_id, but GenerationConfig.from_model_config lets the\nouter config's eos_token_id win and uses the text config only when the outer\none is unset. A nested checkpoint that names one eos at the top and another\ninside therefore gained a stop id it did not have before, which is exactly\nthe change to an already-listing checkpoint that the spec forbids. The loader\nnow reads the outer value first. A new test (top-level 248046, text_config\n248044, no generation_config.json) is red on 53d58da46 and green after; the\nTev1 shape, which names no top-level eos, is unchanged.\n\nThe review's second, low finding (the fallback reads only the sibling\ntokenizer_config.json, not a --tokenizer-config override) is recorded under\nOwed in the spec.\n\nRefs ISSUE-LOCAL-01M3RTGVTN34YQFBR1KZH117XA.\n\nFOLLOWING_AGENTS_PROTOCOL\n\nFollowing-Agents-Protocol: true\nAI-Assisted: true\nAssisted-by: AGENT:claude-opus-5-5 [claude-code]\nSigned-off-by: Ettore Di Giacinto <mudler@localai.io>",
+    "tree": {
+      "sha": "e5c65900f8fc0b43308ac15fd9e9b7fd417cca3e",
+      "url": "https://api.github.com/repos/mudler/vllm.cpp/git/trees/e5c65900f8fc0b43308ac15fd9e9b7fd417cca3e"
+    },
+    "url": "https://api.github.com/repos/mudler/vllm.cpp/git/commits/96788348627b6a079fcc3ef7fc6676a970965d7b",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/mudler/vllm.cpp/commits/96788348627b6a079fcc3ef7fc6676a970965d7b",
+  "html_url": "https://github.com/mudler/vllm.cpp/commit/96788348627b6a079fcc3ef7fc6676a970965d7b",
+  "comments_url": "https://api.github.com/repos/mudler/vllm.cpp/commits/96788348627b6a079fcc3ef7fc6676a970965d7b/comments",
+  "author": {
+    "login": "mudler",
+    "id": 2420543,
+    "node_id": "MDQ6VXNlcjI0MjA1NDM=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/2420543?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/mudler",
+    "html_url": "https://github.com/mudler",
+    "followers_url": "https://api.github.com/users/mudler/followers",
+    "following_url": "https://api.github.com/users/mudler/following{/other_user}",
+    "gists_url": "https://api.github.com/users/mudler/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/mudler/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/mudler/subscriptions",
+    "organizations_url": "https://api.github.com/users/mudler/orgs",
+    "repos_url": "https://api.github.com/users/mudler/repos",
+    "events_url": "https://api.github.com/users/mudler/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/mudler/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "mudler",
+    "id": 2420543,
+    "node_id": "MDQ6VXNlcjI0MjA1NDM=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/2420543?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/mudler",
+    "html_url": "https://github.com/mudler",
+    "followers_url": "https://api.github.com/users/mudler/followers",
+    "following_url": "https://api.github.com/users/mudler/following{/other_user}",
+    "gists_url": "https://api.github.com/users/mudler/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/mudler/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/mudler/subscriptions",
+    "organizations_url": "https://api.github.com/users/mudler/orgs",
+    "repos_url": "https://api.github.com/users/mudler/repos",
+    "events_url": "https://api.github.com/users/mudler/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/mudler/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "0589d1fb7e48e62257a8356ba9238aa7a3a05191",
+      "url": "https://api.github.com/repos/mudler/vllm.cpp/commits/0589d1fb7e48e62257a8356ba9238aa7a3a05191",
+      "html_url": "https://github.com/mudler/vllm.cpp/commit/0589d1fb7e48e62257a8356ba9238aa7a3a05191"
+    }
+  ],
+  "stats": {
+    "total": 45,
+    "additions": 35,
+    "deletions": 10
+  },
+  "files": [
+    {
+      "sha": "f0993c8b66e34501c2ccec7dcfd9548e5f03c716",
+      "filename": ".agents/specs/tev1-eos-fallback.md",
+      "status": "modified",
+      "additions": 8,
+      "deletions": 2,
+      "changes": 10,
+      "blob_url": "https://github.com/mudler/vllm.cpp/blob/96788348627b6a079fcc3ef7fc6676a970965d7b/.agents%2Fspecs%2Ftev1-eos-fallback.md",
+      "raw_url": "https://github.com/mudler/vllm.cpp/raw/96788348627b6a079fcc3ef7fc6676a970965d7b/.agents%2Fspecs%2Ftev1-eos-fallback.md",
+      "contents_url": "https://api.github.com/repos/mudler/vllm.cpp/contents/.agents%2Fspecs%2Ftev1-eos-fallback.md?ref=96788348627b6a079fcc3ef7fc6676a970965d7b",
+      "patch": "@@ -90,8 +90,9 @@ lists its ids keeps its stop set byte for byte.\n \n - Moving the primary EOS to the tokenizer for every model (full upstream\n   parity), with its own survey of affected checkpoints.\n-- `--tokenizer-config` pointing elsewhere: the fallback reads the sibling file\n-  only.\n+- `--tokenizer-config` (server) or `tokenizer_config_path` (C ABI) pointing\n+  elsewhere: the fallback reads the sibling file only. It matters only on the\n+  fallback path, where no other eos was found (fresh review of 53d58da46).\n \n ## Outcome\n \n@@ -114,6 +115,11 @@ lists its ids keeps its stop set byte for byte.\n   ISSUE-LOCAL-01M3RWMQD1RBNEGWZZRDSFTEPR), `test_model_loader_gguf` (a pinned\n   architecture list that predates many registrations), and\n   `test_bench_eos_chat_template` (vllm-bench has no `--no-ignore-eos`).\n+- The fresh review of 53d58da46 FAILED it on one finding: the from_model_config\n+  ids read the text config even when the outer config names an eos, so a nested\n+  checkpoint with a top-level eos and no generation_config.json gained the\n+  text config's id as a stop id. transformers lets the outer value win. Fixed\n+  in the repair commit, with a test that is red on 53d58da46 and green after.\n - Real weights, CPU: both checkpoints (the 4B from its unmodified snapshot)\n   answer the card's decision prompt with the letter alone, `finish_reason:\n   stop`, `stop_reason: null` (the primary eos), with no `stop_token_ids`."
+    },
+    {
+      "sha": "5d9f66e6290a9443dff839cf4dd3291404bd219a",
+      "filename": "src/vllm/transformers_utils/hf_config.cpp",
+      "status": "modified",
+      "additions": 15,
+      "deletions": 8,
+      "changes": 23,
+      "blob_url": "https://github.com/mudler/vllm.cpp/blob/96788348627b6a079fcc3ef7fc6676a970965d7b/src%2Fvllm%2Ftransformers_utils%2Fhf_config.cpp",
+      "raw_url": "https://github.com/mudler/vllm.cpp/raw/96788348627b6a079fcc3ef7fc6676a970965d7b/src%2Fvllm%2Ftransformers_utils%2Fhf_config.cpp",
+      "contents_url": "https://api.github.com/repos/mudler/vllm.cpp/contents/src%2Fvllm%2Ftransformers_utils%2Fhf_config.cpp?ref=96788348627b6a079fcc3ef7fc6676a970965d7b",
+      "patch": "@@ -676,17 +676,24 @@ HfConfig ParseHfConfigDoc(nlohmann::json doc, const std::string& path,\n                              e.what());\n   }\n \n-  // from_model_config's eos, read before `doc` moves into raw: the text\n-  // config's eos_token_id (int or list), sorted and unique like the file's.\n+  // from_model_config's eos, read before `doc` moves into raw, sorted and\n+  // unique like the file's. The OUTER config's eos_token_id wins; the text\n+  // config's is used only when the outer one is unset or null, as\n+  // GenerationConfig.from_model_config resolves it.\n   std::vector<int32_t> model_config_eos_ids;\n   {\n-    const auto it = text.find(\"eos_token_id\");\n-    if (it != text.end() && !it->is_null()) {\n+    const auto named = [](const nlohmann::json& j) -> const nlohmann::json* {\n+      const auto it = j.find(\"eos_token_id\");\n+      return (it == j.end() || it->is_null()) ? nullptr : &*it;\n+    };\n+    const nlohmann::json* eos = named(doc);\n+    if (eos == nullptr) eos = named(text);\n+    if (eos != nullptr) {\n       std::set<int32_t> ids;\n-      if (it->is_number_integer()) {\n-        ids.insert(it->get<int32_t>());\n-      } else if (it->is_array()) {\n-        for (const auto& e : *it) {\n+      if (eos->is_number_integer()) {\n+        ids.insert(eos->get<int32_t>());\n+      } else if (eos->is_array()) {\n+        for (const auto& e : *eos) {\n           if (e.is_number_integer()) ids.insert(e.get<int32_t>());\n         }\n       }"
+    },
+    {
+      "sha": "bb92ee8e93f3729fb1b8aac49a877f2b57cad4c8",
+      "filename": "tests/vllm/v1/test_input_processor.cpp",
+      "status": "modified",
+      "additions": 12,
+      "deletions": 0,
+      "changes": 12,
+      "blob_url": "https://github.com/mudler/vllm.cpp/blob/96788348627b6a079fcc3ef7fc6676a970965d7b/tests%2Fvllm%2Fv1%2Ftest_input_processor.cpp",
+      "raw_url": "https://github.com/mudler/vllm.cpp/raw/96788348627b6a079fcc3ef7fc6676a970965d7b/tests%2Fvllm%2Fv1%2Ftest_input_processor.cpp",
+      "contents_url": "https://api.github.com/repos/mudler/vllm.cpp/contents/tests%2Fvllm%2Fv1%2Ftest_input_processor.cpp?ref=96788348627b6a079fcc3ef7fc6676a970965d7b",
+      "patch": "@@ -608,6 +608,18 @@ TEST_CASE(\"eos fallback: a checkpoint that lists its ids keeps its stop set\") {\n   CHECK(req.sampling_params.stop_token_ids == std::vector<int32_t>{248045});\n }\n \n+TEST_CASE(\"eos fallback: a top-level eos without generation_config.json keeps its stop set\") {\n+  // from_model_config lets the OUTER eos_token_id win over text_config's, so a\n+  // nested checkpoint that names 248046 at the top and 248044 inside, with no\n+  // generation_config.json, stops on 248046 alone, before and after the change.\n+  EosModelDir model(NestedConfig(R\"(\"eos_token_id\": 248046,)\"), \"\",\n+                    R\"({\"eos_token\": \"<|endoftext|>\"})\");\n+  const EngineCoreRequest req = ProcessWith(model.config_path());\n+  REQUIRE(req.sampling_params.eos_token_id.has_value());\n+  CHECK(*req.sampling_params.eos_token_id == 248046);\n+  CHECK(req.sampling_params.stop_token_ids.empty());\n+}\n+\n TEST_CASE(\"eos fallback: the Tev1 shape stops on the tokenizer's eos_token\") {\n   // No top-level eos, no generation_config.json, eos_token <|im_end|>: vLLM's\n   // primary is 248046 and from_model_config adds the text config's 248044."
+    }
+  ]
+}

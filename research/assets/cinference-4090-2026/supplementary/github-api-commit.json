@@ -1,0 +1,125 @@
+{
+  "sha": "70ebb1290dc7abe246c20696a24d21f77faee8d4",
+  "node_id": "C_kwDOTqvlZNoAKDcwZWJiMTI5MGRjN2FiZTI0NmMyMDY5NmEyNGQyMWY3N2ZhZWU4ZDQ",
+  "commit": {
+    "author": {
+      "name": "Joshua Ramirez",
+      "email": "jram4.dev@gmail.com",
+      "date": "2026-09-24T17:28:41Z"
+    },
+    "committer": {
+      "name": "Joshua Ramirez",
+      "email": "jram4.dev@gmail.com",
+      "date": "2026-09-24T17:28:41Z"
+    },
+    "message": "docs: record sampled drafting benchmarks",
+    "tree": {
+      "sha": "2014c15f066f6fa941d7d565dd706ed60423e57a",
+      "url": "https://api.github.com/repos/jram4/ninfer-4090/git/trees/2014c15f066f6fa941d7d565dd706ed60423e57a"
+    },
+    "url": "https://api.github.com/repos/jram4/ninfer-4090/git/commits/70ebb1290dc7abe246c20696a24d21f77faee8d4",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/jram4/ninfer-4090/commits/70ebb1290dc7abe246c20696a24d21f77faee8d4",
+  "html_url": "https://github.com/jram4/ninfer-4090/commit/70ebb1290dc7abe246c20696a24d21f77faee8d4",
+  "comments_url": "https://api.github.com/repos/jram4/ninfer-4090/commits/70ebb1290dc7abe246c20696a24d21f77faee8d4/comments",
+  "author": {
+    "login": "jram4",
+    "id": 181162828,
+    "node_id": "U_kgDOCsxTTA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/181162828?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/jram4",
+    "html_url": "https://github.com/jram4",
+    "followers_url": "https://api.github.com/users/jram4/followers",
+    "following_url": "https://api.github.com/users/jram4/following{/other_user}",
+    "gists_url": "https://api.github.com/users/jram4/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/jram4/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/jram4/subscriptions",
+    "organizations_url": "https://api.github.com/users/jram4/orgs",
+    "repos_url": "https://api.github.com/users/jram4/repos",
+    "events_url": "https://api.github.com/users/jram4/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/jram4/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "jram4",
+    "id": 181162828,
+    "node_id": "U_kgDOCsxTTA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/181162828?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/jram4",
+    "html_url": "https://github.com/jram4",
+    "followers_url": "https://api.github.com/users/jram4/followers",
+    "following_url": "https://api.github.com/users/jram4/following{/other_user}",
+    "gists_url": "https://api.github.com/users/jram4/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/jram4/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/jram4/subscriptions",
+    "organizations_url": "https://api.github.com/users/jram4/orgs",
+    "repos_url": "https://api.github.com/users/jram4/repos",
+    "events_url": "https://api.github.com/users/jram4/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/jram4/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "cbf7b7e1c9e736bf8bc4ff95354fd0658447b743",
+      "url": "https://api.github.com/repos/jram4/ninfer-4090/commits/cbf7b7e1c9e736bf8bc4ff95354fd0658447b743",
+      "html_url": "https://github.com/jram4/ninfer-4090/commit/cbf7b7e1c9e736bf8bc4ff95354fd0658447b743"
+    }
+  ],
+  "stats": {
+    "total": 255,
+    "additions": 253,
+    "deletions": 2
+  },
+  "files": [
+    {
+      "sha": "b30b47eb9cd7b6ee7e17f1b4ec8fb6f31675ec2a",
+      "filename": "README.md",
+      "status": "modified",
+      "additions": 58,
+      "deletions": 2,
+      "changes": 60,
+      "blob_url": "https://github.com/jram4/ninfer-4090/blob/70ebb1290dc7abe246c20696a24d21f77faee8d4/README.md",
+      "raw_url": "https://github.com/jram4/ninfer-4090/raw/70ebb1290dc7abe246c20696a24d21f77faee8d4/README.md",
+      "contents_url": "https://api.github.com/repos/jram4/ninfer-4090/contents/README.md?ref=70ebb1290dc7abe246c20696a24d21f77faee8d4",
+      "patch": "@@ -20,8 +20,10 @@ K8V4 KV cache (FP8 keys, NVFP4 values), 188,416-token engine context, concurrenc\n \n K0 is plain autoregressive decode (no speculation); it is the raw decode baseline. Speculative\n throughput depends on how often the target model accepts the drafted tokens, so it varies by\n-roughly 3x across workloads. The 200+ tok/s figures apply to predictable output (retrieval,\n-structured data, code), not to open-ended prose.\n+roughly 3x across workloads. These 2026-09-23 figures use greedy decoding on the stock model.\n+The 200+ tok/s figures apply to predictable output (retrieval, structured data, code), not to\n+temperature-1 Claude Code traffic. [Current-branch measurements](#current-sampled-drafting-branch)\n+below keep the two workloads separate.\n \n ## Results\n \n@@ -78,6 +80,57 @@ Prefill and time to first token (TTFT) at K7:\n \n Prefill speed does not depend on K.\n \n+### Current sampled-drafting branch\n+\n+The integrated branch samples each positive-temperature MTP proposal from its own distribution\n+`q` (top-12 support) and uses target probabilities `p` for acceptance and the residual\n+`(p-q)+` after rejection. The target sampling settings are unchanged. A multiblock selector\n+keeps proposal selection inexpensive for the wide Q4 draft head. Greedy requests retain the\n+greedy proposal route. Tests cover generated `q` passed through target verification, rejection,\n+and residual correction.\n+\n+The stock-model K7 greedy matrix was rerun on 2026-09-24 with the integrated binary, the same\n+script and settings as the table above (two repetitions for short cases, one for recall). The\n+current results are essentially the same as the 2026-09-23 K7 column; the other K columns above\n+are historical controls and were not rerun.\n+\n+| Workload | Previous K7 tok/s | Current K7 tok/s |\n+|---|---:|---:|\n+| short answer | 112.2 | 111.4 |\n+| structured JSON | 228.0 | 221.6 |\n+| code | 209.1 | 209.2 |\n+| reasoning (thinking on) | 179.9 | 179.9 |\n+| prose | 87.7 | 88.8 |\n+| long generation | 96.6 | 97.3 |\n+| needle recall 8K | 275.2 | 275.5 |\n+| needle recall 32K | 263.1 | 263.4 |\n+| needle recall 64K | 247.8 | 248.1 |\n+| needle recall 131K | 226.1 | 226.1 |\n+| needle recall 189K | 209.4 | 209.6 |\n+\n+All six recall markers passed at every length. The code workload's generated unit tests failed,\n+as they did in the original matrix. The [current K7 summary](results/rtx4090-20260924-sampled/greedy-k7-summary.json)\n+contains the measured rates, acceptance, TTFT, and checks.\n+\n+A separate replay measured the workload that motivated sampled drafting: 32 successful\n+temperature-1 Claude Code requests on the abliterated model, in captured order with byte-identical\n+request bodies, prefix reuse, K7, Q4 draft head, K8V4, and seed 42. Both builds used the same\n+prompts and production flags. This is a **decode-rate** comparison, not the greedy matrix above:\n+\n+| Captured production replay | Greedy drafts | Sampled drafts | Change |\n+|---|---:|---:|---:|\n+| Aggregate decode tok/s | 127.4 | 141.6 | +11.1% |\n+| Tokens per round | 3.80 | 4.20 | +10.5% |\n+| Mean ms per round | 29.82 | 29.68 | -0.5% |\n+\n+The sampled build was faster on 27 of 32 paired requests (paired decode-rate geometric mean\n++12.5%); both runs returned HTTP 200 for all 32. Output lengths and tool-call counts differed,\n+so this replay does not assess task quality or imply matching text at a fixed seed. Exact\n+rejection correction is intended to preserve the target sampling distribution, which is covered\n+by the focused sampling and speculative-round tests. The private request bodies are not\n+redistributed; [aggregate replay data](results/rtx4090-20260924-sampled/temperature1-replay-summary.json)\n+records the measurement.\n+\n ### Comparison with the previous 4090 engine\n \n The previous FNN deployment was the [NInfer RTX 4090 port](https://github.com/jram4/ninfer-4090/tree/master)\n@@ -159,6 +212,9 @@ Perplexity was not re-measured. Prefill changed only through the bit-identical V\n \n On top of the Cinference RTX 4090 port (MTP-10, Ada fallbacks, K8V4 cache):\n \n+- **Sampled MTP drafting at positive temperature:** draft probabilities are carried into exact\n+  sparse target rejection correction, with a multiblock top-12 proposal selector for the\n+  131,072-row Q4 head. Greedy decoding continues to use greedy drafts.\n - **Faster NVFP4 V-cache decode:** E2M1 nibbles are placed directly into FP16 bits and\n   scaled with two `HMUL2`s, replacing a per-nibble switch\n   (`src/ops/kv_cache/nvfp4_group16_codec.cuh`). Measured during development at 25K keys:"
+    },
+    {
+      "sha": "2e9d430e2663ff82aa7c8501e2956c85b7892d05",
+      "filename": "results/rtx4090-20260924-sampled/greedy-k7-summary.json",
+      "status": "added",
+      "additions": 128,
+      "deletions": 0,
+      "changes": 128,
+      "blob_url": "https://github.com/jram4/ninfer-4090/blob/70ebb1290dc7abe246c20696a24d21f77faee8d4/results%2Frtx4090-20260924-sampled%2Fgreedy-k7-summary.json",
+      "raw_url": "https://github.com/jram4/ninfer-4090/raw/70ebb1290dc7abe246c20696a24d21f77faee8d4/results%2Frtx4090-20260924-sampled%2Fgreedy-k7-summary.json",
+      "contents_url": "https://api.github.com/repos/jram4/ninfer-4090/contents/results%2Frtx4090-20260924-sampled%2Fgreedy-k7-summary.json?ref=70ebb1290dc7abe246c20696a24d21f77faee8d4",
+      "patch": "@@ -0,0 +1,128 @@\n+{\n+  \"date\": \"2026-09-24\",\n+  \"hardware\": \"NVIDIA RTX 4090 24 GB\",\n+  \"model\": \"stock Qwen3.8-27B v3 .ninfer artifact\",\n+  \"mode\": \"K7 MTP with optimized Q4 proposal head\",\n+  \"sampling\": \"greedy, thinking disabled except reasoning, prefix reuse disabled\",\n+  \"max_context_tokens\": 196608,\n+  \"kv_dtype\": \"k8v4\",\n+  \"method\": \"tools/bench/cinf_matrix.py; current integrated sampled-drafting branch\",\n+  \"workloads\": {\n+    \"short\": {\n+      \"prompt_tokens\": 24,\n+      \"decode_tok_per_s_median\": 111.405,\n+      \"draft_acceptance_median\": 0.714286,\n+      \"ttft_seconds_median\": 0.079603,\n+      \"repetitions\": 2,\n+      \"checks\": [\n+        \"pass\",\n+        \"pass\"\n+      ]\n+    },\n+    \"structured\": {\n+      \"prompt_tokens\": 77,\n+      \"decode_tok_per_s_median\": 221.632,\n+      \"draft_acceptance_median\": 0.714286,\n+      \"ttft_seconds_median\": 0.104284,\n+      \"repetitions\": 2,\n+      \"checks\": [\n+        \"pass\",\n+        \"pass\"\n+      ]\n+    },\n+    \"code\": {\n+      \"prompt_tokens\": 69,\n+      \"decode_tok_per_s_median\": 209.177,\n+      \"draft_acceptance_median\": 0.654235,\n+      \"ttft_seconds_median\": 0.102576,\n+      \"repetitions\": 2,\n+      \"checks\": [\n+        \"tests-failed\",\n+        \"tests-failed\"\n+      ]\n+    },\n+    \"prose\": {\n+      \"prompt_tokens\": 34,\n+      \"decode_tok_per_s_median\": 88.821,\n+      \"draft_acceptance_median\": 0.195057,\n+      \"ttft_seconds_median\": 0.082435,\n+      \"repetitions\": 2,\n+      \"checks\": [\n+        \"pass\",\n+        \"pass\"\n+      ]\n+    },\n+    \"reason\": {\n+      \"prompt_tokens\": 122,\n+      \"decode_tok_per_s_median\": 179.86,\n+      \"draft_acceptance_median\": 0.540816,\n+      \"ttft_seconds_median\": 0.117598,\n+      \"repetitions\": 2,\n+      \"checks\": [\n+        \"pass\",\n+        \"pass\"\n+      ]\n+    },\n+    \"long_gen\": {\n+      \"prompt_tokens\": 55,\n+      \"decode_tok_per_s_median\": 97.259,\n+      \"draft_acceptance_median\": 0.230297,\n+      \"ttft_seconds_median\": 0.097428,\n+      \"repetitions\": 2,\n+      \"checks\": [\n+        \"pass\",\n+        \"pass\"\n+      ]\n+    },\n+    \"recall_8192\": {\n+      \"prompt_tokens\": 8219,\n+      \"decode_tok_per_s_median\": 275.465,\n+      \"draft_acceptance_median\": 0.985714,\n+      \"ttft_seconds_median\": 3.601061,\n+      \"repetitions\": 1,\n+      \"checks\": [\n+        \"pass\"\n+      ]\n+    },\n+    \"recall_32768\": {\n+      \"prompt_tokens\": 32686,\n+      \"decode_tok_per_s_median\": 263.431,\n+      \"draft_acceptance_median\": 0.985714,\n+      \"ttft_seconds_median\": 15.182907,\n+      \"repetitions\": 1,\n+      \"checks\": [\n+        \"pass\"\n+      ]\n+    },\n+    \"recall_65536\": {\n+      \"prompt_tokens\": 65275,\n+      \"decode_tok_per_s_median\": 248.11,\n+      \"draft_acceptance_median\": 0.985714,\n+      \"ttft_seconds_median\": 33.14046,\n+      \"repetitions\": 1,\n+      \"checks\": [\n+        \"pass\"\n+      ]\n+    },\n+    \"recall_131072\": {\n+      \"prompt_tokens\": 130421,\n+      \"decode_tok_per_s_median\": 226.142,\n+      \"draft_acceptance_median\": 0.985714,\n+      \"ttft_seconds_median\": 77.676424,\n+      \"repetitions\": 1,\n+      \"checks\": [\n+        \"pass\"\n+      ]\n+    },\n+    \"recall_190000\": {\n+      \"prompt_tokens\": 189004,\n+      \"decode_tok_per_s_median\": 209.601,\n+      \"draft_acceptance_median\": 0.985714,\n+      \"ttft_seconds_median\": 127.406156,\n+      \"repetitions\": 1,\n+      \"checks\": [\n+        \"pass\"\n+      ]\n+    }\n+  }\n+}"
+    },
+    {
+      "sha": "1ae8965e2c310ab4c481d97247825459bf71099a",
+      "filename": "results/rtx4090-20260924-sampled/temperature1-replay-summary.json",
+      "status": "added",
+      "additions": 67,
+      "deletions": 0,
+      "changes": 67,
+      "blob_url": "https://github.com/jram4/ninfer-4090/blob/70ebb1290dc7abe246c20696a24d21f77faee8d4/results%2Frtx4090-20260924-sampled%2Ftemperature1-replay-summary.json",
+      "raw_url": "https://github.com/jram4/ninfer-4090/raw/70ebb1290dc7abe246c20696a24d21f77faee8d4/results%2Frtx4090-20260924-sampled%2Ftemperature1-replay-summary.json",
+      "contents_url": "https://api.github.com/repos/jram4/ninfer-4090/contents/results%2Frtx4090-20260924-sampled%2Ftemperature1-replay-summary.json?ref=70ebb1290dc7abe246c20696a24d21f77faee8d4",
+      "patch": "@@ -0,0 +1,67 @@\n+{\n+  \"date\": \"2026-09-24\",\n+  \"hardware\": \"NVIDIA RTX 4090 24 GB\",\n+  \"model\": \"abliterated Qwen3.8-27B .ninfer artifact\",\n+  \"mode\": \"K7 MTP with optimized Q4 proposal head, k8v4 KV\",\n+  \"sampling\": \"captured Claude Code requests, temperature 1.0, prefix reuse on, fixed server seed 42\",\n+  \"max_context_tokens\": 188416,\n+  \"method\": \"32 captured successful requests replayed byte-identically and in original order against both builds; private request bodies are not redistributed\",\n+  \"baseline\": \"greedy draft proposal with exact target verification\",\n+  \"candidate\": \"sampled top-12 q proposal with sparse exact rejection correction and multiblock proposal selection\",\n+  \"paired_request_count\": 32,\n+  \"paired_decode_rate_geomean_ratio\": 1.125403,\n+  \"paired_requests_faster\": 27,\n+  \"baseline_aggregate\": {\n+    \"request_count\": 32,\n+    \"http_status_counts\": {\n+      \"200\": 32\n+    },\n+    \"http_error_count\": 0,\n+    \"transport_error_count\": 0,\n+    \"successful_paired_request_count\": 32,\n+    \"output_tokens_total\": 58412,\n+    \"decode_seconds_total\": 458.373729,\n+    \"aggregate_decode_tok_per_s\": 127.433132,\n+    \"aggregate_tokens_per_round\": 3.800638,\n+    \"aggregate_ms_per_round\": 29.824564,\n+    \"mean_server_ttft_seconds\": 1.712285,\n+    \"median_server_ttft_seconds\": 0.955132,\n+    \"mean_client_ttft_seconds\": 3.058907,\n+    \"median_client_ttft_seconds\": 2.691852,\n+    \"tool_requests\": 32,\n+    \"tool_call_count_total\": 60,\n+    \"tool_parse_fallback_reason_counts\": {\n+      \"none\": 32\n+    },\n+    \"tool_parse_schema_mismatch_arguments_total\": 0,\n+    \"tool_parse_structured_call_count_total\": 60,\n+    \"tool_parse_empty_arguments_omitted_total\": 0\n+  },\n+  \"candidate_aggregate\": {\n+    \"request_count\": 32,\n+    \"http_status_counts\": {\n+      \"200\": 32\n+    },\n+    \"http_error_count\": 0,\n+    \"transport_error_count\": 0,\n+    \"successful_paired_request_count\": 32,\n+    \"output_tokens_total\": 46590,\n+    \"decode_seconds_total\": 329.127211,\n+    \"aggregate_decode_tok_per_s\": 141.556208,\n+    \"aggregate_tokens_per_round\": 4.201082,\n+    \"aggregate_ms_per_round\": 29.677837,\n+    \"mean_server_ttft_seconds\": 1.714554,\n+    \"median_server_ttft_seconds\": 0.954549,\n+    \"mean_client_ttft_seconds\": 2.778435,\n+    \"median_client_ttft_seconds\": 2.049922,\n+    \"tool_requests\": 31,\n+    \"tool_call_count_total\": 44,\n+    \"tool_parse_fallback_reason_counts\": {\n+      \"none\": 31\n+    },\n+    \"tool_parse_schema_mismatch_arguments_total\": 0,\n+    \"tool_parse_structured_call_count_total\": 44,\n+    \"tool_parse_empty_arguments_omitted_total\": 0\n+  },\n+  \"interpretation\": \"Decode throughput and protocol metrics; output lengths and tool calls differ, so this is not an answer-quality evaluation.\"\n+}"
+    }
+  ]
+}

@@ -1,0 +1,775 @@
+[
+  {
+    "label": "cinference-int8-k7",
+    "workload": "warmup",
+    "rep": 0,
+    "utc": "2026-09-30T21:19:37.480375+00:00",
+    "request": {
+      "model": "qwen3.8-27b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Say hello."
+        }
+      ],
+      "temperature": 0,
+      "max_tokens": 16,
+      "stream": false,
+      "seed": 42,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "enable_thinking": false
+    },
+    "gpu_before": "3, GPU-REDACTED, 17973, 6119, 24, 126.18, 52",
+    "wall_s": 0.10609887726604939,
+    "response": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "logprobs": null,
+          "message": {
+            "content": "Hello! How can I help you today?",
+            "refusal": null,
+            "role": "assistant"
+          }
+        }
+      ],
+      "created": 1790803177,
+      "id": "chatcmpl-28a4a868f7f1b159",
+      "model": "qwen3.8-27b",
+      "object": "chat.completion",
+      "timings": {
+        "cache_n": 0,
+        "draft_n": 13,
+        "draft_n_accepted": 11,
+        "predicted_ms": 52.15861,
+        "predicted_n": 10,
+        "predicted_per_second": 172.55061053199077,
+        "predicted_per_token_ms": 5.7954011111111114,
+        "prompt_ms": 47.922113,
+        "prompt_n": 15,
+        "prompt_per_second": 313.00790096630334,
+        "prompt_per_token_ms": 3.1948075333333334
+      },
+      "usage": {
+        "completion_tokens": 10,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 15,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 25
+      }
+    },
+    "gpu_after": "3, GPU-REDACTED, 17973, 6119, 59, 139.06, 55",
+    "completion_tokens": 10,
+    "end_to_end_output_tps": 94.25170423740104,
+    "server_decode_tps": 172.55061053199077,
+    "server_prefill_tps": 313.00790096630334,
+    "server_prompt_ms": 47.922113,
+    "draft_acceptance": 0.8461538461538461,
+    "output_sha256": "fda564ba3f7a0f028106d468420f674898ed99ac5bf2765ac9586206e39d73c5"
+  },
+  {
+    "label": "cinference-int8-k7",
+    "workload": "json",
+    "rep": 0,
+    "utc": "2026-09-30T21:19:37.652963+00:00",
+    "request": {
+      "model": "qwen3.8-27b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Return ONLY a JSON object (no prose, no code fence) describing a fictional city with keys: name (string), founded (integer year), population (integer), districts (array of exactly 3 objects each with name and area_km2), climate {summer_c: number, winter_c: number}, coastal (boolean)."
+        }
+      ],
+      "temperature": 0,
+      "max_tokens": 512,
+      "stream": false,
+      "seed": 42,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "enable_thinking": false
+    },
+    "gpu_before": "3, GPU-REDACTED, 17973, 6119, 59, 153.59, 55",
+    "wall_s": 0.8158290851861238,
+    "response": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "logprobs": null,
+          "message": {
+            "content": "{\n  \"name\": \"Aethelgard\",\n  \"founded\": 1245,\n  \"population\": 850000,\n  \"districts\": [\n    {\n      \"name\": \"Old Quarter\",\n      \"area_km2\": 12.5\n    },\n    {\n      \"name\": \"Harbor District\",\n      \"area_km2\": 8.2\n    },\n    {\n      \"name\": \"Northern Heights\",\n      \"area_km2\": 25.7\n    }\n  ],\n  \"climate\": {\n    \"summer_c\": 24.5,\n    \"winter_c\": 3.1\n  },\n  \"coastal\": true\n}",
+            "refusal": null,
+            "role": "assistant"
+          }
+        }
+      ],
+      "created": 1790803177,
+      "id": "chatcmpl-1b857dd5fe8983ca",
+      "model": "qwen3.8-27b",
+      "object": "chat.completion",
+      "timings": {
+        "cache_n": 0,
+        "draft_n": 189,
+        "draft_n_accepted": 144,
+        "predicted_ms": 708.113654,
+        "predicted_n": 170,
+        "predicted_per_second": 238.66225293828327,
+        "predicted_per_token_ms": 4.190021621301775,
+        "prompt_ms": 103.279344,
+        "prompt_n": 77,
+        "prompt_per_second": 745.5508237929939,
+        "prompt_per_token_ms": 1.3412901818181817
+      },
+      "usage": {
+        "completion_tokens": 170,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 77,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 247
+      }
+    },
+    "gpu_after": "3, GPU-REDACTED, 17973, 6119, 99, 352.42, 55",
+    "completion_tokens": 170,
+    "end_to_end_output_tps": 208.37697881439968,
+    "server_decode_tps": 238.66225293828327,
+    "server_prefill_tps": 745.5508237929939,
+    "server_prompt_ms": 103.279344,
+    "draft_acceptance": 0.7619047619047619,
+    "output_sha256": "daa3b94128997c8fdf7909b256763edd5d7d6a2a7839355b70720bb95824cdcd",
+    "quality_check": {
+      "valid_json": true,
+      "three_districts": true
+    }
+  },
+  {
+    "label": "cinference-int8-k7",
+    "workload": "json",
+    "rep": 1,
+    "utc": "2026-09-30T21:19:38.533803+00:00",
+    "request": {
+      "model": "qwen3.8-27b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Return ONLY a JSON object (no prose, no code fence) describing a fictional city with keys: name (string), founded (integer year), population (integer), districts (array of exactly 3 objects each with name and area_km2), climate {summer_c: number, winter_c: number}, coastal (boolean)."
+        }
+      ],
+      "temperature": 0,
+      "max_tokens": 512,
+      "stream": false,
+      "seed": 42,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "enable_thinking": false
+    },
+    "gpu_before": "3, GPU-REDACTED, 17973, 6119, 99, 352.42, 55",
+    "wall_s": 0.8155361581593752,
+    "response": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "logprobs": null,
+          "message": {
+            "content": "{\n  \"name\": \"Aethelgard\",\n  \"founded\": 1245,\n  \"population\": 850000,\n  \"districts\": [\n    {\n      \"name\": \"Old Quarter\",\n      \"area_km2\": 12.5\n    },\n    {\n      \"name\": \"Harbor District\",\n      \"area_km2\": 8.2\n    },\n    {\n      \"name\": \"Northern Heights\",\n      \"area_km2\": 25.7\n    }\n  ],\n  \"climate\": {\n    \"summer_c\": 24.5,\n    \"winter_c\": 3.1\n  },\n  \"coastal\": true\n}",
+            "refusal": null,
+            "role": "assistant"
+          }
+        }
+      ],
+      "created": 1790803178,
+      "id": "chatcmpl-ce7792b583215c25",
+      "model": "qwen3.8-27b",
+      "object": "chat.completion",
+      "timings": {
+        "cache_n": 0,
+        "draft_n": 189,
+        "draft_n_accepted": 144,
+        "predicted_ms": 710.126896,
+        "predicted_n": 170,
+        "predicted_per_second": 237.9856346125496,
+        "predicted_per_token_ms": 4.201934295857988,
+        "prompt_ms": 101.933114,
+        "prompt_n": 77,
+        "prompt_per_second": 755.3973088666751,
+        "prompt_per_token_ms": 1.3238066753246753
+      },
+      "usage": {
+        "completion_tokens": 170,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 77,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 247
+      }
+    },
+    "gpu_after": "3, GPU-REDACTED, 17973, 6119, 100, 391.16, 59",
+    "completion_tokens": 170,
+    "end_to_end_output_tps": 208.45182436016276,
+    "server_decode_tps": 237.9856346125496,
+    "server_prefill_tps": 755.3973088666751,
+    "server_prompt_ms": 101.933114,
+    "draft_acceptance": 0.7619047619047619,
+    "output_sha256": "daa3b94128997c8fdf7909b256763edd5d7d6a2a7839355b70720bb95824cdcd",
+    "quality_check": {
+      "valid_json": true,
+      "three_districts": true
+    }
+  },
+  {
+    "label": "cinference-int8-k7",
+    "workload": "json",
+    "rep": 2,
+    "utc": "2026-09-30T21:19:39.412194+00:00",
+    "request": {
+      "model": "qwen3.8-27b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Return ONLY a JSON object (no prose, no code fence) describing a fictional city with keys: name (string), founded (integer year), population (integer), districts (array of exactly 3 objects each with name and area_km2), climate {summer_c: number, winter_c: number}, coastal (boolean)."
+        }
+      ],
+      "temperature": 0,
+      "max_tokens": 512,
+      "stream": false,
+      "seed": 42,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "enable_thinking": false
+    },
+    "gpu_before": "3, GPU-REDACTED, 17973, 6119, 100, 391.16, 53",
+    "wall_s": 0.8131838254630566,
+    "response": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "logprobs": null,
+          "message": {
+            "content": "{\n  \"name\": \"Aethelgard\",\n  \"founded\": 1245,\n  \"population\": 850000,\n  \"districts\": [\n    {\n      \"name\": \"Old Quarter\",\n      \"area_km2\": 12.5\n    },\n    {\n      \"name\": \"Harbor District\",\n      \"area_km2\": 8.2\n    },\n    {\n      \"name\": \"Northern Heights\",\n      \"area_km2\": 25.7\n    }\n  ],\n  \"climate\": {\n    \"summer_c\": 24.5,\n    \"winter_c\": 3.1\n  },\n  \"coastal\": true\n}",
+            "refusal": null,
+            "role": "assistant"
+          }
+        }
+      ],
+      "created": 1790803179,
+      "id": "chatcmpl-5e0b9040dc27ccab",
+      "model": "qwen3.8-27b",
+      "object": "chat.completion",
+      "timings": {
+        "cache_n": 0,
+        "draft_n": 189,
+        "draft_n_accepted": 144,
+        "predicted_ms": 708.244224,
+        "predicted_n": 170,
+        "predicted_per_second": 238.61825380731943,
+        "predicted_per_token_ms": 4.1907942248520715,
+        "prompt_ms": 101.815188,
+        "prompt_n": 77,
+        "prompt_per_second": 756.2722371047431,
+        "prompt_per_token_ms": 1.322275168831169
+      },
+      "usage": {
+        "completion_tokens": 170,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 77,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 247
+      }
+    },
+    "gpu_after": "3, GPU-REDACTED, 17973, 6119, 77, 387.37, 60",
+    "completion_tokens": 170,
+    "end_to_end_output_tps": 209.05482214085578,
+    "server_decode_tps": 238.61825380731943,
+    "server_prefill_tps": 756.2722371047431,
+    "server_prompt_ms": 101.815188,
+    "draft_acceptance": 0.7619047619047619,
+    "output_sha256": "daa3b94128997c8fdf7909b256763edd5d7d6a2a7839355b70720bb95824cdcd",
+    "quality_check": {
+      "valid_json": true,
+      "three_districts": true
+    }
+  },
+  {
+    "label": "cinference-int8-k7",
+    "workload": "code",
+    "rep": 0,
+    "utc": "2026-09-30T21:19:40.287977+00:00",
+    "request": {
+      "model": "qwen3.8-27b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write a complete Python module implementing an LRU cache class with get, put and delete, followed by at most five concise unittest test methods that exercise eviction order. Put everything in one ```python block and end the block with: if __name__ == '__main__': unittest.main()"
+        }
+      ],
+      "temperature": 0,
+      "max_tokens": 512,
+      "stream": false,
+      "seed": 42,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "enable_thinking": false
+    },
+    "gpu_before": "3, GPU-REDACTED, 17973, 6119, 77, 387.37, 52",
+    "wall_s": 2.493290161713958,
+    "response": {
+      "choices": [
+        {
+          "finish_reason": "length",
+          "index": 0,
+          "logprobs": null,
+          "message": {
+            "content": "```python\nimport unittest\nfrom collections import OrderedDict\n\n\nclass LRUCache:\n    \"\"\"\n    An LRU (Least Recently Used) cache implementation using OrderedDict.\n    Supports get, put, and delete operations with O(1) average time complexity.\n    \"\"\"\n\n    def __init__(self, capacity: int):\n        if capacity <= 0:\n            raise ValueError(\"Capacity must be positive\")\n        self.capacity = capacity\n        self.cache = OrderedDict()\n\n    def get(self, key):\n        \"\"\"\n        Retrieve the value for the given key.\n        If key exists, move it to the end (most recently used) and return its value.\n        If key does not exist, return None.\n        \"\"\"\n        if key not in self.cache:\n            return None\n        # Move to end to mark as most recently used\n        self.cache.move_to_end(key)\n        return self.cache[key]\n\n    def put(self, key, value):\n        \"\"\"\n        Insert or update the key with the given value.\n        If key already exists, update its value and move to end.\n        If key does not exist and cache is at capacity, evict the least recently used item.\n        \"\"\"\n        if key in self.cache:\n            # Update value and move to end\n            self.cache[key] = value\n            self.cache.move_to_end(key)\n        else:\n            if len(self.cache) >= self.capacity:\n                # Evict the least recently used item (first item in OrderedDict)\n                self.cache.popitem(last=False)\n            self.cache[key] = value\n\n    def delete(self, key):\n        \"\"\"\n        Delete the key from the cache if it exists.\n        Returns True if the key was present and deleted, False otherwise.\n        \"\"\"\n        if key in self.cache:\n            del self.cache[key]\n            return True\n        return False\n\n\nclass TestLRUCache(unittest.TestCase):\n    \"\"\"\n    Test cases for LRUCache focusing on eviction order.\n    \"\"\"\n\n    def test_basic_eviction_order(self):\n        \"\"\"\n        Test that the least recently used item is evicted when capacity is exceeded.\n        \"\"\"\n        cache = LRUCache(2)\n        cache.put(1, 'a')\n        cache.put(2, 'b')\n        # Access key 1, making it most recently used\n       ",
+            "refusal": null,
+            "role": "assistant"
+          }
+        }
+      ],
+      "created": 1790803180,
+      "id": "chatcmpl-08f59f31ec0dec62",
+      "model": "qwen3.8-27b",
+      "object": "chat.completion",
+      "timings": {
+        "cache_n": 0,
+        "draft_n": 635,
+        "draft_n_accepted": 420,
+        "predicted_ms": 2387.917339,
+        "predicted_n": 512,
+        "predicted_per_second": 213.9940071016001,
+        "predicted_per_token_ms": 4.673028060665362,
+        "prompt_ms": 101.24623000000001,
+        "prompt_n": 69,
+        "prompt_per_second": 681.5068570948271,
+        "prompt_per_token_ms": 1.4673366666666667
+      },
+      "usage": {
+        "completion_tokens": 512,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 69,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 581
+      }
+    },
+    "gpu_after": "3, GPU-REDACTED, 17973, 6119, 99, 415.31, 62",
+    "completion_tokens": 512,
+    "end_to_end_output_tps": 205.3511492011972,
+    "server_decode_tps": 213.9940071016001,
+    "server_prefill_tps": 681.5068570948271,
+    "server_prompt_ms": 101.24623000000001,
+    "draft_acceptance": 0.6614173228346457,
+    "output_sha256": "7faae8a5b9c2bce537aab4ff3a99c104cb6b5b0142032e1601b5fc8be5368039",
+    "quality_check": {
+      "python_syntax": false,
+      "semantic_tests": "not_run"
+    }
+  },
+  {
+    "label": "cinference-int8-k7",
+    "workload": "code",
+    "rep": 1,
+    "utc": "2026-09-30T21:19:42.843746+00:00",
+    "request": {
+      "model": "qwen3.8-27b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write a complete Python module implementing an LRU cache class with get, put and delete, followed by at most five concise unittest test methods that exercise eviction order. Put everything in one ```python block and end the block with: if __name__ == '__main__': unittest.main()"
+        }
+      ],
+      "temperature": 0,
+      "max_tokens": 512,
+      "stream": false,
+      "seed": 42,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "enable_thinking": false
+    },
+    "gpu_before": "3, GPU-REDACTED, 17973, 6119, 99, 415.31, 62",
+    "wall_s": 2.492353281006217,
+    "response": {
+      "choices": [
+        {
+          "finish_reason": "length",
+          "index": 0,
+          "logprobs": null,
+          "message": {
+            "content": "```python\nimport unittest\nfrom collections import OrderedDict\n\n\nclass LRUCache:\n    \"\"\"\n    An LRU (Least Recently Used) cache implementation using OrderedDict.\n    Supports get, put, and delete operations with O(1) average time complexity.\n    \"\"\"\n\n    def __init__(self, capacity: int):\n        if capacity <= 0:\n            raise ValueError(\"Capacity must be positive\")\n        self.capacity = capacity\n        self.cache = OrderedDict()\n\n    def get(self, key):\n        \"\"\"\n        Retrieve the value for the given key.\n        If key exists, move it to the end (most recently used) and return its value.\n        If key does not exist, return None.\n        \"\"\"\n        if key not in self.cache:\n            return None\n        # Move to end to mark as most recently used\n        self.cache.move_to_end(key)\n        return self.cache[key]\n\n    def put(self, key, value):\n        \"\"\"\n        Insert or update the key with the given value.\n        If key already exists, update its value and move to end.\n        If key does not exist and cache is at capacity, evict the least recently used item.\n        \"\"\"\n        if key in self.cache:\n            # Update value and move to end\n            self.cache[key] = value\n            self.cache.move_to_end(key)\n        else:\n            if len(self.cache) >= self.capacity:\n                # Evict the least recently used item (first item in OrderedDict)\n                self.cache.popitem(last=False)\n            self.cache[key] = value\n\n    def delete(self, key):\n        \"\"\"\n        Delete the key from the cache if it exists.\n        Returns True if the key was present and deleted, False otherwise.\n        \"\"\"\n        if key in self.cache:\n            del self.cache[key]\n            return True\n        return False\n\n\nclass TestLRUCache(unittest.TestCase):\n    \"\"\"\n    Test cases for LRUCache focusing on eviction order.\n    \"\"\"\n\n    def test_basic_eviction_order(self):\n        \"\"\"\n        Test that the least recently used item is evicted when capacity is exceeded.\n        \"\"\"\n        cache = LRUCache(2)\n        cache.put(1, 'a')\n        cache.put(2, 'b')\n        # Access key 1, making it most recently used\n       ",
+            "refusal": null,
+            "role": "assistant"
+          }
+        }
+      ],
+      "created": 1790803182,
+      "id": "chatcmpl-43d51a8886346431",
+      "model": "qwen3.8-27b",
+      "object": "chat.completion",
+      "timings": {
+        "cache_n": 0,
+        "draft_n": 635,
+        "draft_n_accepted": 420,
+        "predicted_ms": 2388.5391459999996,
+        "predicted_n": 512,
+        "predicted_per_second": 213.9382981667909,
+        "predicted_per_token_ms": 4.674244904109588,
+        "prompt_ms": 101.179593,
+        "prompt_n": 69,
+        "prompt_per_second": 681.9556983195218,
+        "prompt_per_token_ms": 1.466370913043478
+      },
+      "usage": {
+        "completion_tokens": 512,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 69,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 581
+      }
+    },
+    "gpu_after": "3, GPU-REDACTED, 17973, 6119, 88, 416.60, 63",
+    "completion_tokens": 512,
+    "end_to_end_output_tps": 205.4283411191589,
+    "server_decode_tps": 213.9382981667909,
+    "server_prefill_tps": 681.9556983195218,
+    "server_prompt_ms": 101.179593,
+    "draft_acceptance": 0.6614173228346457,
+    "output_sha256": "7faae8a5b9c2bce537aab4ff3a99c104cb6b5b0142032e1601b5fc8be5368039",
+    "quality_check": {
+      "python_syntax": false,
+      "semantic_tests": "not_run"
+    }
+  },
+  {
+    "label": "cinference-int8-k7",
+    "workload": "code",
+    "rep": 2,
+    "utc": "2026-09-30T21:19:45.399956+00:00",
+    "request": {
+      "model": "qwen3.8-27b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write a complete Python module implementing an LRU cache class with get, put and delete, followed by at most five concise unittest test methods that exercise eviction order. Put everything in one ```python block and end the block with: if __name__ == '__main__': unittest.main()"
+        }
+      ],
+      "temperature": 0,
+      "max_tokens": 512,
+      "stream": false,
+      "seed": 42,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "enable_thinking": false
+    },
+    "gpu_before": "3, GPU-REDACTED, 17973, 6119, 88, 416.60, 56",
+    "wall_s": 2.501366125419736,
+    "response": {
+      "choices": [
+        {
+          "finish_reason": "length",
+          "index": 0,
+          "logprobs": null,
+          "message": {
+            "content": "```python\nimport unittest\nfrom collections import OrderedDict\n\n\nclass LRUCache:\n    \"\"\"\n    An LRU (Least Recently Used) cache implementation using OrderedDict.\n    Supports get, put, and delete operations with O(1) average time complexity.\n    \"\"\"\n\n    def __init__(self, capacity: int):\n        if capacity <= 0:\n            raise ValueError(\"Capacity must be positive\")\n        self.capacity = capacity\n        self.cache = OrderedDict()\n\n    def get(self, key):\n        \"\"\"\n        Retrieve the value for the given key.\n        If key exists, move it to the end (most recently used) and return its value.\n        If key does not exist, return None.\n        \"\"\"\n        if key not in self.cache:\n            return None\n        # Move to end to mark as most recently used\n        self.cache.move_to_end(key)\n        return self.cache[key]\n\n    def put(self, key, value):\n        \"\"\"\n        Insert or update the key with the given value.\n        If key already exists, update its value and move to end.\n        If key does not exist and cache is at capacity, evict the least recently used item.\n        \"\"\"\n        if key in self.cache:\n            # Update value and move to end\n            self.cache[key] = value\n            self.cache.move_to_end(key)\n        else:\n            if len(self.cache) >= self.capacity:\n                # Evict the least recently used item (first item in OrderedDict)\n                self.cache.popitem(last=False)\n            self.cache[key] = value\n\n    def delete(self, key):\n        \"\"\"\n        Delete the key from the cache if it exists.\n        Returns True if the key was present and deleted, False otherwise.\n        \"\"\"\n        if key in self.cache:\n            del self.cache[key]\n            return True\n        return False\n\n\nclass TestLRUCache(unittest.TestCase):\n    \"\"\"\n    Test cases for LRUCache focusing on eviction order.\n    \"\"\"\n\n    def test_basic_eviction_order(self):\n        \"\"\"\n        Test that the least recently used item is evicted when capacity is exceeded.\n        \"\"\"\n        cache = LRUCache(2)\n        cache.put(1, 'a')\n        cache.put(2, 'b')\n        # Access key 1, making it most recently used\n       ",
+            "refusal": null,
+            "role": "assistant"
+          }
+        }
+      ],
+      "created": 1790803185,
+      "id": "chatcmpl-e9e19bcf444fd160",
+      "model": "qwen3.8-27b",
+      "object": "chat.completion",
+      "timings": {
+        "cache_n": 0,
+        "draft_n": 635,
+        "draft_n_accepted": 420,
+        "predicted_ms": 2397.274801,
+        "predicted_n": 512,
+        "predicted_per_second": 213.1587082911151,
+        "predicted_per_token_ms": 4.691340119373777,
+        "prompt_ms": 101.14384,
+        "prompt_n": 69,
+        "prompt_per_second": 682.1967605738521,
+        "prompt_per_token_ms": 1.4658527536231885
+      },
+      "usage": {
+        "completion_tokens": 512,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 69,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 581
+      }
+    },
+    "gpu_after": "3, GPU-REDACTED, 17973, 6119, 100, 424.29, 64",
+    "completion_tokens": 512,
+    "end_to_end_output_tps": 204.68814812708996,
+    "server_decode_tps": 213.1587082911151,
+    "server_prefill_tps": 682.1967605738521,
+    "server_prompt_ms": 101.14384,
+    "draft_acceptance": 0.6614173228346457,
+    "output_sha256": "7faae8a5b9c2bce537aab4ff3a99c104cb6b5b0142032e1601b5fc8be5368039",
+    "quality_check": {
+      "python_syntax": false,
+      "semantic_tests": "not_run"
+    }
+  },
+  {
+    "label": "cinference-int8-k7",
+    "workload": "prose",
+    "rep": 0,
+    "utc": "2026-09-30T21:19:47.965060+00:00",
+    "request": {
+      "model": "qwen3.8-27b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write a 500-word short story about a lighthouse keeper who receives a letter from the future."
+        }
+      ],
+      "temperature": 0,
+      "max_tokens": 512,
+      "stream": false,
+      "seed": 42,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "enable_thinking": false
+    },
+    "gpu_before": "3, GPU-REDACTED, 17973, 6119, 55, 408.01, 64",
+    "wall_s": 5.59584060497582,
+    "response": {
+      "choices": [
+        {
+          "finish_reason": "length",
+          "index": 0,
+          "logprobs": null,
+          "message": {
+            "content": "The wind on the Isle of Skerry didn\u2019t just blow; it screamed. It tore at the stone walls of the lighthouse, a constant, rhythmic assault that Elias had endured for thirty years. He was a man carved from the same granite as his home, weathered and silent, his life measured in the rotation of the great Fresnel lens and the ebb and flow of the North Sea.\n\nElias was polishing the brass railing of the gallery when the mail arrived. It wasn\u2019t the usual supply drop from the mainland, carried by the small, battered ferry. This was a single, white envelope, slipped under the heavy oak door of the keeper\u2019s cottage. There was no postmark, no stamp, and no return address. Only his name, written in an ink that shimmered with a faint, iridescent blue.\n\nHis hands trembled as he broke the seal. The paper inside was thin, almost translucent, and the handwriting was his own.\n\n*Elias,*\n\n*Do not light the lamp tonight. I know you think the storm is coming. I know you see the black clouds gathering on the horizon and feel the pressure drop in your ears. But the storm is not the danger. The danger is the light.*\n\n*If you turn on the beacon, the ship will see you. It will steer toward the rocks to avoid the open sea, thinking your light is a safe harbor. It will crash. The crew will die. The ship will be lost. But if you keep the dark, the ship will pass by, unseen, and survive. You will be blamed. They will say you were negligent. They will take your pension. They will call you a coward. But you will have saved forty lives.*\n\n*Trust the dark. Trust me.*\n\n*\u2014 Elias, 2045*\n\nElias stared at the words, the wind howling louder outside. He looked at the clock on the wall. 11:45 PM. The storm was indeed brewing, a wall of blackness rolling in from the west. In thirty years, he had never failed to light the lamp. It was his duty, his identity, his prayer. To leave it dark was to invite death.\n\nHe walked to the control room, the heavy iron door groaning as he pushed it open. The mechanism was cold, waiting. His hand hovered over the lever. The letter burned in his other hand.\n\n*Trust the dark.*\n\nHe thought of the faces",
+            "refusal": null,
+            "role": "assistant"
+          }
+        }
+      ],
+      "created": 1790803187,
+      "id": "chatcmpl-8b1f4e70410111ac",
+      "model": "qwen3.8-27b",
+      "object": "chat.completion",
+      "timings": {
+        "cache_n": 0,
+        "draft_n": 1465,
+        "draft_n_accepted": 301,
+        "predicted_ms": 5506.900202,
+        "predicted_n": 512,
+        "predicted_per_second": 92.79267487259251,
+        "predicted_per_token_ms": 10.77671272407045,
+        "prompt_ms": 85.625561,
+        "prompt_n": 34,
+        "prompt_per_second": 397.07769038733653,
+        "prompt_per_token_ms": 2.5183988529411767
+      },
+      "usage": {
+        "completion_tokens": 512,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 34,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 546
+      }
+    },
+    "gpu_after": "3, GPU-REDACTED, 17975, 6117, 100, 429.47, 61",
+    "completion_tokens": 512,
+    "end_to_end_output_tps": 91.49653039522423,
+    "server_decode_tps": 92.79267487259251,
+    "server_prefill_tps": 397.07769038733653,
+    "server_prompt_ms": 85.625561,
+    "draft_acceptance": 0.2054607508532423,
+    "output_sha256": "2d891e20e064c411300b928f2279fa67644c9851c5dc1cac780de3123f365b72",
+    "quality_check": {
+      "words": 396
+    }
+  },
+  {
+    "label": "cinference-int8-k7",
+    "workload": "prose",
+    "rep": 1,
+    "utc": "2026-09-30T21:19:53.626287+00:00",
+    "request": {
+      "model": "qwen3.8-27b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write a 500-word short story about a lighthouse keeper who receives a letter from the future."
+        }
+      ],
+      "temperature": 0,
+      "max_tokens": 512,
+      "stream": false,
+      "seed": 42,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "enable_thinking": false
+    },
+    "gpu_before": "3, GPU-REDACTED, 17975, 6117, 100, 429.47, 61",
+    "wall_s": 5.588061701506376,
+    "response": {
+      "choices": [
+        {
+          "finish_reason": "length",
+          "index": 0,
+          "logprobs": null,
+          "message": {
+            "content": "The wind on the Isle of Skerry didn\u2019t just blow; it screamed. It tore at the stone walls of the lighthouse, a constant, rhythmic assault that Elias had endured for thirty years. He was a man carved from the same granite as his home, weathered and silent, his life measured in the rotation of the great Fresnel lens and the ebb and flow of the North Sea.\n\nElias was polishing the brass railing of the gallery when the mail arrived. It wasn\u2019t the usual supply drop from the mainland, carried by the small, battered ferry. This was a single, white envelope, slipped under the heavy oak door of the keeper\u2019s cottage. There was no postmark, no stamp, and no return address. Only his name, written in an ink that shimmered with a faint, iridescent blue.\n\nHis hands trembled as he broke the seal. The paper inside was thin, almost translucent, and the handwriting was his own.\n\n*Elias,*\n\n*Do not light the lamp tonight. I know you think the storm is coming. I know you see the black clouds gathering on the horizon and feel the pressure drop in your ears. But the storm is not the danger. The danger is the light.*\n\n*If you turn on the beacon, the ship will see you. It will steer toward the rocks to avoid the open sea, thinking your light is a safe harbor. It will crash. The crew will die. The ship will be lost. But if you keep the dark, the ship will pass by, unseen, and survive. You will be blamed. They will say you were negligent. They will take your pension. They will call you a coward. But you will have saved forty lives.*\n\n*Trust the dark. Trust me.*\n\n*\u2014 Elias, 2045*\n\nElias stared at the words, the wind howling louder outside. He looked at the clock on the wall. 11:45 PM. The storm was indeed brewing, a wall of blackness rolling in from the west. In thirty years, he had never failed to light the lamp. It was his duty, his identity, his prayer. To leave it dark was to invite death.\n\nHe walked to the control room, the heavy iron door groaning as he pushed it open. The mechanism was cold, waiting. His hand hovered over the lever. The letter burned in his other hand.\n\n*Trust the dark.*\n\nHe thought of the faces",
+            "refusal": null,
+            "role": "assistant"
+          }
+        }
+      ],
+      "created": 1790803193,
+      "id": "chatcmpl-78581e537531db6c",
+      "model": "qwen3.8-27b",
+      "object": "chat.completion",
+      "timings": {
+        "cache_n": 0,
+        "draft_n": 1465,
+        "draft_n_accepted": 301,
+        "predicted_ms": 5504.157851999999,
+        "predicted_n": 512,
+        "predicted_per_second": 92.83890719346326,
+        "predicted_per_token_ms": 10.771346090019568,
+        "prompt_ms": 80.70142399999999,
+        "prompt_n": 34,
+        "prompt_per_second": 421.306072616513,
+        "prompt_per_token_ms": 2.373571294117647
+      },
+      "usage": {
+        "completion_tokens": 512,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 34,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 546
+      }
+    },
+    "gpu_after": "3, GPU-REDACTED, 17975, 6117, 100, 427.92, 67",
+    "completion_tokens": 512,
+    "end_to_end_output_tps": 91.62389883096314,
+    "server_decode_tps": 92.83890719346326,
+    "server_prefill_tps": 421.306072616513,
+    "server_prompt_ms": 80.70142399999999,
+    "draft_acceptance": 0.2054607508532423,
+    "output_sha256": "2d891e20e064c411300b928f2279fa67644c9851c5dc1cac780de3123f365b72",
+    "quality_check": {
+      "words": 396
+    }
+  },
+  {
+    "label": "cinference-int8-k7",
+    "workload": "prose",
+    "rep": 2,
+    "utc": "2026-09-30T21:19:59.280062+00:00",
+    "request": {
+      "model": "qwen3.8-27b",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write a 500-word short story about a lighthouse keeper who receives a letter from the future."
+        }
+      ],
+      "temperature": 0,
+      "max_tokens": 512,
+      "stream": false,
+      "seed": 42,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "enable_thinking": false
+    },
+    "gpu_before": "3, GPU-REDACTED, 17975, 6117, 74, 427.92, 67",
+    "wall_s": 5.589367724955082,
+    "response": {
+      "choices": [
+        {
+          "finish_reason": "length",
+          "index": 0,
+          "logprobs": null,
+          "message": {
+            "content": "The wind on the Isle of Skerry didn\u2019t just blow; it screamed. It tore at the stone walls of the lighthouse, a constant, rhythmic assault that Elias had endured for thirty years. He was a man carved from the same granite as his home, weathered and silent, his life measured in the rotation of the great Fresnel lens and the ebb and flow of the North Sea.\n\nElias was polishing the brass railing of the gallery when the mail arrived. It wasn\u2019t the usual supply drop from the mainland, carried by the small, battered ferry. This was a single, white envelope, slipped under the heavy oak door of the keeper\u2019s cottage. There was no postmark, no stamp, and no return address. Only his name, written in an ink that shimmered with a faint, iridescent blue.\n\nHis hands trembled as he broke the seal. The paper inside was thin, almost translucent, and the handwriting was his own.\n\n*Elias,*\n\n*Do not light the lamp tonight. I know you think the storm is coming. I know you see the black clouds gathering on the horizon and feel the pressure drop in your ears. But the storm is not the danger. The danger is the light.*\n\n*If you turn on the beacon, the ship will see you. It will steer toward the rocks to avoid the open sea, thinking your light is a safe harbor. It will crash. The crew will die. The ship will be lost. But if you keep the dark, the ship will pass by, unseen, and survive. You will be blamed. They will say you were negligent. They will take your pension. They will call you a coward. But you will have saved forty lives.*\n\n*Trust the dark. Trust me.*\n\n*\u2014 Elias, 2045*\n\nElias stared at the words, the wind howling louder outside. He looked at the clock on the wall. 11:45 PM. The storm was indeed brewing, a wall of blackness rolling in from the west. In thirty years, he had never failed to light the lamp. It was his duty, his identity, his prayer. To leave it dark was to invite death.\n\nHe walked to the control room, the heavy iron door groaning as he pushed it open. The mechanism was cold, waiting. His hand hovered over the lever. The letter burned in his other hand.\n\n*Trust the dark.*\n\nHe thought of the faces",
+            "refusal": null,
+            "role": "assistant"
+          }
+        }
+      ],
+      "created": 1790803199,
+      "id": "chatcmpl-a95bbcf64e14a111",
+      "model": "qwen3.8-27b",
+      "object": "chat.completion",
+      "timings": {
+        "cache_n": 0,
+        "draft_n": 1465,
+        "draft_n_accepted": 301,
+        "predicted_ms": 5505.378487,
+        "predicted_n": 512,
+        "predicted_per_second": 92.8183232463741,
+        "predicted_per_token_ms": 10.773734808219178,
+        "prompt_ms": 80.92623999999999,
+        "prompt_n": 34,
+        "prompt_per_second": 420.1356692217506,
+        "prompt_per_token_ms": 2.3801835294117644
+      },
+      "usage": {
+        "completion_tokens": 512,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 34,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 546
+      }
+    },
+    "gpu_after": "3, GPU-REDACTED, 17975, 6117, 100, 439.84, 66",
+    "completion_tokens": 512,
+    "end_to_end_output_tps": 91.60248979755838,
+    "server_decode_tps": 92.8183232463741,
+    "server_prefill_tps": 420.1356692217506,
+    "server_prompt_ms": 80.92623999999999,
+    "draft_acceptance": 0.2054607508532423,
+    "output_sha256": "2d891e20e064c411300b928f2279fa67644c9851c5dc1cac780de3123f365b72",
+    "quality_check": {
+      "words": 396
+    }
+  }
+]

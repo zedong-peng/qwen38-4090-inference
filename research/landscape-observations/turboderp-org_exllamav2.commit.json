@@ -1,0 +1,101 @@
+{
+  "sha": "7dc12af3a81f34ac3f27cd7602ed539b638933ca",
+  "node_id": "C_kwDOKNP4ZdoAKDdkYzEyYWYzYTgxZjM0YWMzZjI3Y2Q3NjAyZWQ1MzliNjM4OTMzY2E",
+  "commit": {
+    "author": {
+      "name": "turboderp",
+      "email": "11859846+turboderp@users.noreply.github.com",
+      "date": "2026-03-04T13:12:19Z"
+    },
+    "committer": {
+      "name": "GitHub",
+      "email": "noreply@github.com",
+      "date": "2026-03-04T13:12:19Z"
+    },
+    "message": "Update README.md",
+    "tree": {
+      "sha": "49591613af2b27c112af0317ef74405a70696a0e",
+      "url": "https://api.github.com/repos/turboderp-org/exllamav2/git/trees/49591613af2b27c112af0317ef74405a70696a0e"
+    },
+    "url": "https://api.github.com/repos/turboderp-org/exllamav2/git/commits/7dc12af3a81f34ac3f27cd7602ed539b638933ca",
+    "comment_count": 0,
+    "verification": {
+      "verified": true,
+      "reason": "valid",
+      "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJpqC+zCRC1aQ7uu5UhlAAApbsQAHuguslSkdofibSFint2DoiW\nnfyGKonNmKrkmYnHotwLt3gcBUxeo08SBIy42bvhv8WiA/QaobdyDcjbDgK32VTt\nGt6ze/LmAiaELo/nmfT3wCHvfWyCNOpij8KEofyRv4SDu6prXVXRkYHmdg6VO42G\nmwIdYxsGh37V925hFoUCJe/yXgmddZ6xB6YvdkZx8Qtu8XHiE/CcnDPeaErovC4l\nF7hMVASu88EWiiwq+87DC0h1RzKOLgy+xQAu7stEXGnHqyVpbDFV34QXg3jUXVob\n0xcN97SoxNoc1rJx0shQT+hdCtJ9S2wtga6MhoalZ44JntrkEt/U47+06WlCGa5h\na6Af2sVaedFjqjevUsjywdf9lM/xZByNKYZzUM6eO+qEAR9r/m+KXcj4xj5h3f5k\npaSpBj2EYz0lmrslGxLpFYJeNdcSlmmn7qKEjDU1SS8YW+GY3zvzR/aVAX9oUBu1\nnogBmOzpoOVvAq/ZHZHNU+4/YKbxL36AFu+Ts+9DAl+DRpN1/xqP2j5beU6nw2aK\nhC9Hxh3J9dexo8Z+x1kDCNp9FUSBhV2JTvIkXFqGOb5pdGDlnNwQZFVshtPi7T5z\nCg15g3ZuozXOJahELfVuWFe5Xv7o5pMUEVrW7kBqanrSl/V5QOoq/H1NuO+ZiY7I\nB2g0wCyUfLwAy+OjJYf0\n=C64D\n-----END PGP SIGNATURE-----\n",
+      "payload": "tree 49591613af2b27c112af0317ef74405a70696a0e\nparent da07facd10b5c7f35b03664c41a3090c9f093de5\nauthor turboderp <11859846+turboderp@users.noreply.github.com> 1772629939 +0100\ncommitter GitHub <noreply@github.com> 1772629939 +0100\n\nUpdate README.md",
+      "verified_at": "2026-03-04T13:12:20Z"
+    }
+  },
+  "url": "https://api.github.com/repos/turboderp-org/exllamav2/commits/7dc12af3a81f34ac3f27cd7602ed539b638933ca",
+  "html_url": "https://github.com/turboderp-org/exllamav2/commit/7dc12af3a81f34ac3f27cd7602ed539b638933ca",
+  "comments_url": "https://api.github.com/repos/turboderp-org/exllamav2/commits/7dc12af3a81f34ac3f27cd7602ed539b638933ca/comments",
+  "author": {
+    "login": "turboderp",
+    "id": 11859846,
+    "node_id": "MDQ6VXNlcjExODU5ODQ2",
+    "avatar_url": "https://avatars.githubusercontent.com/u/11859846?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/turboderp",
+    "html_url": "https://github.com/turboderp",
+    "followers_url": "https://api.github.com/users/turboderp/followers",
+    "following_url": "https://api.github.com/users/turboderp/following{/other_user}",
+    "gists_url": "https://api.github.com/users/turboderp/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/turboderp/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/turboderp/subscriptions",
+    "organizations_url": "https://api.github.com/users/turboderp/orgs",
+    "repos_url": "https://api.github.com/users/turboderp/repos",
+    "events_url": "https://api.github.com/users/turboderp/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/turboderp/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "web-flow",
+    "id": 19864447,
+    "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/web-flow",
+    "html_url": "https://github.com/web-flow",
+    "followers_url": "https://api.github.com/users/web-flow/followers",
+    "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+    "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+    "organizations_url": "https://api.github.com/users/web-flow/orgs",
+    "repos_url": "https://api.github.com/users/web-flow/repos",
+    "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/web-flow/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "da07facd10b5c7f35b03664c41a3090c9f093de5",
+      "url": "https://api.github.com/repos/turboderp-org/exllamav2/commits/da07facd10b5c7f35b03664c41a3090c9f093de5",
+      "html_url": "https://github.com/turboderp-org/exllamav2/commit/da07facd10b5c7f35b03664c41a3090c9f093de5"
+    }
+  ],
+  "stats": {
+    "total": 4,
+    "additions": 4,
+    "deletions": 0
+  },
+  "files": [
+    {
+      "sha": "de61d3c5e51a1922f5f59737fd87c9cd09c6633f",
+      "filename": "README.md",
+      "status": "modified",
+      "additions": 4,
+      "deletions": 0,
+      "changes": 4,
+      "blob_url": "https://github.com/turboderp-org/exllamav2/blob/7dc12af3a81f34ac3f27cd7602ed539b638933ca/README.md",
+      "raw_url": "https://github.com/turboderp-org/exllamav2/raw/7dc12af3a81f34ac3f27cd7602ed539b638933ca/README.md",
+      "contents_url": "https://api.github.com/repos/turboderp-org/exllamav2/contents/README.md?ref=7dc12af3a81f34ac3f27cd7602ed539b638933ca",
+      "patch": "@@ -1,3 +1,7 @@\n+# Note\n+\n+**This project is archived for now**. Development continues on [ExLlamaV3](https://github.com/turboderp-org/exllamav3).\n+\n # ExLlamaV2\n \n ExLlamaV2 is an inference library for running local LLMs on modern consumer GPUs."
+    }
+  ]
+}

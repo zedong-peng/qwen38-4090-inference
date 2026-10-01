@@ -1,0 +1,136 @@
+schema_version: 1
+paper:
+  title: 'SGLang: Efficient Execution of Structured Language Model Programs'
+  slug: sglang-2024
+  topic: llm-inference
+  arxiv_id: '2312.07104'
+  doi: 10.52202/079017-2000
+  selected_version: v2
+  authors:
+  - Zheng, Lianmin
+  - Yin, Liangsheng
+  - Xie, Zhiqiang
+  - Sun, Chuyue
+  - Huang, Jeff
+  - Yu, Cody Hao
+  - Cao, Shiyi
+  - Kozyrakis, Christos
+  - Stoica, Ion
+  - Gonzalez, Joseph E.
+  - Barrett, Clark
+  - Sheng, Ying
+  canonical_url: https://arxiv.org/abs/2312.07104v2
+  publication_note: NeurIPS 2024；Crossref proceedings 记录，首个 arXiv 版本于 2023 年
+assets:
+- kind: tex_source
+  url: https://arxiv.org/src/2312.07104v2
+  resolved_url: https://arxiv.org/src/2312.07104v2
+  version: v2
+  path: paper-tex/archives/2312.07104v2.tar.gz
+  original_filename: null
+  filename_provenance: derived
+  format: tar.gz
+  retrieved_at: '2026-09-14T09:34:25.493154+00:00'
+  bytes: 823092
+  sha256: 5d411c22fcadb44c1aaf5569aeb31bffe6fb88da0a31ec18aba1eda172febbdd
+  status: downloaded
+  error: null
+  extraction:
+    status: extracted
+    path: paper-tex/extracted/2312.07104v2
+    error: null
+  filename_note: Derived from arXiv identifier, selected version and detected format;
+    original response filename not captured.
+- kind: pdf
+  url: https://arxiv.org/pdf/2312.07104v2
+  resolved_url: https://arxiv.org/pdf/2312.07104v2
+  version: v2
+  path: paper-pdf/2312.07104v2.pdf
+  original_filename: null
+  filename_provenance: derived
+  format: pdf
+  retrieved_at: '2026-09-14T09:34:28.184938+00:00'
+  bytes: 1383463
+  sha256: 161e0a0123a89cd8a57d68734ae704680b0e577fee41e1e7e1029c37a9d99b57
+  status: downloaded
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  filename_note: Derived from arXiv identifier, selected version and detected format;
+    original response filename not captured.
+repositories:
+- url: https://github.com/sgl-project/sglang
+  path: github-repo/sglang
+  commit: 95140a7b0c9fc2f87a2a6cf6f6f0df8640a73174
+  branch: main
+  retrieved_at: '2026-09-14'
+  submodule_status: none_declared
+  inspection_scope:
+  - path: README.md
+    scope: selected interfaces/methods; not a complete repository audit
+  - path: python/sglang/launch_server.py
+    scope: selected interfaces/methods; not a complete repository audit
+  - path: python/sglang/srt/mem_cache/radix_cache.py
+    scope: selected interfaces/methods; not a complete repository audit
+  - path: python/sglang/srt/managers/schedule_policy.py
+    scope: selected interfaces/methods; not a complete repository audit
+  - path: test/registered/radix_cache/test_radix_cache_hit.py
+    scope: selected interfaces/methods; not a complete repository audit
+  status: inspected
+  execution: not_run
+reading:
+  status: read
+  source: tex
+  paths:
+  - paper-tex/extracted/2312.07104v2/neurips_2024.tex
+  - paper-tex/extracted/2312.07104v2/sec-intro.tex
+  - paper-tex/extracted/2312.07104v2/sec-programming-model.tex
+  - paper-tex/extracted/2312.07104v2/sec-radix-attention.tex
+  - paper-tex/extracted/2312.07104v2/sec-compressed-fsm.tex
+  - paper-tex/extracted/2312.07104v2/sec-endpoint-spec.tex
+  - paper-tex/extracted/2312.07104v2/sec-eval.tex
+  - paper-tex/extracted/2312.07104v2/sec-related-work.tex
+  - paper-tex/extracted/2312.07104v2/sec-conclusion.tex
+  - paper-tex/extracted/2312.07104v2/appendix.tex
+  scope:
+  - neurips_2024.tex
+  - sec-intro.tex
+  - sec-programming-model.tex
+  - sec-radix-attention.tex
+  - sec-compressed-fsm.tex
+  - sec-endpoint-spec.tex
+  - sec-eval.tex
+  - sec-related-work.tex
+  - sec-conclusion.tex
+  - appendix.tex
+  fallback_reason: null
+  note: Main text and appendix read; bibliography used as source pointers, not all
+    cited works read.
+  figures_inspected:
+  - paper-tex/extracted/2312.07104v2/figures/example_radix_attn.pdf
+ingest:
+  status: processed
+  updated_at: '2026-09-14'
+  exceptions: []
+identity_evidence:
+  path: abstract.html
+  url: https://arxiv.org/abs/2312.07104
+  retrieved_at: '2026-09-14'
+  bytes: 42426
+  sha256: c5faa88e188eab0b0d9933a74987c63ec9a00ae7b585f5cf0ba701a3865f638a
+  method: citation_title/citation_author and submission-history version IDs; matched
+    PDF first-page title
+reproduction:
+  status: not_run
+  note: No downloaded code, build, model inference, training, simulator or benchmark
+    executed.
+archive_distribution:
+  snapshot_date: '2026-10-02'
+  original_cache: .local/originals/llm-inference/assets/sglang-2024
+  original_metadata: .local/originals/llm-inference/assets/sglang-2024/metadata.yaml
+  source_hash_semantics: Original asset sha256/bytes are preserved as historical provenance.
+    Public sanitized file hashes are in archives/public-files.json.
+  full_papers_and_upstream_repos: local_only; recover from canonical URLs and fixed
+    revisions in archives/

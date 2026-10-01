@@ -1,0 +1,116 @@
+schema_version: 1
+paper:
+  title: 'AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration'
+  slug: awq-2024
+  topic: llm-inference
+  arxiv_id: '2306.00978'
+  doi: null
+  selected_version: v6
+  authors:
+  - Lin, Ji
+  - Tang, Jiaming
+  - Tang, Haotian
+  - Yang, Shang
+  - Chen, Wei-Ming
+  - Wang, Wei-Chen
+  - Xiao, Guangxuan
+  - Dang, Xingyu
+  - Gan, Chuang
+  - Han, Song
+  canonical_url: https://arxiv.org/abs/2306.00978v6
+  publication_note: MLSys 2024；arXiv comments 标记 Best Paper Award；本次 v6 含后续实验
+  pdf_title: 'AWQ: Activation-aware Weight Quantization for On-Device LLM Compression
+    and Acceleration'
+assets:
+- kind: tex_source
+  url: https://arxiv.org/src/2306.00978v6
+  resolved_url: https://arxiv.org/src/2306.00978v6
+  version: v6
+  path: paper-tex/archives/2306.00978v6.tar.gz
+  original_filename: null
+  filename_provenance: derived
+  format: tar.gz
+  retrieved_at: '2026-09-14T09:34:59.976847+00:00'
+  bytes: 18617993
+  sha256: 56d1b2b129aced8a2df855b0a669e0346587caa0bc83058f29aeb3de6fc68f84
+  status: downloaded
+  error: null
+  extraction:
+    status: extracted
+    path: paper-tex/extracted/2306.00978v6
+    error: null
+  filename_note: Derived from arXiv identifier, selected version and detected format;
+    original response filename not captured.
+- kind: pdf
+  url: https://arxiv.org/pdf/2306.00978v6
+  resolved_url: https://arxiv.org/pdf/2306.00978v6
+  version: v6
+  path: paper-pdf/2306.00978v6.pdf
+  original_filename: null
+  filename_provenance: derived
+  format: pdf
+  retrieved_at: '2026-09-14T09:35:06.814228+00:00'
+  bytes: 19804976
+  sha256: 6e35c8fe7af1f18a5c48dd2524629d859a2013a91d4b3666b554705287a17764
+  status: downloaded
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  filename_note: Derived from arXiv identifier, selected version and detected format;
+    original response filename not captured.
+repositories:
+- url: https://github.com/mit-han-lab/llm-awq
+  path: github-repo/llm-awq
+  commit: d6e797a42b9ef7778de8ee2352116e0f48a78d61
+  branch: main
+  retrieved_at: '2026-09-14'
+  submodule_status: none_declared
+  inspection_scope:
+  - path: awq/entry.py
+    scope: selected interfaces/methods; not a complete repository audit
+  - path: awq/quantize/auto_scale.py
+    scope: selected interfaces/methods; not a complete repository audit
+  status: inspected
+  execution: not_run
+reading:
+  status: partial
+  source: tex
+  paths:
+  - paper-tex/extracted/2306.00978v6/text/3_approach.tex
+  - paper-tex/extracted/2306.00978v6/text/4_system.tex
+  - paper-tex/extracted/2306.00978v6/text/5_experiments.tex
+  scope:
+  - text/3_approach.tex
+  - text/4_system.tex
+  - text/5_experiments.tex
+  fallback_reason: null
+  note: Focused reading of methods, evaluation and listed sections; not a complete
+    paper/appendix audit. Formal note records only observed scope.
+ingest:
+  status: extracted
+  updated_at: '2026-09-14'
+  exceptions:
+  - 'Partial reading: do not label processed until remaining paper sections are read.'
+identity_evidence:
+  path: abstract.html
+  url: https://arxiv.org/abs/2306.00978
+  retrieved_at: '2026-09-14'
+  bytes: 44966
+  sha256: 9498fecaa8aa13cdbbdd7b3b1098137c0efaf57efb7d2b47115233fafed8e756
+  method: arXiv version and authors + manual PDF first-page / TeX title verification
+  title_discrepancy: arXiv citation_title omits On-Device; selected v6 PDF and main.tex
+    title both include On-Device. Same identifier, AWQ author group and official repository.
+reproduction:
+  status: not_run
+  note: No downloaded code, build, model inference, training, simulator or benchmark
+    executed.
+archive_distribution:
+  snapshot_date: '2026-10-02'
+  original_cache: .local/originals/llm-inference/assets/awq-2024
+  original_metadata: .local/originals/llm-inference/assets/awq-2024/metadata.yaml
+  source_hash_semantics: Original asset sha256/bytes are preserved as historical provenance.
+    Public sanitized file hashes are in archives/public-files.json.
+  full_papers_and_upstream_repos: local_only; recover from canonical URLs and fixed
+    revisions in archives/

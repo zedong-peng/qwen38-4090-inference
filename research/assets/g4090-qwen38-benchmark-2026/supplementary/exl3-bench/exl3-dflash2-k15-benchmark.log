@@ -1,0 +1,7 @@
+{"mode": "dflash2", "workload": "json", "rep": 0, "exl3_native_generation_tps": null, "generation_call_output_tps": null, "error": {"exit_code": 1, "log": "/home/REMOTE_USER/qwen38-4090/results/exl3-dflash2-k15-cq4-cs4096/exl3-dflash2-k15-cq4-cs4096-json-0.log"}}
+Traceback (most recent call last):
+  File "/home/REMOTE_USER/qwen38-4090/repos/exllamav3-git/benchmark_qwen38.py", line 198, in <module>
+    main()
+  File "/home/REMOTE_USER/qwen38-4090/repos/exllamav3-git/benchmark_qwen38.py", line 184, in main
+    raise RuntimeError(f"EXL3 worker failed; inspect {log}")
+RuntimeError: EXL3 worker failed; inspect /home/REMOTE_USER/qwen38-4090/results/exl3-dflash2-k15-cq4-cs4096/exl3-dflash2-k15-cq4-cs4096-json-0.log

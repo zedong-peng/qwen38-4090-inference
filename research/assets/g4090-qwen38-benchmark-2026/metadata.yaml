@@ -1,0 +1,4473 @@
+schema_version: 1
+reference:
+  title: g4090 Qwen3.8-27B inference benchmark and deployment
+  slug: g4090-qwen38-benchmark-2026
+  topic: llm-inference
+  kind: engineering-experiment
+  date: '2026-10-01'
+sources:
+- url: https://huggingface.co/Qwen/Qwen3.8-27B/resolve/1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0/config.json
+- url: https://huggingface.co/api/models/Qwen/Qwen3.8-27B
+- url: https://github.com/eriknelson/ninfer-4090/blob/1bd56c9a1bdf457c6188391a9385d44d86e953aa/README.md
+- url: https://github.com/eriknelson/ninfer-4090/blob/1bd56c9a1bdf457c6188391a9385d44d86e953aa/CMakeLists.txt
+assets:
+- kind: repository_source
+  path: github-repo/eriknelson/ninfer-4090/CMakeLists.txt
+  url: https://github.com/eriknelson/ninfer-4090/blob/1bd56c9a1bdf457c6188391a9385d44d86e953aa/CMakeLists.txt
+  resolved_url: https://github.com/eriknelson/ninfer-4090/blob/1bd56c9a1bdf457c6188391a9385d44d86e953aa/CMakeLists.txt
+  original_filename: CMakeLists.txt
+  filename_provenance: derived
+  bytes: 3804
+  sha256: 3bd3f6901b5c94c726bd5b2b08373cda7e1c6d7ae2a6cae6f7341610410b23a6
+  retrieved_at: '2026-10-01'
+  version: 1bd56c9a1bdf457c6188391a9385d44d86e953aa
+  format: txt
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: read-only local source reference
+  error: null
+- kind: repository_source
+  path: github-repo/eriknelson/ninfer-4090/README.md
+  url: https://github.com/eriknelson/ninfer-4090/blob/1bd56c9a1bdf457c6188391a9385d44d86e953aa/README.md
+  resolved_url: https://github.com/eriknelson/ninfer-4090/blob/1bd56c9a1bdf457c6188391a9385d44d86e953aa/README.md
+  original_filename: README.md
+  filename_provenance: derived
+  bytes: 27316
+  sha256: 61b95714f0d59eebd4c2f0e344f79cc53dfa5adad180108979e30faccfcd48b2
+  retrieved_at: '2026-10-01'
+  version: 1bd56c9a1bdf457c6188391a9385d44d86e953aa
+  format: md
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: read-only local source reference
+  error: null
+- kind: supplementary
+  path: supplementary/Qwen3.8-27B-DFlash2-EXL3-4.00bpw-manifest.json
+  url: null
+  resolved_url: null
+  original_filename: Qwen3.8-27B-DFlash2-EXL3-4.00bpw-manifest.json
+  filename_provenance: derived
+  bytes: 1141
+  sha256: 46abdef66dc2bff3437b0fa0b376d5132692cdb93274a560912ebf9d68ff5854
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/Qwen3.8-27B-EXL3-4.00bpw-manifest.json
+  url: null
+  resolved_url: null
+  original_filename: Qwen3.8-27B-EXL3-4.00bpw-manifest.json
+  filename_provenance: derived
+  bytes: 3431
+  sha256: 3b63654fca5a08ae46106b3b1f2241d44767608a8c148148a2edded6fb9d491f
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/archive-assets-qa.json
+  url: null
+  resolved_url: null
+  original_filename: archive-assets-qa.json
+  filename_provenance: derived
+  bytes: 278
+  sha256: c8b36bc27bde59fb00ed95d11e8fb3c35a16aa73d391320fd7be5b33a2229cda
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/audit_benchmark_results.py
+  url: null
+  resolved_url: null
+  original_filename: audit_benchmark_results.py
+  filename_provenance: derived
+  bytes: 13744
+  sha256: a9617abd6c04ad9fa3af57bdec24088fadfb4e8abbbace9f878c92d7812153e1
+  retrieved_at: '2026-10-01'
+  version: null
+  format: py
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/benchmark_exl3.py
+  url: null
+  resolved_url: null
+  original_filename: benchmark_qwen38.py
+  filename_provenance: derived
+  bytes: 11887
+  sha256: 390e1f7bdb52852bd66c0b4b7a9edd27fa5a241cc0aff6f623ce7dd0a1184e71
+  retrieved_at: '2026-10-01'
+  version: null
+  format: py
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/benchmark_http.py
+  url: null
+  resolved_url: null
+  original_filename: benchmark_http.py
+  filename_provenance: derived
+  bytes: 7554
+  sha256: 3d1a196fd59fe3fc4e5855a24b1f06d5229674cea9b2e2fbb08fc31f3767a38e
+  retrieved_at: '2026-10-01'
+  version: null
+  format: py
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/download_exl3_models.py
+  url: null
+  resolved_url: null
+  original_filename: download_exl3_models.py
+  filename_provenance: derived
+  bytes: 3434
+  sha256: 5057cdd073fbbd7ee4c362e49f973e2570bd391abb9aa9f5c7faeb7c865bb225
+  retrieved_at: '2026-10-01'
+  version: null
+  format: py
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-ar-dry-run.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-ar-dry-run.json
+  filename_provenance: derived
+  bytes: 1043
+  sha256: 1e14a9eca7a29ee694c9cab4826dcc565df86796b767a6c464c49bad70d26df7
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/README.md
+  url: null
+  resolved_url: null
+  original_filename: README.md
+  filename_provenance: derived
+  bytes: 4708
+  sha256: be6e1d9199ed00625934cf97686fcbe9280687f678372ad228e689251171dacc
+  retrieved_at: '2026-10-01'
+  version: null
+  format: md
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/archive-manifest.json
+  url: null
+  resolved_url: null
+  original_filename: archive-manifest.json
+  filename_provenance: derived
+  bytes: 14277
+  sha256: 1952cce4efa2110189594e9fe732ef355c50a5f8785ca1134a4e6902deaf45b9
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/benchmark_exl3_guarded.py
+  url: null
+  resolved_url: null
+  original_filename: benchmark_exl3_guarded.py
+  filename_provenance: derived
+  bytes: 11887
+  sha256: 390e1f7bdb52852bd66c0b4b7a9edd27fa5a241cc0aff6f623ce7dd0a1184e71
+  retrieved_at: '2026-10-01'
+  version: null
+  format: py
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/dflash2-config-pinned.json
+  url: null
+  resolved_url: null
+  original_filename: dflash2-config-pinned.json
+  filename_provenance: derived
+  bytes: 1686
+  sha256: 98f252301f486dc4dc7630fb00a7fa871dae9b91e7455f5e14300428d0656caa
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-ar-benchmark.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-ar-benchmark.log
+  filename_provenance: derived
+  bytes: 1428
+  sha256: a0c04db0151ab563fd913662725b81af5a2236e7c57e9296769290a4f7c387b6
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-ar-k0-cq4-cs4096/exl3-ar-k0-cq4-cs4096-code-0.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-ar-k0-cq4-cs4096-code-0.json
+  filename_provenance: derived
+  bytes: 8109
+  sha256: aea324a9dff089178ce323b180437f6ee86c30118a19d45888e6b1d7e9e3087d
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-ar-k0-cq4-cs4096/exl3-ar-k0-cq4-cs4096-code-0.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-ar-k0-cq4-cs4096-code-0.log
+  filename_provenance: derived
+  bytes: 114
+  sha256: 5d6eee6ebb586ecd66ff336a48f4c785b6978108a72f3f616a62954200b94a47
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-ar-k0-cq4-cs4096/exl3-ar-k0-cq4-cs4096-code-1.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-ar-k0-cq4-cs4096-code-1.json
+  filename_provenance: derived
+  bytes: 8107
+  sha256: 89edfa9ced916ae8a4c0dde1199931f893d442ea43e81f8903526814dd1e6b9f
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-ar-k0-cq4-cs4096/exl3-ar-k0-cq4-cs4096-code-1.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-ar-k0-cq4-cs4096-code-1.log
+  filename_provenance: derived
+  bytes: 114
+  sha256: 5d6eee6ebb586ecd66ff336a48f4c785b6978108a72f3f616a62954200b94a47
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-ar-k0-cq4-cs4096/exl3-ar-k0-cq4-cs4096-code-2.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-ar-k0-cq4-cs4096-code-2.json
+  filename_provenance: derived
+  bytes: 8109
+  sha256: 93a159675faa75a49210634969875241f0c7df36538d6311f2956b50361558b2
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-ar-k0-cq4-cs4096/exl3-ar-k0-cq4-cs4096-code-2.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-ar-k0-cq4-cs4096-code-2.log
+  filename_provenance: derived
+  bytes: 114
+  sha256: 5d6eee6ebb586ecd66ff336a48f4c785b6978108a72f3f616a62954200b94a47
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-ar-k0-cq4-cs4096/exl3-ar-k0-cq4-cs4096-json-0.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-ar-k0-cq4-cs4096-json-0.json
+  filename_provenance: derived
+  bytes: 4541
+  sha256: b39511b4ae9d942a70b41437ed6f2d93b6aa34f62060ebb64ed39dca64b6919a
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-ar-k0-cq4-cs4096/exl3-ar-k0-cq4-cs4096-json-0.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-ar-k0-cq4-cs4096-json-0.log
+  filename_provenance: derived
+  bytes: 114
+  sha256: 5d6eee6ebb586ecd66ff336a48f4c785b6978108a72f3f616a62954200b94a47
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-ar-k0-cq4-cs4096/exl3-ar-k0-cq4-cs4096-json-1.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-ar-k0-cq4-cs4096-json-1.json
+  filename_provenance: derived
+  bytes: 4540
+  sha256: f669bc104a122353eeaf0c902d006f9931f8363c0330c9a19dccfd3e68ddd7b7
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-ar-k0-cq4-cs4096/exl3-ar-k0-cq4-cs4096-json-1.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-ar-k0-cq4-cs4096-json-1.log
+  filename_provenance: derived
+  bytes: 114
+  sha256: 5d6eee6ebb586ecd66ff336a48f4c785b6978108a72f3f616a62954200b94a47
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-ar-k0-cq4-cs4096/exl3-ar-k0-cq4-cs4096-json-2.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-ar-k0-cq4-cs4096-json-2.json
+  filename_provenance: derived
+  bytes: 4542
+  sha256: 490b37888edabfe7738d802252380dbd3e2d98f4aec597ea83253a4b4be63e36
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-ar-k0-cq4-cs4096/exl3-ar-k0-cq4-cs4096-json-2.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-ar-k0-cq4-cs4096-json-2.log
+  filename_provenance: derived
+  bytes: 114
+  sha256: 5d6eee6ebb586ecd66ff336a48f4c785b6978108a72f3f616a62954200b94a47
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-ar-k0-cq4-cs4096/exl3-ar-k0-cq4-cs4096-prose-0.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-ar-k0-cq4-cs4096-prose-0.json
+  filename_provenance: derived
+  bytes: 7367
+  sha256: ff6640ee50851e3b65ce468c3d2bad073129a11ee27297c1e5d5ffda76b31afa
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-ar-k0-cq4-cs4096/exl3-ar-k0-cq4-cs4096-prose-0.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-ar-k0-cq4-cs4096-prose-0.log
+  filename_provenance: derived
+  bytes: 114
+  sha256: 5d6eee6ebb586ecd66ff336a48f4c785b6978108a72f3f616a62954200b94a47
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-ar-k0-cq4-cs4096/exl3-ar-k0-cq4-cs4096-prose-1.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-ar-k0-cq4-cs4096-prose-1.json
+  filename_provenance: derived
+  bytes: 7365
+  sha256: 02dc581e2569dcca351513d4824c6fe648e17d963daf755990ca6ed4a59199b8
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-ar-k0-cq4-cs4096/exl3-ar-k0-cq4-cs4096-prose-1.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-ar-k0-cq4-cs4096-prose-1.log
+  filename_provenance: derived
+  bytes: 114
+  sha256: 5d6eee6ebb586ecd66ff336a48f4c785b6978108a72f3f616a62954200b94a47
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-ar-k0-cq4-cs4096/exl3-ar-k0-cq4-cs4096-prose-2.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-ar-k0-cq4-cs4096-prose-2.json
+  filename_provenance: derived
+  bytes: 7369
+  sha256: 93a00a933b2aa591e3f95bd2d678d4f264fcad5bbe7e4f54f25660ae6561d97c
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-ar-k0-cq4-cs4096/exl3-ar-k0-cq4-cs4096-prose-2.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-ar-k0-cq4-cs4096-prose-2.log
+  filename_provenance: derived
+  bytes: 114
+  sha256: 5d6eee6ebb586ecd66ff336a48f4c785b6978108a72f3f616a62954200b94a47
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-ar-k0-cq4-cs4096/exl3-ar-k0-cq4-cs4096.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-ar-k0-cq4-cs4096.json
+  filename_provenance: derived
+  bytes: 62111
+  sha256: 20d9be2894badf1398dac1d259f9b7508b100c3b3b2fdc2a56268f28167e9fb7
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-ar-k0-cq4-cs4096/exl3-ar-k0-cq4-cs4096.summary.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-ar-k0-cq4-cs4096.summary.json
+  filename_provenance: derived
+  bytes: 1285
+  sha256: 1a32517045e3ea390f206041ba14eb9bab5868a5fb76dc364d4476b69e44bf14
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-dflash2-benchmark.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-dflash2-benchmark.log
+  filename_provenance: derived
+  bytes: 1479
+  sha256: 44fd3e40a333063a3c66694a6ae9c1e02f4262a92764c6c1c0e15b1c55a53b8e
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-dflash2-k15-benchmark.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-dflash2-k15-benchmark.log
+  filename_provenance: derived
+  bytes: 698
+  sha256: ea3b23dfe9e8da428740344080a5eddf584ee25915bd3f575648e12fc3a253ff
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-dflash2-k15-cq4-cs4096/exl3-dflash2-k15-cq4-cs4096-json-0.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-dflash2-k15-cq4-cs4096-json-0.log
+  filename_provenance: derived
+  bytes: 1558
+  sha256: 116054eb87fe854efa4e25c8729ee9b578e7a59048eb224ec075caa0aca632f2
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-dflash2-k15-cq4-cs4096/exl3-dflash2-k15-cq4-cs4096.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-dflash2-k15-cq4-cs4096.json
+  filename_provenance: derived
+  bytes: 322
+  sha256: 9289c2a2d68e14a262c6301cc3d946236e1e529058a2e985344cf3d613bc2874
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-dflash2-k15-guard-check.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-dflash2-k15-guard-check.json
+  filename_provenance: derived
+  bytes: 968
+  sha256: 416527ec2bef3e545a98262d92d935faa99575448e6d80a409986502a236acaf
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-dflash2-k7-cq4-cs4096/exl3-dflash2-k7-cq4-cs4096-code-0.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-dflash2-k7-cq4-cs4096-code-0.json
+  filename_provenance: derived
+  bytes: 8286
+  sha256: a07dbd903ff8bb309e5aad7aa89fe3f2513a89f0785de200c439a966fb264e02
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-dflash2-k7-cq4-cs4096/exl3-dflash2-k7-cq4-cs4096-code-0.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-dflash2-k7-cq4-cs4096-code-0.log
+  filename_provenance: derived
+  bytes: 192
+  sha256: 84522989b2c7089fe52775658fa942febdd4734f8af1c5b82ef4b309c970ee79
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-dflash2-k7-cq4-cs4096/exl3-dflash2-k7-cq4-cs4096-code-1.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-dflash2-k7-cq4-cs4096-code-1.json
+  filename_provenance: derived
+  bytes: 8284
+  sha256: 4b747239db133eadbb8ee860b5418a59871dae7773716ae66624ffb2f174c3cd
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-dflash2-k7-cq4-cs4096/exl3-dflash2-k7-cq4-cs4096-code-1.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-dflash2-k7-cq4-cs4096-code-1.log
+  filename_provenance: derived
+  bytes: 192
+  sha256: 84522989b2c7089fe52775658fa942febdd4734f8af1c5b82ef4b309c970ee79
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-dflash2-k7-cq4-cs4096/exl3-dflash2-k7-cq4-cs4096-code-2.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-dflash2-k7-cq4-cs4096-code-2.json
+  filename_provenance: derived
+  bytes: 8285
+  sha256: cfef7a8730009d482f3c10293e17ce204120dd7a8554fa1f7e56d24dec0e729b
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-dflash2-k7-cq4-cs4096/exl3-dflash2-k7-cq4-cs4096-code-2.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-dflash2-k7-cq4-cs4096-code-2.log
+  filename_provenance: derived
+  bytes: 192
+  sha256: 84522989b2c7089fe52775658fa942febdd4734f8af1c5b82ef4b309c970ee79
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-dflash2-k7-cq4-cs4096/exl3-dflash2-k7-cq4-cs4096-json-0.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-dflash2-k7-cq4-cs4096-json-0.json
+  filename_provenance: derived
+  bytes: 4715
+  sha256: ad0b7a34725d87f3bcdd705f1b4568087d78ca10ac6b2c7b2944d6f1813030fe
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-dflash2-k7-cq4-cs4096/exl3-dflash2-k7-cq4-cs4096-json-0.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-dflash2-k7-cq4-cs4096-json-0.log
+  filename_provenance: derived
+  bytes: 192
+  sha256: 84522989b2c7089fe52775658fa942febdd4734f8af1c5b82ef4b309c970ee79
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-dflash2-k7-cq4-cs4096/exl3-dflash2-k7-cq4-cs4096-json-1.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-dflash2-k7-cq4-cs4096-json-1.json
+  filename_provenance: derived
+  bytes: 4717
+  sha256: 63e747adc582dc15e6213b29b3c917e2e98120684a8c244fadaa66d86741491b
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-dflash2-k7-cq4-cs4096/exl3-dflash2-k7-cq4-cs4096-json-1.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-dflash2-k7-cq4-cs4096-json-1.log
+  filename_provenance: derived
+  bytes: 192
+  sha256: 84522989b2c7089fe52775658fa942febdd4734f8af1c5b82ef4b309c970ee79
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-dflash2-k7-cq4-cs4096/exl3-dflash2-k7-cq4-cs4096-json-2.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-dflash2-k7-cq4-cs4096-json-2.json
+  filename_provenance: derived
+  bytes: 4718
+  sha256: 274e62aa213c5220afe779c8872de42d2b47abad2f4134b2b324f76e5cb10c4b
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-dflash2-k7-cq4-cs4096/exl3-dflash2-k7-cq4-cs4096-json-2.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-dflash2-k7-cq4-cs4096-json-2.log
+  filename_provenance: derived
+  bytes: 192
+  sha256: 84522989b2c7089fe52775658fa942febdd4734f8af1c5b82ef4b309c970ee79
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-dflash2-k7-cq4-cs4096/exl3-dflash2-k7-cq4-cs4096-prose-0.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-dflash2-k7-cq4-cs4096-prose-0.json
+  filename_provenance: derived
+  bytes: 7708
+  sha256: abee3834b083cca49f36698858383dff384041a345c638572fe304297138382a
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-dflash2-k7-cq4-cs4096/exl3-dflash2-k7-cq4-cs4096-prose-0.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-dflash2-k7-cq4-cs4096-prose-0.log
+  filename_provenance: derived
+  bytes: 192
+  sha256: 84522989b2c7089fe52775658fa942febdd4734f8af1c5b82ef4b309c970ee79
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-dflash2-k7-cq4-cs4096/exl3-dflash2-k7-cq4-cs4096-prose-1.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-dflash2-k7-cq4-cs4096-prose-1.json
+  filename_provenance: derived
+  bytes: 7710
+  sha256: 1248fa49ef011e7bacb1aa5dd3b4f94de59c242bf9f8377b0ac84e81b496207d
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-dflash2-k7-cq4-cs4096/exl3-dflash2-k7-cq4-cs4096-prose-1.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-dflash2-k7-cq4-cs4096-prose-1.log
+  filename_provenance: derived
+  bytes: 192
+  sha256: 84522989b2c7089fe52775658fa942febdd4734f8af1c5b82ef4b309c970ee79
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-dflash2-k7-cq4-cs4096/exl3-dflash2-k7-cq4-cs4096-prose-2.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-dflash2-k7-cq4-cs4096-prose-2.json
+  filename_provenance: derived
+  bytes: 7708
+  sha256: 9daa6fd471b8e68a89b9dd1ec2541fa2250b8dd6e697926ab4a4c04cfa7310e8
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-dflash2-k7-cq4-cs4096/exl3-dflash2-k7-cq4-cs4096-prose-2.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-dflash2-k7-cq4-cs4096-prose-2.log
+  filename_provenance: derived
+  bytes: 192
+  sha256: 84522989b2c7089fe52775658fa942febdd4734f8af1c5b82ef4b309c970ee79
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-dflash2-k7-cq4-cs4096/exl3-dflash2-k7-cq4-cs4096.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-dflash2-k7-cq4-cs4096.json
+  filename_provenance: derived
+  bytes: 64263
+  sha256: 34fd4c36d7320f8af3442408c5b0c3a8eba33798eb586e8eb014021ecebf4855
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-dflash2-k7-cq4-cs4096/exl3-dflash2-k7-cq4-cs4096.summary.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-dflash2-k7-cq4-cs4096.summary.json
+  filename_provenance: derived
+  bytes: 1301
+  sha256: 42bece715fc04fc5855c4f450f521e4870281502a1b0b8052f4a6bc96f101f59
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-git-import-and-template.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-git-import-and-template.json
+  filename_provenance: derived
+  bytes: 429
+  sha256: f29fa8a6a5bd765a4dd8ac3eb833679a36e85cd59a472e1ea8db7bd17bf01218
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-mtp-benchmark.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-mtp-benchmark.log
+  filename_provenance: derived
+  bytes: 1441
+  sha256: 6111baf7cdfa568d4788202510c015e1e3abc9875462176618b03d72847fd1f6
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-mtp-k4-cq4-cs4096/exl3-mtp-k4-cq4-cs4096-code-0.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-mtp-k4-cq4-cs4096-code-0.json
+  filename_provenance: derived
+  bytes: 8194
+  sha256: 9afbae822f0e1911228fb054c0237c4621f525efa5c0c52e1f1c1fd22c4434ff
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-mtp-k4-cq4-cs4096/exl3-mtp-k4-cq4-cs4096-code-0.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-mtp-k4-cq4-cs4096-code-0.log
+  filename_provenance: derived
+  bytes: 184
+  sha256: d4b0431862a143bdef9f1aa00d09230ac28ea82ef51844752acdf30abf113935
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-mtp-k4-cq4-cs4096/exl3-mtp-k4-cq4-cs4096-code-1.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-mtp-k4-cq4-cs4096-code-1.json
+  filename_provenance: derived
+  bytes: 8192
+  sha256: 79e00bb8b6987aa7ac3d9ef81419a15536e4aacc2bd2bd38a44a31f134571a61
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-mtp-k4-cq4-cs4096/exl3-mtp-k4-cq4-cs4096-code-1.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-mtp-k4-cq4-cs4096-code-1.log
+  filename_provenance: derived
+  bytes: 184
+  sha256: d4b0431862a143bdef9f1aa00d09230ac28ea82ef51844752acdf30abf113935
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-mtp-k4-cq4-cs4096/exl3-mtp-k4-cq4-cs4096-code-2.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-mtp-k4-cq4-cs4096-code-2.json
+  filename_provenance: derived
+  bytes: 8195
+  sha256: eb44eb3f57b3882bcd46d5afb76d33094091085a0ea2c26ad97a4c4e2d46c140
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-mtp-k4-cq4-cs4096/exl3-mtp-k4-cq4-cs4096-code-2.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-mtp-k4-cq4-cs4096-code-2.log
+  filename_provenance: derived
+  bytes: 184
+  sha256: d4b0431862a143bdef9f1aa00d09230ac28ea82ef51844752acdf30abf113935
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-mtp-k4-cq4-cs4096/exl3-mtp-k4-cq4-cs4096-json-0.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-mtp-k4-cq4-cs4096-json-0.json
+  filename_provenance: derived
+  bytes: 4634
+  sha256: ea633aa4a9d17fefbf4ce32a01355067fb38d5a8a3dd91238c3015cd40e29599
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-mtp-k4-cq4-cs4096/exl3-mtp-k4-cq4-cs4096-json-0.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-mtp-k4-cq4-cs4096-json-0.log
+  filename_provenance: derived
+  bytes: 184
+  sha256: d4b0431862a143bdef9f1aa00d09230ac28ea82ef51844752acdf30abf113935
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-mtp-k4-cq4-cs4096/exl3-mtp-k4-cq4-cs4096-json-1.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-mtp-k4-cq4-cs4096-json-1.json
+  filename_provenance: derived
+  bytes: 4640
+  sha256: d15ae55be54759db62597235fb589b4dc41cc251eb351b21180d6fcdcff73cbb
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-mtp-k4-cq4-cs4096/exl3-mtp-k4-cq4-cs4096-json-1.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-mtp-k4-cq4-cs4096-json-1.log
+  filename_provenance: derived
+  bytes: 184
+  sha256: d4b0431862a143bdef9f1aa00d09230ac28ea82ef51844752acdf30abf113935
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-mtp-k4-cq4-cs4096/exl3-mtp-k4-cq4-cs4096-json-2.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-mtp-k4-cq4-cs4096-json-2.json
+  filename_provenance: derived
+  bytes: 4640
+  sha256: f0e27e56f501e5c98790965b4dade57a7fed507175af76e3eed01764bed4b849
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-mtp-k4-cq4-cs4096/exl3-mtp-k4-cq4-cs4096-json-2.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-mtp-k4-cq4-cs4096-json-2.log
+  filename_provenance: derived
+  bytes: 184
+  sha256: d4b0431862a143bdef9f1aa00d09230ac28ea82ef51844752acdf30abf113935
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-mtp-k4-cq4-cs4096/exl3-mtp-k4-cq4-cs4096-prose-0.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-mtp-k4-cq4-cs4096-prose-0.json
+  filename_provenance: derived
+  bytes: 7627
+  sha256: 94168c8cd37dc582e0f7786d19304a6d7b8f9091944ba14e3e8c309c3ccdedb3
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-mtp-k4-cq4-cs4096/exl3-mtp-k4-cq4-cs4096-prose-0.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-mtp-k4-cq4-cs4096-prose-0.log
+  filename_provenance: derived
+  bytes: 184
+  sha256: d4b0431862a143bdef9f1aa00d09230ac28ea82ef51844752acdf30abf113935
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-mtp-k4-cq4-cs4096/exl3-mtp-k4-cq4-cs4096-prose-1.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-mtp-k4-cq4-cs4096-prose-1.json
+  filename_provenance: derived
+  bytes: 7628
+  sha256: 78a898b878fa807518025ae48632259b39d3b5254453f089fb20978f4966f489
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-mtp-k4-cq4-cs4096/exl3-mtp-k4-cq4-cs4096-prose-1.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-mtp-k4-cq4-cs4096-prose-1.log
+  filename_provenance: derived
+  bytes: 184
+  sha256: d4b0431862a143bdef9f1aa00d09230ac28ea82ef51844752acdf30abf113935
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-mtp-k4-cq4-cs4096/exl3-mtp-k4-cq4-cs4096-prose-2.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-mtp-k4-cq4-cs4096-prose-2.json
+  filename_provenance: derived
+  bytes: 7627
+  sha256: c89196b44516f5ff6f5f5c3e5e6747cc4cc9789fe248c3f8b869654da68722bd
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-mtp-k4-cq4-cs4096/exl3-mtp-k4-cq4-cs4096-prose-2.log
+  url: null
+  resolved_url: null
+  original_filename: exl3-mtp-k4-cq4-cs4096-prose-2.log
+  filename_provenance: derived
+  bytes: 184
+  sha256: d4b0431862a143bdef9f1aa00d09230ac28ea82ef51844752acdf30abf113935
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-mtp-k4-cq4-cs4096/exl3-mtp-k4-cq4-cs4096.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-mtp-k4-cq4-cs4096.json
+  filename_provenance: derived
+  bytes: 63490
+  sha256: cee3ff199028411b92fe9eee8cc006719b6a931e644d12eb15fdb8c618635311
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-mtp-k4-cq4-cs4096/exl3-mtp-k4-cq4-cs4096.summary.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-mtp-k4-cq4-cs4096.summary.json
+  filename_provenance: derived
+  bytes: 1288
+  sha256: 78694c5690955509e379e57f0c46d4914d57b30268fa6b13ef07eff9c148dc3c
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-runner-before-gpu.py
+  url: null
+  resolved_url: null
+  original_filename: exl3-runner-before-gpu.py
+  filename_provenance: derived
+  bytes: 11370
+  sha256: 32eb6a11d1cc03ee31863f268e68d42101a53a7f8b096b41a7b2c9f8e59ed715
+  retrieved_at: '2026-10-01'
+  version: null
+  format: py
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-runner-config-guard.diff
+  url: null
+  resolved_url: null
+  original_filename: exl3-runner-config-guard.diff
+  filename_provenance: derived
+  bytes: 1291
+  sha256: 320b749f7622ef81bf17196d9f0fd8b88c74e0f3dd0f3aa6c58d293c032f4e24
+  retrieved_at: '2026-10-01'
+  version: null
+  format: diff
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/exl3-suite-summary.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-suite-summary.json
+  filename_provenance: derived
+  bytes: 6472
+  sha256: c0e3ebba0ee880b856b78f6726b6cee255d424dce8530ebf7ee1f27fd3341013
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-bench/run_exl3_bench.sh
+  url: null
+  resolved_url: null
+  original_filename: run_exl3_bench.sh
+  filename_provenance: derived
+  bytes: 972
+  sha256: 8545736886c8711f4064f4efece3361b65f5fdaf8e12b30de037c2e5fa81aa96
+  retrieved_at: '2026-10-01'
+  version: null
+  format: sh
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-cpu-install.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-cpu-install.json
+  filename_provenance: derived
+  bytes: 777
+  sha256: db5c1d01158c31c5b8f22085c48a7caa143a142f6ac4632d842555260b1e5dff
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-deployment-notes.md
+  url: null
+  resolved_url: null
+  original_filename: exl3-deployment-notes.md
+  filename_provenance: derived
+  bytes: 5852
+  sha256: 771be8bf1b26a574298c43e6995466032eac5dba6c6266cbf8ecd8d5dc0a37c4
+  retrieved_at: '2026-10-01'
+  version: null
+  format: md
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-git-import-and-template.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-git-import-and-template.json
+  filename_provenance: derived
+  bytes: 429
+  sha256: f29fa8a6a5bd765a4dd8ac3eb833679a36e85cd59a472e1ea8db7bd17bf01218
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-model-downloads.json
+  url: null
+  resolved_url: null
+  original_filename: exl3-model-downloads.json
+  filename_provenance: derived
+  bytes: 6543
+  sha256: 66d3b653fc11813673f01257fbdd462919b94ffc255a28d57d7bf9a083f081d7
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/exl3-pip-freeze.txt
+  url: null
+  resolved_url: null
+  original_filename: exl3-pip-freeze.txt
+  filename_provenance: derived
+  bytes: 1438
+  sha256: 6d459ff78e4f37881e707240a9b508a81806bcbc9afe2b5fedbfe723169a6632
+  retrieved_at: '2026-10-01'
+  version: null
+  format: txt
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/git-clone-provenance-exl3-hyperqwen.json
+  url: null
+  resolved_url: null
+  original_filename: git-clone-provenance-exl3-hyperqwen.json
+  filename_provenance: derived
+  bytes: 968
+  sha256: 69c9bfb2683842ac1d826a14d9a2a9c0a39d6e2bad1d9bc03d96969839dc870c
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/install_exl3_cpu.sh
+  url: null
+  resolved_url: null
+  original_filename: install_exl3_cpu.sh
+  filename_provenance: derived
+  bytes: 2296
+  sha256: b517d428ab8d9a1b26c78e5be0c86173e46d9929e88654d49526316c69ddadd7
+  retrieved_at: '2026-10-01'
+  version: null
+  format: sh
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/qwen38-cinference.service
+  url: null
+  resolved_url: null
+  original_filename: qwen38-cinference.service
+  filename_provenance: derived
+  bytes: 518
+  sha256: f59b2014d574ec110aafc6ba8e20e17d09c97bb074d72b4a85595a9eb572d84b
+  retrieved_at: '2026-10-01'
+  version: null
+  format: service
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/qwen38-config.json
+  url: https://huggingface.co/Qwen/Qwen3.8-27B/resolve/1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0/config.json
+  resolved_url: https://huggingface.co/Qwen/Qwen3.8-27B/resolve/1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0/config.json
+  original_filename: qwen38-config.json
+  filename_provenance: derived
+  bytes: 4312
+  sha256: 191e0af232104ed8b65258cf3fb2b842e288008baca7633c11b82a1ac7203aab
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/qwen38-model-api.json
+  url: https://huggingface.co/api/models/Qwen/Qwen3.8-27B
+  resolved_url: https://huggingface.co/api/models/Qwen/Qwen3.8-27B
+  original_filename: qwen38-model-api.json
+  filename_provenance: derived
+  bytes: 24109
+  sha256: dea7a7c3f9920a26aa25ec43943e996e60f2a2d71e32d30eb3e67b9f9e675fe8
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/build-env.log
+  url: null
+  resolved_url: null
+  original_filename: build-env.log
+  filename_provenance: derived
+  bytes: 25821
+  sha256: 1a896417e45564cd38e4771534eff7fb5d9608f4bebf277ce528cbc056e2df4e
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/cinference-benchmark-matched-k3-k7.log
+  url: null
+  resolved_url: null
+  original_filename: cinference-benchmark-matched-k3-k7.log
+  filename_provenance: derived
+  bytes: 3763
+  sha256: 6b9a294386cdad2199c649526d7efc1da5a90140493b8a4df86b130da983daf4
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/cinference-benchmark-matched.log
+  url: null
+  resolved_url: null
+  original_filename: cinference-benchmark-matched.log
+  filename_provenance: derived
+  bytes: 2163
+  sha256: 1e3c1b84398f933bdb4122da6479808e56755540d7a5ec076c1e2d59fc223468
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/cinference-benchmark.log
+  url: null
+  resolved_url: null
+  original_filename: cinference-benchmark.log
+  filename_provenance: derived
+  bytes: 5645
+  sha256: e81e6dfddca624a89546bf4cf7b275642c43dbbb52994e869092616396bff960
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/cinference-build.log
+  url: null
+  resolved_url: null
+  original_filename: cinference-build.log
+  filename_provenance: derived
+  bytes: 46163
+  sha256: e28f21b580190e81f7fabc0e47c3e9bcfd0ad68b7adff67ceb437fde27ef7a3c
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/cinference-configure.log
+  url: null
+  resolved_url: null
+  original_filename: cinference-configure.log
+  filename_provenance: derived
+  bytes: 773
+  sha256: 9bd36c9247cc5671f8aff296a0e3d0882297516a31c138256d7cd2c07400e2ac
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/cinference-service.log
+  url: null
+  resolved_url: null
+  original_filename: cinference-service.log
+  filename_provenance: derived
+  bytes: 4974
+  sha256: aa65a8442a4fd1f558d7aa444a0fb9a56a17f4af80fc79fbaeb9c723ef7a971e
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/cinference-service.requests.jsonl
+  url: null
+  resolved_url: null
+  original_filename: cinference-service.requests.jsonl
+  filename_provenance: derived
+  bytes: 47974
+  sha256: 5723f31fc02e2bd6bc1d19583e8671562503cfc84a31f75d4ab1c61d3047b7da
+  retrieved_at: '2026-10-01'
+  version: null
+  format: jsonl
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/cinference-unpack.log
+  url: null
+  resolved_url: null
+  original_filename: cinference-unpack.log
+  filename_provenance: derived
+  bytes: 158842
+  sha256: 800d384be434656fadf57fe6910aae92c2aaa28a9e5e519e5f7a403266378200
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/gguf-download.log
+  url: null
+  resolved_url: null
+  original_filename: gguf-download.log
+  filename_provenance: derived
+  bytes: 22201
+  sha256: 84b177caadf37487637df08a15013e5fe2007fe6347e7a291aab8e2c8c19b730
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/gguf-mtp-download.log
+  url: null
+  resolved_url: null
+  original_filename: gguf-mtp-download.log
+  filename_provenance: derived
+  bytes: 1582
+  sha256: ef75a7eb13b64f713a6f68fb0b0392c6dfdb75ef8ddff448ed016f5a1e6436a6
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/llama-benchmark-matched.log
+  url: null
+  resolved_url: null
+  original_filename: llama-benchmark-matched.log
+  filename_provenance: derived
+  bytes: 5497
+  sha256: 36b00b80f974325d879e2939315a322a38640df90cb63fc190e0c94ceedb1c32
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/llama-build.log
+  url: null
+  resolved_url: null
+  original_filename: llama-build.log
+  filename_provenance: derived
+  bytes: 33920
+  sha256: 964133c7c1a354c37a2b5d957ee2a592a81b73171b47eb388d8d3f865daee4e3
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/llama-configure.log
+  url: null
+  resolved_url: null
+  original_filename: llama-configure.log
+  filename_provenance: derived
+  bytes: 3159
+  sha256: f0fbf5c3d5a72d313d80f377e50e1b0fa3417a83a11d11accd5e30ebe22173e4
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/llama-source-download.log
+  url: null
+  resolved_url: null
+  original_filename: llama-source-download.log
+  filename_provenance: derived
+  bytes: 9898
+  sha256: 8c69646caafa2857c2aa82ba58177466b1f4724e7e98c1f98f37e0b9b138ead8
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/model-download-mirror.log
+  url: null
+  resolved_url: null
+  original_filename: model-download-mirror.log
+  filename_provenance: derived
+  bytes: 21332
+  sha256: c7301339d18a891c0bf279790ef1fa37dd2464d50c8dece15cacbd272aaf6b09
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/model-download.log
+  url: null
+  resolved_url: null
+  original_filename: model-download.log
+  filename_provenance: derived
+  bytes: 877
+  sha256: 9d5068043492eba766b2fa3931e7bd1b30c2452b006a6ce39373a90ef7564bb3
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/model-v3-conversion.log
+  url: null
+  resolved_url: null
+  original_filename: model-v3-conversion.log
+  filename_provenance: derived
+  bytes: 173
+  sha256: 7a6ee703a6ea02e33b86b72bbe98036c4a56591e50762f2c2af3b4b3e3ed5596
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/ninfer-benchmark-matched-k5.log
+  url: null
+  resolved_url: null
+  original_filename: ninfer-benchmark-matched-k5.log
+  filename_provenance: derived
+  bytes: 1891
+  sha256: 4fe918d337c941c8e29b8536bac2905f89361fe8c8abc74cc88baa4a1e1a5444
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/ninfer-benchmark-matched.log
+  url: null
+  resolved_url: null
+  original_filename: ninfer-benchmark-matched.log
+  filename_provenance: derived
+  bytes: 3909
+  sha256: f6cf4e42781e64c020f59219571882b824441d37a6a46e50b91d4ba24542853f
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/ninfer-build.log
+  url: null
+  resolved_url: null
+  original_filename: ninfer-build.log
+  filename_provenance: derived
+  bytes: 32461
+  sha256: d5eae102a70bc8f469e95769f51374aea38b59662d9abfb4b0f5be9fdc288c60
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/ninfer-configure.log
+  url: null
+  resolved_url: null
+  original_filename: ninfer-configure.log
+  filename_provenance: derived
+  bytes: 225
+  sha256: f064a231e545f66a19d55f35f3de64afee13ddc29558ee512b1d2d082b24ffad
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/primary-audit-current.log
+  url: null
+  resolved_url: null
+  original_filename: primary-audit-current.log
+  filename_provenance: derived
+  bytes: 4060
+  sha256: fe7495ee616e30251c680d954c24253eaa2601a3f7942763f428d567d3c91dee
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/primary-audit-final-http.log
+  url: null
+  resolved_url: null
+  original_filename: primary-audit-final-http.log
+  filename_provenance: derived
+  bytes: 4423
+  sha256: 30b937eaa9be14979d8b0e520df1459b714d660990ac7cd99b8c9bbcd69b02f3
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/runner-timewait-guard-test.json
+  url: null
+  resolved_url: null
+  original_filename: runner-timewait-guard-test.json
+  filename_provenance: derived
+  bytes: 2329
+  sha256: baf088626808fb73a2d582f87ba80280fcf7fe6b5e28ddb72a6928cf486dc483
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/service-verification-final.log
+  url: null
+  resolved_url: null
+  original_filename: service-verification-final.log
+  filename_provenance: derived
+  bytes: 2031
+  sha256: 222e1f462ca64b0fd19f5affd56c59513391cf57204735bd8fb232090f04784a
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/service-verification.log
+  url: null
+  resolved_url: null
+  original_filename: service-verification.log
+  filename_provenance: derived
+  bytes: 1031
+  sha256: 4ca2b49b3dba13d6cfb8f601df98d3d9036ed807693084ff34cb99bd5d81e8b3
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/logs/zlib-install.log
+  url: null
+  resolved_url: null
+  original_filename: zlib-install.log
+  filename_provenance: derived
+  bytes: 1741
+  sha256: 54caf334203cf71ad7088aef88265c8b1823a27d8543afde6d7522db486cb3d9
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/build-env-explicit.txt
+  url: null
+  resolved_url: null
+  original_filename: build-env-explicit.txt
+  filename_provenance: derived
+  bytes: 14089
+  sha256: 3c7ba166d20148b5511cc668688efe02ec928bde571a422b0c756c5e14347a31
+  retrieved_at: '2026-10-01'
+  version: null
+  format: txt
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/cinference-help.txt
+  url: null
+  resolved_url: null
+  original_filename: cinference-help.txt
+  filename_provenance: derived
+  bytes: 2840
+  sha256: 2c1836cdf5c28477b4661549a1745fa316a19162a760a15738bf730a84009b90
+  retrieved_at: '2026-10-01'
+  version: null
+  format: txt
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/cinference-server-help.txt
+  url: null
+  resolved_url: null
+  original_filename: cinference-server-help.txt
+  filename_provenance: derived
+  bytes: 2840
+  sha256: 2c1836cdf5c28477b4661549a1745fa316a19162a760a15738bf730a84009b90
+  retrieved_at: '2026-10-01'
+  version: null
+  format: txt
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/cmake-build-provenance.json
+  url: null
+  resolved_url: null
+  original_filename: cmake-build-provenance.json
+  filename_provenance: derived
+  bytes: 9582
+  sha256: 964759ba1a5baebe465fe4b9ff3e44b0ea888019709405845e8d3b8a31c0d418
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/cuda-toolkit.txt
+  url: null
+  resolved_url: null
+  original_filename: cuda-toolkit.txt
+  filename_provenance: derived
+  bytes: 208
+  sha256: 68f8b0a1301428031e307cf5260142a517bff25cc232a09eae2734be475d721f
+  retrieved_at: '2026-10-01'
+  version: null
+  format: txt
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/gguf-mtp-sha256.txt
+  url: null
+  resolved_url: null
+  original_filename: gguf-mtp-sha256.txt
+  filename_provenance: derived
+  bytes: 124
+  sha256: 29c88928bc6de0ede087ee925fc69c446a24c06c7c482a9fa93481717686f0b3
+  retrieved_at: '2026-10-01'
+  version: null
+  format: txt
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/gguf-sha256.txt
+  url: null
+  resolved_url: null
+  original_filename: gguf-sha256.txt
+  filename_provenance: derived
+  bytes: 125
+  sha256: 79e834ea913afcb37dcb79bafa04ad00023eb95797fd4d01faecc8a5d63e84f5
+  retrieved_at: '2026-10-01'
+  version: null
+  format: txt
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/git-clone-provenance-exl3-hyperqwen.json
+  url: null
+  resolved_url: null
+  original_filename: git-clone-provenance-exl3-hyperqwen.json
+  filename_provenance: derived
+  bytes: 968
+  sha256: 69c9bfb2683842ac1d826a14d9a2a9c0a39d6e2bad1d9bc03d96969839dc870c
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/gpu-hardware.csv
+  url: null
+  resolved_url: null
+  original_filename: gpu-hardware.csv
+  filename_provenance: derived
+  bytes: 422
+  sha256: cf940593d3876cd2f4d1d35642137b105e2a673efc118e8fc841b1709086ade7
+  retrieved_at: '2026-10-01'
+  version: null
+  format: csv
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench/cinference-int8-k0.json
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8-k0.json
+  filename_provenance: derived
+  bytes: 37481
+  sha256: e06a835d1b84557f60647ce41880465a1a9c7f09b9f6c745e036d7c6b00ab9c8
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench/cinference-int8-k0.requests.jsonl
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8-k0.requests.jsonl
+  filename_provenance: derived
+  bytes: 79007
+  sha256: a95e93c63106a3bbb33849528953b5ca6193e4da57dcc0a252440f36765546c1
+  retrieved_at: '2026-10-01'
+  version: null
+  format: jsonl
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench/cinference-int8-k0.server.log
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8-k0.server.log
+  filename_provenance: derived
+  bytes: 6019
+  sha256: c6d5a520294fc2ebfcd343ac562b35c6a2d5f3b7c15daa4897de7b0a71fb348a
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench/cinference-int8-k0.summary.json
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8-k0.summary.json
+  filename_provenance: derived
+  bytes: 1936
+  sha256: 488c64f907a372e50eb7704016e216357189fb04018dc33c1304e1dff21f2ed0
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench/cinference-int8-k3.json
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8-k3.json
+  filename_provenance: derived
+  bytes: 38549
+  sha256: 39087979c71cbcf32d6920ccb43dc4c0731eb15d9dcbc80f378ddc0541bde414
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench/cinference-int8-k3.requests.jsonl
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8-k3.requests.jsonl
+  filename_provenance: derived
+  bytes: 56920
+  sha256: 2888890c1aebbfc9f7cdff47aa8e54615bdc4ded52d93a7fa85f6f399331ffe5
+  retrieved_at: '2026-10-01'
+  version: null
+  format: jsonl
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench/cinference-int8-k3.server.log
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8-k3.server.log
+  filename_provenance: derived
+  bytes: 5110
+  sha256: 8a38f36929b41c5f89446554414cf9c23977f0069c82c1ef1db429142d03a54d
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench/cinference-int8-k3.summary.json
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8-k3.summary.json
+  filename_provenance: derived
+  bytes: 1999
+  sha256: db9f924baee60178829b2cb28b1e24141a7dae9367e26a73c02246b313e9ef0c
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench/cinference-int8-k7.json
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8-k7.json
+  filename_provenance: derived
+  bytes: 38631
+  sha256: 49fec7377bddf6bf36027e0f11aefc43961e0e58cdc6ceaa58ed5a9066b10a7d
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench/cinference-int8-k7.requests.jsonl
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8-k7.requests.jsonl
+  filename_provenance: derived
+  bytes: 57124
+  sha256: 2744bd422f6b9f402117e8d9db0d4e2d6fa364095d5737f95b46fc942d9b30fe
+  retrieved_at: '2026-10-01'
+  version: null
+  format: jsonl
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench/cinference-int8-k7.server.log
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8-k7.server.log
+  filename_provenance: derived
+  bytes: 5115
+  sha256: 7feff5079009eec2fdd7f086e6f879073aa1e06a10a9f5158607e7d93b1bf804
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench/cinference-int8-k7.summary.json
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8-k7.summary.json
+  filename_provenance: derived
+  bytes: 1991
+  sha256: 602b26e59a2062c780d55fc6111fc5541eee7e486fb397e249db1a8df94c9d6c
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench/cinference-int8.runs.json
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8.runs.json
+  filename_provenance: derived
+  bytes: 2525
+  sha256: 7948d7f80edeedcea8aad7f4f5845046247f594f75b4139cb1b3e5b3eae1afff
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/cinference-int8-k0.json
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8-k0.json
+  filename_provenance: derived
+  bytes: 37876
+  sha256: 1ac42eb8351c24be766d36321ae71c686ee182cbe4fb89cf23bad79f3cd62663
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/cinference-int8-k0.requests.jsonl
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8-k0.requests.jsonl
+  filename_provenance: derived
+  bytes: 78912
+  sha256: fccedd69fa055c63a9328e8aa942a4dd72641ce0565ac7cc63fb56ac0a846963
+  retrieved_at: '2026-10-01'
+  version: null
+  format: jsonl
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/cinference-int8-k0.runs.json
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8-k0.runs.json
+  filename_provenance: derived
+  bytes: 819
+  sha256: da72016817edd93311bdef50604bba94eee02ea44936d5cbb72fd00b8bd086da
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/cinference-int8-k0.server.log
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8-k0.server.log
+  filename_provenance: derived
+  bytes: 6006
+  sha256: 7d19c3bf4bf418480d7f16f1df96e7ae3db391025cb4fba5b457c049dd5de824
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/cinference-int8-k0.summary.json
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8-k0.summary.json
+  filename_provenance: derived
+  bytes: 1944
+  sha256: a2b2e4dea0b1c9f5f74ca815eced92e03ae3453c219d23d0550abebd01cde0d7
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/cinference-int8-k3.json
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8-k3.json
+  filename_provenance: derived
+  bytes: 38966
+  sha256: 04ddf94701bb496161032a9d465253d275d1fce62f8cff79a2a5278bfd83dfe0
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/cinference-int8-k3.requests.jsonl
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8-k3.requests.jsonl
+  filename_provenance: derived
+  bytes: 57048
+  sha256: 4f1b6136b81b2cd08a6f6caba65f3c53c66c7d838e9aadaefcca0311148df9f5
+  retrieved_at: '2026-10-01'
+  version: null
+  format: jsonl
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/cinference-int8-k3.server.log
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8-k3.server.log
+  filename_provenance: derived
+  bytes: 5110
+  sha256: bde5e1b6c75cc4965551a451c2e21a616c4989bdb63574a2e50388050521759b
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/cinference-int8-k3.summary.json
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8-k3.summary.json
+  filename_provenance: derived
+  bytes: 1989
+  sha256: 390f82f30ac64e4e8337d0a17660c90a2812a479feb8e3f528cc81e559128c2a
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/cinference-int8-k7.json
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8-k7.json
+  filename_provenance: derived
+  bytes: 38829
+  sha256: ad8a8fbf027e8e89bc7816b6972eb2344275ab42ba1bdc52e8966f66ce83cf8d
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/cinference-int8-k7.requests.jsonl
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8-k7.requests.jsonl
+  filename_provenance: derived
+  bytes: 57110
+  sha256: 6c8e71b412cd7d94a44e24b9df3f48435ae4e834854ae6dc0035174dae0b5884
+  retrieved_at: '2026-10-01'
+  version: null
+  format: jsonl
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/cinference-int8-k7.server.log
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8-k7.server.log
+  filename_provenance: derived
+  bytes: 5114
+  sha256: 1cea2aee4ed51c965f81dafc6495c2dfe19534461c597709b94c946ef3ec0fc6
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/cinference-int8-k7.summary.json
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8-k7.summary.json
+  filename_provenance: derived
+  bytes: 1988
+  sha256: 6f3cc1a64365e2bf75a78a4dfc0fd8c566304a9546180bdb68e1b13ae1d30321
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/cinference-int8.runs.json
+  url: null
+  resolved_url: null
+  original_filename: cinference-int8.runs.json
+  filename_provenance: derived
+  bytes: 1812
+  sha256: c370834759bff6e9c2b639017a5f7a49b42fc0f7a7d18978208163a717375a21
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/llama-udq4-k0.json
+  url: null
+  resolved_url: null
+  original_filename: llama-udq4-k0.json
+  filename_provenance: derived
+  bytes: 37433
+  sha256: 299c8fa5ee2bf1c51555a94c32cae0fa2c46acc44b707c7b0b75b3212e74f57d
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/llama-udq4-k0.server.log
+  url: null
+  resolved_url: null
+  original_filename: llama-udq4-k0.server.log
+  filename_provenance: derived
+  bytes: 12616
+  sha256: ead882c5385e7dc6e95fb2b057c3fed07481fa64ab9bb437bb9dce04e403e62b
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/llama-udq4-k0.summary.json
+  url: null
+  resolved_url: null
+  original_filename: llama-udq4-k0.summary.json
+  filename_provenance: derived
+  bytes: 1917
+  sha256: 01a9d0963a155b990588005579cfbbc81b1fb3a55ea3f278049a13ea9e0c6d35
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/llama-udq4-k3.json
+  url: null
+  resolved_url: null
+  original_filename: llama-udq4-k3.json
+  filename_provenance: derived
+  bytes: 38623
+  sha256: a1f6c7200f63ce9a90426db9706cb8fddf353b9868b626eb1077a51ef9314274
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/llama-udq4-k3.server.log
+  url: null
+  resolved_url: null
+  original_filename: llama-udq4-k3.server.log
+  filename_provenance: derived
+  bytes: 11278
+  sha256: 32429152e54f7716b3fa93f5856e02745574976aeb9de972b3856991dbe55ace
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/llama-udq4-k3.summary.json
+  url: null
+  resolved_url: null
+  original_filename: llama-udq4-k3.summary.json
+  filename_provenance: derived
+  bytes: 1960
+  sha256: 152a61d3d00b495dcacc9f2caf4241de85d34ce76dac3cd969ca100de840c181
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/llama-udq4-k7.json
+  url: null
+  resolved_url: null
+  original_filename: llama-udq4-k7.json
+  filename_provenance: derived
+  bytes: 38261
+  sha256: 04cbe66d3b359e6dbf7d0f7853935886b71ca91b0fa933eb24c71ea7254a2641
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/llama-udq4-k7.server.log
+  url: null
+  resolved_url: null
+  original_filename: llama-udq4-k7.server.log
+  filename_provenance: derived
+  bytes: 11262
+  sha256: f026cddc20cd14b70d552b58ac36589c993fa53b653e641a21cd6e14cfa8101b
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/llama-udq4-k7.summary.json
+  url: null
+  resolved_url: null
+  original_filename: llama-udq4-k7.summary.json
+  filename_provenance: derived
+  bytes: 1958
+  sha256: bd21d1fd20211abc12fbb5541c627e47a6e053e64a67b3e75ffd52024a27122d
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/llama-udq4.runs.json
+  url: null
+  resolved_url: null
+  original_filename: llama-udq4.runs.json
+  filename_provenance: derived
+  bytes: 2359
+  sha256: 8c12d23fe1f936658ee8ed972d4a05b30c6def997955dc953a843bd1090869f6
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/ninfer-erik-int8-k0-k3-k7.runs.json
+  url: null
+  resolved_url: null
+  original_filename: ninfer-erik-int8-k0-k3-k7.runs.json
+  filename_provenance: derived
+  bytes: 2620
+  sha256: fc3a8c27990500ad3b72217415fb033c7456a704c5a1f92cc70a447d6b9e2716
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/ninfer-erik-int8-k0.json
+  url: null
+  resolved_url: null
+  original_filename: ninfer-erik-int8-k0.json
+  filename_provenance: derived
+  bytes: 37834
+  sha256: 3e6fbd47936332c5a657612bc0210994d285b67d2a1e6cc0f069b02cf560cf14
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/ninfer-erik-int8-k0.requests.jsonl
+  url: null
+  resolved_url: null
+  original_filename: ninfer-erik-int8-k0.requests.jsonl
+  filename_provenance: derived
+  bytes: 79740
+  sha256: eabb3365a49d314f24ff8d34bc0cde3ec91ca9cd0bcd551f60e164778887efb0
+  retrieved_at: '2026-10-01'
+  version: null
+  format: jsonl
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/ninfer-erik-int8-k0.server.log
+  url: null
+  resolved_url: null
+  original_filename: ninfer-erik-int8-k0.server.log
+  filename_provenance: derived
+  bytes: 6994
+  sha256: 55c333d6e8e6b511c0f70d5915e882825c0b770cdf9bb4ef58c98b9a3a497355
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/ninfer-erik-int8-k0.summary.json
+  url: null
+  resolved_url: null
+  original_filename: ninfer-erik-int8-k0.summary.json
+  filename_provenance: derived
+  bytes: 1943
+  sha256: 6ef83ac8f6335b58b614102c07566a8bc6589ac750e6d0fd6dc2f87f2b28c793
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/ninfer-erik-int8-k3.json
+  url: null
+  resolved_url: null
+  original_filename: ninfer-erik-int8-k3.json
+  filename_provenance: derived
+  bytes: 38956
+  sha256: 1fac9311136123c65089a1db16eb7e749dea7c26f1403520f05af0459e942206
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/ninfer-erik-int8-k3.requests.jsonl
+  url: null
+  resolved_url: null
+  original_filename: ninfer-erik-int8-k3.requests.jsonl
+  filename_provenance: derived
+  bytes: 55237
+  sha256: 42256169ee5f9c3007db40d23ba6f854118b7eb056a9cd0d0ed3f7a0c1ba9a65
+  retrieved_at: '2026-10-01'
+  version: null
+  format: jsonl
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/ninfer-erik-int8-k3.server.log
+  url: null
+  resolved_url: null
+  original_filename: ninfer-erik-int8-k3.server.log
+  filename_provenance: derived
+  bytes: 6075
+  sha256: 6955a9489575a2ce7852b0b3597d73cade7ef0df378f410f634f2b67263c2427
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/ninfer-erik-int8-k3.summary.json
+  url: null
+  resolved_url: null
+  original_filename: ninfer-erik-int8-k3.summary.json
+  filename_provenance: derived
+  bytes: 1984
+  sha256: be941df2b76431e331b7d64099e515e2e036cb1523d90a95e04f9201bc67bf58
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/ninfer-erik-int8-k5.json
+  url: null
+  resolved_url: null
+  original_filename: ninfer-erik-int8-k5.json
+  filename_provenance: derived
+  bytes: 38643
+  sha256: 56756bde89bc8de9daefb2c8298dfe0add4053454c28beefb72c252777262a9c
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/ninfer-erik-int8-k5.requests.jsonl
+  url: null
+  resolved_url: null
+  original_filename: ninfer-erik-int8-k5.requests.jsonl
+  filename_provenance: derived
+  bytes: 58055
+  sha256: 0ce00978d73eb5cdbd3ad67721d56fbba6f4c903ccc9e6e699713ec91804d0f7
+  retrieved_at: '2026-10-01'
+  version: null
+  format: jsonl
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/ninfer-erik-int8-k5.server.log
+  url: null
+  resolved_url: null
+  original_filename: ninfer-erik-int8-k5.server.log
+  filename_provenance: derived
+  bytes: 6097
+  sha256: 6d4a4460861d86e081e20859f16200f7364df4efd3ec6eacae8c99c62b7494eb
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/ninfer-erik-int8-k5.summary.json
+  url: null
+  resolved_url: null
+  original_filename: ninfer-erik-int8-k5.summary.json
+  filename_provenance: derived
+  bytes: 1985
+  sha256: a1f76f9581eb1652990717fcc227a2acabd6ab980e4d3f4531906e32373b2ccc
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/ninfer-erik-int8-k7.server.log
+  url: null
+  resolved_url: null
+  original_filename: ninfer-erik-int8-k7.server.log
+  filename_provenance: derived
+  bytes: 4446
+  sha256: 4a9e1eeb61ad8176f5b5c89dc7d60bde22996ebe75a566c24e4f6dff992d1967
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/http-bench-matched/ninfer-erik-int8.runs.json
+  url: null
+  resolved_url: null
+  original_filename: ninfer-erik-int8.runs.json
+  filename_provenance: derived
+  bytes: 905
+  sha256: 891825f596be4a8cfa0d9d34480157d8c14c6241a70de558bad5b866b56d3f52
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/llama-bench-help.txt
+  url: null
+  resolved_url: null
+  original_filename: llama-bench-help.txt
+  filename_provenance: derived
+  bytes: 4484
+  sha256: da5da0ff6172a34a6245b72841770d1eb1f4f43ad3c549aa78687f324c317391
+  retrieved_at: '2026-10-01'
+  version: null
+  format: txt
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/llama-git-clone.json
+  url: null
+  resolved_url: null
+  original_filename: llama-git-clone.json
+  filename_provenance: derived
+  bytes: 442
+  sha256: 0de8e49f7e554cf3e8b942ff8efd74fb9229201c8ea84ef03f13d1f246e20231
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/llama-server-help.txt
+  url: null
+  resolved_url: null
+  original_filename: llama-server-help.txt
+  filename_provenance: derived
+  bytes: 58884
+  sha256: 578e91b0a0589a87bd8af7b8416c90da02cf50820c2cf541e346fc2a65c7feb6
+  retrieved_at: '2026-10-01'
+  version: null
+  format: txt
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/ninfer-v2-sha256.txt
+  url: null
+  resolved_url: null
+  original_filename: ninfer-v2-sha256.txt
+  filename_provenance: derived
+  bytes: 120
+  sha256: 3d1f54d3ea4fea7d3c692238738af4708b4143393d7d8d82455a4b58afb5c7ad
+  retrieved_at: '2026-10-01'
+  version: null
+  format: txt
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/ninfer-v3-payload-verification.json
+  url: null
+  resolved_url: null
+  original_filename: ninfer-v3-payload-verification.json
+  filename_provenance: derived
+  bytes: 312
+  sha256: 71b7e1a2c754171d82c40b3b7d404b8ace5d92fec2fe67eacd45188cfcba9102
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/ninfer-v3-sha256.txt
+  url: null
+  resolved_url: null
+  original_filename: ninfer-v3-sha256.txt
+  filename_provenance: derived
+  bytes: 120
+  sha256: d3ac3d3158f0b1e1089c304e92d0eae0fe7717acc38971e56db11eb6dbcca246
+  retrieved_at: '2026-10-01'
+  version: null
+  format: txt
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/official-commit-fetch-validation.json
+  url: null
+  resolved_url: null
+  original_filename: official-commit-fetch-validation.json
+  filename_provenance: derived
+  bytes: 5423
+  sha256: a91eac74b4edb268be4e2f2a26468a05a11cec5b2a5dcc159ef9e4ead11eb96f
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/official-commit-fetch-validation.log
+  url: null
+  resolved_url: null
+  original_filename: official-commit-fetch-validation.log
+  filename_provenance: derived
+  bytes: 1589
+  sha256: aded414f021941c2b15ff73efabc3cb90163490f74f5c46be99bf540cbe97c82
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/primary-benchmark-audit.json
+  url: null
+  resolved_url: null
+  original_filename: primary-benchmark-audit.json
+  filename_provenance: derived
+  bytes: 285842
+  sha256: 47d7e1d70782a5fcb3100bb4a811ee48625482d7940633eafd96a6d205c7de99
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/qwen38-cinference-4090-git-status-after-20260930T211550Z.txt
+  url: null
+  resolved_url: null
+  original_filename: qwen38-cinference-4090-git-status-after-20260930T211550Z.txt
+  filename_provenance: derived
+  bytes: 1
+  sha256: 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
+  retrieved_at: '2026-10-01'
+  version: null
+  format: txt
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/qwen38-cinference-4090-git-status-before-20260930T211550Z.txt
+  url: null
+  resolved_url: null
+  original_filename: qwen38-cinference-4090-git-status-before-20260930T211550Z.txt
+  filename_provenance: derived
+  bytes: 76789
+  sha256: ca43ffd4ef05856ea349701c67534ba6171b0d5f8fe093b72ba1918f63e1de19
+  retrieved_at: '2026-10-01'
+  version: null
+  format: txt
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/qwen38-cinference-4090-independent-git-clone-20260930T211550Z.log
+  url: null
+  resolved_url: null
+  original_filename: qwen38-cinference-4090-independent-git-clone-20260930T211550Z.log
+  filename_provenance: derived
+  bytes: 904
+  sha256: 1cb11fb6f80833f2ed2c5e0f06afd5c1243643dfc718e81b36606746ebcc8782
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/qwen38-cinference-4090-removed-appledouble-20260930T211550Z.json
+  url: null
+  resolved_url: null
+  original_filename: qwen38-cinference-4090-removed-appledouble-20260930T211550Z.json
+  filename_provenance: derived
+  bytes: 80436
+  sha256: 867979155b7dc4ff5df0bca42a959e337dfb7c5414434865eb5ab85105a21d49
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/qwen38-ninfer-4090-git-status-after-20260930T211550Z.txt
+  url: null
+  resolved_url: null
+  original_filename: qwen38-ninfer-4090-git-status-after-20260930T211550Z.txt
+  filename_provenance: derived
+  bytes: 1
+  sha256: 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
+  retrieved_at: '2026-10-01'
+  version: null
+  format: txt
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/qwen38-ninfer-4090-git-status-before-20260930T211550Z.txt
+  url: null
+  resolved_url: null
+  original_filename: qwen38-ninfer-4090-git-status-before-20260930T211550Z.txt
+  filename_provenance: derived
+  bytes: 67688
+  sha256: a99690e192d6f82f88b3db7489317d29ea99104859f80f95be803c38ef46640e
+  retrieved_at: '2026-10-01'
+  version: null
+  format: txt
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/qwen38-ninfer-4090-independent-git-clone-20260930T211550Z.log
+  url: null
+  resolved_url: null
+  original_filename: qwen38-ninfer-4090-independent-git-clone-20260930T211550Z.log
+  filename_provenance: derived
+  bytes: 909
+  sha256: 412a057451e18f22dacd0e56b000bf48fea74b63cd5a12522b33bd72206ebc05
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/qwen38-ninfer-4090-removed-appledouble-20260930T211550Z.json
+  url: null
+  resolved_url: null
+  original_filename: qwen38-ninfer-4090-removed-appledouble-20260930T211550Z.json
+  filename_provenance: derived
+  bytes: 70897
+  sha256: aa761762c13d744b77f349b8ea791a195a9d3291b8e20b590466bccd5da550cb
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/remote-git-clones-ninfer.json
+  url: null
+  resolved_url: null
+  original_filename: remote-git-clones-ninfer.json
+  filename_provenance: derived
+  bytes: 5233
+  sha256: b312cd00c7959ac89bb380a6199f49628baac14de83355f43c66b3a27133504d
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/service-verification/anthropic.json
+  url: null
+  resolved_url: null
+  original_filename: anthropic.json
+  filename_provenance: derived
+  bytes: 878
+  sha256: 616654ec211fa4df009ad52be1f5290d89dfaa93f68ecf1512cccb79fafd52dc
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/service-verification/binary-and-unit.json
+  url: null
+  resolved_url: null
+  original_filename: binary-and-unit.json
+  filename_provenance: derived
+  bytes: 391
+  sha256: c60b40015cd6ce6f9234146a67feabf64764ea32fc12775358339f16407cf931
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/service-verification/code.json
+  url: null
+  resolved_url: null
+  original_filename: code.json
+  filename_provenance: derived
+  bytes: 7235
+  sha256: 95bcc82142b79d50b35e1be9036c89f0df701654f8ea28ee5d6821beb6585456
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/service-verification/final-systemd-state.txt
+  url: null
+  resolved_url: null
+  original_filename: final-systemd-state.txt
+  filename_provenance: derived
+  bytes: 69
+  sha256: 86e422b7bb50fed04b1c3e08003c9ccdc6d190bfdcd0451834e84468acfc54dc
+  retrieved_at: '2026-10-01'
+  version: null
+  format: txt
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/service-verification/json.json
+  url: null
+  resolved_url: null
+  original_filename: json.json
+  filename_provenance: derived
+  bytes: 2158
+  sha256: 491f19ea4b551029a3e8571095a14c621304d42bbae624c5202112bee3ce2fd3
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/service-verification/manager-state.txt
+  url: null
+  resolved_url: null
+  original_filename: manager-state.txt
+  filename_provenance: derived
+  bytes: 52
+  sha256: 898f7c8214082ecd65e122685a9587a5e7916976b5b25be97e41fcaaa7f419f1
+  retrieved_at: '2026-10-01'
+  version: null
+  format: txt
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/service-verification/responses-schema-correction.json
+  url: null
+  resolved_url: null
+  original_filename: responses-schema-correction.json
+  filename_provenance: derived
+  bytes: 267
+  sha256: 59bd95e5d22ead82e93471f53d0ae7df936d3e0f22b919f3b664280f8e1b4e16
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/service-verification/responses.json
+  url: null
+  resolved_url: null
+  original_filename: responses.json
+  filename_provenance: derived
+  bytes: 1550
+  sha256: 5e4a46dfc2d33a8036a4d58d951ef4b7dc7e1a7950246096394ca47ac7157680
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/service-verification/stream.sse
+  url: null
+  resolved_url: null
+  original_filename: stream.sse
+  filename_provenance: derived
+  bytes: 1363
+  sha256: 97ccebdabba5669f5ce29fb534eed3260583785ff28622a0482ef93af424aeec
+  retrieved_at: '2026-10-01'
+  version: null
+  format: sse
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/service-verification/summary.json
+  url: null
+  resolved_url: null
+  original_filename: summary.json
+  filename_provenance: derived
+  bytes: 2030
+  sha256: fb392981e12b86db8c6fa9ca4c6442a6b57eaa1a6e399ff4d884f265827fcbd3
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/tabby-base-install.json
+  url: null
+  resolved_url: null
+  original_filename: tabby-base-install.json
+  filename_provenance: derived
+  bytes: 3664
+  sha256: 88761ebc828f05620078b73bb4a1a58d526aebb32a33f6cbcfdabb88ecf97c4c
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/tabby-base-install.log
+  url: null
+  resolved_url: null
+  original_filename: tabby-base-install.log
+  filename_provenance: derived
+  bytes: 21612
+  sha256: a640b07c54495b4fbe4051d87fbe972e7ff4cebfb222506ec30607770705e204
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/tabby-cpu-pycompile/backends_exllamav3_model.pyc
+  url: null
+  resolved_url: null
+  original_filename: backends_exllamav3_model.pyc
+  filename_provenance: derived
+  bytes: 74912
+  sha256: fc59ba56350fadcda4bcfbc683f9067bdf488d0f646eaebe5ca801258d4714a7
+  retrieved_at: '2026-10-01'
+  version: null
+  format: pyc
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/tabby-cpu-pycompile/common_args.pyc
+  url: null
+  resolved_url: null
+  original_filename: common_args.pyc
+  filename_provenance: derived
+  bytes: 5112
+  sha256: 7a1bc085a5d8ef689cacea99b059c9e7b206d34ccc1fcbd5db2510dcaa88575a
+  retrieved_at: '2026-10-01'
+  version: null
+  format: pyc
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/tabby-cpu-pycompile/common_config_models.pyc
+  url: null
+  resolved_url: null
+  original_filename: common_config_models.pyc
+  filename_provenance: derived
+  bytes: 31434
+  sha256: 82e704d4ac63be234dbb24b50b968d1dc23a98b27fbbe9dfb7c31b9d0cefa57f
+  retrieved_at: '2026-10-01'
+  version: null
+  format: pyc
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/tabby-cpu-pycompile/main.pyc
+  url: null
+  resolved_url: null
+  original_filename: main.pyc
+  filename_provenance: derived
+  bytes: 10460
+  sha256: 78aebcd7426dcb7c62669186cfdb58df0f7a10ff92b13c0f24d36498b8fb11dc
+  retrieved_at: '2026-10-01'
+  version: null
+  format: pyc
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/tabby-dflash2-http-preparation.json
+  url: null
+  resolved_url: null
+  original_filename: tabby-dflash2-http-preparation.json
+  filename_provenance: derived
+  bytes: 882
+  sha256: d09711bcae34f19a4981157eda98391506d389453bccae03bb8acb9cac351e14
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/tabby-git-clone.json
+  url: null
+  resolved_url: null
+  original_filename: tabby-git-clone.json
+  filename_provenance: derived
+  bytes: 782
+  sha256: 687555618c5b34deff9ef3467daf42e147bfc616c6d049bfcccdb636f5bcde9d
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/tabby-git-clone.log
+  url: null
+  resolved_url: null
+  original_filename: tabby-git-clone.log
+  filename_provenance: derived
+  bytes: 325
+  sha256: b3396e6b1c011317daa08585408f12a98d700f342e0be0758c0e3a00108c720c
+  retrieved_at: '2026-10-01'
+  version: null
+  format: log
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/tabby-pip-freeze-after.txt
+  url: null
+  resolved_url: null
+  original_filename: tabby-pip-freeze-after.txt
+  filename_provenance: derived
+  bytes: 1965
+  sha256: 82bb9d9af5e7e81ecf9b91fd776500501cb680780880f5b322d0363f5602012f
+  retrieved_at: '2026-10-01'
+  version: null
+  format: txt
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/tabby-pip-freeze-before.txt
+  url: null
+  resolved_url: null
+  original_filename: tabby-pip-freeze-before.txt
+  filename_provenance: derived
+  bytes: 1517
+  sha256: c9f4aa1619e2d36173c1cfc9b7ff564530895f59b3fe5fc8ace6efe299125813
+  retrieved_at: '2026-10-01'
+  version: null
+  format: txt
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/tabby-pip-plan.json
+  url: null
+  resolved_url: null
+  original_filename: tabby-pip-plan.json
+  filename_provenance: derived
+  bytes: 381225
+  sha256: b7799a6d59a8dbb0b976df3b9f25b6979f7743a972f324e10030f5baa33a84a7
+  retrieved_at: '2026-10-01'
+  version: null
+  format: json
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/tabby-preserve-engine-constraints.txt
+  url: null
+  resolved_url: null
+  original_filename: tabby-preserve-engine-constraints.txt
+  filename_provenance: derived
+  bytes: 37
+  sha256: 1d0c039cfbefd5dc7ff037db4d299ba8a7e6b9afb7699fb96a353b1acce8cbc6
+  retrieved_at: '2026-10-01'
+  version: null
+  format: txt
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/run_exl3_bench.sh
+  url: null
+  resolved_url: null
+  original_filename: run_qwen38_bench.sh
+  filename_provenance: derived
+  bytes: 972
+  sha256: 8545736886c8711f4064f4efece3361b65f5fdaf8e12b30de037c2e5fa81aa96
+  retrieved_at: '2026-10-01'
+  version: null
+  format: sh
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/run_llama_modes.py
+  url: null
+  resolved_url: null
+  original_filename: run_llama_modes.py
+  filename_provenance: derived
+  bytes: 2741
+  sha256: 0bd5854931cbe530e7209a8a76aa921dd11884074a235da11875b0bb5893fe4b
+  retrieved_at: '2026-10-01'
+  version: null
+  format: py
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/run_ninfer_modes.py
+  url: null
+  resolved_url: null
+  original_filename: run_ninfer_modes.py
+  filename_provenance: derived
+  bytes: 4338
+  sha256: 57671c8682c815c1182d15e625e1c780f1010ce4350f520581b5881296ae0a47
+  retrieved_at: '2026-10-01'
+  version: null
+  format: py
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/run_qwen38_service.sh
+  url: null
+  resolved_url: null
+  original_filename: run_qwen38_service.sh
+  filename_provenance: derived
+  bytes: 1061
+  sha256: e8fa689fca24a933339fc14bc4b07ca904f8cc93ae05ce164cad1deb137aa3fb
+  retrieved_at: '2026-10-01'
+  version: null
+  format: sh
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/service_ctl.sh
+  url: null
+  resolved_url: null
+  original_filename: service_ctl.sh
+  filename_provenance: derived
+  bytes: 212
+  sha256: c0099aab1d87239f10293fe94d5f1f718e3e98e5ffc147d159918dbbc0e5bfe3
+  retrieved_at: '2026-10-01'
+  version: null
+  format: sh
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/tabby-http-preparation/README.md
+  url: null
+  resolved_url: null
+  original_filename: README.md
+  filename_provenance: derived
+  bytes: 2390
+  sha256: 6ea12b703d5b3da3a910bfda5be180a3e9c82605b6468d7013bbc1bc388ff544
+  retrieved_at: '2026-10-01'
+  version: null
+  format: md
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/tabby-http-preparation/dflash2-benchmark.yml
+  url: null
+  resolved_url: null
+  original_filename: dflash2-benchmark.yml
+  filename_provenance: derived
+  bytes: 1096
+  sha256: a12fecd388216f18fa7f073c540207ebd1df2742fd8b871dc7cb1059ffc69180
+  retrieved_at: '2026-10-01'
+  version: null
+  format: yml
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/tabby-http-preparation/launch_dflash2_http.sh
+  url: null
+  resolved_url: null
+  original_filename: launch_dflash2_http.sh
+  filename_provenance: derived
+  bytes: 1060
+  sha256: 254da76e82b988b3e7ef3bb705060263e3686cf28128abff00228e315b9a5dfd
+  retrieved_at: '2026-10-01'
+  version: null
+  format: sh
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/verify_container_payload.py
+  url: null
+  resolved_url: null
+  original_filename: verify_container_payload.py
+  filename_provenance: derived
+  bytes: 1619
+  sha256: 0521b52388f71d3403b4ad71fff87a0fa68262746207af2132de4736a101e452
+  retrieved_at: '2026-10-01'
+  version: null
+  format: py
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/verify_qwen38_service.py
+  url: null
+  resolved_url: null
+  original_filename: verify_qwen38_service.py
+  filename_provenance: derived
+  bytes: 3545
+  sha256: ff642ef2cf02d5759ccb1bcf79d46aa84fc80884ab6c77f3a9fe8cb9d88802df
+  retrieved_at: '2026-10-01'
+  version: null
+  format: py
+  status: downloaded
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: primary source or remote g4090 execution snapshot; actual work ran remotely
+  error: null
+- kind: supplementary
+  path: supplementary/remote-evidence/results/service-verification/final-reconnect-and-cli.json
+  url: null
+  resolved_url: null
+  version: null
+  original_filename: final-reconnect-and-cli.json
+  filename_provenance: derived
+  format: json
+  retrieved_at: '2026-10-01'
+  bytes: 622
+  sha256: bb5f25f4a202aaf4ea5316577dae46a7f2be070a23e9586f0bcd49873ad922e0
+  status: downloaded
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: remote g4090 generated execution snapshot; health after SSH reconnect,
+    systemd PID/state, linger and four CLI version exit codes
+- kind: supplementary
+  path: supplementary/remote-evidence/results/service-verification/stopped-at-user-request.json
+  url: null
+  resolved_url: null
+  version: null
+  original_filename: stopped-at-user-request.json
+  filename_provenance: derived
+  format: json
+  retrieved_at: '2026-10-02'
+  bytes: 1125
+  sha256: 12df28087448bc01407642c4cb1c8150ad602530c674cf7b539be45c66482fcf
+  status: downloaded
+  error: null
+  extraction:
+    status: not_applicable
+    path: null
+    error: null
+  provenance: remote g4090 generated execution snapshot; stopped and disabled this
+    user service at user request, verified PID exit and NVIDIA process/memory snapshots
+repositories:
+- url: https://github.com/eriknelson/ninfer-4090
+  path: github-repo/eriknelson/ninfer-4090
+  commit: 1bd56c9a1bdf457c6188391a9385d44d86e953aa
+  branch: null
+  retrieved_at: '2026-10-01'
+  submodule_status: none_declared
+  status: inspected
+  inspection_scope:
+  - README.md
+  - CMakeLists.txt
+  execution: not_run_locally; same-commit independent remote clone benchmarked
+  note: selected serving/CLI interfaces were inspected selectively; no complete source
+    audit.
+reading:
+  status: partial
+  source: engineering_source_and_execution_records
+  paths:
+  - github-repo/eriknelson/ninfer-4090/README.md
+  - github-repo/eriknelson/ninfer-4090/CMakeLists.txt
+  - supplementary/exl3-bench/README.md
+  note: Selected engine interfaces and real run evidence; no complete code audit or
+    paper reproduction claimed.
+remote_execution:
+  status: measured_and_service_stopped_at_user_request
+  host_alias: g4090
+  root: ~/qwen38-4090
+  gpu_index: 3
+  gpu_uuid: GPU-REDACTED
+  gpu_model: RTX 4090
+  shared_machine: true
+  exclusive_gpu_isolation_established: false
+  driver: 570.124.06
+  system_cuda_toolkit: '12.8'
+  http_primary_configs: 9
+  http_primary_measured_requests: 81
+  http_primary_warmup_requests: 9
+  native_exl3_measured_requests: 27
+  all_completed_primary_requests_successful: true
+  local_cached_repository_modified: false
+  source_execution_location: independent remote Git clones with official origins/fixed
+    HEAD/no alternates; official exact-commit fetch validated
+  repositories:
+  - origin: https://github.com/eriknelson/ninfer-4090.git
+    commit: 1bd56c9a1bdf457c6188391a9385d44d86e953aa
+    remote_relative_path: repos/qwen38-ninfer-4090
+    execution: http_benchmarked
+  - origin: https://github.com/jram4/ninfer-4090.git
+    commit: 70ebb1290dc7abe246c20696a24d21f77faee8d4
+    remote_relative_path: repos/qwen38-cinference-4090
+    execution: http_benchmarked_and_service_smoke_verified_then_stopped_at_user_request
+  - origin: https://github.com/ggml-org/llama.cpp.git
+    commit: a4d880fd5c7f88713ded6db9f0111893bd78afa6
+    remote_relative_path: repos/native-llama/llama.cpp
+    execution: http_benchmarked
+  - origin: https://github.com/turboderp-org/exllamav3.git
+    commit: d3739fd393337b1ff4d6c2a342b12f0c87a9592f
+    remote_relative_path: repos/exllamav3-git
+    execution: native_ar_mtp_dflash2_benchmarked
+  - origin: https://github.com/syv-ai/HyperQwen.git
+    commit: e1459c7631774f56de2f9425437d54e7e72ea688
+    remote_relative_path: repos/HyperQwen-git
+    execution: cloned_not_gpu_run
+  - origin: https://github.com/theroyallab/tabbyAPI.git
+    commit: be74bf0a00bcb3a518e6feb7606f150c189be637
+    remote_relative_path: repos/tabbyAPI
+    execution: cpu_installed_and_config_verified_not_gpu_run
+  model_storage: remote models/ only; full weights not copied into local wiki
+  models:
+  - name: qwen3_8_27b.v2.ninfer
+    source: neroued/Qwen3.8-27B-NInfer
+    revision: 3526913004b1cf552cb57b88d6a5c6f5e4a89a70
+    bytes: 18210531328
+    sha256: eec39564993d6e9c7d5e383382a760f093465c9d163ec9a1bd6b80199514bf3e
+    verification: matched official LFS SHA256
+  - name: qwen3_8_27b.v3.ninfer
+    source: generated by pinned jram v2-to-v3 converter
+    bytes: 18210750082
+    sha256: efec7393d517dc3cdda1f8fa0f3333bd03ffe61610418f059d6758afcaece006
+    verification: full original v2 payload byte-identical; current metadata/template/identity
+      change full-file hash
+  - name: Qwen3.8-27B-UD-Q4_K_M.gguf
+    source: unsloth/Qwen3.8-27B-GGUF
+    revision: 4ca720788d1e01f1bff70c033e0d0028fd02e502
+    bytes: 16464440224
+    sha256: 322e194ff79741c7baa497c240f677f54b201b0efab44ca8e50f122b39123482
+    verification: matched official LFS SHA256
+  - name: mtp-Qwen3.8-27B-Q4_0.gguf
+    source: unsloth/Qwen3.8-27B-GGUF
+    revision: 4ca720788d1e01f1bff70c033e0d0028fd02e502
+    bytes: 1369590656
+    sha256: 50d9ce5a6da381bbcfb31061cf73df94a90e6faf8efeddee379a9cb8f1501c6e
+    verification: matched official LFS SHA256
+  - name: Qwen3.8-27B-EXL3-4.00bpw/
+    source: r0b0tlab/Qwen3.8-27B-EXL3-4.00bpw
+    revision: 3f1771b8c21f83cbb8e82169559ced9f38ca04e5
+    bytes: 16533419632
+    verification: all official LFS SHA256/git-blob SHA1 matched; per-file SHA256 archived
+  - name: Qwen3.8-27B-DFlash2-EXL3-4.00bpw/
+    source: r0b0tlab/Qwen3.8-27B-DFlash2-EXL3-4.00bpw
+    revision: 265b5240592907d2d55ff0dc4d5f66569692604d
+    bytes: 1254705438
+    verification: all official LFS SHA256/git-blob SHA1 matched; per-file SHA256 archived
+    block_size: 8
+    default_draft_tokens: 7
+  service:
+    unit: qwen38-cinference.service
+    state: disabled_inactive_dead
+    linger: true
+    context: 16384
+    draft_tokens: 7
+    kv_dtype: int8
+    max_concurrency: 1
+    prefix_reuse: true
+    base_url_remote: http://127.0.0.1:18038/v1
+    model_id: qwen3.8-27b
+    default_thinking: false
+    verification:
+    - health
+    - models
+    - valid JSON
+    - 1449-token complete code AST
+    - SSE DONE
+    - OpenAI Responses
+    - Anthropic Messages
+    code_semantic_tests: not_run
+    reboot_test: not_run
+    enabled: false
+    main_pid: 0
+    stopped_at_utc: '2026-10-01T17:48:51.394909+00:00'
+    stop_reason: Stopped and disabled at user request
+    stop_evidence_path: supplementary/remote-evidence/results/service-verification/stopped-at-user-request.json
+    previous_main_pid: 2332782
+    previous_main_pid_exists: false
+    verification_scope: historical deployment smoke before the service was stopped
+    note: Service stopped and automatic startup disabled at user request; models,
+      builds, original measurement and deployment records retained. User linger setting
+      was not changed.
+  limitations:
+  - 'formal speed matrix: context4096, max512 output, temp0/seed42/penalty0/thinkingoff;
+    code and prose truncated'
+  - different published quantizations and cache dtypes; deployment comparison, not
+    engine-only equal-precision study
+  - native EXL3 N/time_generate and HTTP (N-1)/decode_seconds/HTTP wall differ; separate
+    columns
+  - shared GPU snapshots are card totals and do not establish exclusive process isolation
+  - 16K service smoke reused prompt prefix; not included in cold-prefix three-repetition
+    matrix
+  - text single-lane only; no vision/long-context/positive-temperature quality evaluation
+  recorded_failures:
+  - Erik MTP7 unsupported [1,5]; supported K5 tested
+  - DFlash2 K15 unsupported for block_size8; model unchanged and CPU guard added
+  - TIME_WAIT falsely failed port bind guard; listener guard corrected and verified
+  - Responses rejected Chat-only enable_thinking field; verifier corrected to reasoning.effort
+    none
+  gpu_count_used: 1
+  execution_schedule: serial modes and single requests on physical GPU3
+  multi_gpu_parallelism: not_run
+reproduction:
+  status: engine_inference_measured_and_service_smoke_verified
+  note: Engineering deployment, not a reproduction of formal paper benchmark results.
+ingest:
+  status: extracted
+  updated_at: '2026-10-02'
+  note: Raw requests/responses/logs/config/model integrity and fixed source evidence
+    archived; local source caches remain reference-only.
+archive_distribution:
+  snapshot_date: '2026-10-02'
+  original_cache: .local/originals/llm-inference/assets/g4090-qwen38-benchmark-2026
+  original_metadata: .local/originals/llm-inference/assets/g4090-qwen38-benchmark-2026/metadata.yaml
+  source_hash_semantics: Original asset sha256/bytes are preserved as historical provenance.
+    Public sanitized file hashes are in archives/public-files.json.
+  full_papers_and_upstream_repos: local_only; recover from canonical URLs and fixed
+    revisions in archives/

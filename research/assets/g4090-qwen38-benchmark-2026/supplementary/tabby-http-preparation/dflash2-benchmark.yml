@@ -1,0 +1,45 @@
+# Benchmark-only short prompts (<256 tokens), max output512.
+network:
+  host: 127.0.0.1
+  port: 18041
+  disable_auth: true
+  allowed_origins: []
+  disable_fetch_requests: true
+  api_servers: [OAI]
+  access_log: true
+logging:
+  log_generation_params: true
+  log_chat_completion_requests: true
+  log_live_status: false
+model:
+  model_dir: /home/REMOTE_USER/qwen38-4090/models
+  model_name: Qwen3.8-27B-EXL3-4.00bpw
+  backend: exllamav3
+  inline_model_loading: false
+  use_dummy_models: true
+  dummy_model_names: [qwen3.8-27b]
+  max_seq_len: 4096
+  cache_size: 4096
+  cache_mode: Q4
+  max_batch_size: 1
+  chunk_size: 1024
+  tensor_parallel: false
+  gpu_split_auto: true
+  vision: false
+  warmup: false
+  template_vars_force:
+    enable_thinking: false
+draft_model:
+  draft_mode: model
+  draft_model_dir: /home/REMOTE_USER/qwen38-4090/models
+  draft_model_name: Qwen3.8-27B-DFlash2-EXL3-4.00bpw
+  draft_cache_mode: Q4
+  draft_num_tokens: 7
+  dynamic_draft: false
+sampling:
+  override_preset: null
+memory:
+  sysmem_recurrent_cache: 0
+  sysmem_kv_cache: 0
+  sysmem_multimodal_cache: 0
+  cuda_malloc_async: false

@@ -1,0 +1,119 @@
+{
+  "clones": [
+    {
+      "directory": "/home/REMOTE_USER/qwen38-4090/repos/qwen38-ninfer-4090",
+      "reference": "/home/REMOTE_USER/qwen38-4090/repos/qwen38-ninfer-4090",
+      "canonical_origin": "https://github.com/eriknelson/ninfer-4090.git",
+      "expected_head": "1bd56c9a1bdf457c6188391a9385d44d86e953aa",
+      "clone_command": [
+        "git",
+        "clone",
+        "--no-local",
+        "--no-hardlinks",
+        "/home/REMOTE_USER/qwen38-4090/repos/qwen38-ninfer-4090",
+        "/home/REMOTE_USER/qwen38-4090/repos/.independent-git-clones-20260930T211550Z/qwen38-ninfer-4090"
+      ],
+      "clone_log": "/home/REMOTE_USER/qwen38-4090/results/qwen38-ninfer-4090-independent-git-clone-20260930T211550Z.log",
+      "started_at": "2026-09-30T21:15:52.384533+00:00",
+      "status_before_file": "/home/REMOTE_USER/qwen38-4090/results/qwen38-ninfer-4090-git-status-before-20260930T211550Z.txt",
+      "tracked_before": {
+        "files": 1379,
+        "sha256": "5a6272c9be6ab382ccc1deb216dcdd410e7919d0a8cd70c4d8169b825e8e0f28"
+      },
+      "build_before": {
+        "directory_inode": 112860964,
+        "directory_device": 2081,
+        "server_binary": {
+          "inode": 112889860,
+          "size": 578179232,
+          "mtime_ns": 1790802059237483970,
+          "sha256": "d8ca7c2858446a75f9b32cd59149a4040b267706b54ad9e6bb9bd80df971e9ef"
+        }
+      },
+      "head": "1bd56c9a1bdf457c6188391a9385d44d86e953aa",
+      "origin": "https://github.com/eriknelson/ninfer-4090.git",
+      "git_status": "",
+      "tracked_status_clean": true,
+      "alternates": "none",
+      "objects_shared_inode_count": 0,
+      "original_git_backup": "/home/REMOTE_USER/qwen38-4090/results/remote-git-metadata-backups/20260930T211550Z/qwen38-ninfer-4090/.git",
+      "appledouble_removed_count": 1573,
+      "status_after_file": "/home/REMOTE_USER/qwen38-4090/results/qwen38-ninfer-4090-git-status-after-20260930T211550Z.txt",
+      "tracked_after": {
+        "files": 1379,
+        "sha256": "5a6272c9be6ab382ccc1deb216dcdd410e7919d0a8cd70c4d8169b825e8e0f28"
+      },
+      "build_after": {
+        "directory_inode": 112860964,
+        "directory_device": 2081,
+        "server_binary": {
+          "inode": 112889860,
+          "size": 578179232,
+          "mtime_ns": 1790802059237483970,
+          "sha256": "d8ca7c2858446a75f9b32cd59149a4040b267706b54ad9e6bb9bd80df971e9ef"
+        }
+      },
+      "completed_at": "2026-09-30T21:16:01.994712+00:00",
+      "rebuilt": false,
+      "method": "actual git clone --no-local; verified clone Git directory transferred to unchanged existing working/build directory"
+    },
+    {
+      "directory": "/home/REMOTE_USER/qwen38-4090/repos/qwen38-cinference-4090",
+      "reference": "/home/REMOTE_USER/qwen38-4090/repos/qwen38-cinference-4090",
+      "canonical_origin": "https://github.com/jram4/ninfer-4090.git",
+      "expected_head": "70ebb1290dc7abe246c20696a24d21f77faee8d4",
+      "clone_command": [
+        "git",
+        "clone",
+        "--no-local",
+        "--no-hardlinks",
+        "/home/REMOTE_USER/qwen38-4090/repos/qwen38-cinference-4090",
+        "/home/REMOTE_USER/qwen38-4090/repos/.independent-git-clones-20260930T211550Z/qwen38-cinference-4090"
+      ],
+      "clone_log": "/home/REMOTE_USER/qwen38-4090/results/qwen38-cinference-4090-independent-git-clone-20260930T211550Z.log",
+      "started_at": "2026-09-30T21:16:03.898532+00:00",
+      "status_before_file": "/home/REMOTE_USER/qwen38-4090/results/qwen38-cinference-4090-git-status-before-20260930T211550Z.txt",
+      "tracked_before": {
+        "files": 1605,
+        "sha256": "0a05a3e17dc2e05ee1fe81fb18e910c61f29ab930ebd33c7c044dd2bac600136"
+      },
+      "build_before": {
+        "directory_inode": 112863179,
+        "directory_device": 2081,
+        "server_binary": {
+          "inode": 112889734,
+          "size": 440140912,
+          "mtime_ns": 1790801704759013289,
+          "sha256": "b2c1d3a98a87b1b7b1aafcf89e766bdbb2a6ef4b2f16bbdce7af781ebba58808"
+        }
+      },
+      "head": "70ebb1290dc7abe246c20696a24d21f77faee8d4",
+      "origin": "https://github.com/jram4/ninfer-4090.git",
+      "git_status": "",
+      "tracked_status_clean": true,
+      "alternates": "none",
+      "objects_shared_inode_count": 0,
+      "original_git_backup": "/home/REMOTE_USER/qwen38-4090/results/remote-git-metadata-backups/20260930T211550Z/qwen38-cinference-4090/.git",
+      "appledouble_removed_count": 1802,
+      "status_after_file": "/home/REMOTE_USER/qwen38-4090/results/qwen38-cinference-4090-git-status-after-20260930T211550Z.txt",
+      "tracked_after": {
+        "files": 1605,
+        "sha256": "0a05a3e17dc2e05ee1fe81fb18e910c61f29ab930ebd33c7c044dd2bac600136"
+      },
+      "build_after": {
+        "directory_inode": 112863179,
+        "directory_device": 2081,
+        "server_binary": {
+          "inode": 112889734,
+          "size": 440140912,
+          "mtime_ns": 1790801704759013289,
+          "sha256": "b2c1d3a98a87b1b7b1aafcf89e766bdbb2a6ef4b2f16bbdce7af781ebba58808"
+        }
+      },
+      "completed_at": "2026-09-30T21:16:11.999241+00:00",
+      "rebuilt": false,
+      "method": "actual git clone --no-local; verified clone Git directory transferred to unchanged existing working/build directory"
+    }
+  ],
+  "no_gpu_or_build_executed": true
+}

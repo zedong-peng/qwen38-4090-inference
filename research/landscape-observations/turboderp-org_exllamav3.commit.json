@@ -1,0 +1,101 @@
+{
+  "sha": "d3739fd393337b1ff4d6c2a342b12f0c87a9592f",
+  "node_id": "C_kwDOOU24GtoAKGQzNzM5ZmQzOTMzMzdiMWZmNGQ2YzJhMzQyYjEyZjBjODdhOTU5MmY",
+  "commit": {
+    "author": {
+      "name": "turboderp",
+      "email": "11859846+turboderp@users.noreply.github.com",
+      "date": "2026-09-27T20:12:45Z"
+    },
+    "committer": {
+      "name": "turboderp",
+      "email": "11859846+turboderp@users.noreply.github.com",
+      "date": "2026-09-27T20:12:45Z"
+    },
+    "message": "Bump to v1.5.3",
+    "tree": {
+      "sha": "c20cf6c9ee1b38b9766a9cde74130f12fdec5c4a",
+      "url": "https://api.github.com/repos/turboderp-org/exllamav3/git/trees/c20cf6c9ee1b38b9766a9cde74130f12fdec5c4a"
+    },
+    "url": "https://api.github.com/repos/turboderp-org/exllamav3/git/commits/d3739fd393337b1ff4d6c2a342b12f0c87a9592f",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/turboderp-org/exllamav3/commits/d3739fd393337b1ff4d6c2a342b12f0c87a9592f",
+  "html_url": "https://github.com/turboderp-org/exllamav3/commit/d3739fd393337b1ff4d6c2a342b12f0c87a9592f",
+  "comments_url": "https://api.github.com/repos/turboderp-org/exllamav3/commits/d3739fd393337b1ff4d6c2a342b12f0c87a9592f/comments",
+  "author": {
+    "login": "turboderp",
+    "id": 11859846,
+    "node_id": "MDQ6VXNlcjExODU5ODQ2",
+    "avatar_url": "https://avatars.githubusercontent.com/u/11859846?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/turboderp",
+    "html_url": "https://github.com/turboderp",
+    "followers_url": "https://api.github.com/users/turboderp/followers",
+    "following_url": "https://api.github.com/users/turboderp/following{/other_user}",
+    "gists_url": "https://api.github.com/users/turboderp/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/turboderp/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/turboderp/subscriptions",
+    "organizations_url": "https://api.github.com/users/turboderp/orgs",
+    "repos_url": "https://api.github.com/users/turboderp/repos",
+    "events_url": "https://api.github.com/users/turboderp/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/turboderp/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "turboderp",
+    "id": 11859846,
+    "node_id": "MDQ6VXNlcjExODU5ODQ2",
+    "avatar_url": "https://avatars.githubusercontent.com/u/11859846?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/turboderp",
+    "html_url": "https://github.com/turboderp",
+    "followers_url": "https://api.github.com/users/turboderp/followers",
+    "following_url": "https://api.github.com/users/turboderp/following{/other_user}",
+    "gists_url": "https://api.github.com/users/turboderp/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/turboderp/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/turboderp/subscriptions",
+    "organizations_url": "https://api.github.com/users/turboderp/orgs",
+    "repos_url": "https://api.github.com/users/turboderp/repos",
+    "events_url": "https://api.github.com/users/turboderp/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/turboderp/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "588eca3fbaa8e6de054242bd7e5d90c542f704c8",
+      "url": "https://api.github.com/repos/turboderp-org/exllamav3/commits/588eca3fbaa8e6de054242bd7e5d90c542f704c8",
+      "html_url": "https://github.com/turboderp-org/exllamav3/commit/588eca3fbaa8e6de054242bd7e5d90c542f704c8"
+    }
+  ],
+  "stats": {
+    "total": 2,
+    "additions": 1,
+    "deletions": 1
+  },
+  "files": [
+    {
+      "sha": "9c4592f3a2a201ab7baecbe87622955c203643b9",
+      "filename": "exllamav3/version.py",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1,
+      "changes": 2,
+      "blob_url": "https://github.com/turboderp-org/exllamav3/blob/d3739fd393337b1ff4d6c2a342b12f0c87a9592f/exllamav3%2Fversion.py",
+      "raw_url": "https://github.com/turboderp-org/exllamav3/raw/d3739fd393337b1ff4d6c2a342b12f0c87a9592f/exllamav3%2Fversion.py",
+      "contents_url": "https://api.github.com/repos/turboderp-org/exllamav3/contents/exllamav3%2Fversion.py?ref=d3739fd393337b1ff4d6c2a342b12f0c87a9592f",
+      "patch": "@@ -1 +1 @@\n-__version__ = \"1.5.2\"\n\\ No newline at end of file\n+__version__ = \"1.5.3\"\n\\ No newline at end of file"
+    }
+  ]
+}

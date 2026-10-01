@@ -1,0 +1,6 @@
+COMMAND: ['git', 'clone', '--no-local', '--no-hardlinks', '/home/REMOTE_USER/qwen38-4090/repos/qwen38-cinference-4090', '/home/REMOTE_USER/qwen38-4090/repos/.independent-git-clones-20260930T211550Z/qwen38-cinference-4090']
+Cloning into '/home/REMOTE_USER/qwen38-4090/repos/.independent-git-clones-20260930T211550Z/qwen38-cinference-4090'...
+COMMAND: git -C /home/REMOTE_USER/qwen38-4090/repos/.independent-git-clones-20260930T211550Z/qwen38-cinference-4090 ['checkout', '--detach', '70ebb1290dc7abe246c20696a24d21f77faee8d4']
+HEAD is now at 70ebb12 docs: record sampled drafting benchmarks
+COMMAND: git -C /home/REMOTE_USER/qwen38-4090/repos/.independent-git-clones-20260930T211550Z/qwen38-cinference-4090 ['remote', 'set-url', 'origin', 'https://github.com/jram4/ninfer-4090.git']
+COMMAND: git -C /home/REMOTE_USER/qwen38-4090/repos/.independent-git-clones-20260930T211550Z/qwen38-cinference-4090 ['fsck', '--full', '--no-dangling']

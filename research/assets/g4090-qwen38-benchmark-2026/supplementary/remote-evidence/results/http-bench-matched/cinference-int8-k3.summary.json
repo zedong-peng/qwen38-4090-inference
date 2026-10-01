@@ -1,0 +1,89 @@
+[
+  {
+    "label": "cinference-int8-k3",
+    "workload": "json",
+    "successful_reps": 3,
+    "failed_reps": 0,
+    "median_decode_tps": 157.06012413593558,
+    "median_end_to_end_output_tps": 144.27780633438974,
+    "median_prefill_tps": 784.2796541611917,
+    "median_server_prompt_ms": 98.179265,
+    "median_draft_acceptance": 0.8299319727891157,
+    "finish_reasons": [
+      "stop",
+      "stop",
+      "stop"
+    ],
+    "quality_checks": [
+      {
+        "valid_json": true,
+        "three_districts": true
+      },
+      {
+        "valid_json": true,
+        "three_districts": true
+      },
+      {
+        "valid_json": true,
+        "three_districts": true
+      }
+    ]
+  },
+  {
+    "label": "cinference-int8-k3",
+    "workload": "code",
+    "successful_reps": 3,
+    "failed_reps": 0,
+    "median_decode_tps": 163.01844274825643,
+    "median_end_to_end_output_tps": 158.25691033358407,
+    "median_prefill_tps": 709.2317552289499,
+    "median_server_prompt_ms": 97.288368,
+    "median_draft_acceptance": 0.8598130841121495,
+    "finish_reasons": [
+      "length",
+      "length",
+      "length"
+    ],
+    "quality_checks": [
+      {
+        "python_syntax": false,
+        "semantic_tests": "not_run"
+      },
+      {
+        "python_syntax": false,
+        "semantic_tests": "not_run"
+      },
+      {
+        "python_syntax": false,
+        "semantic_tests": "not_run"
+      }
+    ]
+  },
+  {
+    "label": "cinference-int8-k3",
+    "workload": "prose",
+    "successful_reps": 3,
+    "failed_reps": 0,
+    "median_decode_tps": 100.2413894656181,
+    "median_end_to_end_output_tps": 98.88657276114732,
+    "median_prefill_tps": 439.6518030133373,
+    "median_server_prompt_ms": 77.33392599999999,
+    "median_draft_acceptance": 0.4037626628075253,
+    "finish_reasons": [
+      "length",
+      "length",
+      "length"
+    ],
+    "quality_checks": [
+      {
+        "words": 402
+      },
+      {
+        "words": 402
+      },
+      {
+        "words": 402
+      }
+    ]
+  }
+]

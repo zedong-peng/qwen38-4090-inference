@@ -1,0 +1,89 @@
+[
+  {
+    "label": "cinference-int8-k0",
+    "workload": "json",
+    "successful_reps": 3,
+    "failed_reps": 0,
+    "median_decode_tps": 53.64882334240444,
+    "median_end_to_end_output_tps": 52.3276706743325,
+    "median_prefill_tps": 807.2082057389631,
+    "median_server_prompt_ms": 95.390507,
+    "median_draft_acceptance": null,
+    "finish_reasons": [
+      "stop",
+      "stop",
+      "stop"
+    ],
+    "quality_checks": [
+      {
+        "valid_json": true,
+        "three_districts": true
+      },
+      {
+        "valid_json": true,
+        "three_districts": true
+      },
+      {
+        "valid_json": true,
+        "three_districts": true
+      }
+    ]
+  },
+  {
+    "label": "cinference-int8-k0",
+    "workload": "code",
+    "successful_reps": 3,
+    "failed_reps": 0,
+    "median_decode_tps": 53.61274352469672,
+    "median_end_to_end_output_tps": 53.173719378053285,
+    "median_prefill_tps": 729.6976924854473,
+    "median_server_prompt_ms": 94.559707,
+    "median_draft_acceptance": null,
+    "finish_reasons": [
+      "length",
+      "length",
+      "length"
+    ],
+    "quality_checks": [
+      {
+        "python_syntax": false,
+        "semantic_tests": "not_run"
+      },
+      {
+        "python_syntax": false,
+        "semantic_tests": "not_run"
+      },
+      {
+        "python_syntax": false,
+        "semantic_tests": "not_run"
+      }
+    ]
+  },
+  {
+    "label": "cinference-int8-k0",
+    "workload": "prose",
+    "successful_reps": 3,
+    "failed_reps": 0,
+    "median_decode_tps": 53.56477634882576,
+    "median_end_to_end_output_tps": 53.232351312456046,
+    "median_prefill_tps": 455.8518723820695,
+    "median_server_prompt_ms": 74.585632,
+    "median_draft_acceptance": null,
+    "finish_reasons": [
+      "length",
+      "length",
+      "length"
+    ],
+    "quality_checks": [
+      {
+        "words": 388
+      },
+      {
+        "words": 388
+      },
+      {
+        "words": 388
+      }
+    ]
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "repo": "Anbeeld/beellama.cpp",
+    "stars": 1141,
+    "pushed": "2026-09-30T11:00:40Z",
+    "branch": "main"
+  },
+  {
+    "repo": "satellitedown/cinference",
+    "stars": 5,
+    "pushed": "2026-09-30T08:13:39Z",
+    "branch": "main"
+  },
+  {
+    "repo": "r0b0tlab/qwen38-exl3-dflash2",
+    "stars": 22,
+    "pushed": "2026-09-20T17:02:57Z",
+    "branch": "main"
+  },
+  {
+    "repo": "r0b0tlab/exllamav3",
+    "stars": 0,
+    "pushed": "2026-09-17T18:16:26Z",
+    "branch": "master"
+  },
+  {
+    "repo": "MiaAI-Lab/Qwen3.8-27B-DFlash2-EXL3-5.0bpw",
+    "stars": 230,
+    "pushed": "2026-09-01T19:40:29Z",
+    "branch": "main"
+  },
+  {
+    "repo": "noonghunna/club-3090",
+    "stars": 2324,
+    "pushed": "2026-09-29T03:24:40Z",
+    "branch": "master"
+  },
+  {
+    "repo": "PaddlePaddle/FastDeploy",
+    "stars": 3717,
+    "pushed": "2026-09-24T14:17:31Z",
+    "branch": "develop"
+  },
+  {
+    "repo": "dphnAI/sonar",
+    "stars": 1869,
+    "pushed": "2026-09-11T20:33:24Z",
+    "branch": "main"
+  },
+  {
+    "repo": "intel/auto-round",
+    "stars": 1627,
+    "pushed": "2026-09-30T14:08:24Z",
+    "branch": "main"
+  },
+  {
+    "repo": "kvmem/kvmem-qw3",
+    "stars": 23,
+    "pushed": "2026-09-19T12:17:29Z",
+    "branch": "main"
+  },
+  {
+    "repo": "dflash-ai/dflash",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "repo": "z-lab/dflash",
+    "stars": 6130,
+    "pushed": "2026-08-18T21:14:10Z",
+    "branch": "main"
+  },
+  {
+    "repo": "yuhuili/EAGLE",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "repo": "huggingface/transformers",
+    "stars": 166865,
+    "pushed": "2026-09-30T17:12:47Z",
+    "branch": "main"
+  },
+  {
+    "repo": "unslothai/unsloth",
+    "stars": 77092,
+    "pushed": "2026-09-30T19:52:32Z",
+    "branch": "main"
+  },
+  {
+    "repo": "lmstudio-ai/lms",
+    "stars": 5322,
+    "pushed": "2026-09-25T19:27:53Z",
+    "branch": "main"
+  },
+  {
+    "repo": "microsoft/BitNet",
+    "stars": 40353,
+    "pushed": "2026-07-27T05:52:06Z",
+    "branch": "main"
+  },
+  {
+    "repo": "NVIDIA/TensorRT-Edge-LLM",
+    "stars": 573,
+    "pushed": "2026-09-29T16:12:35Z",
+    "branch": "main"
+  },
+  {
+    "repo": "intel/ipex-llm",
+    "stars": 8852,
+    "pushed": "2026-01-28T17:32:40Z",
+    "branch": "main"
+  }
+]

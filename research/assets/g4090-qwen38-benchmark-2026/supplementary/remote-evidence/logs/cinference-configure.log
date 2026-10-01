@@ -1,0 +1,15 @@
+-- Found CUDAToolkit: /usr/local/cuda/targets/x86_64-linux/include (found version "12.8.93")
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Found PkgConfig: /home/REMOTE_USER/qwen38-4090/tools/build-env/bin/pkg-config (found version "0.29.2")
+-- Checking for modules 'libavformat;libavcodec;libavutil;libswscale'
+--   Found libavformat, version 61.7.100
+--   Found libavcodec, version 61.19.101
+--   Found libavutil, version 59.39.100
+--   Found libswscale, version 8.3.100
+-- Checking for module 'libcurl>=7.85'
+--   Found libcurl, version 8.22.0
+-- Configuring done (1.6s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/REMOTE_USER/qwen38-4090/repos/qwen38-cinference-4090/build-sm89

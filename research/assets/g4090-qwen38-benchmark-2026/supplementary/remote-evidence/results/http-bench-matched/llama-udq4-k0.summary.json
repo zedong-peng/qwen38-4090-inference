@@ -1,0 +1,89 @@
+[
+  {
+    "label": "llama-udq4-k0",
+    "workload": "json",
+    "successful_reps": 3,
+    "failed_reps": 0,
+    "median_decode_tps": 48.278555265662035,
+    "median_end_to_end_output_tps": 42.69313894904608,
+    "median_prefill_tps": 370.0179723015118,
+    "median_server_prompt_ms": 208.098,
+    "median_draft_acceptance": null,
+    "finish_reasons": [
+      "stop",
+      "stop",
+      "stop"
+    ],
+    "quality_checks": [
+      {
+        "valid_json": true,
+        "three_districts": true
+      },
+      {
+        "valid_json": true,
+        "three_districts": true
+      },
+      {
+        "valid_json": true,
+        "three_districts": true
+      }
+    ]
+  },
+  {
+    "label": "llama-udq4-k0",
+    "workload": "code",
+    "successful_reps": 3,
+    "failed_reps": 0,
+    "median_decode_tps": 48.25290945686204,
+    "median_end_to_end_output_tps": 47.23848721865696,
+    "median_prefill_tps": 314.0832183970831,
+    "median_server_prompt_ms": 219.687,
+    "median_draft_acceptance": null,
+    "finish_reasons": [
+      "length",
+      "length",
+      "length"
+    ],
+    "quality_checks": [
+      {
+        "python_syntax": false,
+        "semantic_tests": "not_run"
+      },
+      {
+        "python_syntax": false,
+        "semantic_tests": "not_run"
+      },
+      {
+        "python_syntax": false,
+        "semantic_tests": "not_run"
+      }
+    ]
+  },
+  {
+    "label": "llama-udq4-k0",
+    "workload": "prose",
+    "successful_reps": 3,
+    "failed_reps": 0,
+    "median_decode_tps": 48.151945300897836,
+    "median_end_to_end_output_tps": 47.217018556149426,
+    "median_prefill_tps": 151.2448788039199,
+    "median_server_prompt_ms": 224.801,
+    "median_draft_acceptance": null,
+    "finish_reasons": [
+      "length",
+      "length",
+      "length"
+    ],
+    "quality_checks": [
+      {
+        "words": 380
+      },
+      {
+        "words": 380
+      },
+      {
+        "words": 380
+      }
+    ]
+  }
+]
