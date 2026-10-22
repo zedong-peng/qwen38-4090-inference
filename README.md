@@ -2,6 +2,8 @@
 
 单张 RTX 4090 上的推理方案研究、速度证据和专题榜单。这个独立仓库保存研究与实验现场，便于后续继续；快照日期为 **2026-10-02**。
 
+在线（独立静态页）：[`zedongpeng.com/benchmarks/qwen38-4090/`](https://zedongpeng.com/benchmarks/qwen38-4090/)
+
 ## 从这里继续
 
 先读 [CONTINUE.md](CONTINUE.md)，再读 [实验协议](site/assets/benchmarks/qwen38-4090/README.md)。
@@ -37,7 +39,7 @@ Cinference MTP7 在已测 HTTP 配置的代码/JSON 上分别为 **213.9 / 238.6
 
 ## 当前状态
 
-实验服务器的推理服务已按用户要求停止并禁用自动启动；本次归档没有重新启动 GPU 任务。CLI 工具安装记录已保存。个人网站榜单通过完整 Jekyll 构建及桌面/手机检查，尚未推送到个人站点。
+实验服务器的推理服务已按用户要求停止并禁用自动启动；本次归档没有重新启动 GPU 任务。CLI 工具安装记录已保存。个人网站榜单已作为独立静态页发布到 `zedongpeng.com/benchmarks/qwen38-4090/`：个人网站只负责拉取本仓库、运行 `tools/build_site.py` 并复制 `dist/`，不再把榜单嵌入 Jekyll 页面。
 
 现有 [Artificial Analysis](https://artificialanalysis.ai/hardware-inference-stack/laptops-workstations)、[Inference Atlas](https://0xbakeer.github.io/inference-atlas/) 已做本地推理比较；截至快照日期，检查的数据没有 RTX 4090 条目。这个专题补充单卡 4090 证据，不宣称整个领域没有其他榜单。
 
