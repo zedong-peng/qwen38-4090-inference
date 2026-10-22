@@ -4,8 +4,8 @@
 
 个人网站部署时从本仓库拉取 `main`，运行 `tools/build_site.py`，把
 `dist/benchmarks/qwen38-4090/` 和 `dist/assets/` 复制到站点输出目录。榜单页面是独立的
-静态 HTML（自带页头、主题切换和页脚），不经过个人网站的 Jekyll layout。个人网站的
-`/qwen38-4090/` 只是一个带导航的跳转页，指向 `/benchmarks/qwen38-4090/`。
+静态 HTML（自带页头、主题切换和页脚），不经过个人网站的 Jekyll layout。个人网站不在导航栏放榜单入口，只在博客底部的 websites 列表链接到
+`/benchmarks/qwen38-4090/`；`/qwen38-4090/` 只保留一个无导航的静态短链接跳转。
 
 下面保留最初的 Jekyll 草稿接入说明，仅用于追溯；当前部署不再把九个文件复制进 Jekyll 页面。
 
