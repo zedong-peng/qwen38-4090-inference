@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Qwen3.8 27B on one RTX 4090</title>
-<meta name="description" content="How long one RTX 4090 takes to serve a recorded coding agent with Qwen3.8 27B, across inference engines, weights and speculative decoding, on the AA-AgentPerf-Local workload.">
+<meta name="description" content="How long one RTX 4090 takes to run Artificial Analysis's local agent benchmark with Qwen3.8 27B, across inference engines and speculative decoding.">
 <script>try { var t = localStorage.getItem("theme"); if (t === "dark" || t === "light") document.documentElement.dataset.theme = t; } catch (e) {}</script>
 <link rel="stylesheet" href="/assets/css/qwen38-4090-leaderboard.css">
 </head>
@@ -15,50 +15,29 @@
 </header>
 <main>
   <h1>Qwen3.8 27B on one RTX 4090</h1>
-  <p class="lede">How long one 24 GB card takes to serve a recorded coding agent, across <span data-fill="n-methods">many</span> ways to run the model. The workload is the one Artificial Analysis uses on its <a href="https://artificialanalysis.ai/hardware-inference-stack/laptops-workstations">laptops &amp; workstations</a> page, so their systems share the axis.</p>
-  <ul class="facts">
-    <li>8 agent tasks · 168 turns</li>
-    <li>history grows to 56K tokens</li>
-    <li>65,536-token context · one request at a time</li>
-    <li>every turn writes its recorded length</li>
-  </ul>
+  <p class="lede">How long one RTX 4090 takes to run Artificial Analysis's local agent benchmark with Qwen3.8 27B, for each inference engine and drafting method. The workload is the one on their <a href="https://artificialanalysis.ai/hardware-inference-stack/laptops-workstations">laptops &amp; workstations</a> page, so their systems share the charts.</p>
 
-  <section id="time">
-    <h2>Completion time</h2>
-    <p class="sub">Minutes to answer every turn; tool time excluded. Lower is better.</p>
-    <div class="card">
-      <ul class="legend" id="legend-time"></ul>
-      <div id="bars"></div>
-      <ul class="missing" id="missing"></ul>
-    </div>
+  <section>
+    <h2>Completion time by engine and drafting</h2>
+    <p class="sub">Minutes to finish the agent replay. MTP drafts tokens with the model's own extra head, DFlash2 with a small separate model.</p>
+    <div class="card"><div id="heat"></div></div>
   </section>
 
-  <section id="speeds">
-    <h2>Two speeds</h2>
-    <p class="sub">Each turn first reads the new part of the conversation (prefill), then writes its answer (generation). Speculative decoding only speeds up the second.</p>
-    <div class="card"><ul class="legend" id="legend-speeds"></ul><div id="scatter-speeds"></div></div>
+  <section>
+    <h2>Against other systems</h2>
+    <p class="sub">The RTX 4090 with its fastest method, next to Artificial Analysis's runs.</p>
+    <div class="card"><div id="bars"></div></div>
   </section>
 
-  <section id="price">
-    <h2>Time and price</h2>
-    <p class="sub">System price as Artificial Analysis counts it: launch MSRP, and for a graphics card the card plus $2,500 for the rest of the computer. The RTX 4090 uses its fastest method here.</p>
+  <section>
+    <h2>Completion time and price</h2>
+    <p class="sub">Price as Artificial Analysis counts it: launch price, and for a graphics card the card plus $2,500 for the rest of the computer.</p>
     <div class="card"><div id="scatter-price"></div></div>
   </section>
 
-  <section id="all">
-    <h2>All results</h2>
-    <p class="sub">Click a column to sort.</p>
-    <div class="card tablewrap"><table id="table"></table></div>
-    <div class="downloads">
-      <a href="/assets/benchmarks/qwen38-4090/results.json">results.json</a>
-      <a href="/assets/benchmarks/qwen38-4090/samples.json">per-turn timings</a>
-      <a href="https://github.com/zedong-peng/qwen38-4090-inference">launch commands and scripts</a>
-    </div>
-  </section>
-
-  <section id="how">
-    <h2>How it was measured</h2>
-    <ul class="notes" id="notes"></ul>
+  <section>
+    <h2>How it's measured</h2>
+    <p class="sub">The unmodified <a href="https://github.com/ArtificialAnalysis/aa-agentperf-local">AA-AgentPerf-Local</a> default replay: 8 recorded coding-agent tasks, 168 turns, with the conversation growing to about 56K tokens. One request at a time in a 65,536-token context, and every turn writes exactly its recorded number of tokens. Completion time adds up each turn from request to last token; tool calls are not timed.</p>
   </section>
 </main>
 <footer id="footer"></footer>

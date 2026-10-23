@@ -26,20 +26,6 @@ HARDWARE = {
     "msrp_usd": 1599, "rest_of_system_usd": 2500, "driver": "570.124.06", "cuda": "12.8",
     "cpu": "Intel Xeon Silver 4210", "shared": "one card of a shared four-card server",
 }
-NOTES = [
-    "Workload: the <a href=\"https://github.com/ArtificialAnalysis/aa-agentperf-local\">AA-AgentPerf-Local</a> "
-    "default replay, unmodified: 8 recorded agent tasks, 168 turns. Each request carries the whole conversation so far; "
-    "every turn generates exactly its recorded number of tokens (<code>ignore_eos</code>), sampled at temperature 0.7.",
-    "Every server gets a 65,536-token context, one sequence at a time and its own prefix cache. Weights, KV-cache format "
-    "and drafting are each method's own; they are listed with the result.",
-    "Completion time is the sum of every turn's request time, as on the AA page. Generation speed counts tokens over the "
-    "first-to-last-token window; prefill speed is uncached prompt tokens over time to first token.",
-    "One RTX 4090 (450 W, driver 570, CUDA 12.8) in a shared four-card server; other cards stayed busy with other work. "
-    "Energy is the card's own power draw over the replay.",
-    "AA systems are Artificial Analysis's published runs of the same replay (retrieved 2026-10-23), not ours.",
-]
-
-
 def load(path):
     return json.loads(Path(path).read_text())
 
@@ -156,7 +142,7 @@ def main():
                   for s in refs["systems"]]
     a.out.mkdir(parents=True, exist_ok=True)
     data = {"updated": datetime.now().strftime("%Y-%m-%d"), "workload": WORKLOAD, "hardware": HARDWARE,
-            "methods": methods, "references": references, "references_source": refs["source"], "notes": NOTES}
+            "methods": methods, "references": references, "references_source": refs["source"]}
     (a.out / "results.json").write_text(json.dumps(data, indent=1) + "\n")
     (a.out / "samples.json").write_text(json.dumps(
         {"columns": ["turn_id", "prompt_tokens", "cached_tokens", "output_tokens", "ttft_ms", "generation_ms", "e2e_ms"],

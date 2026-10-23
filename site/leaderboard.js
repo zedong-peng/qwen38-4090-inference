@@ -1,7 +1,8 @@
 (function () {
   "use strict";
   var DATA_URL = "/assets/benchmarks/qwen38-4090/results.json";
-  var COLOR = { Autoregressive: "var(--ar)", MTP: "var(--mtp)", DFlash2: "var(--dflash)" };
+  var REPO = "https://github.com/zedong-peng/qwen38-4090-inference";
+  var DECODING = [["Autoregressive", "No drafting"], ["MTP", "MTP"], ["DFlash2", "DFlash2"]];
   var NS = "http://www.w3.org/2000/svg";
 
   function $(id) { return document.getElementById(id); }
@@ -20,7 +21,7 @@
   function fmt(v, d) { return v == null ? "–" : Number(v).toLocaleString("en-US", { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 }); }
   function mins(s) { return s == null ? "–" : (s / 60).toFixed(1); }
   function drafting(m) { return m.decoding === "Autoregressive" ? "no drafting" : m.decoding + (m.draft ? " " + m.draft : ""); }
-  function colorOf(r) { return r.ref ? "var(--ref)" : COLOR[r.decoding]; }
+  function uniq(a) { return a.filter(function (v, i) { return v && a.indexOf(v) === i; }); }
 
   // round axis: a max and a step that land on clean numbers
   function scale(v) {
@@ -44,13 +45,17 @@
   // one tooltip for every chart
   var tip = $("tip");
   function showTip(evt, r) {
-    var rows = [["Completion", mins(r.completion_s) + " min"], ["Generation", fmt(r.output_tps) + " tok/s"], ["Prefill", fmt(r.prefill_tps) + " tok/s"],
-      ["First token, median", r.ttft_p50_ms == null ? "–" : (r.ttft_p50_ms / 1000).toFixed(2) + " s"]];
-    if (r.energy_wh != null) rows.push(["Energy", fmt(r.energy_wh) + " Wh"]);
-    if (r.price_usd != null) rows.push(["System price", "$" + fmt(r.price_usd)]);
+    var rows = [];
+    if (r.completion_s != null) {
+      rows = [["Completion", mins(r.completion_s) + " min"], ["Generation", fmt(r.output_tps) + " tok/s"], ["Prefill", fmt(r.prefill_tps) + " tok/s"],
+        ["First token, median", r.ttft_p50_ms == null ? "–" : (r.ttft_p50_ms / 1000).toFixed(2) + " s"]];
+      if (r.energy_wh != null) rows.push(["Energy", fmt(r.energy_wh) + " Wh"]);
+      if (r.peak_mem_gb != null) rows.push(["Peak memory", fmt(r.peak_mem_gb, 1) + " GB"]);
+      if (r.price_usd != null) rows.push(["System price", "$" + fmt(r.price_usd)]);
+    } else rows = [[r.status === "failed" ? (r.reason || "did not run") : "not measured yet", ""]];
     tip.innerHTML = "";
     tip.appendChild(el("div", { class: "t" }, r.title));
-    tip.appendChild(el("div", { style: "color:var(--ink-3);margin-bottom:6px" }, r.subtitle));
+    tip.appendChild(el("div", { class: "s" }, r.subtitle));
     rows.forEach(function (x) { var d = el("div", { class: "r" }); d.appendChild(el("span", null, x[0])); d.appendChild(el("b", null, x[1])); tip.appendChild(d); });
     tip.style.display = "block";
     moveTip(evt);
@@ -71,40 +76,79 @@
     node.addEventListener("blur", hideTip);
   }
 
-  function legend(ul) {
-    ul.innerHTML = "";
-    [["Autoregressive", "no drafting"], ["MTP", "MTP: the model's own draft head"], ["DFlash2", "DFlash2: a separate draft model"]].forEach(function (d) {
-      var li = el("li"); li.appendChild(el("span", { class: "key", style: "background:" + COLOR[d[0]] })); li.appendChild(document.createTextNode(d[1])); ul.appendChild(li);
+  // engines down, drafting across; shade steps from slowest (1) to fastest (5) on a log scale
+  function heat(methods) {
+    var box = $("heat"); box.innerHTML = "";
+    var t = methods.filter(function (m) { return m.status === "ok"; }).map(function (m) { return Math.log(m.completion_s); });
+    var lo = Math.min.apply(null, t), hi = Math.max.apply(null, t);
+    function step(s) { return hi - lo < 1e-9 ? 4 : 5 - Math.min(4, Math.floor((Math.log(s) - lo) / (hi - lo) * 5)); }
+    var grid = el("div", { class: "heat" });
+    grid.appendChild(el("div"));
+    DECODING.forEach(function (c) { grid.appendChild(el("div", { class: "colh" }, c[1])); });
+    uniq(methods.map(function (m) { return m.engine; })).forEach(function (engine) {
+      var row = methods.filter(function (m) { return m.engine === engine; });
+      var lab = el("div", { class: "rowh" });
+      lab.appendChild(el("b", null, engine));
+      lab.appendChild(el("span", null, uniq(row.map(function (m) { return m.weights; })).join(" / ")));
+      grid.appendChild(lab);
+      DECODING.forEach(function (c) {
+        var m = row.filter(function (x) { return x.decoding === c[0]; })[0];
+        if (!m) { grid.appendChild(el("div", { class: "cell na" })); return; }
+        var cell = el("div", { class: "cell", tabindex: "0" });
+        if (m.status === "ok") { cell.className += " s" + step(m.completion_s); cell.textContent = mins(m.completion_s) + " min"; }
+        else if (m.status === "failed") { cell.className += " failed"; cell.textContent = "did not run"; }
+        else { cell.className += " pending"; cell.textContent = "–"; }
+        cell.setAttribute("aria-label", m.title + ": " + (m.status === "ok" ? mins(m.completion_s) + " minutes" : "not measured"));
+        hover(cell, m);
+        grid.appendChild(cell);
+      });
     });
-    var li = el("li"); li.appendChild(el("span", { class: "key", style: "background:var(--ref)" })); li.appendChild(document.createTextNode("other systems, measured by Artificial Analysis")); ul.appendChild(li);
+    box.appendChild(grid);
+    var key = el("div", { class: "heat-key" }), shades = el("span"), missing = el("span");
+    shades.appendChild(document.createTextNode("Faster"));
+    [5, 4, 3, 2, 1].forEach(function (s) { shades.appendChild(el("i", { class: "s" + s })); });
+    shades.appendChild(document.createTextNode("Slower"));
+    missing.appendChild(el("i", { class: "pending" }));
+    missing.appendChild(document.createTextNode("not measured yet"));
+    key.appendChild(shades); key.appendChild(missing);
+    box.appendChild(key);
   }
 
-  function label(parent, r) {
-    var lab = el("div", { class: "label" + (r.ref ? " ref" : "") + (r.status === "pending" ? " pending" : "") });
-    lab.appendChild(el("b", null, r.title)); lab.appendChild(el("span", null, r.subtitle));
-    parent.appendChild(lab);
+  function legend(parent) {
+    var ul = el("ul", { class: "legend" });
+    [["var(--ar)", "measured here"], ["var(--ref)", "measured by Artificial Analysis"]].forEach(function (d) {
+      var li = el("li"); li.appendChild(el("span", { class: "key", style: "background:" + d[0] })); li.appendChild(document.createTextNode(d[1])); ul.appendChild(li);
+    });
+    parent.appendChild(ul);
   }
 
   function bars(rows, pending) {
     var box = $("bars"); box.innerHTML = "";
+    legend(box);
     var grid = el("div", { class: "bars" });
-    var sc = rows.length ? scale(Math.max.apply(null, rows.map(function (r) { return r.completion_s / 60; }))) : { max: 40, step: 10 };
+    var sc = scale(Math.max.apply(null, rows.map(function (r) { return r.completion_s / 60; })));
+    function label(r) {
+      var lab = el("div", { class: "label" });
+      lab.appendChild(el("b", null, r.system_label));
+      if (r.detail) lab.appendChild(el("span", null, r.detail));
+      grid.appendChild(lab);
+    }
     rows.forEach(function (r) {
-      label(grid, r);
+      label(r);
       var track = el("div", { class: "track" });
       var w = (r.completion_s / 60) / sc.max * 100;
-      var bar = el("div", { class: "bar", tabindex: "0", style: "width:" + w + "%;background:" + colorOf(r), "aria-label": r.title + ": " + mins(r.completion_s) + " minutes" });
+      var bar = el("div", { class: "bar", tabindex: "0", style: "width:" + w + "%;background:" + (r.ref ? "var(--ref)" : "var(--ar)"),
+        "aria-label": r.system_label + ": " + mins(r.completion_s) + " minutes" });
       track.appendChild(bar); track.appendChild(el("div", { class: "val", style: "left:" + w + "%" }, mins(r.completion_s) + " min"));
       hover(bar, r);
       grid.appendChild(track);
     });
-    if (pending.length && rows.length) grid.appendChild(el("div", { class: "divider" }));
-    pending.forEach(function (r) {
-      label(grid, r);
+    if (pending) {
+      label(pending);
       var track = el("div", { class: "track" });
       track.appendChild(el("div", { class: "val pending", style: "left:0" }, "not measured yet"));
       grid.appendChild(track);
-    });
+    }
     box.appendChild(grid);
     var axisRow = el("div", { class: "axis-row" }); axisRow.appendChild(el("div"));
     var axis = el("div", { class: "axis" });
@@ -129,45 +173,6 @@
   };
   Labels.prototype.block = function (x, y, r) { this.boxes.push({ x: x - r, y: y - r, w: 2 * r, h: 2 * r }); };
 
-  function axes(s, W, H, m, xt, yt, X, Y, xl, yl, xf, yf) {
-    xt.forEach(function (v) { s.appendChild(sv("line", { class: "gl", x1: X(v), x2: X(v), y1: m.t, y2: H - m.b })); s.appendChild(sv("text", { x: X(v), y: H - m.b + 18, "text-anchor": "middle" }, xf(v))); });
-    yt.forEach(function (v) { s.appendChild(sv("line", { class: "gl", x1: m.l, x2: W - m.r, y1: Y(v), y2: Y(v) })); s.appendChild(sv("text", { x: m.l - 8, y: Y(v) + 4, "text-anchor": "end" }, yf(v))); });
-    s.appendChild(sv("text", { x: (m.l + W - m.r) / 2, y: H - 8, "text-anchor": "middle" }, xl));
-    var cy = (m.t + H - m.b) / 2;
-    s.appendChild(sv("text", { x: 14, y: cy, "text-anchor": "middle", transform: "rotate(-90 14 " + cy + ")" }, yl));
-  }
-
-  function points(s, rows, X, Y, W, labelled, text, rad, left) {
-    var L = new Labels(left);
-    rows.forEach(function (r) { L.block(X(r), Y(r), rad + 2); });
-    rows.slice().sort(function (a, b) { return (b.ref ? 1 : 0) - (a.ref ? 1 : 0); }).forEach(function (r) {
-      var g = sv("g", { tabindex: "0" });
-      g.appendChild(sv("circle", { class: "hit", cx: X(r), cy: Y(r), r: 12 }));
-      g.appendChild(sv("circle", { class: "pt", cx: X(r), cy: Y(r), r: rad, fill: colorOf(r) }));
-      hover(g, r); s.appendChild(g);
-    });
-    rows.filter(function (r) { return labelled(r); }).forEach(function (r) { L.place(s, X(r), Y(r), text(r), W); });
-  }
-
-  // log-log: generation speed against prefill speed
-  function scatterSpeeds(rows) {
-    var box = $("scatter-speeds"); box.innerHTML = "";
-    if (!rows.length) return;
-    var W = Math.max(320, Math.min(900, box.clientWidth || 900)), H = Math.round(Math.max(300, W * 0.47)), m = { l: 60, r: 16, t: 16, b: 46 };
-    var xv = rows.map(function (r) { return r.output_tps; }), yv = rows.map(function (r) { return r.prefill_tps; });
-    var x0 = Math.min.apply(null, xv) * 0.8, x1 = Math.max.apply(null, xv) * 1.25, y0 = Math.min.apply(null, yv) * 0.8, y1 = Math.max.apply(null, yv) * 1.25;
-    function lx(v) { return m.l + (Math.log(v) - Math.log(x0)) / (Math.log(x1) - Math.log(x0)) * (W - m.l - m.r); }
-    function ly(v) { return H - m.b - (Math.log(v) - Math.log(y0)) / (Math.log(y1) - Math.log(y0)) * (H - m.t - m.b); }
-    var s = sv("svg", { viewBox: "0 0 " + W + " " + H, role: "img", "aria-label": "Generation speed against prefill speed" });
-    var inX = function (v) { return v >= x0 && v <= x1; }, inY = function (v) { return v >= y0 && v <= y1; };
-    axes(s, W, H, m, [10, 20, 30, 50, 100, 200, 300, 500].filter(inX), [100, 200, 300, 500, 1000, 2000, 3000, 5000, 10000].filter(inY), lx, ly,
-      "Generation, tokens/s (log scale)", "Prefill, tokens/s (log scale)", fmt, fmt);
-    var best = rows.filter(function (r) { return !r.ref; }).sort(function (a, b) { return a.completion_s - b.completion_s; }).slice(0, 2);
-    points(s, rows, function (r) { return lx(r.output_tps); }, function (r) { return ly(r.prefill_tps); }, W,
-      function (r) { return r.ref || best.indexOf(r) >= 0; }, function (r) { return r.short; }, 6, m.l);
-    box.appendChild(s);
-  }
-
   function scatterPrice(rows) {
     var box = $("scatter-price"); box.innerHTML = "";
     var W = Math.max(320, Math.min(900, box.clientWidth || 900)), H = Math.round(Math.max(280, W * 0.4)), m = { l: 52, r: 16, t: 16, b: 46 };
@@ -176,100 +181,51 @@
     function X(v) { return m.l + v / sx.max * (W - m.l - m.r); }
     function Y(v) { return H - m.b - v / sy.max * (H - m.t - m.b); }
     var s = sv("svg", { viewBox: "0 0 " + W + " " + H, role: "img", "aria-label": "Completion time against system price" });
-    var xt = [], yt = [];
-    for (var v = 0; v <= sx.max + 1e-9; v += sx.step) xt.push(v);
-    for (v = 0; v <= sy.max + 1e-9; v += sy.step) yt.push(v);
-    axes(s, W, H, m, xt, yt, X, Y, "System price, USD", "Completion time, min", function (v) { return "$" + fmt(v); }, fmt);
-    points(s, rows, function (r) { return X(r.price_usd); }, function (r) { return Y(r.completion_s / 60); }, W,
-      function () { return true; }, function (r) { return r.price_label; }, 7, m.l);
+    for (var v = 0; v <= sx.max + 1e-9; v += sx.step) {
+      s.appendChild(sv("line", { class: "gl", x1: X(v), x2: X(v), y1: m.t, y2: H - m.b }));
+      s.appendChild(sv("text", { x: X(v), y: H - m.b + 18, "text-anchor": "middle" }, "$" + fmt(v)));
+    }
+    for (v = 0; v <= sy.max + 1e-9; v += sy.step) {
+      s.appendChild(sv("line", { class: "gl", x1: m.l, x2: W - m.r, y1: Y(v), y2: Y(v) }));
+      s.appendChild(sv("text", { x: m.l - 8, y: Y(v) + 4, "text-anchor": "end" }, fmt(v)));
+    }
+    s.appendChild(sv("text", { x: (m.l + W - m.r) / 2, y: H - 8, "text-anchor": "middle" }, "System price, USD"));
+    var cy = (m.t + H - m.b) / 2;
+    s.appendChild(sv("text", { x: 14, y: cy, "text-anchor": "middle", transform: "rotate(-90 14 " + cy + ")" }, "Completion time, min"));
+    var L = new Labels(m.l);
+    rows.forEach(function (r) { L.block(X(r.price_usd), Y(r.completion_s / 60), 9); });
+    rows.forEach(function (r) {
+      var x = X(r.price_usd), y = Y(r.completion_s / 60), g = sv("g", { tabindex: "0" });
+      g.appendChild(sv("circle", { class: "hit", cx: x, cy: y, r: 12 }));
+      g.appendChild(sv("circle", { class: "pt", cx: x, cy: y, r: 7, fill: r.ref ? "var(--ref)" : "var(--ar)" }));
+      hover(g, r); s.appendChild(g);
+    });
+    rows.forEach(function (r) { L.place(s, X(r.price_usd), Y(r.completion_s / 60), r.system_label, W); });
     box.appendChild(s);
   }
 
-  var COLS = [
-    ["Method", function (r) { return r.title; }, false],
-    ["Weights", function (r) { return r.weights; }, false],
-    ["KV cache", function (r) { return r.kv || ""; }, false],
-    ["Completion, min", function (r) { return r.completion_s == null ? null : r.completion_s / 60; }, true, 1],
-    ["Generation, tok/s", function (r) { return r.output_tps; }, true, 0],
-    ["Prefill, tok/s", function (r) { return r.prefill_tps; }, true, 0],
-    ["First token, s", function (r) { return r.ttft_p50_ms == null ? null : r.ttft_p50_ms / 1000; }, true, 2],
-    ["Energy, Wh", function (r) { return r.energy_wh; }, true, 0],
-    ["Peak memory, GB", function (r) { return r.peak_mem_gb; }, true, 1]
-  ];
-  function table(rows) {
-    var t = $("table"), sortCol = 3, dir = 1;
-    function render() {
-      t.innerHTML = "";
-      var thead = el("thead"), tr = el("tr");
-      COLS.forEach(function (c, i) {
-        var th = el("th", { class: c[2] ? "num" : "", scope: "col" }, c[0]);
-        if (i === sortCol) th.setAttribute("aria-sort", dir > 0 ? "ascending" : "descending");
-        th.addEventListener("click", function () { dir = sortCol === i ? -dir : 1; sortCol = i; render(); });
-        tr.appendChild(th);
-      });
-      thead.appendChild(tr); t.appendChild(thead);
-      var body = el("tbody");
-      rows.slice().sort(function (a, b) {
-        var va = COLS[sortCol][1](a), vb = COLS[sortCol][1](b);
-        if (va == null) return vb == null ? 0 : 1; if (vb == null) return -1;
-        return (va > vb ? 1 : va < vb ? -1 : 0) * dir;
-      }).forEach(function (r) {
-        var tr = el("tr", { class: r.ref ? "ref" : "" });
-        COLS.forEach(function (c, i) {
-          var v = c[1](r), td = el("td", { class: c[2] ? "num" : "" });
-          if (i === 0) {
-            td.className = "method";
-            td.appendChild(el("span", { class: "key", style: "background:" + (r.status === "pending" ? "transparent;box-shadow:inset 0 0 0 1px var(--axis)" : colorOf(r)) }));
-            td.appendChild(document.createTextNode(v));
-            var note = r.ref ? r.framework : [r.engine_build, r.note].filter(Boolean).join(" · ");
-            if (note) td.appendChild(el("div", { class: "small" }, note));
-          } else td.textContent = c[2] ? (v == null ? "–" : fmt(v, c[3])) : v;
-          tr.appendChild(td);
-        });
-        body.appendChild(tr);
-      });
-      t.appendChild(body);
-    }
-    render();
-  }
-
   function render(d) {
-    var notice = d.demo || (d.methods.some(function (m) { return m.status === "ok"; }) ? null :
-      "RTX 4090 measurements are in progress. Each method's row fills in when its replay finishes; the other systems are Artificial Analysis's published runs.");
-    if (notice) document.querySelector("main").insertBefore(el("p", { class: "demo" + (d.demo ? "" : " quiet") }, notice), document.querySelector("main h1"));
     d.methods.forEach(function (m) {
       m.title = m.engine + " · " + drafting(m);
-      m.subtitle = [m.weights, m.engine_build, m.note].filter(Boolean).join(" · ");
-      m.short = m.engine.replace(" + sidnaZ patches", " (sidnaZ)") + (m.decoding === "Autoregressive" ? "" : " " + drafting(m));
+      m.subtitle = [m.weights, m.kv && m.kv + " KV cache", m.note].filter(Boolean).join(" · ");
     });
-    var ok = d.methods.filter(function (m) { return m.status === "ok"; });
-    var pending = d.methods.filter(function (m) { return m.status === "pending"; });
+    heat(d.methods);
     var refs = d.references.map(function (r) {
-      return Object.assign({ ref: true, title: r.short + " (AA)", subtitle: r.framework + " · " + r.quant + " · " + r.decodingText,
-        weights: r.quant, kv: "", price_label: r.short }, r);
+      return Object.assign({ ref: true, title: r.system, subtitle: r.framework + " · " + r.quant + " · " + r.decodingText, system_label: r.short }, r);
     });
-    document.querySelectorAll('[data-fill="n-methods"]').forEach(function (e) { e.textContent = d.methods.length; });
-    legend($("legend-time")); legend($("legend-speeds"));
-    var measured = ok.concat(refs).sort(function (a, b) { return a.completion_s - b.completion_s; });
-    bars(measured, pending);
-    var miss = $("missing"); miss.innerHTML = "";
-    d.methods.filter(function (m) { return m.status === "failed"; }).forEach(function (m) {
-      var li = el("li"); li.appendChild(el("b", null, m.title + ": ")); li.appendChild(document.createTextNode(m.reason || "did not run")); miss.appendChild(li);
-    });
-    var hw = d.hardware, best = ok.slice().sort(function (a, b) { return a.completion_s - b.completion_s; })[0];
-    function charts() {
-      scatterSpeeds(measured.filter(function (r) { return r.output_tps && r.prefill_tps; }));
-      scatterPrice(refs.concat(best ? [Object.assign({}, best, { price_usd: hw.msrp_usd + hw.rest_of_system_usd, price_label: "RTX 4090 (fastest here)" })] : []));
-    }
+    var hw = d.hardware;
+    var best = d.methods.filter(function (m) { return m.status === "ok"; }).sort(function (a, b) { return a.completion_s - b.completion_s; })[0];
+    var gpu = best && Object.assign({}, best, { system_label: "RTX 4090", detail: best.engine + " · " + drafting(best), price_usd: hw.msrp_usd + hw.rest_of_system_usd });
+    var systems = refs.concat(gpu ? [gpu] : []).sort(function (a, b) { return a.completion_s - b.completion_s; });
+    bars(systems, gpu ? null : { system_label: "RTX 4090" });
+    function charts() { scatterPrice(systems); }
     charts();
     var lastW = innerWidth, timer;
     addEventListener("resize", function () { if (innerWidth === lastW) return; lastW = innerWidth; clearTimeout(timer); timer = setTimeout(charts, 150); });
-    table(measured.concat(pending));
-    var notes = $("notes"); notes.innerHTML = "";
-    d.notes.forEach(function (n) { var li = el("li"); li.innerHTML = n; notes.appendChild(li); });
-    $("footer").innerHTML = "Updated " + d.updated + ". Code and raw results: <a href=\"https://github.com/zedong-peng/qwen38-4090-inference\">github.com/zedong-peng/qwen38-4090-inference</a>.";
+    $("footer").innerHTML = "Updated " + d.updated + " · <a href=\"/assets/benchmarks/qwen38-4090/results.json\">results.json</a> · " +
+      "<a href=\"/assets/benchmarks/qwen38-4090/samples.json\">per-turn timings</a> · <a href=\"" + REPO + "\">launch commands and code</a>";
   }
 
   if (window.QWEN38_DATA) render(window.QWEN38_DATA);
-  else fetch(DATA_URL).then(function (r) { return r.json(); }).then(render).catch(function (e) { $("bars").textContent = "Could not load results: " + e; });
+  else fetch(DATA_URL).then(function (r) { return r.json(); }).then(render).catch(function (e) { $("heat").textContent = "Could not load results: " + e; });
 })();

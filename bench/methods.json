@@ -22,8 +22,6 @@
      "note": "AA's baseline recipe"},
     {"id": "lcpp-q4km-mtp2", "engine": "llama.cpp", "weights": "Q4_K_M", "decoding": "MTP", "draft": 2, "kv": "F16",
      "note": "AA's RTX 5090 recipe"},
-    {"id": "lcpp5090-q4km-mtp2", "engine": "llama.cpp", "engine_build": "b11026", "weights": "Q4_K_M", "decoding": "MTP", "draft": 2, "kv": "F16",
-     "note": "AA's RTX 5090 recipe and build"},
     {"id": "lcpp-udq4km-dflash7", "engine": "llama.cpp", "weights": "UD-Q4_K_M", "decoding": "DFlash2", "draft": 7, "kv": "F16",
      "note": "AA's DGX Spark recipe"},
     {"id": "ik-q4km-ar", "engine": "ik_llama.cpp", "weights": "Q4_K_M", "decoding": "Autoregressive", "draft": 0, "kv": "F16"},

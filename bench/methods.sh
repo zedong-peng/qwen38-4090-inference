@@ -22,15 +22,12 @@ method_setup() {
   local m=$1 port=$2 out=$3
   SERVE_ENV=() MODEL_ID=qwen3.8-27b
   local L=$W/engines/llama.cpp/build/bin/llama-server
-  local L5090=$W/engines/llama.cpp-b49650adb/build/bin/llama-server
   local IK=$W/engines/ik_llama.cpp/build/bin/llama-server
   case $m in
     # llama.cpp master
     lcpp-q4km-ar)       CMD=($(llama_common $L $port) --model $GGUF/Qwen3.8-27B-Q4_K_M.gguf --no-webui --verbosity 4) ;;
     lcpp-q4km-mtp2)     CMD=($(llama_common $L $port) --model $GGUF/Qwen3.8-27B-Q4_K_M.gguf $AA_MTP2 --no-webui --verbosity 4) ;;
     lcpp-udq4km-dflash7) CMD=($(llama_common $L $port) --model $GGUF/Qwen3.8-27B-UD-Q4_K_M.gguf $AA_DFLASH7 --no-webui --verbosity 4) ;;
-    # llama.cpp at the build AA ran on the RTX 5090 (b11026), same recipe: the hardware is the only difference
-    lcpp5090-q4km-mtp2) CMD=($(llama_common $L5090 $port) --model $GGUF/Qwen3.8-27B-Q4_K_M.gguf $AA_MTP2 --no-webui --verbosity 4) ;;
     # ik_llama.cpp
     ik-q4km-ar)         CMD=($IK --alias qwen3.8-27b --host 127.0.0.1 --port $port --ctx-size 65536 --parallel 1 -ngl 99 --jinja \
                           --model $GGUF/Qwen3.8-27B-Q4_K_M.gguf) ;;

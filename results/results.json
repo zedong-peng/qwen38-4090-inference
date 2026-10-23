@@ -61,24 +61,6 @@
    }
   },
   {
-   "id": "lcpp5090-q4km-mtp2",
-   "engine": "llama.cpp",
-   "engine_build": "b11026",
-   "weights": "Q4_K_M",
-   "decoding": "MTP",
-   "draft": 2,
-   "kv": "F16",
-   "note": "AA's RTX 5090 recipe and build",
-   "status": "pending",
-   "engine_url": "https://github.com/ggml-org/llama.cpp",
-   "weights_source": {
-    "repo": "unsloth/Qwen3.8-27B-GGUF",
-    "revision": "f1bfb127c64f7072bdd2cad55f258b9c8b2910fe",
-    "file": "Qwen3.8-27B-Q4_K_M.gguf",
-    "bytes": 17106775008
-   }
-  },
-  {
    "id": "lcpp-udq4km-dflash7",
    "engine": "llama.cpp",
    "weights": "UD-Q4_K_M",
@@ -375,12 +357,5 @@
    "decodingText": "MTP 4"
   }
  ],
- "references_source": "https://artificialanalysis.ai/hardware-inference-stack/laptops-workstations",
- "notes": [
-  "Workload: the <a href=\"https://github.com/ArtificialAnalysis/aa-agentperf-local\">AA-AgentPerf-Local</a> default replay, unmodified: 8 recorded agent tasks, 168 turns. Each request carries the whole conversation so far; every turn generates exactly its recorded number of tokens (<code>ignore_eos</code>), sampled at temperature 0.7.",
-  "Every server gets a 65,536-token context, one sequence at a time and its own prefix cache. Weights, KV-cache format and drafting are each method's own; they are listed with the result.",
-  "Completion time is the sum of every turn's request time, as on the AA page. Generation speed counts tokens over the first-to-last-token window; prefill speed is uncached prompt tokens over time to first token.",
-  "One RTX 4090 (450 W, driver 570, CUDA 12.8) in a shared four-card server; other cards stayed busy with other work. Energy is the card's own power draw over the replay.",
-  "AA systems are Artificial Analysis's published runs of the same replay (retrieved 2026-10-23), not ours."
- ]
+ "references_source": "https://artificialanalysis.ai/hardware-inference-stack/laptops-workstations"
 }
