@@ -95,7 +95,7 @@
         var m = row.filter(function (x) { return x.decoding === c[0]; })[0];
         if (!m) { grid.appendChild(el("div", { class: "cell na" })); return; }
         var cell = el("div", { class: "cell", tabindex: "0" });
-        if (m.status === "ok") { cell.className += " s" + step(m.completion_s); cell.textContent = mins(m.completion_s) + " min"; }
+        if (m.status === "ok") { cell.className += " qwen38-s" + step(m.completion_s); cell.textContent = mins(m.completion_s) + " min"; }
         else if (m.status === "failed") { cell.className += " failed"; cell.textContent = "did not run"; }
         else { cell.className += " pending"; cell.textContent = "–"; }
         cell.setAttribute("aria-label", m.title + ": " + (m.status === "ok" ? mins(m.completion_s) + " minutes" : "not measured"));
@@ -106,7 +106,7 @@
     box.appendChild(grid);
     var key = el("div", { class: "heat-key" }), shades = el("span"), missing = el("span");
     shades.appendChild(document.createTextNode("Faster"));
-    [5, 4, 3, 2, 1].forEach(function (s) { shades.appendChild(el("i", { class: "s" + s })); });
+    [5, 4, 3, 2, 1].forEach(function (s) { shades.appendChild(el("i", { class: "qwen38-s" + s })); });
     shades.appendChild(document.createTextNode("Slower"));
     missing.appendChild(el("i", { class: "pending" }));
     missing.appendChild(document.createTextNode("not measured yet"));
