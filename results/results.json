@@ -128,7 +128,7 @@
    "draft": 3,
    "how": "vLLM launched with the flags Artificial Analysis's tool gives vLLM (one sequence, FP8 KV cache, prefix caching, chunked prefill), run against the attached server",
    "status": "failed",
-   "reason": "no start at 65,536 tokens"
+   "reason": "does not fit a 65,536-token context in 24 GB"
   }
  ],
  "references": [
