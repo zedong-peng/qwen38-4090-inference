@@ -1,4 +1,5 @@
 .local/
+bench/env.local.sh
 dist/
 .cache/
 models/

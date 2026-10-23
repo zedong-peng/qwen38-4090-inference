@@ -1,0 +1,386 @@
+{
+ "updated": "2026-10-23",
+ "workload": {
+  "name": "AA-AgentPerf-Local default replay (agentperf-default-v1)",
+  "runner": "agentperf-local 0.3.4",
+  "tasks": 8,
+  "turns": 168,
+  "tool_calls": 172,
+  "output_tokens": 30883,
+  "largest_prompt_tokens": 56000,
+  "context_tokens": 65536,
+  "concurrency": 1,
+  "output_policy": "exact (ignore_eos, recorded length)",
+  "sampling": "temperature 0.7, top_p 0.8, top_k 20"
+ },
+ "hardware": {
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "memory_gb": 24,
+  "bandwidth_gbs": 1008,
+  "power_limit_w": 450,
+  "msrp_usd": 1599,
+  "rest_of_system_usd": 2500,
+  "driver": "570.124.06",
+  "cuda": "12.8",
+  "cpu": "Intel Xeon Silver 4210",
+  "shared": "one card of a shared four-card server"
+ },
+ "methods": [
+  {
+   "id": "lcpp-q4km-ar",
+   "engine": "llama.cpp",
+   "weights": "Q4_K_M",
+   "decoding": "Autoregressive",
+   "draft": 0,
+   "kv": "F16",
+   "note": "AA's baseline recipe",
+   "status": "pending",
+   "engine_url": "https://github.com/ggml-org/llama.cpp",
+   "weights_source": {
+    "repo": "unsloth/Qwen3.8-27B-GGUF",
+    "revision": "f1bfb127c64f7072bdd2cad55f258b9c8b2910fe",
+    "file": "Qwen3.8-27B-Q4_K_M.gguf",
+    "bytes": 17106775008
+   }
+  },
+  {
+   "id": "lcpp-q4km-mtp2",
+   "engine": "llama.cpp",
+   "weights": "Q4_K_M",
+   "decoding": "MTP",
+   "draft": 2,
+   "kv": "F16",
+   "note": "AA's RTX 5090 recipe",
+   "status": "pending",
+   "engine_url": "https://github.com/ggml-org/llama.cpp",
+   "weights_source": {
+    "repo": "unsloth/Qwen3.8-27B-GGUF",
+    "revision": "f1bfb127c64f7072bdd2cad55f258b9c8b2910fe",
+    "file": "Qwen3.8-27B-Q4_K_M.gguf",
+    "bytes": 17106775008
+   }
+  },
+  {
+   "id": "lcpp5090-q4km-mtp2",
+   "engine": "llama.cpp",
+   "engine_build": "b11026",
+   "weights": "Q4_K_M",
+   "decoding": "MTP",
+   "draft": 2,
+   "kv": "F16",
+   "note": "AA's RTX 5090 recipe and build",
+   "status": "pending",
+   "engine_url": "https://github.com/ggml-org/llama.cpp",
+   "weights_source": {
+    "repo": "unsloth/Qwen3.8-27B-GGUF",
+    "revision": "f1bfb127c64f7072bdd2cad55f258b9c8b2910fe",
+    "file": "Qwen3.8-27B-Q4_K_M.gguf",
+    "bytes": 17106775008
+   }
+  },
+  {
+   "id": "lcpp-udq4km-dflash7",
+   "engine": "llama.cpp",
+   "weights": "UD-Q4_K_M",
+   "decoding": "DFlash2",
+   "draft": 7,
+   "kv": "F16",
+   "note": "AA's DGX Spark recipe",
+   "status": "pending",
+   "engine_url": "https://github.com/ggml-org/llama.cpp",
+   "weights_source": {
+    "repo": "unsloth/Qwen3.8-27B-GGUF",
+    "revision": "4ca720788d1e01f1bff70c033e0d0028fd02e502",
+    "file": "Qwen3.8-27B-UD-Q4_K_M.gguf",
+    "bytes": 16464440224
+   }
+  },
+  {
+   "id": "ik-q4km-ar",
+   "engine": "ik_llama.cpp",
+   "weights": "Q4_K_M",
+   "decoding": "Autoregressive",
+   "draft": 0,
+   "kv": "F16",
+   "status": "pending",
+   "engine_url": "https://github.com/ikawrakow/ik_llama.cpp",
+   "weights_source": {
+    "repo": "unsloth/Qwen3.8-27B-GGUF",
+    "revision": "f1bfb127c64f7072bdd2cad55f258b9c8b2910fe",
+    "file": "Qwen3.8-27B-Q4_K_M.gguf",
+    "bytes": 17106775008
+   }
+  },
+  {
+   "id": "ik-q4km-mtp2",
+   "engine": "ik_llama.cpp",
+   "weights": "Q4_K_M",
+   "decoding": "MTP",
+   "draft": 2,
+   "kv": "F16",
+   "status": "pending",
+   "engine_url": "https://github.com/ikawrakow/ik_llama.cpp",
+   "weights_source": {
+    "repo": "unsloth/Qwen3.8-27B-GGUF",
+    "revision": "f1bfb127c64f7072bdd2cad55f258b9c8b2910fe",
+    "file": "Qwen3.8-27B-Q4_K_M.gguf",
+    "bytes": 17106775008
+   }
+  },
+  {
+   "id": "ik-udq4km-dflash7",
+   "engine": "ik_llama.cpp",
+   "weights": "UD-Q4_K_M",
+   "decoding": "DFlash2",
+   "draft": 7,
+   "kv": "F16",
+   "status": "pending",
+   "engine_url": "https://github.com/ikawrakow/ik_llama.cpp",
+   "weights_source": {
+    "repo": "unsloth/Qwen3.8-27B-GGUF",
+    "revision": "4ca720788d1e01f1bff70c033e0d0028fd02e502",
+    "file": "Qwen3.8-27B-UD-Q4_K_M.gguf",
+    "bytes": 16464440224
+   }
+  },
+  {
+   "id": "vllm-w4a16-ar",
+   "engine": "vLLM",
+   "weights": "W4A16 AutoRound",
+   "decoding": "Autoregressive",
+   "draft": 0,
+   "kv": "FP8",
+   "status": "pending",
+   "engine_url": "https://github.com/vllm-project/vllm",
+   "weights_source": {
+    "repo": "dbirks/Qwen3.8-27B-W4A16-AutoRound"
+   }
+  },
+  {
+   "id": "vllm-w4a16-mtp3",
+   "engine": "vLLM",
+   "weights": "W4A16 AutoRound",
+   "decoding": "MTP",
+   "draft": 3,
+   "kv": "FP8",
+   "status": "pending",
+   "engine_url": "https://github.com/vllm-project/vllm",
+   "weights_source": {
+    "repo": "dbirks/Qwen3.8-27B-W4A16-AutoRound"
+   }
+  },
+  {
+   "id": "vsz-w4a16-ar",
+   "engine": "vLLM + sidnaZ patches",
+   "weights": "W4A16 AutoRound",
+   "decoding": "Autoregressive",
+   "draft": 0,
+   "kv": "BF16",
+   "status": "pending",
+   "engine_url": "https://github.com/sidnaZ/qwen38-27b-rtx4090",
+   "weights_source": {
+    "repo": "dbirks/Qwen3.8-27B-W4A16-AutoRound"
+   }
+  },
+  {
+   "id": "vsz-w4a16-mtp3",
+   "engine": "vLLM + sidnaZ patches",
+   "weights": "W4A16 AutoRound",
+   "decoding": "MTP",
+   "draft": 3,
+   "kv": "BF16",
+   "status": "pending",
+   "engine_url": "https://github.com/sidnaZ/qwen38-27b-rtx4090",
+   "weights_source": {
+    "repo": "dbirks/Qwen3.8-27B-W4A16-AutoRound"
+   }
+  },
+  {
+   "id": "vsz-w4a16-dflash7",
+   "engine": "vLLM + sidnaZ patches",
+   "weights": "W4A16 AutoRound",
+   "decoding": "DFlash2",
+   "draft": 7,
+   "kv": "BF16",
+   "note": "community RTX 4090 recipe",
+   "status": "pending",
+   "engine_url": "https://github.com/sidnaZ/qwen38-27b-rtx4090",
+   "weights_source": {
+    "repo": "dbirks/Qwen3.8-27B-W4A16-AutoRound"
+   }
+  },
+  {
+   "id": "sgl-awq-ar",
+   "engine": "SGLang",
+   "weights": "AWQ INT4",
+   "decoding": "Autoregressive",
+   "draft": 0,
+   "kv": "FP8",
+   "status": "pending",
+   "engine_url": "https://github.com/sgl-project/sglang",
+   "weights_source": {
+    "repo": "cyankiwi/Qwen3.8-27B-AWQ-INT4"
+   }
+  },
+  {
+   "id": "sgl-awq-mtp3",
+   "engine": "SGLang",
+   "weights": "AWQ INT4",
+   "decoding": "MTP",
+   "draft": 3,
+   "kv": "FP8",
+   "status": "pending",
+   "engine_url": "https://github.com/sgl-project/sglang",
+   "weights_source": {
+    "repo": "cyankiwi/Qwen3.8-27B-AWQ-INT4"
+   }
+  },
+  {
+   "id": "exl3-4bpw-ar",
+   "engine": "ExLlamaV3",
+   "weights": "EXL3 4.0 bpw",
+   "decoding": "Autoregressive",
+   "draft": 0,
+   "kv": "F16",
+   "status": "pending",
+   "engine_url": "https://github.com/turboderp-org/exllamav3",
+   "weights_source": {
+    "repo": "turboderp/Qwen3.8-27B-exl3",
+    "revision": "SC_4.00bpw_H5"
+   }
+  },
+  {
+   "id": "exl3-4bpw-mtp",
+   "engine": "ExLlamaV3",
+   "weights": "EXL3 4.0 bpw",
+   "decoding": "MTP",
+   "draft": 0,
+   "kv": "F16",
+   "status": "pending",
+   "engine_url": "https://github.com/turboderp-org/exllamav3",
+   "weights_source": {
+    "repo": "turboderp/Qwen3.8-27B-exl3",
+    "revision": "SC_4.00bpw_H5"
+   }
+  },
+  {
+   "id": "exl3-4bpw-dflash7",
+   "engine": "ExLlamaV3",
+   "weights": "EXL3 4.0 bpw",
+   "decoding": "DFlash2",
+   "draft": 7,
+   "kv": "F16",
+   "status": "pending",
+   "engine_url": "https://github.com/turboderp-org/exllamav3",
+   "weights_source": {
+    "repo": "turboderp/Qwen3.8-27B-exl3",
+    "revision": "SC_4.00bpw_H5"
+   }
+  },
+  {
+   "id": "ninfer-v3-dflash15",
+   "engine": "NInfer",
+   "weights": "NInfer v3",
+   "decoding": "DFlash2",
+   "draft": 15,
+   "kv": "K8 V4",
+   "note": "our engine, official weights",
+   "status": "pending",
+   "engine_url": "https://github.com/zedong-peng/qwen38-4090-decode",
+   "weights_source": {
+    "repo": "neroued NInfer v3 container (DFlash2)"
+   }
+  }
+ ],
+ "references": [
+  {
+   "system": "NVIDIA GeForce RTX 5090",
+   "short": "RTX 5090",
+   "memory_gb": 32,
+   "bandwidth_gbs": 1792,
+   "price_usd": 4500,
+   "price_note": "card $2,000 + $2,500",
+   "framework": "llama.cpp b11026",
+   "quant": "Q4_K_M",
+   "decoding": "MTP",
+   "draft": 2,
+   "completion_s": 294.884503844194,
+   "output_tps": 151.288426015958,
+   "prefill_tps": 2155.5551058260694,
+   "ttft_p50_ms": 323.675051098689,
+   "decodingText": "MTP 2"
+  },
+  {
+   "system": "NVIDIA DGX Spark",
+   "short": "DGX Spark",
+   "memory_gb": 128,
+   "bandwidth_gbs": 273,
+   "price_usd": 4000,
+   "framework": "llama.cpp b11236",
+   "quant": "UD-Q4_K_M",
+   "decoding": "DFlash2",
+   "draft": 7,
+   "completion_s": 1037.35393960169,
+   "output_tps": 43.2692077310355,
+   "prefill_tps": 601.3340589007829,
+   "ttft_p50_ms": 1045.14579148963,
+   "decodingText": "DFlash2 7"
+  },
+  {
+   "system": "NVIDIA RTX Spark N1X laptop",
+   "short": "RTX Spark laptop",
+   "memory_gb": 128,
+   "bandwidth_gbs": 300,
+   "price_usd": 5900,
+   "framework": "llama.cpp b11236",
+   "quant": "UD-Q4_K_M",
+   "decoding": "DFlash2",
+   "draft": 7,
+   "completion_s": 1124.52401140002,
+   "output_tps": 40.6121669585203,
+   "prefill_tps": 537.5489303766957,
+   "ttft_p50_ms": 1112.20104999938,
+   "decodingText": "DFlash2 7"
+  },
+  {
+   "system": "AMD Ryzen AI Halo",
+   "short": "Ryzen AI Halo",
+   "memory_gb": 128,
+   "bandwidth_gbs": 256,
+   "price_usd": 4000,
+   "framework": "llama.cpp b11026 (ROCm)",
+   "quant": "Q4_K_M",
+   "decoding": "MTP",
+   "draft": 2,
+   "completion_s": 2067.67636695248,
+   "output_tps": 23.4019460619965,
+   "prefill_tps": 261.1966590442855,
+   "ttft_p50_ms": 1995.845937985,
+   "decodingText": "MTP 2"
+  },
+  {
+   "system": "MacBook Pro (M5 Pro, 64 GB)",
+   "short": "MacBook Pro M5 Pro",
+   "memory_gb": 64,
+   "bandwidth_gbs": 307,
+   "price_usd": 3000,
+   "framework": "llama.cpp b11026 (Metal)",
+   "quant": "Q4_K_M",
+   "decoding": "MTP",
+   "draft": 4,
+   "completion_s": 2257.69868524912,
+   "output_tps": 23.0949233397184,
+   "prefill_tps": 212.1954935533054,
+   "ttft_p50_ms": 2453.43229200807,
+   "decodingText": "MTP 4"
+  }
+ ],
+ "references_source": "https://artificialanalysis.ai/hardware-inference-stack/laptops-workstations",
+ "notes": [
+  "Workload: the <a href=\"https://github.com/ArtificialAnalysis/aa-agentperf-local\">AA-AgentPerf-Local</a> default replay, unmodified: 8 recorded agent tasks, 168 turns. Each request carries the whole conversation so far; every turn generates exactly its recorded number of tokens (<code>ignore_eos</code>), sampled at temperature 0.7.",
+  "Every server gets a 65,536-token context, one sequence at a time and its own prefix cache. Weights, KV-cache format and drafting are each method's own; they are listed with the result.",
+  "Completion time is the sum of every turn's request time, as on the AA page. Generation speed counts tokens over the first-to-last-token window; prefill speed is uncached prompt tokens over time to first token.",
+  "One RTX 4090 (450 W, driver 570, CUDA 12.8) in a shared four-card server; other cards stayed busy with other work. Energy is the card's own power draw over the replay.",
+  "AA systems are Artificial Analysis's published runs of the same replay (retrieved 2026-10-23), not ours."
+ ]
+}

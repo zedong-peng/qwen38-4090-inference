@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Qwen3.8 27B on one RTX 4090</title>
+<meta name="description" content="How long one RTX 4090 takes to serve a recorded coding agent with Qwen3.8 27B, across inference engines, weights and speculative decoding, on the AA-AgentPerf-Local workload.">
+<script>try { var t = localStorage.getItem("theme"); if (t === "dark" || t === "light") document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="stylesheet" href="/assets/css/qwen38-4090-leaderboard.css">
+</head>
+<body>
+<header class="top">
+  <a href="/">Zedong Peng</a>
+  <button type="button" id="theme" aria-label="Switch light or dark">Light / dark</button>
+</header>
+<main>
+  <h1>Qwen3.8 27B on one RTX 4090</h1>
+  <p class="lede">How long one 24 GB card takes to serve a recorded coding agent, across <span data-fill="n-methods">many</span> ways to run the model. The workload is the one Artificial Analysis uses on its <a href="https://artificialanalysis.ai/hardware-inference-stack/laptops-workstations">laptops &amp; workstations</a> page, so their systems share the axis.</p>
+  <ul class="facts">
+    <li>8 agent tasks · 168 turns</li>
+    <li>history grows to 56K tokens</li>
+    <li>65,536-token context · one request at a time</li>
+    <li>every turn writes its recorded length</li>
+  </ul>
+
+  <section id="time">
+    <h2>Completion time</h2>
+    <p class="sub">Minutes to answer every turn; tool time excluded. Lower is better.</p>
+    <div class="card">
+      <ul class="legend" id="legend-time"></ul>
+      <div id="bars"></div>
+      <ul class="missing" id="missing"></ul>
+    </div>
+  </section>
+
+  <section id="speeds">
+    <h2>Two speeds</h2>
+    <p class="sub">Each turn first reads the new part of the conversation (prefill), then writes its answer (generation). Speculative decoding only speeds up the second.</p>
+    <div class="card"><ul class="legend" id="legend-speeds"></ul><div id="scatter-speeds"></div></div>
+  </section>
+
+  <section id="price">
+    <h2>Time and price</h2>
+    <p class="sub">System price as Artificial Analysis counts it: launch MSRP, and for a graphics card the card plus $2,500 for the rest of the computer. The RTX 4090 uses its fastest method here.</p>
+    <div class="card"><div id="scatter-price"></div></div>
+  </section>
+
+  <section id="all">
+    <h2>All results</h2>
+    <p class="sub">Click a column to sort.</p>
+    <div class="card tablewrap"><table id="table"></table></div>
+    <div class="downloads">
+      <a href="/assets/benchmarks/qwen38-4090/results.json">results.json</a>
+      <a href="/assets/benchmarks/qwen38-4090/samples.json">per-turn timings</a>
+      <a href="https://github.com/zedong-peng/qwen38-4090-inference">launch commands and scripts</a>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>How it was measured</h2>
+    <ul class="notes" id="notes"></ul>
+  </section>
+</main>
+<footer id="footer"></footer>
+<div id="tip" role="tooltip"></div>
+<script src="/assets/js/qwen38-4090-leaderboard.js" defer></script>
+</body>
+</html>

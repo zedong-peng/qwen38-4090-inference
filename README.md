@@ -1,48 +1,41 @@
-# Qwen3.8-27B × RTX 4090 inference
+# Qwen3.8 27B on one RTX 4090
 
-单张 RTX 4090 上的推理方案研究、速度证据和专题榜单。这个独立仓库保存研究与实验现场，便于后续继续；快照日期为 **2026-10-02**。
+How long one 24 GB RTX 4090 takes to serve a recorded coding agent with Qwen3.8 27B, across inference engines, weights
+and speculative decoding. The workload is the [AA-AgentPerf-Local](https://github.com/ArtificialAnalysis/aa-agentperf-local)
+default replay, the one Artificial Analysis uses on its
+[laptops & workstations](https://artificialanalysis.ai/hardware-inference-stack/laptops-workstations) page, so their
+systems share the axis.
 
-在线（独立静态页）：[`zedongpeng.com/benchmarks/qwen38-4090/`](https://zedongpeng.com/benchmarks/qwen38-4090/)
+Page: [zedongpeng.com/benchmarks/qwen38-4090/](https://zedongpeng.com/benchmarks/qwen38-4090/)
 
-## 从这里继续
+| path | contents |
+|---|---|
+| `bench/methods.sh` | how each method's server is launched (65,536-token context, one sequence, its own prefix cache) |
+| `bench/run_method.sh` | one method end to end: start the server, an `aa-mini-v1` check, the full replay, GPU telemetry, stop |
+| `bench/methods.json` | what each method is: engine, weights, drafting, KV cache |
+| `bench/references.json` | Artificial Analysis's published runs of the same replay (other systems) |
+| `bench/collect.py` | run tree → `results/results.json` and `results/samples.json` (per-turn timings) |
+| `site/` | the page: `index.html`, `leaderboard.css`, `leaderboard.js` |
+| `tools/build_site.py` | static build into `dist/` (what the personal site deploys) |
 
-先读 [CONTINUE.md](CONTINUE.md)，再读 [实验协议](site/assets/benchmarks/qwen38-4090/README.md)。
+Methods without a finished replay show as "not measured yet".
+
+## Run a method
+
+On the GPU server, with the engines and models in place (paths in an untracked `bench/env.local.sh`, see
+`bench/env.example.sh`) and `agentperf-local` 0.3.4 in `$Q38_WORK/envs/aa`:
 
 ```bash
-python3 tools/verify_repo.py
-python3 tools/build_site.py
-python3 -m http.server 8080 --directory dist --bind 127.0.0.1
+bash bench/run_method.sh lcpp-q4km-mtp2 1      # METHOD GPU [REPS]
+python3 bench/collect.py --runs $Q38_WORK/runs  # refresh results/
 ```
 
-浏览器打开 <http://127.0.0.1:8080/benchmarks/qwen38-4090/>。上述命令只校验存档并生成静态页面，不连接实验服务器、不加载模型。Python 3.9+ 标准库即可运行。
+## Preview the page
 
-## 已有结果
+```bash
+python3 tools/build_site.py
+python3 -m http.server 8080 --directory dist --bind 127.0.0.1   # /benchmarks/qwen38-4090/
+```
 
-全部测量串行使用同一张物理 RTX 4090，而非四卡并行。HTTP 的 Cinference、NInfer、llama.cpp，以及原生 Python 的 ExLlamaV3，共 **108 个正式样本、36 条配置与负载汇总**。HTTP 和原生调用使用不同计时口径，在榜单中分别展示。
-
-这轮真实输入只有 **34–77 token**；4K 是配置容量。并发为 1，贪心解码，最多输出 512 token，每个负载 3 次取中位数。量化与 KV 格式不同，因此比较的是部署配置。代码和散文截断；JSON 结构检查通过；代码语义测试未运行。
-
-Cinference MTP7 在已测 HTTP 配置的代码/JSON 上分别为 **213.9 / 238.6 decode token/s**。散文的最优草稿长度不同。不能据此宣布所有方案的通用冠军：**Unsloth 原生、vLLM、SGLang 尚未实测**，社区报告另列。
-
-## 保存的内容
-
-| 位置 | 内容 |
-|---|---|
-| [site/](site/) | 可继续编辑的榜单页面、JS/CSS、结果、108 条脱敏样本、复现脚本；保留原站 Jekyll 文件结构 |
-| [research/](research/) | 推理专题笔记、论文与工程资产的来源/固定版本、检索记录、测速和工具安装 threads |
-| [archives/](archives/) | 完整原始缓存文件清单与 SHA-256、仓库/论文/模型锁定信息、复制范围说明 |
-| [qa/](qa/) | 已完成的网站构建、浏览器交互检查、截图与数据审计证据 |
-| [docs/](docs/) | 现有榜单调查、远端实验状态、个人网站接入方法与归档说明 |
-| `.local/originals/` | 此工作目录内的完整原始研究缓存、日志和源码参考，保留原样；由 Git 忽略 |
-
-公开仓库含脱敏证据。公开清单中的 `original_sha256` 指原始缓存的哈希；公开副本的哈希由 [archives/public-files.json](archives/public-files.json) 单独记录。上游源码和论文全文保存在本地缓存，公开仓库提供 canonical URL、固定版本与校验值；模型大文件仍保存在实验服务器。
-
-## 当前状态
-
-实验服务器的推理服务已按用户要求停止并禁用自动启动；本次归档没有重新启动 GPU 任务。CLI 工具安装记录已保存。个人网站榜单已作为独立静态页发布到 `zedongpeng.com/benchmarks/qwen38-4090/`：个人网站只负责拉取本仓库、运行 `tools/build_site.py` 并复制 `dist/`，不再把榜单嵌入 Jekyll 页面。
-
-现有 [Artificial Analysis](https://artificialanalysis.ai/hardware-inference-stack/laptops-workstations)、[Inference Atlas](https://0xbakeer.github.io/inference-atlas/) 已做本地推理比较；截至快照日期，检查的数据没有 RTX 4090 条目。这个专题补充单卡 4090 证据，不宣称整个领域没有其他榜单。
-
-## 来源与权利
-
-上游代码、论文、模型和外部 benchmark 保留各自的许可证、作者及条件；存档或提供链接不改变这些条件。参见 [NOTICE.md](NOTICE.md)。
+The 2026-10-02 short-prompt leaderboard (34–77-token prompts, 4K context) is tagged `v1-short-prompts`; its files
+(`site/_pages`, `site/assets`, `qa/`, `archives/`, `docs/`, `research/`) are no longer used by the build.
