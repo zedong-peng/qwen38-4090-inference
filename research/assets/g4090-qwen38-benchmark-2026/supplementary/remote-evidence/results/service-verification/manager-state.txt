@@ -1,3 +1,0 @@
-RuntimePath=/run/user/1015
-State=closing
-Linger=yes

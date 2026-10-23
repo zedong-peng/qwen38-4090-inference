@@ -1,6 +1,0 @@
-COMMAND: ['git', 'clone', '--no-local', '--no-hardlinks', '/home/REMOTE_USER/qwen38-4090/repos/qwen38-ninfer-4090', '/home/REMOTE_USER/qwen38-4090/repos/.independent-git-clones-20260930T211550Z/qwen38-ninfer-4090']
-Cloning into '/home/REMOTE_USER/qwen38-4090/repos/.independent-git-clones-20260930T211550Z/qwen38-ninfer-4090'...
-COMMAND: git -C /home/REMOTE_USER/qwen38-4090/repos/.independent-git-clones-20260930T211550Z/qwen38-ninfer-4090 ['checkout', '--detach', '1bd56c9a1bdf457c6188391a9385d44d86e953aa']
-HEAD is now at 1bd56c9 docs(ledger): record the 4090 context-cost preset and its deploy
-COMMAND: git -C /home/REMOTE_USER/qwen38-4090/repos/.independent-git-clones-20260930T211550Z/qwen38-ninfer-4090 ['remote', 'set-url', 'origin', 'https://github.com/eriknelson/ninfer-4090.git']
-COMMAND: git -C /home/REMOTE_USER/qwen38-4090/repos/.independent-git-clones-20260930T211550Z/qwen38-ninfer-4090 ['fsck', '--full', '--no-dangling']

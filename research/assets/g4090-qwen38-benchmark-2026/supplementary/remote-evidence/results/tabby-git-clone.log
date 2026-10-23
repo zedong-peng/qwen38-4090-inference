@@ -1,3 +1,0 @@
-COMMAND: ['git', '-c', 'http.proxy=http://127.0.0.1:18080', 'clone', '--depth', '1', 'https://github.com/theroyallab/tabbyAPI.git', '/home/REMOTE_USER/qwen38-4090/repos/tabbyAPI']
-Cloning into '/home/REMOTE_USER/qwen38-4090/repos/tabbyAPI'...
-HEAD is now at be74bf0 Config: Restore accidentally delete vision_offload and warmup fields

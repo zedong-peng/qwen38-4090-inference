@@ -1,1 +1,0 @@
-50d9ce5a6da381bbcfb31061cf73df94a90e6faf8efeddee379a9cb8f1501c6e  /home/REMOTE_USER/qwen38-4090/models/mtp-Qwen3.8-27B-Q4_0.gguf

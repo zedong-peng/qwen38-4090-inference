@@ -105,6 +105,7 @@ h2 { font-size: 20px; font-weight: 600; margin: 0 0 4px; }
 .bars .label.pending b { color: var(--ink-3); }
 .bars .val.pending { color: var(--ink-3); font-style: italic; padding-left: 0; }
 .demo { margin: 16px 0 0; padding: 8px 12px; border: 1px solid var(--mtp); border-radius: 8px; font-size: 14px; color: var(--ink); }
+.demo.quiet { border-color: var(--axis); color: var(--ink-2); }
 .axis-row { display: grid; grid-template-columns: minmax(180px, 34%) 1fr; column-gap: 14px; margin-top: 6px; }
 .axis { position: relative; height: 18px; margin-right: 64px; border-top: 1px solid var(--axis); font-size: 12px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
 .axis span { position: absolute; top: 2px; transform: translateX(-50%); }

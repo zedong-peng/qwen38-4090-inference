@@ -1,8 +1,0 @@
-{
-  "old_payload_offset": 176128,
-  "new_payload_offset": 385024,
-  "verified_bytes": 18210355200,
-  "v2_payload_sha256": "2447064919566ad54c71c9d24b4cb955d06cd920af39a92588e724a6b3c7c368",
-  "v3_original_payload_sha256": "2447064919566ad54c71c9d24b4cb955d06cd920af39a92588e724a6b3c7c368",
-  "unchanged": true
-}

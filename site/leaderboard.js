@@ -234,7 +234,9 @@
   }
 
   function render(d) {
-    if (d.demo) document.querySelector("main").insertBefore(el("p", { class: "demo" }, d.demo), document.querySelector("main h1"));
+    var notice = d.demo || (d.methods.some(function (m) { return m.status === "ok"; }) ? null :
+      "RTX 4090 measurements are in progress. Each method's row fills in when its replay finishes; the other systems are Artificial Analysis's published runs.");
+    if (notice) document.querySelector("main").insertBefore(el("p", { class: "demo" + (d.demo ? "" : " quiet") }, notice), document.querySelector("main h1"));
     d.methods.forEach(function (m) {
       m.title = m.engine + " · " + drafting(m);
       m.subtitle = [m.weights, m.engine_build, m.note].filter(Boolean).join(" · ");

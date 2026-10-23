@@ -1,9 +1,0 @@
-{"mode": "dflash2", "workload": "json", "rep": 0, "exl3_native_generation_tps": 39.41270514732053, "generation_call_output_tps": 33.81237798078773, "error": null}
-{"mode": "dflash2", "workload": "json", "rep": 1, "exl3_native_generation_tps": 142.97691879556078, "generation_call_output_tps": 126.86120966479098, "error": null}
-{"mode": "dflash2", "workload": "json", "rep": 2, "exl3_native_generation_tps": 148.45286833585232, "generation_call_output_tps": 131.64934153959553, "error": null}
-{"mode": "dflash2", "workload": "code", "rep": 0, "exl3_native_generation_tps": 186.41511311598944, "generation_call_output_tps": 176.92924995983918, "error": null}
-{"mode": "dflash2", "workload": "code", "rep": 1, "exl3_native_generation_tps": 185.25187571648163, "generation_call_output_tps": 172.20542480149416, "error": null}
-{"mode": "dflash2", "workload": "code", "rep": 2, "exl3_native_generation_tps": 182.0338895009004, "generation_call_output_tps": 172.71008566062622, "error": null}
-{"mode": "dflash2", "workload": "prose", "rep": 0, "exl3_native_generation_tps": 80.36529825819473, "generation_call_output_tps": 74.74193175307002, "error": null}
-{"mode": "dflash2", "workload": "prose", "rep": 1, "exl3_native_generation_tps": 80.15752157252226, "generation_call_output_tps": 78.94310580575295, "error": null}
-{"mode": "dflash2", "workload": "prose", "rep": 2, "exl3_native_generation_tps": 80.19347735830554, "generation_call_output_tps": 79.01395589937285, "error": null}

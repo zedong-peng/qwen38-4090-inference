@@ -37,5 +37,5 @@ python3 tools/build_site.py
 python3 -m http.server 8080 --directory dist --bind 127.0.0.1   # /benchmarks/qwen38-4090/
 ```
 
-The 2026-10-02 short-prompt leaderboard (34–77-token prompts, 4K context) is tagged `v1-short-prompts`; its files
-(`site/_pages`, `site/assets`, `qa/`, `archives/`, `docs/`, `research/`) are no longer used by the build.
+The earlier short-prompt leaderboard (2026-10-02: 34–77-token prompts, 4K context) and its research archive are at
+tag `v1-short-prompts`.

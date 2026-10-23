@@ -1,4 +1,0 @@
-MainPID=2332782
-ExecMainStatus=0
-ActiveState=active
-SubState=running
