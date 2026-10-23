@@ -1,44 +1,37 @@
 {
-  "engines": {
-    "llama.cpp": {"url": "https://github.com/ggml-org/llama.cpp"},
-    "ik_llama.cpp": {"url": "https://github.com/ikawrakow/ik_llama.cpp"},
-    "vLLM": {"url": "https://github.com/vllm-project/vllm"},
-    "vLLM + sidnaZ patches": {"url": "https://github.com/sidnaZ/qwen38-27b-rtx4090"},
-    "SGLang": {"url": "https://github.com/sgl-project/sglang"},
-    "ExLlamaV3": {"url": "https://github.com/turboderp-org/exllamav3"},
-    "NInfer": {"url": "https://github.com/zedong-peng/qwen38-4090-decode"}
+ "methods": [
+  {
+   "id": "lcpp-mtp2",
+   "engine": "llama.cpp",
+   "engine_url": "https://github.com/ggml-org/llama.cpp",
+   "version": "b11026 (b49650adb)",
+   "weights": "Q4_K_M",
+   "weights_source": "unsloth/Qwen3.8-27B-GGUF @ f1bfb127c64f7072bdd2cad55f258b9c8b2910fe",
+   "decoding": "MTP",
+   "draft": 2,
+   "how": "Artificial Analysis's managed run of its recipe qwen38-27b-q4-k-m-mtp, the one behind its RTX 5090 result"
   },
-  "weights": {
-    "Q4_K_M": {"repo": "unsloth/Qwen3.8-27B-GGUF", "revision": "f1bfb127c64f7072bdd2cad55f258b9c8b2910fe", "file": "Qwen3.8-27B-Q4_K_M.gguf", "bytes": 17106775008},
-    "UD-Q4_K_M": {"repo": "unsloth/Qwen3.8-27B-GGUF", "revision": "4ca720788d1e01f1bff70c033e0d0028fd02e502", "file": "Qwen3.8-27B-UD-Q4_K_M.gguf", "bytes": 16464440224},
-    "W4A16 AutoRound": {"repo": "dbirks/Qwen3.8-27B-W4A16-AutoRound"},
-    "AWQ INT4": {"repo": "cyankiwi/Qwen3.8-27B-AWQ-INT4"},
-    "EXL3 4.0 bpw": {"repo": "turboderp/Qwen3.8-27B-exl3", "revision": "SC_4.00bpw_H5"},
-    "NInfer v3": {"repo": "neroued NInfer v3 container (DFlash2)"},
-    "NInfer 4090": {"repo": "zedongpeng/Qwen3.8-27B-NInfer-4090"}
+  {
+   "id": "lcpp-dflash7",
+   "engine": "llama.cpp",
+   "engine_url": "https://github.com/ggml-org/llama.cpp",
+   "version": "b11236 (f1ea20621)",
+   "weights": "UD-Q4_K_M",
+   "weights_source": "unsloth/Qwen3.8-27B-GGUF @ 4ca720788d1e01f1bff70c033e0d0028fd02e502, draft incoai/Qwen3.8-27B-DFlash2-GGUF",
+   "decoding": "DFlash",
+   "draft": 7,
+   "how": "Artificial Analysis's managed run of its recipe qwen38-27b-ud-q4-k-m-dflash-rtx-spark, the one behind its RTX Spark result"
   },
-  "methods": [
-    {"id": "lcpp-q4km-ar", "engine": "llama.cpp", "weights": "Q4_K_M", "decoding": "Autoregressive", "draft": 0, "kv": "F16",
-     "note": "AA's baseline recipe"},
-    {"id": "lcpp-q4km-mtp2", "engine": "llama.cpp", "weights": "Q4_K_M", "decoding": "MTP", "draft": 2, "kv": "F16",
-     "note": "AA's RTX 5090 recipe"},
-    {"id": "lcpp-udq4km-dflash7", "engine": "llama.cpp", "weights": "UD-Q4_K_M", "decoding": "DFlash2", "draft": 7, "kv": "F16",
-     "note": "AA's DGX Spark recipe"},
-    {"id": "ik-q4km-ar", "engine": "ik_llama.cpp", "weights": "Q4_K_M", "decoding": "Autoregressive", "draft": 0, "kv": "F16"},
-    {"id": "ik-q4km-mtp2", "engine": "ik_llama.cpp", "weights": "Q4_K_M", "decoding": "MTP", "draft": 2, "kv": "F16"},
-    {"id": "ik-udq4km-dflash7", "engine": "ik_llama.cpp", "weights": "UD-Q4_K_M", "decoding": "DFlash2", "draft": 7, "kv": "F16"},
-    {"id": "vllm-w4a16-ar", "engine": "vLLM", "weights": "W4A16 AutoRound", "decoding": "Autoregressive", "draft": 0, "kv": "FP8"},
-    {"id": "vllm-w4a16-mtp3", "engine": "vLLM", "weights": "W4A16 AutoRound", "decoding": "MTP", "draft": 3, "kv": "FP8"},
-    {"id": "vsz-w4a16-ar", "engine": "vLLM + sidnaZ patches", "weights": "W4A16 AutoRound", "decoding": "Autoregressive", "draft": 0, "kv": "BF16"},
-    {"id": "vsz-w4a16-mtp3", "engine": "vLLM + sidnaZ patches", "weights": "W4A16 AutoRound", "decoding": "MTP", "draft": 3, "kv": "BF16"},
-    {"id": "vsz-w4a16-dflash7", "engine": "vLLM + sidnaZ patches", "weights": "W4A16 AutoRound", "decoding": "DFlash2", "draft": 7, "kv": "BF16",
-     "note": "community RTX 4090 recipe"},
-    {"id": "sgl-awq-ar", "engine": "SGLang", "weights": "AWQ INT4", "decoding": "Autoregressive", "draft": 0, "kv": "FP8"},
-    {"id": "sgl-awq-mtp3", "engine": "SGLang", "weights": "AWQ INT4", "decoding": "MTP", "draft": 3, "kv": "FP8"},
-    {"id": "exl3-4bpw-ar", "engine": "ExLlamaV3", "weights": "EXL3 4.0 bpw", "decoding": "Autoregressive", "draft": 0, "kv": "F16"},
-    {"id": "exl3-4bpw-mtp", "engine": "ExLlamaV3", "weights": "EXL3 4.0 bpw", "decoding": "MTP", "draft": 0, "kv": "F16"},
-    {"id": "exl3-4bpw-dflash7", "engine": "ExLlamaV3", "weights": "EXL3 4.0 bpw", "decoding": "DFlash2", "draft": 7, "kv": "F16"},
-    {"id": "ninfer-v3-dflash15", "engine": "NInfer", "weights": "NInfer v3", "decoding": "DFlash2", "draft": 15, "kv": "K8 V4",
-     "note": "our engine, official weights"}
-  ]
+  {
+   "id": "vllm-mtp3",
+   "engine": "vLLM",
+   "engine_url": "https://github.com/vllm-project/vllm",
+   "version": "0.27.1",
+   "weights": "W4A16",
+   "weights_source": "dbirks/Qwen3.8-27B-W4A16-AutoRound",
+   "decoding": "MTP",
+   "draft": 3,
+   "how": "vLLM launched with the flags Artificial Analysis's tool gives vLLM (one sequence, FP8 KV cache, prefix caching, chunked prefill), run against the attached server"
+  }
+ ]
 }

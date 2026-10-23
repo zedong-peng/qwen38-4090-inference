@@ -1,277 +1,134 @@
 {
- "updated": "2026-10-23",
+ "updated": "2026-10-24",
  "workload": {
   "name": "AA-AgentPerf-Local default replay (agentperf-default-v1)",
   "runner": "agentperf-local 0.3.4",
   "tasks": 8,
   "turns": 168,
   "tool_calls": 172,
-  "output_tokens": 30883,
-  "largest_prompt_tokens": 56000,
   "context_tokens": 65536,
   "concurrency": 1,
   "output_policy": "exact (ignore_eos, recorded length)",
-  "sampling": "temperature 0.7, top_p 0.8, top_k 20"
+  "sampling": "temperature 0.7, top_p 0.8, top_k 20, min_p 0"
  },
  "hardware": {
-  "gpu": "NVIDIA GeForce RTX 4090",
+  "system": "NVIDIA GeForce RTX 4090",
   "memory_gb": 24,
   "bandwidth_gbs": 1008,
   "power_limit_w": 450,
-  "msrp_usd": 1599,
-  "rest_of_system_usd": 2500,
   "driver": "570.124.06",
-  "cuda": "12.8",
   "cpu": "Intel Xeon Silver 4210",
   "shared": "one card of a shared four-card server"
  },
  "methods": [
   {
-   "id": "lcpp-q4km-ar",
+   "id": "lcpp-mtp2",
    "engine": "llama.cpp",
-   "weights": "Q4_K_M",
-   "decoding": "Autoregressive",
-   "draft": 0,
-   "kv": "F16",
-   "note": "AA's baseline recipe",
-   "status": "pending",
    "engine_url": "https://github.com/ggml-org/llama.cpp",
-   "weights_source": {
-    "repo": "unsloth/Qwen3.8-27B-GGUF",
-    "revision": "f1bfb127c64f7072bdd2cad55f258b9c8b2910fe",
-    "file": "Qwen3.8-27B-Q4_K_M.gguf",
-    "bytes": 17106775008
-   }
-  },
-  {
-   "id": "lcpp-q4km-mtp2",
-   "engine": "llama.cpp",
+   "version": "b11026 (b49650adb)",
    "weights": "Q4_K_M",
+   "weights_source": "unsloth/Qwen3.8-27B-GGUF @ f1bfb127c64f7072bdd2cad55f258b9c8b2910fe",
    "decoding": "MTP",
    "draft": 2,
-   "kv": "F16",
-   "note": "AA's RTX 5090 recipe",
-   "status": "pending",
-   "engine_url": "https://github.com/ggml-org/llama.cpp",
-   "weights_source": {
-    "repo": "unsloth/Qwen3.8-27B-GGUF",
-    "revision": "f1bfb127c64f7072bdd2cad55f258b9c8b2910fe",
-    "file": "Qwen3.8-27B-Q4_K_M.gguf",
-    "bytes": 17106775008
-   }
+   "how": "Artificial Analysis's managed run of its recipe qwen38-27b-q4-k-m-mtp, the one behind its RTX 5090 result",
+   "status": "ok",
+   "runs": [
+    {
+     "run": "20261023-220159/lcpp-mtp2/1",
+     "launch": "CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=1 llama-server --model \"$MODEL_DIR\"/Qwen3.8-27B-Q4_K_M.gguf --alias qwen38-27b-q4-k-m-mtp-5bdf7ebd4f0f3b34 --host 127.0.0.1 --port 8080 --ctx-size 65536 --parallel 1 --gpu-layers all --jinja --batch-size 4096 --ubatch-size 2048 --no-mmproj --spec-type draft-mtp --spec-draft-n-max 2 --backend-sampling --spec-draft-backend-sampling --no-webui --verbosity 4",
+     "ok": true,
+     "completion_s": 633.590634573251,
+     "output_tps": 76.76580101793999,
+     "ttft_p50_ms": 1103.5786736756563,
+     "cached_tokens": 2399926,
+     "uncached_tokens": 177896,
+     "output_tokens": 30883
+    },
+    {
+     "run": "20261023-220159/lcpp-mtp2/2",
+     "launch": "CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=1 llama-server --model \"$MODEL_DIR\"/Qwen3.8-27B-Q4_K_M.gguf --alias qwen38-27b-q4-k-m-mtp-224e724f245037fa --host 127.0.0.1 --port 8080 --ctx-size 65536 --parallel 1 --gpu-layers all --jinja --batch-size 4096 --ubatch-size 2048 --no-mmproj --spec-type draft-mtp --spec-draft-n-max 2 --backend-sampling --spec-draft-backend-sampling --no-webui --verbosity 4",
+     "ok": true,
+     "completion_s": 608.047486430034,
+     "output_tps": 78.23586851869685,
+     "ttft_p50_ms": 1035.6149468570948,
+     "cached_tokens": 2399926,
+     "uncached_tokens": 177896,
+     "output_tokens": 30883
+    },
+    {
+     "run": "20261023-220159/lcpp-mtp2/3",
+     "launch": "CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=1 llama-server --model \"$MODEL_DIR\"/Qwen3.8-27B-Q4_K_M.gguf --alias qwen38-27b-q4-k-m-mtp-61dd76b4bf070978 --host 127.0.0.1 --port 8080 --ctx-size 65536 --parallel 1 --gpu-layers all --jinja --batch-size 4096 --ubatch-size 2048 --no-mmproj --spec-type draft-mtp --spec-draft-n-max 2 --backend-sampling --spec-draft-backend-sampling --no-webui --verbosity 4",
+     "ok": true,
+     "completion_s": 606.2046667281538,
+     "output_tps": 78.31051126874378,
+     "ttft_p50_ms": 1027.476673014462,
+     "cached_tokens": 2399926,
+     "uncached_tokens": 177896,
+     "output_tokens": 30883
+    }
+   ],
+   "completion_s": 608.047486430034
   },
   {
-   "id": "lcpp-udq4km-dflash7",
+   "id": "lcpp-dflash7",
    "engine": "llama.cpp",
-   "weights": "UD-Q4_K_M",
-   "decoding": "DFlash2",
-   "draft": 7,
-   "kv": "F16",
-   "note": "AA's DGX Spark recipe",
-   "status": "pending",
    "engine_url": "https://github.com/ggml-org/llama.cpp",
-   "weights_source": {
-    "repo": "unsloth/Qwen3.8-27B-GGUF",
-    "revision": "4ca720788d1e01f1bff70c033e0d0028fd02e502",
-    "file": "Qwen3.8-27B-UD-Q4_K_M.gguf",
-    "bytes": 16464440224
-   }
-  },
-  {
-   "id": "ik-q4km-ar",
-   "engine": "ik_llama.cpp",
-   "weights": "Q4_K_M",
-   "decoding": "Autoregressive",
-   "draft": 0,
-   "kv": "F16",
-   "status": "pending",
-   "engine_url": "https://github.com/ikawrakow/ik_llama.cpp",
-   "weights_source": {
-    "repo": "unsloth/Qwen3.8-27B-GGUF",
-    "revision": "f1bfb127c64f7072bdd2cad55f258b9c8b2910fe",
-    "file": "Qwen3.8-27B-Q4_K_M.gguf",
-    "bytes": 17106775008
-   }
-  },
-  {
-   "id": "ik-q4km-mtp2",
-   "engine": "ik_llama.cpp",
-   "weights": "Q4_K_M",
-   "decoding": "MTP",
-   "draft": 2,
-   "kv": "F16",
-   "status": "pending",
-   "engine_url": "https://github.com/ikawrakow/ik_llama.cpp",
-   "weights_source": {
-    "repo": "unsloth/Qwen3.8-27B-GGUF",
-    "revision": "f1bfb127c64f7072bdd2cad55f258b9c8b2910fe",
-    "file": "Qwen3.8-27B-Q4_K_M.gguf",
-    "bytes": 17106775008
-   }
-  },
-  {
-   "id": "ik-udq4km-dflash7",
-   "engine": "ik_llama.cpp",
+   "version": "b11236 (f1ea20621)",
    "weights": "UD-Q4_K_M",
-   "decoding": "DFlash2",
+   "weights_source": "unsloth/Qwen3.8-27B-GGUF @ 4ca720788d1e01f1bff70c033e0d0028fd02e502, draft incoai/Qwen3.8-27B-DFlash2-GGUF",
+   "decoding": "DFlash",
    "draft": 7,
-   "kv": "F16",
-   "status": "pending",
-   "engine_url": "https://github.com/ikawrakow/ik_llama.cpp",
-   "weights_source": {
-    "repo": "unsloth/Qwen3.8-27B-GGUF",
-    "revision": "4ca720788d1e01f1bff70c033e0d0028fd02e502",
-    "file": "Qwen3.8-27B-UD-Q4_K_M.gguf",
-    "bytes": 16464440224
-   }
+   "how": "Artificial Analysis's managed run of its recipe qwen38-27b-ud-q4-k-m-dflash-rtx-spark, the one behind its RTX Spark result",
+   "status": "ok",
+   "runs": [
+    {
+     "run": "20261023-220159/lcpp-dflash7/1",
+     "launch": "CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=1 llama-server --model \"$MODEL_DIR\"/Qwen3.8-27B-UD-Q4_K_M.gguf --alias qwen38-27b-ud-q4-k-m-dflash-rtx-spark-b0d1d4244972cac5 --host 127.0.0.1 --port 8080 --ctx-size 65536 --parallel 1 --gpu-layers all --jinja --batch-size 4096 --ubatch-size 512 --no-mmproj --model-draft \"$MODEL_DIR\"/Qwen3.8-27B-DFlash2-Q4_K_M.gguf --spec-type draft-dflash --spec-draft-n-max 7 --spec-draft-backend-sampling --no-webui --verbosity 4",
+     "ok": true,
+     "completion_s": 544.854597363621,
+     "output_tps": 93.18913640346926,
+     "ttft_p50_ms": 1149.9833967536688,
+     "cached_tokens": 2385367,
+     "uncached_tokens": 192455,
+     "output_tokens": 30883
+    },
+    {
+     "run": "20261023-220159/lcpp-dflash7/2",
+     "launch": "CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=1 llama-server --model \"$MODEL_DIR\"/Qwen3.8-27B-UD-Q4_K_M.gguf --alias qwen38-27b-ud-q4-k-m-dflash-rtx-spark-54b3bbe1ee748cff --host 127.0.0.1 --port 8080 --ctx-size 65536 --parallel 1 --gpu-layers all --jinja --batch-size 4096 --ubatch-size 512 --no-mmproj --model-draft \"$MODEL_DIR\"/Qwen3.8-27B-DFlash2-Q4_K_M.gguf --spec-type draft-dflash --spec-draft-n-max 7 --spec-draft-backend-sampling --no-webui --verbosity 4",
+     "ok": true,
+     "completion_s": 534.6725628003478,
+     "output_tps": 91.84857019431725,
+     "ttft_p50_ms": 1117.89804790169,
+     "cached_tokens": 2385367,
+     "uncached_tokens": 192455,
+     "output_tokens": 30883
+    },
+    {
+     "run": "20261023-220159/lcpp-dflash7/3",
+     "launch": "CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=1 llama-server --model \"$MODEL_DIR\"/Qwen3.8-27B-UD-Q4_K_M.gguf --alias qwen38-27b-ud-q4-k-m-dflash-rtx-spark-08d8bc4a21034b8f --host 127.0.0.1 --port 8080 --ctx-size 65536 --parallel 1 --gpu-layers all --jinja --batch-size 4096 --ubatch-size 512 --no-mmproj --model-draft \"$MODEL_DIR\"/Qwen3.8-27B-DFlash2-Q4_K_M.gguf --spec-type draft-dflash --spec-draft-n-max 7 --spec-draft-backend-sampling --no-webui --verbosity 4",
+     "ok": true,
+     "completion_s": 541.1539088636637,
+     "output_tps": 89.9570485834071,
+     "ttft_p50_ms": 1095.012248493731,
+     "cached_tokens": 2385367,
+     "uncached_tokens": 192455,
+     "output_tokens": 30883
+    }
+   ],
+   "completion_s": 541.1539088636637
   },
   {
-   "id": "vllm-w4a16-ar",
+   "id": "vllm-mtp3",
    "engine": "vLLM",
-   "weights": "W4A16 AutoRound",
-   "decoding": "Autoregressive",
-   "draft": 0,
-   "kv": "FP8",
-   "status": "pending",
    "engine_url": "https://github.com/vllm-project/vllm",
-   "weights_source": {
-    "repo": "dbirks/Qwen3.8-27B-W4A16-AutoRound"
-   }
-  },
-  {
-   "id": "vllm-w4a16-mtp3",
-   "engine": "vLLM",
-   "weights": "W4A16 AutoRound",
+   "version": "0.27.1",
+   "weights": "W4A16",
+   "weights_source": "dbirks/Qwen3.8-27B-W4A16-AutoRound",
    "decoding": "MTP",
    "draft": 3,
-   "kv": "FP8",
-   "status": "pending",
-   "engine_url": "https://github.com/vllm-project/vllm",
-   "weights_source": {
-    "repo": "dbirks/Qwen3.8-27B-W4A16-AutoRound"
-   }
-  },
-  {
-   "id": "vsz-w4a16-ar",
-   "engine": "vLLM + sidnaZ patches",
-   "weights": "W4A16 AutoRound",
-   "decoding": "Autoregressive",
-   "draft": 0,
-   "kv": "BF16",
-   "status": "pending",
-   "engine_url": "https://github.com/sidnaZ/qwen38-27b-rtx4090",
-   "weights_source": {
-    "repo": "dbirks/Qwen3.8-27B-W4A16-AutoRound"
-   }
-  },
-  {
-   "id": "vsz-w4a16-mtp3",
-   "engine": "vLLM + sidnaZ patches",
-   "weights": "W4A16 AutoRound",
-   "decoding": "MTP",
-   "draft": 3,
-   "kv": "BF16",
-   "status": "pending",
-   "engine_url": "https://github.com/sidnaZ/qwen38-27b-rtx4090",
-   "weights_source": {
-    "repo": "dbirks/Qwen3.8-27B-W4A16-AutoRound"
-   }
-  },
-  {
-   "id": "vsz-w4a16-dflash7",
-   "engine": "vLLM + sidnaZ patches",
-   "weights": "W4A16 AutoRound",
-   "decoding": "DFlash2",
-   "draft": 7,
-   "kv": "BF16",
-   "note": "community RTX 4090 recipe",
-   "status": "pending",
-   "engine_url": "https://github.com/sidnaZ/qwen38-27b-rtx4090",
-   "weights_source": {
-    "repo": "dbirks/Qwen3.8-27B-W4A16-AutoRound"
-   }
-  },
-  {
-   "id": "sgl-awq-ar",
-   "engine": "SGLang",
-   "weights": "AWQ INT4",
-   "decoding": "Autoregressive",
-   "draft": 0,
-   "kv": "FP8",
-   "status": "pending",
-   "engine_url": "https://github.com/sgl-project/sglang",
-   "weights_source": {
-    "repo": "cyankiwi/Qwen3.8-27B-AWQ-INT4"
-   }
-  },
-  {
-   "id": "sgl-awq-mtp3",
-   "engine": "SGLang",
-   "weights": "AWQ INT4",
-   "decoding": "MTP",
-   "draft": 3,
-   "kv": "FP8",
-   "status": "pending",
-   "engine_url": "https://github.com/sgl-project/sglang",
-   "weights_source": {
-    "repo": "cyankiwi/Qwen3.8-27B-AWQ-INT4"
-   }
-  },
-  {
-   "id": "exl3-4bpw-ar",
-   "engine": "ExLlamaV3",
-   "weights": "EXL3 4.0 bpw",
-   "decoding": "Autoregressive",
-   "draft": 0,
-   "kv": "F16",
-   "status": "pending",
-   "engine_url": "https://github.com/turboderp-org/exllamav3",
-   "weights_source": {
-    "repo": "turboderp/Qwen3.8-27B-exl3",
-    "revision": "SC_4.00bpw_H5"
-   }
-  },
-  {
-   "id": "exl3-4bpw-mtp",
-   "engine": "ExLlamaV3",
-   "weights": "EXL3 4.0 bpw",
-   "decoding": "MTP",
-   "draft": 0,
-   "kv": "F16",
-   "status": "pending",
-   "engine_url": "https://github.com/turboderp-org/exllamav3",
-   "weights_source": {
-    "repo": "turboderp/Qwen3.8-27B-exl3",
-    "revision": "SC_4.00bpw_H5"
-   }
-  },
-  {
-   "id": "exl3-4bpw-dflash7",
-   "engine": "ExLlamaV3",
-   "weights": "EXL3 4.0 bpw",
-   "decoding": "DFlash2",
-   "draft": 7,
-   "kv": "F16",
-   "status": "pending",
-   "engine_url": "https://github.com/turboderp-org/exllamav3",
-   "weights_source": {
-    "repo": "turboderp/Qwen3.8-27B-exl3",
-    "revision": "SC_4.00bpw_H5"
-   }
-  },
-  {
-   "id": "ninfer-v3-dflash15",
-   "engine": "NInfer",
-   "weights": "NInfer v3",
-   "decoding": "DFlash2",
-   "draft": 15,
-   "kv": "K8 V4",
-   "note": "our engine, official weights",
-   "status": "pending",
-   "engine_url": "https://github.com/zedong-peng/qwen38-4090-decode",
-   "weights_source": {
-    "repo": "neroued NInfer v3 container (DFlash2)"
-   }
+   "how": "vLLM launched with the flags Artificial Analysis's tool gives vLLM (one sequence, FP8 KV cache, prefix caching, chunked prefill), run against the attached server",
+   "status": "failed",
+   "reason": "no start at 65,536 tokens"
   }
  ],
  "references": [
@@ -280,8 +137,6 @@
    "short": "RTX 5090",
    "memory_gb": 32,
    "bandwidth_gbs": 1792,
-   "price_usd": 4500,
-   "price_note": "card $2,000 + $2,500",
    "framework": "llama.cpp b11026",
    "quant": "Q4_K_M",
    "decoding": "MTP",
@@ -289,15 +144,13 @@
    "completion_s": 294.884503844194,
    "output_tps": 151.288426015958,
    "prefill_tps": 2155.5551058260694,
-   "ttft_p50_ms": 323.675051098689,
-   "decodingText": "MTP 2"
+   "ttft_p50_ms": 323.675051098689
   },
   {
    "system": "NVIDIA DGX Spark",
    "short": "DGX Spark",
    "memory_gb": 128,
    "bandwidth_gbs": 273,
-   "price_usd": 4000,
    "framework": "llama.cpp b11236",
    "quant": "UD-Q4_K_M",
    "decoding": "DFlash2",
@@ -305,15 +158,13 @@
    "completion_s": 1037.35393960169,
    "output_tps": 43.2692077310355,
    "prefill_tps": 601.3340589007829,
-   "ttft_p50_ms": 1045.14579148963,
-   "decodingText": "DFlash2 7"
+   "ttft_p50_ms": 1045.14579148963
   },
   {
    "system": "NVIDIA RTX Spark N1X laptop",
    "short": "RTX Spark laptop",
    "memory_gb": 128,
    "bandwidth_gbs": 300,
-   "price_usd": 5900,
    "framework": "llama.cpp b11236",
    "quant": "UD-Q4_K_M",
    "decoding": "DFlash2",
@@ -321,15 +172,13 @@
    "completion_s": 1124.52401140002,
    "output_tps": 40.6121669585203,
    "prefill_tps": 537.5489303766957,
-   "ttft_p50_ms": 1112.20104999938,
-   "decodingText": "DFlash2 7"
+   "ttft_p50_ms": 1112.20104999938
   },
   {
    "system": "AMD Ryzen AI Halo",
    "short": "Ryzen AI Halo",
    "memory_gb": 128,
    "bandwidth_gbs": 256,
-   "price_usd": 4000,
    "framework": "llama.cpp b11026 (ROCm)",
    "quant": "Q4_K_M",
    "decoding": "MTP",
@@ -337,15 +186,13 @@
    "completion_s": 2067.67636695248,
    "output_tps": 23.4019460619965,
    "prefill_tps": 261.1966590442855,
-   "ttft_p50_ms": 1995.845937985,
-   "decodingText": "MTP 2"
+   "ttft_p50_ms": 1995.845937985
   },
   {
    "system": "MacBook Pro (M5 Pro, 64 GB)",
    "short": "MacBook Pro M5 Pro",
    "memory_gb": 64,
    "bandwidth_gbs": 307,
-   "price_usd": 3000,
    "framework": "llama.cpp b11026 (Metal)",
    "quant": "Q4_K_M",
    "decoding": "MTP",
@@ -353,9 +200,9 @@
    "completion_s": 2257.69868524912,
    "output_tps": 23.0949233397184,
    "prefill_tps": 212.1954935533054,
-   "ttft_p50_ms": 2453.43229200807,
-   "decodingText": "MTP 4"
+   "ttft_p50_ms": 2453.43229200807
   }
  ],
- "references_source": "https://artificialanalysis.ai/hardware-inference-stack/laptops-workstations"
+ "references_source": "https://artificialanalysis.ai/hardware-inference-stack/laptops-workstations",
+ "references_retrieved": "2026-10-24"
 }

@@ -1,22 +1,77 @@
 {
-  "source": "https://artificialanalysis.ai/hardware-inference-stack/laptops-workstations",
-  "retrieved": "2026-10-23",
-  "workload": "AgentPerf-Local default",
-  "systems": [
-    {"system": "NVIDIA GeForce RTX 5090", "short": "RTX 5090", "memory_gb": 32, "bandwidth_gbs": 1792, "price_usd": 4500, "price_note": "card $2,000 + $2,500",
-     "framework": "llama.cpp b11026", "quant": "Q4_K_M", "decoding": "MTP", "draft": 2,
-     "completion_s": 294.884503844194, "output_tps": 151.288426015958, "prefill_tps": 2155.5551058260694, "ttft_p50_ms": 323.675051098689},
-    {"system": "NVIDIA DGX Spark", "short": "DGX Spark", "memory_gb": 128, "bandwidth_gbs": 273, "price_usd": 4000,
-     "framework": "llama.cpp b11236", "quant": "UD-Q4_K_M", "decoding": "DFlash2", "draft": 7,
-     "completion_s": 1037.35393960169, "output_tps": 43.2692077310355, "prefill_tps": 601.3340589007829, "ttft_p50_ms": 1045.14579148963},
-    {"system": "NVIDIA RTX Spark N1X laptop", "short": "RTX Spark laptop", "memory_gb": 128, "bandwidth_gbs": 300, "price_usd": 5900,
-     "framework": "llama.cpp b11236", "quant": "UD-Q4_K_M", "decoding": "DFlash2", "draft": 7,
-     "completion_s": 1124.52401140002, "output_tps": 40.6121669585203, "prefill_tps": 537.5489303766957, "ttft_p50_ms": 1112.20104999938},
-    {"system": "AMD Ryzen AI Halo", "short": "Ryzen AI Halo", "memory_gb": 128, "bandwidth_gbs": 256, "price_usd": 4000,
-     "framework": "llama.cpp b11026 (ROCm)", "quant": "Q4_K_M", "decoding": "MTP", "draft": 2,
-     "completion_s": 2067.67636695248, "output_tps": 23.4019460619965, "prefill_tps": 261.1966590442855, "ttft_p50_ms": 1995.845937985},
-    {"system": "MacBook Pro (M5 Pro, 64 GB)", "short": "MacBook Pro M5 Pro", "memory_gb": 64, "bandwidth_gbs": 307, "price_usd": 3000,
-     "framework": "llama.cpp b11026 (Metal)", "quant": "Q4_K_M", "decoding": "MTP", "draft": 4,
-     "completion_s": 2257.69868524912, "output_tps": 23.0949233397184, "prefill_tps": 212.1954935533054, "ttft_p50_ms": 2453.43229200807}
-  ]
+ "source": "https://artificialanalysis.ai/hardware-inference-stack/laptops-workstations",
+ "retrieved": "2026-10-24",
+ "workload": "AgentPerf-Local default",
+ "systems": [
+  {
+   "system": "NVIDIA GeForce RTX 5090",
+   "short": "RTX 5090",
+   "memory_gb": 32,
+   "bandwidth_gbs": 1792,
+   "framework": "llama.cpp b11026",
+   "quant": "Q4_K_M",
+   "decoding": "MTP",
+   "draft": 2,
+   "completion_s": 294.884503844194,
+   "output_tps": 151.288426015958,
+   "prefill_tps": 2155.5551058260694,
+   "ttft_p50_ms": 323.675051098689
+  },
+  {
+   "system": "NVIDIA DGX Spark",
+   "short": "DGX Spark",
+   "memory_gb": 128,
+   "bandwidth_gbs": 273,
+   "framework": "llama.cpp b11236",
+   "quant": "UD-Q4_K_M",
+   "decoding": "DFlash2",
+   "draft": 7,
+   "completion_s": 1037.35393960169,
+   "output_tps": 43.2692077310355,
+   "prefill_tps": 601.3340589007829,
+   "ttft_p50_ms": 1045.14579148963
+  },
+  {
+   "system": "NVIDIA RTX Spark N1X laptop",
+   "short": "RTX Spark laptop",
+   "memory_gb": 128,
+   "bandwidth_gbs": 300,
+   "framework": "llama.cpp b11236",
+   "quant": "UD-Q4_K_M",
+   "decoding": "DFlash2",
+   "draft": 7,
+   "completion_s": 1124.52401140002,
+   "output_tps": 40.6121669585203,
+   "prefill_tps": 537.5489303766957,
+   "ttft_p50_ms": 1112.20104999938
+  },
+  {
+   "system": "AMD Ryzen AI Halo",
+   "short": "Ryzen AI Halo",
+   "memory_gb": 128,
+   "bandwidth_gbs": 256,
+   "framework": "llama.cpp b11026 (ROCm)",
+   "quant": "Q4_K_M",
+   "decoding": "MTP",
+   "draft": 2,
+   "completion_s": 2067.67636695248,
+   "output_tps": 23.4019460619965,
+   "prefill_tps": 261.1966590442855,
+   "ttft_p50_ms": 1995.845937985
+  },
+  {
+   "system": "MacBook Pro (M5 Pro, 64 GB)",
+   "short": "MacBook Pro M5 Pro",
+   "memory_gb": 64,
+   "bandwidth_gbs": 307,
+   "framework": "llama.cpp b11026 (Metal)",
+   "quant": "Q4_K_M",
+   "decoding": "MTP",
+   "draft": 4,
+   "completion_s": 2257.69868524912,
+   "output_tps": 23.0949233397184,
+   "prefill_tps": 212.1954935533054,
+   "ttft_p50_ms": 2453.43229200807
+  }
+ ]
 }
