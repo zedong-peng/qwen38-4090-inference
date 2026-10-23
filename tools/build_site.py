@@ -65,18 +65,66 @@ def table(data):
 
 
 def note(data):
-    month = MONTH
-    return (f'<p class="qwen38-note">Workload: <a href="https://github.com/ArtificialAnalysis/aa-agentperf-local">AgentPerf-Local</a>\'s '
-            "default, 8 recorded coding-agent tasks and 168 turns, sent one at a time; every turn writes its recorded number "
-            "of tokens, and tool time is not counted. Other systems: "
-            f'<a href="{data["references_source"]}">Artificial Analysis</a>, {month}. Highlighted: our RTX 4090 runs with their tool, '
-            "median of three; the two llama.cpp setups are their recipes for the RTX 5090 and the RTX Spark. "
-            f'<a href="{REPO}">Commands and raw data</a>.</p>')
+    return ('<p class="qwen38-note">Minutes to finish the replay. Highlighted: our RTX 4090, median of three runs; '
+            f'the other systems are <a href="{data["references_source"]}">Artificial Analysis</a>\'s, {MONTH}.</p>')
 
 
-def render(data):
-    return ((SITE / "index.html").read_text().replace("<!--TABLE-->", table(data)).replace("<!--NOTE-->", note(data))
-            .replace("<!--MONTH-->", MONTH))
+def method(data):
+    return (f'Workload: <a href="https://github.com/ArtificialAnalysis/aa-agentperf-local">AgentPerf-Local</a>\'s default '
+            "replay, 8 recorded coding-agent tasks and 168 turns sent one at a time with a 65,536-token context; every turn "
+            "writes its recorded number of tokens, and tool time is not counted. Our runs use their tool and their recipes for "
+            "the RTX 5090 (llama.cpp b11026, Q4_K_M, MTP 2) and the RTX Spark (b11236, UD-Q4_K_M, DFlash 7) on one RTX 4090. "
+            f'<a href="{REPO}">Commands and raw data</a>.')
+
+
+def median_turns(data, samples):
+    """Per method, the turns of its median run (the run whose time the table shows)."""
+    out = {}
+    for m in data["methods"]:
+        run = next((r["run"] for r in m.get("runs", []) if r.get("completion_s") == m.get("completion_s")), None)
+        if run and run in samples["methods"].get(m["id"], {}):
+            out[m["id"]] = [dict(zip(samples["columns"], t)) for t in samples["methods"][m["id"]][run]]
+    return out
+
+
+def split(data, samples):
+    """Where the minutes go: reading the prompt (time to first token) and writing, for each RTX 4090 setup."""
+    turns = median_turns(data, samples)
+    bars = []
+    for m in data["methods"]:
+        if m["id"] not in turns:
+            continue
+        t = turns[m["id"]]
+        read, write = (sum(x[k] for x in t) / 6e4 for k in ("ttft_ms", "generation_ms"))
+        bars.append((f'{m["decoding"]} {m["draft"]}', read, write))
+    top = max(r + w for _, r, w in bars)
+    rows = "".join(
+        f'<div class="qwen38-srow"><span class="qwen38-slabel">{escape(name)}</span><div class="qwen38-sbar">'
+        f'<i class="qwen38-read" style="--w:{r / top:.3f}" title="Reading: {r:.1f} min">{r:.1f}</i>'
+        f'<i class="qwen38-write" style="--w:{w / top:.3f}" title="Writing: {w:.1f} min">{w:.1f}</i></div></div>'
+        for name, r, w in bars)
+    return ('<figure class="qwen38-split"><div class="qwen38-key"><span><i class="qwen38-read"></i>Reading the prompt</span>'
+            '<span><i class="qwen38-write"></i>Writing</span></div>' + rows +
+            '<figcaption>Minutes on the RTX 4090, median run. Reading is the time to the first token of each turn.</figcaption></figure>')
+
+
+def numbers(data, samples):
+    turns = median_turns(data, samples)
+    t = turns["lcpp-mtp2"]
+    tps = {k: sum(x["output_tokens"] for x in v) / (sum(x["generation_ms"] for x in v) / 1e3) for k, v in turns.items()}
+    return {"<!--PROMPT-->": f'{sum(x["prompt_tokens"] for x in t) / 1e6:.2f} million',
+            "<!--OUTPUT-->": f'{sum(x["output_tokens"] for x in t):,}',
+            "<!--UNCACHED-->": f'{round(sum(x["prompt_tokens"] - x["cached_tokens"] for x in t), -3):,}',
+            "<!--TPS-->": f'{tps["lcpp-dflash7"]:.0f} tokens a second instead of {tps["lcpp-mtp2"]:.0f}'}
+
+
+def render(data, samples):
+    html = (SITE / "index.html").read_text()
+    subs = {"<!--TABLE-->": table(data), "<!--NOTE-->": note(data), "<!--SPLIT-->": split(data, samples),
+            "<!--METHOD-->": method(data), "<!--MONTH-->": MONTH, **numbers(data, samples)}
+    for k, v in subs.items():
+        html = html.replace(k, v)
+    return html
 
 
 def build(output, data_path):
@@ -85,7 +133,7 @@ def build(output, data_path):
         raise ValueError("Use dist/ or a separate output directory; never overwrite project sources")
     page = output / "benchmarks/qwen38-4090/index.html"
     page.parent.mkdir(parents=True, exist_ok=True)
-    page.write_text(render(json.loads(Path(data_path).read_text())))
+    page.write_text(render(json.loads(Path(data_path).read_text()), json.loads((RESULTS / "samples.json").read_text())))
     for src, dst in ((SITE / "leaderboard.css", output / CSS), (SITE / "leaderboard.js", output / JS),
                      (RESULTS / "results.json", output / DATA / "results.json"), (RESULTS / "samples.json", output / DATA / "samples.json")):
         dst.parent.mkdir(parents=True, exist_ok=True)
@@ -98,7 +146,7 @@ def build(output, data_path):
 
 
 def inline(target, data_path):
-    html = render(json.loads(Path(data_path).read_text()))
+    html = render(json.loads(Path(data_path).read_text()), json.loads((RESULTS / "samples.json").read_text()))
     html = html.replace('<link rel="stylesheet" href="/assets/css/qwen38-4090-leaderboard.css">',
                         "<style>\n" + (SITE / "leaderboard.css").read_text() + "</style>")
     html = html.replace('<script src="/assets/js/qwen38-4090-leaderboard.js" defer></script>',

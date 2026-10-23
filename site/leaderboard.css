@@ -81,3 +81,35 @@ a:hover { text-decoration-thickness: 2px; }
   .qwen38-t { font-size: 14px; }
   .qwen38-t .qwen38-bw { display: none; }
 }
+
+/* ------------------------------------------------------------- the post */
+
+.qwen38-prose { max-width: 680px; }
+.qwen38-prose h2 { margin: 64px 0 14px; font-size: 24px; line-height: 1.25; font-weight: 700; letter-spacing: -0.015em; }
+.qwen38-prose p { margin: 0 0 16px; font: 400 18px/1.6 var(--serif); color: var(--ink-2); }
+.qwen38-prose .qwen38-small { font: 14px/1.6 var(--sans); color: var(--muted); }
+.qwen38-prose .qwen38-small a { color: var(--ink-2); }
+
+/* Reading and writing: two fills, validated for colour-blind separation on the card in both themes. */
+.qwen38-split { --read: #4a86c5; --write: #d97757; margin: 28px 0 32px; max-width: 680px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 20px 24px 16px; }
+:root[data-theme="dark"] .qwen38-split { --read: #5a93cf; --write: #d9734f; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .qwen38-split { --read: #5a93cf; --write: #d9734f; } }
+.qwen38-key { display: flex; gap: 20px; margin-bottom: 14px; font-size: 13.5px; color: var(--ink-2); }
+.qwen38-key span { display: inline-flex; align-items: center; gap: 8px; }
+.qwen38-key i { width: 12px; height: 12px; border-radius: 3px; }
+.qwen38-srow { display: grid; grid-template-columns: 92px 1fr; align-items: center; gap: 12px; margin: 10px 0; }
+.qwen38-slabel { font-size: 14px; font-weight: 600; white-space: nowrap; }
+.qwen38-sbar { display: flex; gap: 2px; }
+.qwen38-sbar i { display: block; width: calc((100% - 2px) * var(--w)); height: 24px; line-height: 24px; padding-left: 8px; font: 600 13px/24px var(--sans); font-style: normal; color: #141413; font-variant-numeric: tabular-nums; }
+.qwen38-sbar .qwen38-read { border-radius: 4px 0 0 4px; }
+.qwen38-sbar .qwen38-write { border-radius: 0 4px 4px 0; }
+.qwen38-read { background: var(--read); }
+.qwen38-write { background: var(--write); }
+.qwen38-split figcaption { margin-top: 12px; font-size: 13px; color: var(--muted); }
+
+@media (max-width: 640px) {
+  .qwen38-prose h2 { margin-top: 48px; font-size: 21px; }
+  .qwen38-prose p { font-size: 17px; }
+  .qwen38-split { padding: 16px 14px 12px; }
+  .qwen38-srow { grid-template-columns: 72px 1fr; }
+}

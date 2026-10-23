@@ -16,9 +16,25 @@
 </header>
 <main class="qwen38-main">
   <p class="qwen38-eyebrow">Benchmark <span>·</span> <!--MONTH--></p>
-  <h1 class="qwen38-hero"><b>Qwen3.8 27B on an RTX 4090.</b> Artificial Analysis times how long a computer takes to serve a recorded coding agent. This is their table, with one RTX 4090 added.</h1>
+  <h1 class="qwen38-hero"><b>Qwen3.8 27B on an RTX 4090.</b> Artificial Analysis times how long a computer takes to serve a recorded coding agent. A 2022 gaming card finishes in nine minutes, behind only the RTX 5090.</h1>
   <!--TABLE-->
   <!--NOTE-->
+
+  <section class="qwen38-prose">
+    <h2>Memory decides whether it runs, bandwidth how fast</h2>
+    <p>Each step of writing reads all 16 GB of weights, so memory bandwidth sorts the table into tiers: the RTX 5090 at 1,792 GB/s, the RTX 4090 at 1,008, and the rest at 256 to 307, with room for far larger models but slow to read them.</p>
+    <p>Twenty-four gigabytes is just enough. With llama.cpp&rsquo;s weights loaded, the 65,536-token cache still fits. vLLM&rsquo;s 4-bit checkpoint does not: it keeps the embedding and output layers at 16 bits, loads 17.6 GiB, and leaves 2.35 GiB for a cache that needs 2.91.</p>
+
+    <h2>An agent reads far more than it writes</h2>
+    <p>Over 168 turns the agent sends <!--PROMPT--> prompt tokens and gets back <!--OUTPUT-->. Most of each prompt was already sent the turn before and sits in the cache; the <!--UNCACHED--> new tokens still take nearly four minutes to read. Writing takes the rest.</p>
+  </section>
+  <!--SPLIT-->
+  <section class="qwen38-prose">
+    <p>Speculative decoding shortens only the writing. DFlash drafts seven tokens at a time where MTP drafts two, and writes <!--TPS-->. It saves nearly two minutes of writing and none of the reading.</p>
+
+    <h2>Method</h2>
+    <p class="qwen38-small"><!--METHOD--></p>
+  </section>
 </main>
 <script src="/assets/js/qwen38-4090-leaderboard.js" defer></script>
 </body>
