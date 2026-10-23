@@ -17,6 +17,8 @@ SITE, RESULTS = ROOT / "site", ROOT / "results"
 CSS, JS = "assets/css/qwen38-4090-leaderboard.css", "assets/js/qwen38-4090-leaderboard.js"
 DATA = "assets/benchmarks/qwen38-4090"
 REPO = "https://github.com/zedong-peng/qwen38-4090-inference"
+MONTH = "October 2026"
+FONTS = ("qwen38-dmsans.woff2", "qwen38-sourceserif4.woff2")
 
 
 def setup(engine, weights, decoding, draft):
@@ -47,7 +49,7 @@ def table(data):
         if r["minutes"] is None:
             cell = f'<span class="qwen38-wait">{"measuring" if r["status"] == "pending" else escape(r["reason"] or "did not run")}</span>'
         else:
-            cell = (f'<div class="qwen38-bar"><i style="width:{80 * r["minutes"] / top:.1f}%"></i>'
+            cell = (f'<div class="qwen38-bar"><i style="--w:{r["minutes"] / top:.3f}"></i>'
                     f'<span>{r["minutes"]:.1f}</span></div>')
         cls = ' class="qwen38-ours"' if r["ours"] else ""
         body.append(
@@ -56,23 +58,25 @@ def table(data):
             f'<div class="qwen38-setup">{escape(r["setup"])}</div></td>'
             f'<td class="qwen38-num qwen38-bw">{r["bandwidth"]:,} GB/s</td>'
             f'<td class="qwen38-mcol">{cell}</td></tr>')
-    return ('<table class="qwen38-t">\n<caption>Minutes to finish the workload (lower is faster)</caption>\n'
+    return ('<figure class="qwen38-card"><table class="qwen38-t">\n'
             '<thead><tr><th>System and setup</th><th class="qwen38-num qwen38-bw">Bandwidth</th>'
-            '<th class="qwen38-mcol">Minutes</th></tr></thead>\n<tbody>\n' + "\n".join(body) + "\n</tbody>\n</table>")
+            '<th class="qwen38-mcol">Minutes to finish <span>(lower is faster)</span></th></tr></thead>\n<tbody>\n'
+            + "\n".join(body) + "\n</tbody>\n</table></figure>")
 
 
 def note(data):
-    month = "October 2026"
+    month = MONTH
     return (f'<p class="qwen38-note">Workload: <a href="https://github.com/ArtificialAnalysis/aa-agentperf-local">AgentPerf-Local</a>\'s '
             "default, 8 recorded coding-agent tasks and 168 turns, sent one at a time; every turn writes its recorded number "
             "of tokens, and tool time is not counted. Other systems: "
-            f'<a href="{data["references_source"]}">Artificial Analysis</a>, {month}. RTX 4090 (blue): our runs with their tool, '
+            f'<a href="{data["references_source"]}">Artificial Analysis</a>, {month}. Highlighted: our RTX 4090 runs with their tool, '
             "median of three; the two llama.cpp setups are their recipes for the RTX 5090 and the RTX Spark. "
             f'<a href="{REPO}">Commands and raw data</a>.</p>')
 
 
 def render(data):
-    return (SITE / "index.html").read_text().replace("<!--TABLE-->", table(data)).replace("<!--NOTE-->", note(data))
+    return ((SITE / "index.html").read_text().replace("<!--TABLE-->", table(data)).replace("<!--NOTE-->", note(data))
+            .replace("<!--MONTH-->", MONTH))
 
 
 def build(output, data_path):
@@ -86,6 +90,9 @@ def build(output, data_path):
                      (RESULTS / "results.json", output / DATA / "results.json"), (RESULTS / "samples.json", output / DATA / "samples.json")):
         dst.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(src, dst)
+    for f in FONTS:
+        (output / "assets/fonts").mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(SITE / "fonts" / f, output / "assets/fonts" / f)
     (output / "index.html").write_text('<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=benchmarks/qwen38-4090/">\n')
     return page
 
