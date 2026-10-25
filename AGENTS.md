@@ -7,3 +7,9 @@
 - No machine details in the repo (paths, host names, user names): they live in the untracked `bench/env.local.sh`.
 - After changes: `python3 bench/collect.py --runs RUNS` and `python3 tools/build_site.py`, then look at the page at
   desktop and phone width in both themes.
+- Only Qwen3.8 27B (user, 10-24). The NInfer engine is a separate repo and not on this page.
+- The page is a short post around the table: a finding-led hero, two findings (memory decides whether it runs,
+  bandwidth how fast; an agent reads far more than it writes), and a Method note. Numbers in the prose come from the
+  data through `tools/build_site.py`. Style matches Velodrome's (Anthropic-like): the table on a white card, our 4090
+  rows tinted clay. CSS classes start with `qwen38-`, the only prefix the blog's purgecss keeps.
+- The blog's deploy workflow builds the page (`gh workflow run deploy.yml -R zedong-peng/zedong-peng.github.io`).
