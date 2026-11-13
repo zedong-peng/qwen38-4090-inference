@@ -5,7 +5,7 @@ table for Qwen3.8 27B, with one RTX 4090 added. The workload is the
 [AA-AgentPerf-Local](https://github.com/ArtificialAnalysis/aa-agentperf-local) default replay, run with their tool,
 unmodified. Their numbers are theirs (`bench/references.json`); the 4090 rows are ours.
 
-Page: [zedongpeng.com/benchmarks/qwen38-4090/](https://zedongpeng.com/benchmarks/qwen38-4090/)
+Page: [zedongpeng.com/qwen38-4090-inference/](https://zedongpeng.com/qwen38-4090-inference/)
 
 | RTX 4090 setup | how it runs |
 |---|---|
@@ -21,6 +21,6 @@ other two models on their page: on 24 GB neither Qwen3.6 35B A3B nor Ling 3.0 Fl
 | `bench/run_4090.sh` | the runs: `bash bench/run_4090.sh GPU [REPS] [SETUPS]` (paths in an untracked `bench/env.local.sh`, see `bench/env.example.sh`) |
 | `bench/methods.json`, `bench/references.json` | the three 4090 setups; AA's published runs of the same replay |
 | `bench/collect.py` | run tree → `results/results.json` (each replay, its launch command) and `results/samples.json` (per-turn timings) |
-| `site/`, `tools/build_site.py` | the page; the build renders the table as static HTML into `dist/`, which the personal site deploys |
+| `site/`, `tools/build_site.py` | the page; the build renders the table as static HTML into `dist/`, which `.github/workflows/site.yml` publishes to GitHub Pages |
 
 The earlier leaderboard (2026-10-02, short prompts, 4K context) is at tag `v1-short-prompts`.

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build the page as static files (standard library only): the table is rendered here from results/results.json.
 
-dist/benchmarks/qwen38-4090/index.html and dist/assets/... are what the personal site's deploy copies.
+dist/ is the whole site, with relative paths; this repo's Pages workflow publishes it at zedongpeng.com/qwen38-4090-inference/.
 --inline FILE writes one self-contained HTML page instead (styles and script inlined), for previews;
 --data replaces results/results.json, for example with illustrative numbers.
 """
@@ -14,8 +14,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE, RESULTS = ROOT / "site", ROOT / "results"
-CSS, JS = "assets/css/qwen38-4090-leaderboard.css", "assets/js/qwen38-4090-leaderboard.js"
-DATA = "assets/benchmarks/qwen38-4090"
+CSS, JS = "leaderboard.css", "leaderboard.js"
 REPO = "https://github.com/zedong-peng/qwen38-4090-inference"
 MONTH = "October 2026"
 FONTS = ("qwen38-dmsans.woff2", "qwen38-sourceserif4.woff2")
@@ -131,25 +130,22 @@ def build(output, data_path):
     output = output.resolve()
     if output == ROOT or output in ROOT.parents or (output.is_relative_to(ROOT) and not output.is_relative_to(ROOT / "dist")):
         raise ValueError("Use dist/ or a separate output directory; never overwrite project sources")
-    page = output / "benchmarks/qwen38-4090/index.html"
-    page.parent.mkdir(parents=True, exist_ok=True)
+    page = output / "index.html"
+    (output / "fonts").mkdir(parents=True, exist_ok=True)
     page.write_text(render(json.loads(Path(data_path).read_text()), json.loads((RESULTS / "samples.json").read_text())))
-    for src, dst in ((SITE / "leaderboard.css", output / CSS), (SITE / "leaderboard.js", output / JS),
-                     (RESULTS / "results.json", output / DATA / "results.json"), (RESULTS / "samples.json", output / DATA / "samples.json")):
-        dst.parent.mkdir(parents=True, exist_ok=True)
+    for src, dst in ((SITE / CSS, output / CSS), (SITE / JS, output / JS),
+                     (RESULTS / "results.json", output / "results.json"), (RESULTS / "samples.json", output / "samples.json")):
         shutil.copyfile(src, dst)
     for f in FONTS:
-        (output / "assets/fonts").mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(SITE / "fonts" / f, output / "assets/fonts" / f)
-    (output / "index.html").write_text('<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=benchmarks/qwen38-4090/">\n')
+        shutil.copyfile(SITE / "fonts" / f, output / "fonts" / f)
     return page
 
 
 def inline(target, data_path):
     html = render(json.loads(Path(data_path).read_text()), json.loads((RESULTS / "samples.json").read_text()))
-    html = html.replace('<link rel="stylesheet" href="/assets/css/qwen38-4090-leaderboard.css">',
+    html = html.replace('<link rel="stylesheet" href="leaderboard.css">',
                         "<style>\n" + (SITE / "leaderboard.css").read_text() + "</style>")
-    html = html.replace('<script src="/assets/js/qwen38-4090-leaderboard.js" defer></script>',
+    html = html.replace('<script src="leaderboard.js" defer></script>',
                         "<script>\n" + (SITE / "leaderboard.js").read_text() + "</script>")
     target.write_text(html)
     return target

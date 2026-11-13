@@ -11,5 +11,6 @@
 - The page is a short post around the table: a finding-led hero, two findings (memory decides whether it runs,
   bandwidth how fast; an agent reads far more than it writes), and a Method note. Numbers in the prose come from the
   data through `tools/build_site.py`. Style matches Velodrome's (Anthropic-like): the table on a white card, our 4090
-  rows tinted clay. CSS classes start with `qwen38-`, the only prefix the blog's purgecss keeps.
-- The blog's deploy workflow builds the page (`gh workflow run deploy.yml -R zedong-peng/zedong-peng.github.io`).
+  rows tinted clay. CSS classes start with `qwen38-`.
+- A push to `main` builds and publishes the page through `.github/workflows/site.yml`, at
+  zedongpeng.com/qwen38-4090-inference/. Paths in the page are relative.
