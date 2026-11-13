@@ -1,10 +1,6 @@
 /* This page's own parts. Fonts, base colours, the header and the type scale come from zedongpeng.com's site.css. */
 
 :root { --q38-card: #ffffff; --q38-ref: #d9d6cc; --q38-tint: #f9ece6; --q38-read: #4a86c5; --q38-write: #d97757; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) { --q38-card: #1f1e1c; --q38-ref: #4d4b46; --q38-tint: #3a2b25; --q38-read: #5a93cf; --q38-write: #d9734f; }
-}
-:root[data-theme="dark"] { --q38-card: #1f1e1c; --q38-ref: #4d4b46; --q38-tint: #3a2b25; --q38-read: #5a93cf; --q38-write: #d9734f; }
 
 /* Systems by models, on a card */
 .qwen38-card { margin: 12px 0 0; background: var(--q38-card); border: 1px solid var(--line); border-radius: 10px; padding: 6px 24px 4px; }
@@ -25,7 +21,7 @@
 .qwen38-ours .qwen38-bar span { font-weight: 600; }
 .qwen38-note { max-width: 680px; margin: 16px 0 0; }
 
-/* Reading and writing: two fills, validated for colour-blind separation on the card in both themes. */
+/* Reading and writing: two fills, validated for colour-blind separation on the card. */
 .qwen38-split { background: var(--q38-card); border: 1px solid var(--line); border-radius: 10px; padding: 20px 24px 16px; font-family: var(--sans); font-size: 14px; }
 .qwen38-key { display: flex; gap: 20px; margin-bottom: 14px; }
 .qwen38-key span { display: inline-flex; align-items: center; gap: 8px; }
