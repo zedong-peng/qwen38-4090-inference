@@ -1,4 +1,4 @@
-"""Build the page data (results.json, samples.json) from bench/methods.json, bench/references.json and the run tree.
+"""Build the page data (results.json, samples.json) from bench/methods.json and the run tree.
 
 usage: python3 bench/collect.py [--runs RUNS_DIR] [--out results/]
 The run tree is what bench/run_4090.sh writes: RUNS_DIR/<timestamp>/<setup>/<rep>/ (agentperf-local result
@@ -88,7 +88,8 @@ def main():
     a = ap.parse_args()
     found, failures = collect(a.runs)
     methods, samples = [], {}
-    for m in load(HERE / "methods.json")["methods"]:
+    spec = load(HERE / "methods.json")
+    for m in spec["methods"]:
         out = dict(m)
         reps = found.get(m["id"], [])
         if reps:
@@ -100,11 +101,9 @@ def main():
         else:
             out["status"] = "pending"
         methods.append(out)
-    refs = load(HERE / "references.json")
     a.out.mkdir(parents=True, exist_ok=True)
     data = {"updated": datetime.now().strftime("%Y-%m-%d"), "workload": WORKLOAD, "hardware": HARDWARE,
-            "methods": methods, "references": refs["systems"], "references_source": refs["source"],
-            "references_retrieved": refs["retrieved"]}
+            "model": spec["model"], "does_not_fit": spec["does_not_fit"], "methods": methods}
     (a.out / "results.json").write_text(json.dumps(data, indent=1) + "\n")
     (a.out / "samples.json").write_text(json.dumps(
         {"columns": ["turn_id", "prompt_tokens", "cached_tokens", "output_tokens", "ttft_ms", "generation_ms", "e2e_ms"],

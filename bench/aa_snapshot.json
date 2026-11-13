@@ -1,0 +1,618 @@
+{
+ "source": "https://artificialanalysis.ai/hardware-inference-stack/laptops-workstations",
+ "retrieved": "2026-11-13",
+ "systems": [
+  {
+   "key": "macbook-pro-14-m5-pro-20gpu-64gb",
+   "name": "MacBook Pro (M5 Pro, 64 GB)",
+   "shortName": "MacBook Pro",
+   "detail": "M5 Pro · 64 GB · 20-core GPU",
+   "vendor": "Apple",
+   "vendorLogo": "/img/hardware/laptops-workstations/apple-logo.svg",
+   "color": "#A8A9AC",
+   "accelerator": "M5 Pro (20-core GPU, 64 GB)",
+   "chip": "M5 Pro",
+   "memoryGb": 64,
+   "memoryKind": "unified",
+   "memoryType": "LPDDR5X-9600",
+   "memoryBandwidthGbs": 307,
+   "packaging": "packaged_system",
+   "msrpUsd": 3000,
+   "msrpDate": "2026-03-11",
+   "memoryConfigurable": true,
+   "image": "/img/hardware/laptops-workstations/macbook-pro-14-m5-pro-20gpu-64gb-v4.webp",
+   "change": null
+  },
+  {
+   "key": "dgx-spark",
+   "name": "NVIDIA DGX Spark",
+   "shortName": "NVIDIA DGX Spark",
+   "detail": null,
+   "vendor": "NVIDIA",
+   "vendorLogo": "/img/logos/nvidia.svg",
+   "color": "#2E9D6E",
+   "accelerator": "GB10",
+   "chip": "GB10",
+   "memoryGb": 128,
+   "memoryKind": "unified",
+   "memoryType": "LPDDR5X-8533",
+   "memoryBandwidthGbs": 273,
+   "packaging": "packaged_system",
+   "msrpUsd": 4000,
+   "msrpDate": "2025-10-15",
+   "memoryConfigurable": false,
+   "image": "/img/hardware/laptops-workstations/dgx-spark-v3.webp",
+   "change": null
+  },
+  {
+   "key": "geforce-rtx-5090",
+   "name": "NVIDIA GeForce RTX 5090",
+   "shortName": "NVIDIA GeForce RTX 5090",
+   "detail": null,
+   "vendor": "NVIDIA",
+   "vendorLogo": "/img/logos/nvidia.svg",
+   "color": "#76B900",
+   "accelerator": "RTX 5090",
+   "chip": "RTX 5090",
+   "memoryGb": 32,
+   "memoryKind": "dedicated",
+   "memoryType": "gddr7",
+   "memoryBandwidthGbs": 1792,
+   "packaging": "discrete_accelerator",
+   "msrpUsd": 2000,
+   "msrpDate": "2025-01-30",
+   "memoryConfigurable": false,
+   "image": "/img/hardware/laptops-workstations/geforce-rtx-5090-v2.webp",
+   "change": null
+  },
+  {
+   "key": "amd-ryzen-ai-halo",
+   "name": "AMD Ryzen AI Halo",
+   "shortName": "AMD Ryzen AI Halo",
+   "detail": null,
+   "vendor": "AMD",
+   "vendorLogo": "/img/logos/amd.svg",
+   "color": "#000000",
+   "accelerator": "Ryzen AI Max+ 395",
+   "chip": "Ryzen AI Max+ 395",
+   "memoryGb": 128,
+   "memoryKind": "unified",
+   "memoryType": "LPDDR5X-8000",
+   "memoryBandwidthGbs": 256,
+   "packaging": "packaged_system",
+   "msrpUsd": 4000,
+   "msrpDate": "2026-07-06",
+   "memoryConfigurable": false,
+   "image": "/img/hardware/laptops-workstations/amd-ryzen-ai-halo-v3.webp",
+   "change": null
+  },
+  {
+   "key": "nvidia-rtx-spark-laptop",
+   "name": "NVIDIA RTX Spark Laptop",
+   "shortName": "NVIDIA RTX Spark N1X",
+   "detail": "20-core CPU · 6144-core GPU",
+   "vendor": "NVIDIA",
+   "vendorLogo": "/img/logos/nvidia.svg",
+   "color": "#166534",
+   "accelerator": "N1X",
+   "chip": "N1X",
+   "memoryGb": 128,
+   "memoryKind": "unified",
+   "memoryType": "LPDDR5X-9400",
+   "memoryBandwidthGbs": 300,
+   "packaging": "packaged_system",
+   "msrpUsd": 5900,
+   "msrpDate": "2026-10-07",
+   "memoryConfigurable": true,
+   "image": "/img/hardware/laptops-workstations/nvidia-rtx-spark-laptop-v1.webp",
+   "change": {
+    "type": "new",
+    "removeAfter": "2026-11-05"
+   }
+  }
+ ],
+ "models": [
+  {
+   "key": "qwen3-8-27b",
+   "name": "Qwen3.8 27B (Xhigh)",
+   "creatorName": "Alibaba",
+   "creatorLogo": "/img/logos/alibaba.svg",
+   "color": "#0EA5E9",
+   "intelligenceIndex": 20.1068756031705,
+   "parametersB": 27,
+   "activeParametersB": null,
+   "contextWindowTokens": 262144,
+   "releaseDate": "2026-08-14",
+   "doesNotFitOn": []
+  },
+  {
+   "key": "qwen3-6-35b-a3b",
+   "name": "Qwen3.6 35B A3B (Reasoning)",
+   "creatorName": "Alibaba",
+   "creatorLogo": "/img/logos/alibaba.svg",
+   "color": "#ff7018",
+   "intelligenceIndex": null,
+   "parametersB": 36,
+   "activeParametersB": 3,
+   "contextWindowTokens": 262144,
+   "releaseDate": "2026-04-16",
+   "doesNotFitOn": []
+  },
+  {
+   "key": "ling-3-0-flash",
+   "name": "Ling 3.0 Flash",
+   "creatorName": "InclusionAI",
+   "creatorLogo": "/img/logos/inclusionai.jpg",
+   "color": "#7C3AED",
+   "intelligenceIndex": null,
+   "parametersB": 124,
+   "activeParametersB": 5.1,
+   "contextWindowTokens": 262144,
+   "releaseDate": "2026-08-04",
+   "doesNotFitOn": [
+    {
+     "systemKey": "geforce-rtx-5090",
+     "quant": "Q4_K_M",
+     "weightsBytes": 77010144672
+    },
+    {
+     "systemKey": "macbook-pro-14-m5-pro-20gpu-64gb",
+     "quant": "Q4_K_M",
+     "weightsBytes": 77010144672
+    }
+   ]
+  }
+ ],
+ "defaultModelKey": "qwen3-8-27b",
+ "workload": {
+  "key": "default",
+  "name": "AgentPerf-Local default",
+  "turns": 168,
+  "toolCalls": 172,
+  "completionUnit": "minutes"
+ },
+ "runs": [
+  {
+   "id": "07070a42-eee7-4aea-a292-c8c633bbfe3b",
+   "systemKey": "geforce-rtx-5090",
+   "modelKey": "qwen3-8-27b",
+   "quant": "Q4_K_M",
+   "runtime": {
+    "framework": "llama-cpp",
+    "version": "version: 0.4.1-dev (build 11026, commit b49650adb)",
+    "platform": "cuda"
+   },
+   "speculation": "enabled-mtp-self-draft",
+   "completionSeconds": 294.884503844194,
+   "outputTokensPerSecond": 151.288426015958,
+   "prefillTokensPerSecond": 2155.5551058260694,
+   "timeToFirstTokenMedianMs": 323.675051098689,
+   "config": {
+    "profileId": "qwen38-27b-q4-k-m-mtp",
+    "format": "gguf",
+    "weightsBytes": 17106775008,
+    "repository": "unsloth/Qwen3.8-27B-GGUF",
+    "revision": "f1bfb127c64f7072bdd2cad55f258b9c8b2910fe",
+    "thinkingPolicy": "enabled-medium-candidate",
+    "contextTokens": 65536,
+    "sampling": {
+     "temperature": 0.7,
+     "topP": 0.8,
+     "topK": 20,
+     "minP": 0,
+     "reasoningEffort": null
+    },
+    "clientVersion": "0.3.0",
+    "launchCommand": "CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=0 llama-server --model \"$MODEL_DIR\"/Qwen3.8-27B-Q4_K_M.gguf --alias qwen38-27b-q4-k-m-mtp-488339a4d3e0e3af --host 127.0.0.1 --port 8080 --ctx-size 65536 --parallel 1 --gpu-layers all --jinja --batch-size 4096 --ubatch-size 2048 --no-mmproj --spec-type draft-mtp --spec-draft-n-max 2 --backend-sampling --spec-draft-backend-sampling --no-webui --verbosity 4"
+   }
+  },
+  {
+   "id": "13da8bb3-5c7a-41cf-9359-bc4d6a63d5e7",
+   "systemKey": "amd-ryzen-ai-halo",
+   "modelKey": "ling-3-0-flash",
+   "quant": "Q4_K_M",
+   "runtime": {
+    "framework": "llama-cpp",
+    "version": "version: 0.4.1-dev (build 11114, commit 7dc9a32df)",
+    "platform": "rocm"
+   },
+   "speculation": "enabled-dspark-external-draft",
+   "completionSeconds": 1508.3145881155501,
+   "outputTokensPerSecond": 34.8852562857032,
+   "prefillTokensPerSecond": 313.30926482730575,
+   "timeToFirstTokenMedianMs": 1674.64574653422,
+   "config": {
+    "profileId": "ling3-flash-q4-k-m-dspark-strix-halo",
+    "format": "gguf",
+    "weightsBytes": 77010144672,
+    "repository": "inclusionAI/Ling-3.0-flash-GGUF",
+    "revision": "29edce5130491e638f3e5ebec91fa0a5ed4f780e",
+    "thinkingPolicy": "enabled",
+    "contextTokens": 65536,
+    "sampling": {
+     "temperature": 0.7,
+     "topP": 0.8,
+     "topK": 20,
+     "minP": 0,
+     "reasoningEffort": null
+    },
+    "clientVersion": "0.3.0",
+    "launchCommand": "llama-server --model \"$MODEL_DIR\"/Q4_K_M/Ling-3.0-flash-Q4_K_M-00001-of-00002.gguf --alias ling3-flash-q4-k-m-dspark-strix-halo-4316d051c13f4422 --host 127.0.0.1 --port 8080 --ctx-size 65536 --parallel 1 --gpu-layers all --jinja --batch-size 2048 --ubatch-size 512 --no-mmproj --device ROCm0 --flash-attn on --fit off --ctx-checkpoints 2 --model-draft \"$MODEL_DIR\"/Ling-3.0-flash-DSpark-bf16.gguf --gpu-layers-draft all --spec-type draft-dspark --spec-draft-n-max 8 --no-webui --verbosity 4"
+   }
+  },
+  {
+   "id": "2c454850-1f32-42b6-bee5-f45959fb89dd",
+   "systemKey": "dgx-spark",
+   "modelKey": "ling-3-0-flash",
+   "quant": "Q4_K_M",
+   "runtime": {
+    "framework": "llama-cpp",
+    "version": "version: 0.4.1-dev (build 11114, commit 7dc9a32d)",
+    "platform": "cuda"
+   },
+   "speculation": "enabled-dspark-external-draft",
+   "completionSeconds": 895.582791196299,
+   "outputTokensPerSecond": 64.8009569939767,
+   "prefillTokensPerSecond": 466.6793322664045,
+   "timeToFirstTokenMedianMs": 1625.89931802358,
+   "config": {
+    "profileId": "ling3-flash-q4-k-m-dspark-dgx-spark",
+    "format": "gguf",
+    "weightsBytes": 77010144672,
+    "repository": "inclusionAI/Ling-3.0-flash-GGUF",
+    "revision": "29edce5130491e638f3e5ebec91fa0a5ed4f780e",
+    "thinkingPolicy": "enabled",
+    "contextTokens": 65536,
+    "sampling": {
+     "temperature": 0.7,
+     "topP": 0.8,
+     "topK": 20,
+     "minP": 0,
+     "reasoningEffort": null
+    },
+    "clientVersion": "0.3.0",
+    "launchCommand": "llama-server --model \"$MODEL_DIR\"/Q4_K_M/Ling-3.0-flash-Q4_K_M-00001-of-00002.gguf --alias ling3-flash-q4-k-m-dspark-dgx-spark-1db997c2387108af --host 127.0.0.1 --port 8080 --ctx-size 65536 --parallel 1 --gpu-layers all --jinja --batch-size 2048 --ubatch-size 512 --no-mmproj --flash-attn on --fit off --ctx-checkpoints 2 --model-draft \"$MODEL_DIR\"/Ling-3.0-flash-DSpark-bf16.gguf --spec-type draft-dspark --spec-draft-n-max 8 --no-webui --verbosity 4"
+   }
+  },
+  {
+   "id": "5fd2aa8a-044a-4855-afe9-0ead0638f0c7",
+   "systemKey": "amd-ryzen-ai-halo",
+   "modelKey": "qwen3-8-27b",
+   "quant": "Q4_K_M",
+   "runtime": {
+    "framework": "llama-cpp",
+    "version": "version: 0.4.1-dev (build 11026, commit b49650adb)",
+    "platform": "rocm"
+   },
+   "speculation": "enabled-mtp-self-draft",
+   "completionSeconds": 2067.67636695248,
+   "outputTokensPerSecond": 23.4019460619965,
+   "prefillTokensPerSecond": 261.1966590442855,
+   "timeToFirstTokenMedianMs": 1995.845937985,
+   "config": {
+    "profileId": "qwen38-27b-q4-k-m-mtp-strix-halo",
+    "format": "gguf",
+    "weightsBytes": 17106775008,
+    "repository": "unsloth/Qwen3.8-27B-GGUF",
+    "revision": "f1bfb127c64f7072bdd2cad55f258b9c8b2910fe",
+    "thinkingPolicy": "enabled-medium-candidate",
+    "contextTokens": 65536,
+    "sampling": {
+     "temperature": 0.7,
+     "topP": 0.8,
+     "topK": 20,
+     "minP": 0,
+     "reasoningEffort": null
+    },
+    "clientVersion": "0.3.0",
+    "launchCommand": "llama-server --model \"$MODEL_DIR\"/Qwen3.8-27B-Q4_K_M.gguf --alias qwen38-27b-q4-k-m-mtp-strix-halo-800b9cd4aaefab6d --host 127.0.0.1 --port 8080 --ctx-size 65536 --parallel 1 --gpu-layers all --jinja --batch-size 2048 --ubatch-size 512 --no-mmproj --device ROCm0 --load-mode none --threads 16 --flash-attn on --fit off --cache-ram 0 --spec-type draft-mtp --spec-draft-n-max 2 --backend-sampling --spec-draft-backend-sampling --no-webui --verbosity 4"
+   }
+  },
+  {
+   "id": "81d98c39-0cc5-4191-8020-4e847bc7cf58",
+   "systemKey": "nvidia-rtx-spark-laptop",
+   "modelKey": "qwen3-8-27b",
+   "quant": "UD-Q4_K_M",
+   "runtime": {
+    "framework": "llama-cpp",
+    "version": "version: 0.5.0-dev (build 11236, commit f1ea20621)",
+    "platform": "cuda"
+   },
+   "speculation": "enabled-dflash-external-draft",
+   "completionSeconds": 1124.52401140002,
+   "outputTokensPerSecond": 40.6121669585203,
+   "prefillTokensPerSecond": 537.5489303766957,
+   "timeToFirstTokenMedianMs": 1112.20104999938,
+   "config": {
+    "profileId": "qwen38-27b-ud-q4-k-m-dflash-rtx-spark",
+    "format": "gguf",
+    "weightsBytes": 17607447040,
+    "repository": "unsloth/Qwen3.8-27B-GGUF",
+    "revision": "4ca720788d1e01f1bff70c033e0d0028fd02e502",
+    "thinkingPolicy": "enabled-medium-candidate",
+    "contextTokens": 65536,
+    "sampling": {
+     "temperature": 0.7,
+     "topP": 0.8,
+     "topK": 20,
+     "minP": 0,
+     "reasoningEffort": null
+    },
+    "clientVersion": "0.3.3",
+    "launchCommand": "llama-server.EXE --model \"$MODEL_DIR\"/Qwen3.8-27B-UD-Q4_K_M.gguf --alias qwen38-27b-ud-q4-k-m-dflash-rtx-spark-bf565a68add48790 --host 127.0.0.1 --port 8080 --ctx-size 65536 --parallel 1 --gpu-layers all --jinja --batch-size 4096 --ubatch-size 512 --no-mmproj --model-draft \"$MODEL_DIR\"/Qwen3.8-27B-DFlash2-Q4_K_M.gguf --spec-type draft-dflash --spec-draft-n-max 7 --spec-draft-backend-sampling --no-webui --verbosity 4"
+   }
+  },
+  {
+   "id": "83b37291-aaf2-40c5-a585-81bc47f5bc2c",
+   "systemKey": "amd-ryzen-ai-halo",
+   "modelKey": "qwen3-6-35b-a3b",
+   "quant": "UD-Q4_K_M",
+   "runtime": {
+    "framework": "llama-cpp",
+    "version": "version: 0.4.1-dev (build 11026, commit b49650adb)",
+    "platform": "vulkan"
+   },
+   "speculation": "enabled-mtp-self-draft",
+   "completionSeconds": 702.516056792345,
+   "outputTokensPerSecond": 73.8859041284375,
+   "prefillTokensPerSecond": 687.4390886919676,
+   "timeToFirstTokenMedianMs": 799.327586544678,
+   "config": {
+    "profileId": "qwen36-35b-a3b-q4-k-m-mtp-strix-halo",
+    "format": "gguf",
+    "weightsBytes": 22663387424,
+    "repository": "unsloth/Qwen3.6-35B-A3B-MTP-GGUF",
+    "revision": "5bc3e238d916f48a861bac2f8a1990a0e9b7e98d",
+    "thinkingPolicy": "enabled",
+    "contextTokens": 65536,
+    "sampling": {
+     "temperature": 0.7,
+     "topP": 0.8,
+     "topK": 20,
+     "minP": 0,
+     "reasoningEffort": null
+    },
+    "clientVersion": "0.3.0",
+    "launchCommand": "llama-server --model \"$MODEL_DIR\"/Qwen3.6-35B-A3B-UD-Q4_K_M.gguf --alias qwen36-35b-a3b-q4-k-m-mtp-strix-halo-53cb946e97294e4b --host 127.0.0.1 --port 8080 --ctx-size 65536 --parallel 1 --gpu-layers all --jinja --batch-size 2048 --ubatch-size 512 --no-mmproj --device Vulkan0 --load-mode none --threads 16 --flash-attn on --fit off --cache-ram 0 --spec-type draft-mtp --spec-draft-n-max 2 --backend-sampling --spec-draft-backend-sampling --no-webui --verbosity 4"
+   }
+  },
+  {
+   "id": "84863a37-afa7-4cce-9319-a09c649bfc4f",
+   "systemKey": "nvidia-rtx-spark-laptop",
+   "modelKey": "qwen3-6-35b-a3b",
+   "quant": "UD-Q4_K_M",
+   "runtime": {
+    "framework": "llama-cpp",
+    "version": "version: 0.5.0-dev (build 11236, commit f1ea20621)",
+    "platform": "cuda"
+   },
+   "speculation": "enabled-mtp-self-draft",
+   "completionSeconds": 456.34568990001196,
+   "outputTokensPerSecond": 92.530204982912,
+   "prefillTokensPerSecond": 1599.0620273831908,
+   "timeToFirstTokenMedianMs": 477.571400000215,
+   "config": {
+    "profileId": "qwen36-35b-a3b-ud-q4-k-m-mtp-rtx-spark",
+    "format": "gguf",
+    "weightsBytes": 22663387424,
+    "repository": "unsloth/Qwen3.6-35B-A3B-MTP-GGUF",
+    "revision": "5bc3e238d916f48a861bac2f8a1990a0e9b7e98d",
+    "thinkingPolicy": "enabled",
+    "contextTokens": 65536,
+    "sampling": {
+     "temperature": 0.7,
+     "topP": 0.8,
+     "topK": 20,
+     "minP": 0,
+     "reasoningEffort": null
+    },
+    "clientVersion": "0.3.3",
+    "launchCommand": "llama-server.EXE --model \"$MODEL_DIR\"/Qwen3.6-35B-A3B-UD-Q4_K_M.gguf --alias qwen36-35b-a3b-ud-q4-k-m-mtp-rtx-spark-14bb433a65cff374 --host 127.0.0.1 --port 8080 --ctx-size 65536 --parallel 1 --gpu-layers all --jinja --batch-size 4096 --ubatch-size 4096 --no-mmproj --spec-type draft-mtp --spec-draft-n-max 2 --spec-draft-backend-sampling --no-webui --verbosity 4"
+   }
+  },
+  {
+   "id": "a62a3262-b90d-4793-89b7-51436262e0c6",
+   "systemKey": "macbook-pro-14-m5-pro-20gpu-64gb",
+   "modelKey": "qwen3-6-35b-a3b",
+   "quant": "UD-Q4_K_M",
+   "runtime": {
+    "framework": "llama-cpp",
+    "version": "version: 0.4.1-dev (build 11026, commit b49650adb)",
+    "platform": "metal"
+   },
+   "speculation": "enabled-mtp-self-draft",
+   "completionSeconds": 713.318940425961,
+   "outputTokensPerSecond": 70.0965000004987,
+   "prefillTokensPerSecond": 717.8894841056174,
+   "timeToFirstTokenMedianMs": 674.556521502382,
+   "config": {
+    "profileId": "qwen36-35b-a3b-q4-k-m-mtp-m5-pro",
+    "format": "gguf",
+    "weightsBytes": 22663387424,
+    "repository": "unsloth/Qwen3.6-35B-A3B-MTP-GGUF",
+    "revision": "5bc3e238d916f48a861bac2f8a1990a0e9b7e98d",
+    "thinkingPolicy": "enabled",
+    "contextTokens": 65536,
+    "sampling": {
+     "temperature": 0.7,
+     "topP": 0.8,
+     "topK": 20,
+     "minP": 0,
+     "reasoningEffort": null
+    },
+    "clientVersion": "0.3.0",
+    "launchCommand": "llama-server --model \"$MODEL_DIR\"/Qwen3.6-35B-A3B-UD-Q4_K_M.gguf --alias qwen36-35b-a3b-q4-k-m-mtp-m5-pro-01d9da65529d7211 --host 127.0.0.1 --port 8080 --ctx-size 65536 --parallel 1 --gpu-layers all --jinja --batch-size 2048 --ubatch-size 512 --no-mmproj --device MTL0 --load-mode mmap --threads 6 --flash-attn on --fit off --cache-ram 0 --spec-type draft-mtp --spec-draft-n-max 2 --spec-draft-backend-sampling --no-webui --verbosity 4"
+   }
+  },
+  {
+   "id": "b0b14b99-e232-4bb4-a566-4558b88ca829",
+   "systemKey": "dgx-spark",
+   "modelKey": "qwen3-6-35b-a3b",
+   "quant": "NVFP4",
+   "runtime": {
+    "framework": "vllm",
+    "version": "0.28.0",
+    "platform": "cuda"
+   },
+   "speculation": "enabled-mtp-self-draft",
+   "completionSeconds": 440.46565193648,
+   "outputTokensPerSecond": 118.925608614905,
+   "prefillTokensPerSecond": 1307.706943777876,
+   "timeToFirstTokenMedianMs": 761.480323504657,
+   "config": {
+    "profileId": "qwen36-35b-a3b-nvfp4-mtp-dgx-spark",
+    "format": "modelopt",
+    "weightsBytes": 23457714000,
+    "repository": "nvidia/Qwen3.6-35B-A3B-NVFP4",
+    "revision": "1355db6a052410cfd62085d94b58866fd0f2c3c5",
+    "thinkingPolicy": "enabled-medium-candidate",
+    "contextTokens": 65536,
+    "sampling": {
+     "temperature": 0.7,
+     "topP": 0.8,
+     "topK": 20,
+     "minP": 0,
+     "reasoningEffort": null
+    },
+    "clientVersion": "0.3.0",
+    "launchCommand": "vllm serve \"$MODEL_DIR\" --served-model-name qwen36-35b-a3b-nvfp4-mtp-dgx-spark-ac98a02d42f01169 --host 127.0.0.1 --port 8080 --max-model-len 65536 --tensor-parallel-size 1 --max-num-seqs 1 --enable-auto-tool-choice --tool-call-parser qwen3_xml --reasoning-parser qwen3 --seed 0 --enable-prompt-tokens-details --trust-remote-code --kv-cache-dtype fp8 --attention-backend flashinfer --moe-backend marlin --gpu-memory-utilization 0.8 --max-num-batched-tokens 8192 --enable-chunked-prefill --async-scheduling --enable-prefix-caching --speculative-config '{\"method\":\"mtp\",\"num_speculative_tokens\":3,\"moe_backend\":\"triton\"}' --load-format safetensors"
+   }
+  },
+  {
+   "id": "cc6170c6-3f21-4f74-8ac3-d14c7050e9d9",
+   "systemKey": "nvidia-rtx-spark-laptop",
+   "modelKey": "ling-3-0-flash",
+   "quant": "Q4_K_M",
+   "runtime": {
+    "framework": "llama-cpp",
+    "version": "version: 0.6.0-dev (build 11583, commit 988015788)",
+    "platform": "cuda"
+   },
+   "speculation": "enabled-dspark-external-draft",
+   "completionSeconds": 917.654527200008,
+   "outputTokensPerSecond": 61.9059975303061,
+   "prefillTokensPerSecond": 467.27759706707667,
+   "timeToFirstTokenMedianMs": 1480.74734999682,
+   "config": {
+    "profileId": "ling3-flash-q4-k-m-dspark-dgx-spark",
+    "format": "gguf",
+    "weightsBytes": 77010144672,
+    "repository": "inclusionAI/Ling-3.0-flash-GGUF",
+    "revision": "29edce5130491e638f3e5ebec91fa0a5ed4f780e",
+    "thinkingPolicy": "enabled",
+    "contextTokens": 65536,
+    "sampling": {
+     "temperature": 0.7,
+     "topP": 0.8,
+     "topK": 20,
+     "minP": 0,
+     "reasoningEffort": null
+    },
+    "clientVersion": "0.3.3",
+    "launchCommand": "llama-server.EXE --model \"$MODEL_DIR\"/Q4_K_M/Ling-3.0-flash-Q4_K_M-00001-of-00002.gguf --alias ling3-flash-q4-k-m-dspark-dgx-spark-115b534149c29c52 --host 127.0.0.1 --port 8080 --ctx-size 65536 --parallel 1 --gpu-layers all --jinja --batch-size 2048 --ubatch-size 512 --no-mmproj --flash-attn on --fit off --ctx-checkpoints 2 --model-draft \"$LOCAL_DIR_1\"/Ling-3.0-flash-DSpark-bf16.gguf --spec-type draft-dspark --spec-draft-n-max 8 --no-webui --verbosity 4"
+   }
+  },
+  {
+   "id": "d762bd2b-f784-457f-b9bc-270729d5b181",
+   "systemKey": "dgx-spark",
+   "modelKey": "qwen3-8-27b",
+   "quant": "UD-Q4_K_M",
+   "runtime": {
+    "framework": "llama-cpp",
+    "version": "version: 0.5.0-dev (build 1, commit f1ea206)",
+    "platform": "cuda"
+   },
+   "speculation": "enabled-dflash-external-draft",
+   "completionSeconds": 1037.35393960169,
+   "outputTokensPerSecond": 43.2692077310355,
+   "prefillTokensPerSecond": 601.3340589007829,
+   "timeToFirstTokenMedianMs": 1045.14579148963,
+   "config": {
+    "profileId": "qwen38-27b-ud-q4-k-m-dflash-dgx-spark",
+    "format": "gguf",
+    "weightsBytes": 17607447040,
+    "repository": "unsloth/Qwen3.8-27B-GGUF",
+    "revision": "4ca720788d1e01f1bff70c033e0d0028fd02e502",
+    "thinkingPolicy": "enabled-medium-candidate",
+    "contextTokens": 65536,
+    "sampling": {
+     "temperature": 0.7,
+     "topP": 0.8,
+     "topK": 20,
+     "minP": 0,
+     "reasoningEffort": null
+    },
+    "clientVersion": "0.3.3",
+    "launchCommand": "llama-server --model \"$MODEL_DIR\"/Qwen3.8-27B-UD-Q4_K_M.gguf --alias qwen38-27b-ud-q4-k-m-dflash-dgx-spark-cac0b475aee61b83 --host 127.0.0.1 --port 8080 --ctx-size 65536 --parallel 1 --gpu-layers all --jinja --batch-size 4096 --ubatch-size 512 --no-mmproj --model-draft \"$MODEL_DIR\"/Qwen3.8-27B-DFlash2-Q4_K_M.gguf --spec-type draft-dflash --spec-draft-n-max 7 --spec-draft-backend-sampling --no-webui --verbosity 4"
+   }
+  },
+  {
+   "id": "d8eef754-cadd-447a-b5a9-9dea769ea107",
+   "systemKey": "geforce-rtx-5090",
+   "modelKey": "qwen3-6-35b-a3b",
+   "quant": "UD-Q4_K_M",
+   "runtime": {
+    "framework": "llama-cpp",
+    "version": "version: 0.4.1-dev (build 11026, commit b49650adb)",
+    "platform": "cuda"
+   },
+   "speculation": "enabled-mtp-self-draft",
+   "completionSeconds": 119.32394830346999,
+   "outputTokensPerSecond": 381.413391763519,
+   "prefillTokensPerSecond": 5100.952927823365,
+   "timeToFirstTokenMedianMs": 164.781751926057,
+   "config": {
+    "profileId": "qwen36-35b-a3b-q4-k-m-mtp-rtx5090",
+    "format": "gguf",
+    "weightsBytes": 22663387424,
+    "repository": "unsloth/Qwen3.6-35B-A3B-MTP-GGUF",
+    "revision": "5bc3e238d916f48a861bac2f8a1990a0e9b7e98d",
+    "thinkingPolicy": "enabled",
+    "contextTokens": 65536,
+    "sampling": {
+     "temperature": 0.7,
+     "topP": 0.8,
+     "topK": 20,
+     "minP": 0,
+     "reasoningEffort": null
+    },
+    "clientVersion": "0.3.0",
+    "launchCommand": "llama-server --model \"$MODEL_DIR\"/Qwen3.6-35B-A3B-UD-Q4_K_M.gguf --alias qwen36-35b-a3b-q4-k-m-mtp-rtx5090-27e26f3617e55468 --host 127.0.0.1 --port 8080 --ctx-size 65536 --parallel 1 --gpu-layers all --jinja --batch-size 2048 --ubatch-size 2048 --no-mmproj --spec-type draft-mtp --spec-draft-n-max 2 --backend-sampling --no-webui --verbosity 4"
+   }
+  },
+  {
+   "id": "d9dc4220-17c7-4ab0-b87d-aba420e4d07a",
+   "systemKey": "macbook-pro-14-m5-pro-20gpu-64gb",
+   "modelKey": "qwen3-8-27b",
+   "quant": "Q4_K_M",
+   "runtime": {
+    "framework": "llama-cpp",
+    "version": "version: 0.4.1-dev (build 11026, commit b49650adb)",
+    "platform": "metal"
+   },
+   "speculation": "enabled-mtp-self-draft",
+   "completionSeconds": 2257.69868524912,
+   "outputTokensPerSecond": 23.0949233397184,
+   "prefillTokensPerSecond": 212.1954935533054,
+   "timeToFirstTokenMedianMs": 2453.43229200807,
+   "config": {
+    "profileId": "qwen38-27b-q4-k-m-mtp-m5-pro",
+    "format": "gguf",
+    "weightsBytes": 17106775008,
+    "repository": "unsloth/Qwen3.8-27B-GGUF",
+    "revision": "f1bfb127c64f7072bdd2cad55f258b9c8b2910fe",
+    "thinkingPolicy": "enabled-medium-candidate",
+    "contextTokens": 65536,
+    "sampling": {
+     "temperature": 0.7,
+     "topP": 0.8,
+     "topK": 20,
+     "minP": 0,
+     "reasoningEffort": null
+    },
+    "clientVersion": "0.3.0",
+    "launchCommand": "llama-server --model \"$MODEL_DIR\"/Qwen3.8-27B-Q4_K_M.gguf --alias qwen38-27b-q4-k-m-mtp-m5-pro-13b17d8ce67c773b --host 127.0.0.1 --port 8080 --ctx-size 65536 --parallel 1 --gpu-layers all --jinja --batch-size 2048 --ubatch-size 512 --no-mmproj --device MTL0 --load-mode mmap --threads 6 --flash-attn on --fit off --cache-ram 0 --spec-type draft-mtp --spec-draft-n-max 4 --spec-draft-backend-sampling --no-webui --verbosity 4"
+   }
+  }
+ ]
+}

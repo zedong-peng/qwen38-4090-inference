@@ -4,38 +4,45 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Qwen3.8 27B on an RTX 4090</title>
-<meta name="description" content="Artificial Analysis's local agent benchmark, Qwen3.8 27B: their systems and one RTX 4090.">
-<script>try { var t = localStorage.getItem("theme"); if (t === "dark" || t === "light") document.documentElement.dataset.theme = t; } catch (e) {}</script>
-<link rel="preload" href="fonts/qwen38-sourceserif4.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="description" content="Artificial Analysis's local agent benchmark: their systems and models, and one RTX 4090.">
+<link rel="canonical" href="https://zedongpeng.com/qwen38-4090-inference/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://zedongpeng.com/assets/css/site.css">
 <link rel="stylesheet" href="leaderboard.css">
 </head>
 <body>
-<header class="qwen38-top">
-  <a class="qwen38-home" href="/">Zedong Peng</a>
-  <button type="button" class="qwen38-pill" id="theme" aria-label="Switch light or dark">Light / dark</button>
-</header>
-<main class="qwen38-main">
-  <p class="qwen38-eyebrow">Benchmark <span>·</span> <!--MONTH--></p>
-  <h1 class="qwen38-hero"><b>Qwen3.8 27B on an RTX 4090.</b> Artificial Analysis times how long a computer takes to serve a recorded coding agent. A 2022 gaming card finishes in nine minutes, behind only the RTX 5090.</h1>
-  <!--TABLE-->
-  <!--NOTE-->
-
-  <section class="qwen38-prose">
+<script src="https://zedongpeng.com/assets/js/site-header.js"></script>
+<main>
+<article>
+  <header class="col page-head">
+    <p class="eyebrow">Benchmark · <!--MONTH--></p>
+    <h1>Qwen3.8 27B on an RTX 4090</h1>
+  </header>
+  <div class="col prose">
+    <p>Artificial Analysis times how long a computer takes to serve a recorded coding agent. A 2022 gaming card finishes in nine minutes, behind only the RTX 5090.</p>
+  </div>
+  <div class="wide">
+    <!--TABLE-->
+    <!--NOTE-->
+  </div>
+  <div class="col prose">
     <h2>Memory decides whether it runs, bandwidth how fast</h2>
-    <p>Each step of writing reads all 16 GB of weights, so memory bandwidth sorts the table into tiers: the RTX 5090 at 1,792 GB/s, the RTX 4090 at 1,008, and the rest at 256 to 307, with room for far larger models but slow to read them.</p>
+    <p>Each step of writing Qwen3.8 27B reads all 16 GB of weights, so memory bandwidth sorts the table into tiers: the RTX 5090 at 1,792 GB/s, the RTX 4090 at 1,008, and the rest at 256 to 307, with room for far larger models but slow to read them.</p>
     <p>Twenty-four gigabytes is just enough. With llama.cpp&rsquo;s weights loaded, the 65,536-token cache still fits. vLLM&rsquo;s 4-bit checkpoint does not: it keeps the embedding and output layers at 16 bits, loads 17.6 GiB, and leaves 2.35 GiB for a cache that needs 2.91.</p>
+    <p><!--OTHERS--></p>
 
     <h2>An agent reads far more than it writes</h2>
     <p>Over 168 turns the agent sends <!--PROMPT--> prompt tokens and gets back <!--OUTPUT-->. Most of each prompt was already sent the turn before and sits in the cache; the <!--UNCACHED--> new tokens still take nearly four minutes to read. Writing takes the rest.</p>
-  </section>
-  <!--SPLIT-->
-  <section class="qwen38-prose">
+    <!--SPLIT-->
     <p>Speculative decoding shortens only the writing. DFlash drafts seven tokens at a time where MTP drafts two, and writes <!--TPS-->. It saves nearly two minutes of writing and none of the reading.</p>
 
     <h2>Method</h2>
-    <p class="qwen38-small"><!--METHOD--></p>
-  </section>
+    <p class="small"><!--METHOD--></p>
+  </div>
+</article>
 </main>
-<script src="leaderboard.js" defer></script>
+<footer class="zp-foot small">&copy; 2026 Zedong Peng</footer>
 </body>
 </html>

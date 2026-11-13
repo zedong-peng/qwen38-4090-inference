@@ -1,4 +1,9 @@
 {
+ "model": "qwen3-8-27b",
+ "does_not_fit": [
+  "qwen3-6-35b-a3b",
+  "ling-3-0-flash"
+ ],
  "methods": [
   {
    "id": "lcpp-mtp2",
