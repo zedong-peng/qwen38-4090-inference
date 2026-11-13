@@ -14,8 +14,10 @@
 - No machine details in the repo (paths, host names, user names): they live in the untracked `bench/env.local.sh`.
 - After changes: `python3 bench/collect.py --runs RUNS` and `python3 tools/build_site.py`, then look at the page at
   desktop and phone width.
-- The models are the three on AA's page; our runs are Qwen3.8 27B, the only one that fits 24 GB. The NInfer engine is
-  a separate repo and not on this page.
+- The models are the three on AA's page; our runs are Qwen3.8 27B, the only one that fits 24 GB. The NInfer engine of
+  the decode study (qwen38-4090-decode, a separate repo) goes on the RTX 4090 leaderboard, measured on the same replay
+  on the official weights. No weights are changed to make a setup fit: one that cannot hold the 65,536-token context
+  is listed as not supported (user, 11-14).
 - The page is figures only (user, 11-13): the two figures, each with a one-line title and a small note; no prose
   sections. Numbers come from the data through `tools/build_site.py`. The page takes zedongpeng.com's theme (its `site.css`, fonts and header;
   see Theme in the home page repo's AGENTS.md); `site/leaderboard.css` holds only this page's parts, such as the table
