@@ -3,7 +3,10 @@
 - The benchmark is AA-AgentPerf-Local's default replay, unmodified: 65,536-token context, one sequence, exact output
   lengths, standard sampling. A run that changes any of these is a different result and does not go on the page.
 - The page is AA's Completion Time by Model and System chart with the RTX 4090 as one more column, laid out as theirs
-  is (models down, systems across, green for faster), and under it the RTX 4090 Qwen3.8 27B inference leaderboard, our setups ranked (user, 11-13). In the chart the
+  is (models down, systems across, green for faster), and under it the RTX 4090 Qwen3.8 27B inference leaderboard, our setups ranked on the same workload (user,
+  11-13). Only setups that keep the public weights are ranked: extreme quantization is always faster, and that is not
+  what the leaderboard is for. Spec-Bench decode speeds stay in the decode study's write-up; AA's workload is the one
+  that reflects agent use (user, 11-13). In the chart the
   RTX 4090 follows AA's settings and one of AA's own serving configurations, like every other column.
   AA's side comes from `bench/aa_snapshot.json`, refreshed with `python3 tools/fetch_aa.py`; the RTX 4090 column shows
   its fastest setup.
