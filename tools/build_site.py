@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the page as static files (standard library only): the table is rendered here from results/results.json (our
+"""Build the page as static files (standard library only): the two figures are rendered here from results/results.json (our
 RTX 4090) and bench/aa_snapshot.json (Artificial Analysis's systems, models and runs; tools/fetch_aa.py refreshes it).
 
 dist/ is the whole site, with relative paths; this repo's Pages workflow publishes it at zedongpeng.com/qwen38-4090-inference/.
@@ -10,7 +10,7 @@ dist/ is the whole site, with relative paths; this repo's Pages workflow publish
 import argparse
 import datetime
 import json
-import re
+import math
 import shutil
 from html import escape
 from pathlib import Path
@@ -23,21 +23,7 @@ REPO = "https://github.com/zedong-peng/qwen38-4090-inference"
 
 SHORT = {"geforce-rtx-5090": "RTX 5090", "dgx-spark": "DGX Spark", "nvidia-rtx-spark-laptop": "RTX Spark laptop",
          "amd-ryzen-ai-halo": "Ryzen AI Halo", "macbook-pro-14-m5-pro-20gpu-64gb": "MacBook Pro M5 Pro"}
-ENGINE = {"llama-cpp": "llama.cpp", "vllm": "vLLM"}
-DRAFTER = {"mtp": "MTP", "dflash": "DFlash", "dspark": "DSpark"}
 OURS = "rtx-4090"
-
-
-def setup(engine, weights, decoding, draft):
-    """Two lines: engine and weights, then the decoding."""
-    return f"{engine} · {weights}", f"{decoding} {draft}" if draft else decoding
-
-
-def aa_setup(run):
-    kind = next((v for k, v in DRAFTER.items() if f"-{k}-" in run["speculation"]), "no drafts")
-    n = re.search(r'--spec-draft-n-max (\d+)|num_speculative_tokens\\?":(\d+)', run["config"]["launchCommand"])
-    return setup(ENGINE.get(run["runtime"]["framework"], run["runtime"]["framework"]), run["quant"], kind,
-                 next(filter(None, n.groups())) if n else None)
 
 
 def best(data):
@@ -45,49 +31,51 @@ def best(data):
     return min((m for m in data["methods"] if m.get("completion_s")), key=lambda m: m["completion_s"])
 
 
-def matrix(data, aa):
-    """Systems down, models across. A cell is (minutes, setup), "does not fit", or None where nobody ran it."""
-    systems = [dict(key=s["key"], name=SHORT.get(s["key"], s["shortName"]), memory=s["memoryGb"],
-                    bandwidth=s["memoryBandwidthGbs"]) for s in aa["systems"]]
-    hw = data["hardware"]
-    systems.append(dict(key=OURS, name="RTX 4090", memory=hw["memory_gb"], bandwidth=hw["bandwidth_gbs"]))
-    cells = {(r["systemKey"], r["modelKey"]): (r["completionSeconds"] / 60, aa_setup(r)) for r in aa["runs"]}
+FAST, SLOW = (21, 128, 61), (220, 252, 231)  # AA's scale: dark green is faster, on a log scale
+
+
+def cells(data, aa):
+    """(system key, model key) -> minutes, or the text of a cell that has no time."""
+    out = {(r["systemKey"], r["modelKey"]): r["completionSeconds"] / 60 for r in aa["runs"]}
+    mem = {s["key"]: f'{s["memoryGb"]} GB {"VRAM" if s["memoryKind"] == "dedicated" else s["memoryKind"]}' for s in aa["systems"]}
     for m in aa["models"]:
         for d in m["doesNotFitOn"]:
-            cells[d["systemKey"], m["key"]] = "does not fit"
+            out[d["systemKey"], m["key"]] = mem[d["systemKey"]]
     for k in data["does_not_fit"]:
-        cells[OURS, k] = "does not fit"
-    b = best(data)
-    cells[OURS, data["model"]] = (b["completion_s"] / 60, setup(b["engine"], b["weights"], b["decoding"], b.get("draft")))
-    first = aa["defaultModelKey"]
-    systems.sort(key=lambda s: cells[s["key"], first][0] if isinstance(cells.get((s["key"], first)), tuple) else 1e9)
-    return systems, cells
+        out[OURS, k] = f'{data["hardware"]["memory_gb"]} GB VRAM'
+    out[OURS, data["model"]] = best(data)["completion_s"] / 60
+    return out, mem
 
 
-def table(data, aa):
-    systems, cells = matrix(data, aa)
-    top = max(c[0] for c in cells.values() if isinstance(c, tuple))
-    head = "".join(
-        f'<th>{escape(m["name"].split(" (")[0])}<span>'
-        + (f'{m["activeParametersB"]:g}B of {m["parametersB"]:g}B active' if m["activeParametersB"]
-           else f'all {m["parametersB"]:g}B active') + "</span></th>"
-        for m in aa["models"])
-    body = []
-    for s in systems:
-        tds = []
-        for m in aa["models"]:
-            c = cells.get((s["key"], m["key"]))
-            if isinstance(c, tuple):
-                tds.append(f'<td><div class="qwen38-bar"><i style="--w:{c[0] / top:.3f}"></i><span>{c[0]:.1f}</span></div>'
-                           f'<div class="qwen38-setup">{escape(c[1][0])}<br>{escape(c[1][1])}</div></td>')
+def heat(data, aa):
+    """AA's Completion Time by Model and System chart, with the RTX 4090 as one more column."""
+    cs, mem = cells(data, aa)
+    cols = [(s["key"], SHORT.get(s["key"], s["shortName"]), mem[s["key"]]) for s in aa["systems"]]
+    cols.append((OURS, "RTX 4090", f'{data["hardware"]["memory_gb"]} GB VRAM'))
+    cols.sort(key=lambda c: -cs[c[0], aa["defaultModelKey"]])  # slowest first on the default model, as AA's chart reads
+    times = [v for v in cs.values() if isinstance(v, float)]
+    lo, hi = math.log(min(times)), math.log(max(times))
+    out = ['<div></div>'] + [
+        f'<div class="qwen38-hcol{" qwen38-ours" if k == OURS else ""}"><b>{escape(name)}</b><span>{escape(sub)}</span></div>'
+        for k, name, sub in cols]
+    for m in aa["models"]:
+        params = (f'{m["parametersB"]:g}B, {m["activeParametersB"]:g}B active' if m["activeParametersB"]
+                  else f'{m["parametersB"]:g}B') + " parameters"
+        out.append(f'<div class="qwen38-hrow"><b>{escape(m["name"].split(" (")[0])}</b><span>{params}</span></div>')
+        for k, _, _ in cols:
+            v = cs.get((k, m["key"]))
+            if isinstance(v, float):
+                t = (math.log(v) - lo) / (hi - lo)
+                rgb = ", ".join(str(round(a + (b - a) * t)) for a, b in zip(FAST, SLOW))
+                out.append(f'<div class="qwen38-cell{" qwen38-dark" if t < 0.5 else ""}" style="background:rgb({rgb})">'
+                           f'{v:.1f} min</div>')
             else:
-                tds.append(f'<td><span class="qwen38-wait">{c or "not run"}</span></td>')
-        cls = ' class="qwen38-ours"' if s["key"] == OURS else ""
-        body.append(f'<tr{cls}><td class="qwen38-sys"><b>{escape(s["name"])}</b>'
-                    f'<div class="qwen38-setup">{s["memory"]} GB · {s["bandwidth"]:,} GB/s</div></td>' + "".join(tds) + "</tr>")
-    return ('<figure class="qwen38-card scroll"><table class="qwen38-t">\n'
-            f'<thead><tr><th>System<span>memory · bandwidth</span></th>{head}</tr></thead>\n<tbody>\n'
-            + "\n".join(body) + "\n</tbody>\n</table></figure>")
+                out.append(f'<div class="qwen38-cell qwen38-nofit">Does not fit<span>in {escape(v)}</span></div>'
+                           if v else '<div class="qwen38-cell qwen38-nofit">Not run</div>')
+    key = ('<p class="small qwen38-key"><span>Faster<i style="background:linear-gradient(to right, rgb(%d, %d, %d), '
+           'rgb(%d, %d, %d))"></i>Slower</span><span><i class="qwen38-nofit"></i>Does not fit in memory</span></p>' % (FAST + SLOW))
+    return (f'<figure class="qwen38-card"><div class="scroll"><div class="qwen38-heat" style="--n:{len(cols)}">\n'
+            + "\n".join(out) + f'\n</div></div>{key}</figure>')
 
 
 def month(iso):
@@ -95,83 +83,43 @@ def month(iso):
 
 
 def note(data, aa):
-    return ('<p class="small qwen38-note">Minutes to finish the replay; lower is faster, and all bars share one scale. '
-            f'Highlighted: our RTX 4090, the faster of two setups, median of three runs, {month(data["updated"])}. '
-            f'The other systems are <a href="{aa["source"]}">Artificial Analysis</a>\'s, retrieved {month(aa["retrieved"])}.</p>')
+    w, b = aa["workload"], best(data)
+    recipe = f'{b["engine"]} {b["version"].split(" ")[0]}, {b["weights"]}, {b["decoding"]} {b["draft"]}'
+    return (f'<p class="small qwen38-note">Time to complete the <a href="https://github.com/ArtificialAnalysis/aa-agentperf-local">'
+            f'AgentPerf-Local</a> default workload ({w["turns"]} turns, {w["toolCalls"]} tool calls); lower is better. '
+            f'The RTX 4090 is ours, run with their tool, settings and serving configuration ({escape(recipe)}), median of three '
+            f'runs, {month(data["updated"])}. The other systems are '
+            f'<a href="{aa["source"]}">Artificial Analysis</a>\'s, retrieved {month(aa["retrieved"])}.</p>')
 
 
-def others(aa):
-    """The two models besides the default one, in a sentence each, from AA's data."""
-    models = {m["key"]: m for m in aa["models"]}
-    ling, a3b = models["ling-3-0-flash"], models["qwen3-6-35b-a3b"]
-    big = sorted({d["weightsBytes"] for d in ling["doesNotFitOn"]})[-1] / 2**30
-    ran = [s for s in aa["systems"] if any(r["systemKey"] == s["key"] and r["modelKey"] == ling["key"] for r in aa["runs"])]
-    assert len(ran) == 3 and {s["memoryGb"] for s in ran} == {128}, "the sentence about Ling 3.0 Flash no longer holds"
-    by = {}
-    for r in aa["runs"]:
-        by.setdefault(r["systemKey"], {})[r["modelKey"]] = r["completionSeconds"]
-    assert all(v[a3b["key"]] == min(v.values()) for v in by.values() if a3b["key"] in v), "Qwen3.6 35B A3B is no longer fastest"
-    return (f'The other two models sort the same way. Ling 3.0 Flash is {big:.0f} GiB at 4 bits and runs only on the three '
-            f'128 GB machines. Qwen3.6 35B A3B uses {a3b["activeParametersB"]:g} of its {a3b["parametersB"]:g} billion '
-            'parameters for each token and is the fastest model on every system that holds it. It does not fit in 24 GB.')
+def board(data):
+    """Our RTX 4090 setups on the default model, fastest first."""
+    ms = sorted(data["methods"], key=lambda m: (m.get("completion_s") is None, m.get("completion_s") or 0))
+    rows = []
+    for i, m in enumerate(ms, 1):
+        name = (f'<td class="qwen38-sys"><b>{escape(m["engine"])} {escape(m["version"].split(" ")[0])}</b>'
+                f'<div class="qwen38-setup">{escape(m["weights"])} · {escape(m["decoding"])} {m["draft"]}</div></td>')
+        if m.get("completion_s"):
+            run = next(r for r in m["runs"] if r["completion_s"] == m["completion_s"])
+            mins = m["completion_s"] / 60
+            rows.append(f'<tr><td>{i}</td>{name}<td class="qwen38-num"><b>{mins:.1f}</b></td>'
+                        f'<td class="qwen38-num">{run["output_tps"]:.0f}</td>'
+                        f'<td class="qwen38-num">{run["ttft_p50_ms"] / 1000:.2f}</td></tr>')
+        else:
+            why = "measuring" if m["status"] == "pending" else m.get("reason") or "did not run"
+            rows.append(f'<tr><td></td>{name}<td class="qwen38-num qwen38-wait" colspan="3">{escape(why)}</td></tr>')
+    return ('<figure class="qwen38-card"><div class="scroll"><table class="qwen38-t">\n<thead><tr><th></th><th>Setup</th>'
+            '<th class="qwen38-num">Minutes to finish</th><th class="qwen38-num">Output tokens/s</th>'
+            '<th class="qwen38-num">First token, s</th></tr></thead>\n<tbody>\n' + "\n".join(rows) + "\n</tbody>\n</table></div></figure>"
+            '<p class="small qwen38-note">Same workload and settings. Each setup is the median of three runs; '
+            f'output speed and the median time to first token are from that run. <a href="{REPO}">Commands and raw data</a>.</p>')
 
 
-def method(data):
-    return (f'Workload: <a href="https://github.com/ArtificialAnalysis/aa-agentperf-local">AgentPerf-Local</a>\'s default '
-            "replay, 8 recorded coding-agent tasks and 168 turns sent one at a time with a 65,536-token context; every turn "
-            "writes its recorded number of tokens, and tool time is not counted. Our runs use their tool and their recipes for "
-            "the RTX 5090 (llama.cpp b11026, Q4_K_M, MTP 2) and the RTX Spark (b11236, UD-Q4_K_M, DFlash 7) on one RTX 4090; "
-            "the table shows the faster. Their tool judged the other two models too large for the card. "
-            f'<a href="{REPO}">Commands and raw data</a>.')
-
-
-def median_turns(data, samples):
-    """Per method, the turns of its median run (the run whose time the table shows)."""
-    out = {}
-    for m in data["methods"]:
-        run = next((r["run"] for r in m.get("runs", []) if r.get("completion_s") == m.get("completion_s")), None)
-        if run and run in samples["methods"].get(m["id"], {}):
-            out[m["id"]] = [dict(zip(samples["columns"], t)) for t in samples["methods"][m["id"]][run]]
-    return out
-
-
-def split(data, samples):
-    """Where the minutes go: reading the prompt (time to first token) and writing, for each RTX 4090 setup."""
-    turns = median_turns(data, samples)
-    bars = []
-    for m in data["methods"]:
-        if m["id"] not in turns:
-            continue
-        t = turns[m["id"]]
-        read, write = (sum(x[k] for x in t) / 6e4 for k in ("ttft_ms", "generation_ms"))
-        bars.append((f'{m["decoding"]} {m["draft"]}', read, write))
-    top = max(r + w for _, r, w in bars)
-    rows = "".join(
-        f'<div class="qwen38-srow"><span class="qwen38-slabel">{escape(name)}</span><div class="qwen38-sbar">'
-        f'<i class="qwen38-read" style="--w:{r / top:.3f}" title="Reading: {r:.1f} min">{r:.1f}</i>'
-        f'<i class="qwen38-write" style="--w:{w / top:.3f}" title="Writing: {w:.1f} min">{w:.1f}</i></div></div>'
-        for name, r, w in bars)
-    return ('<figure class="qwen38-split"><div class="qwen38-key"><span><i class="qwen38-read"></i>Reading the prompt</span>'
-            '<span><i class="qwen38-write"></i>Writing</span></div>' + rows +
-            '<figcaption>Minutes on the RTX 4090, median run. Reading is the time to the first token of each turn.</figcaption></figure>')
-
-
-def numbers(data, samples):
-    turns = median_turns(data, samples)
-    t = turns["lcpp-mtp2"]
-    tps = {k: sum(x["output_tokens"] for x in v) / (sum(x["generation_ms"] for x in v) / 1e3) for k, v in turns.items()}
-    return {"<!--PROMPT-->": f'{sum(x["prompt_tokens"] for x in t) / 1e6:.2f} million',
-            "<!--OUTPUT-->": f'{sum(x["output_tokens"] for x in t):,}',
-            "<!--UNCACHED-->": f'{round(sum(x["prompt_tokens"] - x["cached_tokens"] for x in t), -3):,}',
-            "<!--TPS-->": f'{tps["lcpp-dflash7"]:.0f} tokens a second instead of {tps["lcpp-mtp2"]:.0f}'}
-
-
-def render(data, samples):
+def render(data):
     aa = json.loads(AA.read_text())
     html = (SITE / "index.html").read_text()
-    subs = {"<!--TABLE-->": table(data, aa), "<!--NOTE-->": note(data, aa), "<!--SPLIT-->": split(data, samples),
-            "<!--OTHERS-->": others(aa), "<!--METHOD-->": method(data), "<!--MONTH-->": month(aa["retrieved"]),
-            **numbers(data, samples)}
+    subs = {"<!--HEAT-->": heat(data, aa), "<!--NOTE-->": note(data, aa), "<!--BOARD-->": board(data),
+            "<!--MONTH-->": month(aa["retrieved"])}
     for k, v in subs.items():
         html = html.replace(k, v)
     return html
@@ -183,7 +131,7 @@ def build(output, data_path):
         raise ValueError("Use dist/ or a separate output directory; never overwrite project sources")
     page = output / "index.html"
     output.mkdir(parents=True, exist_ok=True)
-    page.write_text(render(json.loads(Path(data_path).read_text()), json.loads((RESULTS / "samples.json").read_text())))
+    page.write_text(render(json.loads(Path(data_path).read_text())))
     for src, dst in ((SITE / CSS, output / CSS),
                      (RESULTS / "results.json", output / "results.json"), (RESULTS / "samples.json", output / "samples.json"),
                      (AA, output / AA.name)):
@@ -192,7 +140,7 @@ def build(output, data_path):
 
 
 def inline(target, data_path):
-    html = render(json.loads(Path(data_path).read_text()), json.loads((RESULTS / "samples.json").read_text()))
+    html = render(json.loads(Path(data_path).read_text()))
     html = html.replace('<link rel="stylesheet" href="leaderboard.css">',
                         "<style>\n" + (SITE / "leaderboard.css").read_text() + "</style>")
     target.write_text(html)

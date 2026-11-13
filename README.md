@@ -22,6 +22,6 @@ also judged the other two models on their page: on 24 GB neither Qwen3.6 35B A3B
 | `bench/methods.json` | the three 4090 setups, and the models that do not fit the card |
 | `bench/aa_snapshot.json`, `tools/fetch_aa.py` | AA's page data as published (systems, models, runs with launch commands); the script refreshes it |
 | `bench/collect.py` | run tree → `results/results.json` (each replay, its launch command) and `results/samples.json` (per-turn timings) |
-| `site/`, `tools/build_site.py` | the page; the build renders the systems × models table as static HTML into `dist/`, which `.github/workflows/site.yml` publishes to GitHub Pages |
+| `site/`, `tools/build_site.py` | the page; the build renders the model-by-system chart and the RTX 4090 leaderboard as static HTML into `dist/`, which `.github/workflows/site.yml` publishes to GitHub Pages |
 
 The earlier leaderboard (2026-10-02, short prompts, 4K context) is at tag `v1-short-prompts`.

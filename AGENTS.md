@@ -2,18 +2,19 @@
 
 - The benchmark is AA-AgentPerf-Local's default replay, unmodified: 65,536-token context, one sequence, exact output
   lengths, standard sampling. A run that changes any of these is a different result and does not go on the page.
-- The page is AA's table plus the RTX 4090, kept as small as theirs: one table of systems by models (user, 11-13),
-  each cell the minutes and the setup behind them. AA's side comes from `bench/aa_snapshot.json`, refreshed with
-  `python3 tools/fetch_aa.py`; the RTX 4090 row shows its fastest setup.
+- The page is AA's Completion Time by Model and System chart with the RTX 4090 as one more column, laid out as theirs
+  is (models down, systems across, green for faster), and under it the RTX 4090 Qwen3.8 27B inference leaderboard, our setups ranked (user, 11-13). In the chart the
+  RTX 4090 follows AA's settings and one of AA's own serving configurations, like every other column.
+  AA's side comes from `bench/aa_snapshot.json`, refreshed with `python3 tools/fetch_aa.py`; the RTX 4090 column shows
+  its fastest setup.
 - GPU work runs on the experiment server through its GPU queue; nothing else of ours on that card.
 - No machine details in the repo (paths, host names, user names): they live in the untracked `bench/env.local.sh`.
 - After changes: `python3 bench/collect.py --runs RUNS` and `python3 tools/build_site.py`, then look at the page at
   desktop and phone width.
 - The models are the three on AA's page; our runs are Qwen3.8 27B, the only one that fits 24 GB. The NInfer engine is
   a separate repo and not on this page.
-- The page is a short post around the table: a finding-led hero, two findings (memory decides whether it runs,
-  bandwidth how fast; an agent reads far more than it writes), and a Method note. Numbers in the prose come from the
-  data through `tools/build_site.py`. The page takes zedongpeng.com's theme (its `site.css`, fonts and header;
+- The page is figures only (user, 11-13): the two figures, each with a one-line title and a small note; no prose
+  sections. Numbers come from the data through `tools/build_site.py`. The page takes zedongpeng.com's theme (its `site.css`, fonts and header;
   see Theme in the home page repo's AGENTS.md); `site/leaderboard.css` holds only this page's parts, such as the table
   card with our 4090 row tinted, and sets no fonts or base colors. Light only: no dark rules, no theme script. CSS classes start with `qwen38-`.
 - A push to `main` builds and publishes the page through `.github/workflows/site.yml`, at
