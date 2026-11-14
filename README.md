@@ -12,7 +12,7 @@ Page: [zedongpeng.com/qwen38-4090-inference/](https://zedongpeng.com/qwen38-4090
 | llama.cpp b11026, Q4_K_M, MTP 2 | `agentperf-local managed-run` of AA's recipe `qwen38-27b-q4-k-m-mtp`, the one behind their RTX 5090 result |
 | llama.cpp b11236, UD-Q4_K_M, DFlash 7 | `managed-run` of AA's recipe `qwen38-27b-ud-q4-k-m-dflash-rtx-spark`, behind their RTX Spark result |
 | vLLM 0.27.1, W4A16 AutoRound, MTP 3 | vLLM started with the flags AA's tool gives vLLM, then `agentperf-local run` against it |
-| NInfer (decode study build), official NInfer v3 container, DFlash2 verify tree 15 | `ninfer-serve` of [qwen38-4090-decode](https://github.com/zedong-peng/qwen38-4090-decode) with every research knob off, then `agentperf-local run` against it |
+| NInfer (decode study build), official NInfer v3 container, DFlash2 verify tree 15 | `ninfer-serve` of [qwen38-4090-decode](https://github.com/zedong-peng/qwen38-4090-decode) with its engine knobs that keep the dense verify head and `NINFER_ANCHOR_BEFORE_LAST_USER=1` (the turn checkpoint sits before a trailing user message, which three of the tasks replace every turn; 15.8 min without it), then `agentperf-local run` against it |
 | the same, on the study's re-quantized container | listed as not supported: a 65,536-token context does not fit, and the weights are not the public ones |
 
 Each setup gets an `aa-mini-v1` check and three full replays, and the leaderboard ranks the medians. The chart's RTX 4090

@@ -5,9 +5,11 @@
 #   vllm-mtp3    vLLM 0.27.1, dbirks/Qwen3.8-27B-W4A16-AutoRound, launched as AA's tool launches vLLM, attached run;
 #                --language-model-only skips the vision encoder, as the llama.cpp recipes' --no-mmproj does
 #   ninfer-tree15  NInfer as built by the decode study (github.com/zedong-peng/qwen38-4090-decode: the patch series,
-#                then code/reproduce/aa_serve_patch.py), the official NInfer v3 container, DFlash2 drafts of 15 tokens
-#                with verify trees, every research knob off (the study's engine knobs that keep the dense verify head
-#                finish within 0.2% of it here: prefill, not decode, is most of this workload); attached run
+#                then code/reproduce/aa_serve_patch.py and anchor_patch.py), the official NInfer v3 container, DFlash2
+#                drafts of 15 tokens with verify trees, the study's engine knobs that keep the dense verify head, and
+#                NINFER_ANCHOR_BEFORE_LAST_USER=1: the server keeps its turn checkpoint before a trailing user message,
+#                which three of the eight tasks replace every turn (without the flag: 15.8 min instead of 4.2; with
+#                every knob off but the flag: within 1%); attached run
 #   ninfer-requant the same server on the study's re-quantized container with its weight knobs: one start attempt.
 #                Its decode-only weight copies leave no room for a 65,536-token KV cache; it is listed, not ranked
 # usage: run_4090.sh GPU [REPS] [SETUPS]. SETUPS is a space-separated subset (default all five). Each setup: an aa-mini-v1
@@ -89,6 +91,12 @@ NINFER_REQUANT=(NINFER_PROPOSAL_SCREEN=3 NINFER_TREE_TEMPERATURE=1.25 NINFER_KV_
   NINFER_L2_FILL_ATTN_KB=4096 NINFER_TWO_LEVEL_HEAD=1 NINFER_HEAD_SCREEN=3 NINFER_SCREEN_TILED=1 NINFER_LS8=1 NINFER_DRAFT_CONV_Q4=1
   NINFER_Q3_SHADOW=1 NINFER_Q3_TILED=1)
 
+# the study's engine knobs that keep the dense verify head (sampled requests take the ordinary route), and the flag
+NINFER_ENGINE=(NINFER_PROPOSAL_SCREEN=3 NINFER_TREE_TEMPERATURE=1.25 NINFER_KV_VI8=1 NINFER_GDN_STATE_F16=1
+  NINFER_GDN_CHUNKED_RECORD=1 NINFER_CONV_EPILOGUE=1 NINFER_ATTN_ROWSPLIT=3 NINFER_L2_FILL=121
+  NINFER_L2_FILL_NORM_KB=1536 NINFER_L2_FILL_POST_KB=768 NINFER_L2_FILL_GATED_KB=768 NINFER_L2_FILL_RECORD_KB=2048
+  NINFER_L2_FILL_ATTN_KB=4096 NINFER_ANCHOR_BEFORE_LAST_USER=1)
+
 ninfer_attached() { # NAME CONTAINER REPS [KNOB...]; REPS=0 is a start attempt only
   local name=$1 model=$2 reps=$3 port=$((18600 + G)); shift 3
   mkdir -p $R/$name
@@ -133,7 +141,7 @@ for s in $SETUPS; do
     # needs CUDA graphs only up to MTP's 4 tokens, which frees the rest
     vllm-mtp3) vllm_attached vllm-mtp3 0.97 2048 --compilation-config '{"max_cudagraph_capture_size":8}' ||
       log "vllm-mtp3 FAILED: does not fit a 65,536-token context in 24 GB" ;;
-    ninfer-tree15) ninfer_attached ninfer-tree15 $Q38_NINFER_CONTAINERS/official/qwen3_8_27b.ninfer $REPS ||
+    ninfer-tree15) ninfer_attached ninfer-tree15 $Q38_NINFER_CONTAINERS/official/qwen3_8_27b.ninfer $REPS "${NINFER_ENGINE[@]}" ||
       log "ninfer-tree15 FAILED" ;;
     ninfer-requant) ninfer_attached ninfer-requant $Q38_NINFER_CONTAINERS/ours/qwen3_8_27b.ninfer 0 "${NINFER_REQUANT[@]}" || log "ninfer-requant FAILED: does not start at a 65,536-token context" ;;
   esac

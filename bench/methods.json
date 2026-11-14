@@ -49,7 +49,7 @@
    "weights_source": "neroued/Qwen3.8-27B-NInfer @ 1cbd84e7221e51186bd7f093a149912d2489625b",
    "decoding": "DFlash2 tree",
    "draft": 15,
-   "how": "ninfer-serve of the decode study with every research knob off, run against the attached server; ignore_eos and the length finish reason come from the study's aa_serve_patch.py"
+   "how": "ninfer-serve of the decode study with its engine knobs that keep the dense verify head and NINFER_ANCHOR_BEFORE_LAST_USER=1 (the turn checkpoint sits before a trailing user message), run against the attached server; ignore_eos and the length finish reason come from the study's aa_serve_patch.py, the flag from its anchor_patch.py"
   },
   {
    "id": "ninfer-requant",

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14",
+ "updated": "2026-11-15",
  "workload": {
   "name": "AA-AgentPerf-Local default replay (agentperf-default-v1)",
   "runner": "agentperf-local 0.3.4",
@@ -146,44 +146,44 @@
    "weights_source": "neroued/Qwen3.8-27B-NInfer @ 1cbd84e7221e51186bd7f093a149912d2489625b",
    "decoding": "DFlash2 tree",
    "draft": 15,
-   "how": "ninfer-serve of the decode study with every research knob off, run against the attached server; ignore_eos and the length finish reason come from the study's aa_serve_patch.py",
+   "how": "ninfer-serve of the decode study with its engine knobs that keep the dense verify head and NINFER_ANCHOR_BEFORE_LAST_USER=1 (the turn checkpoint sits before a trailing user message), run against the attached server; ignore_eos and the length finish reason come from the study's aa_serve_patch.py, the flag from its anchor_patch.py",
    "status": "ok",
    "runs": [
     {
-     "run": "20261114-153646/nf-def/1",
+     "run": "20261114-221921/nf-eng-anchor/1",
      "launch": null,
      "ok": true,
-     "completion_s": 960.3398265764117,
-     "output_tps": 247.49901351246632,
-     "ttft_p50_ms": 3921.636540442705,
-     "cached_tokens": 1287711,
-     "uncached_tokens": 1290951,
+     "completion_s": 250.33844031021,
+     "output_tps": 284.19607832335913,
+     "ttft_p50_ms": 509.1236252337694,
+     "cached_tokens": 2373587,
+     "uncached_tokens": 205075,
      "output_tokens": 30883
     },
     {
-     "run": "20261114-153646/nf-def/2",
+     "run": "20261114-221921/nf-eng-anchor/2",
      "launch": null,
      "ok": true,
-     "completion_s": 949.0214355960488,
-     "output_tps": 265.6847292099467,
-     "ttft_p50_ms": 3914.326671510935,
-     "cached_tokens": 1287711,
-     "uncached_tokens": 1290951,
+     "completion_s": 250.6917390488088,
+     "output_tps": 274.7941188616558,
+     "ttft_p50_ms": 476.58042423427105,
+     "cached_tokens": 2373587,
+     "uncached_tokens": 205075,
      "output_tokens": 30883
     },
     {
-     "run": "20261114-153646/nf-def/3",
+     "run": "20261114-221921/nf-eng-anchor/3",
      "launch": null,
      "ok": true,
-     "completion_s": 945.3582063354552,
-     "output_tps": 276.58211974557986,
-     "ttft_p50_ms": 3928.3962212502956,
-     "cached_tokens": 1287711,
-     "uncached_tokens": 1290951,
+     "completion_s": 252.03491140529513,
+     "output_tps": 278.65956275027867,
+     "ttft_p50_ms": 505.44420443475246,
+     "cached_tokens": 2373587,
+     "uncached_tokens": 205075,
      "output_tokens": 30883
     }
    ],
-   "completion_s": 949.0214355960488
+   "completion_s": 250.6917390488088
   },
   {
    "id": "ninfer-requant",

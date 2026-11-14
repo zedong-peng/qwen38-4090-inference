@@ -24,8 +24,9 @@ HARDWARE = {
     "system": "NVIDIA GeForce RTX 4090", "memory_gb": 24, "bandwidth_gbs": 1008, "power_limit_w": 450,
     "driver": "570.124.06", "cpu": "Intel Xeon Silver 4210", "shared": "one card of a shared four-card server",
 }
-# a retry of a setup under another launch setting counts as that setup; nf-* are the names in the first NInfer run tree
-ALIASES = {"vllm-mtp3b": "vllm-mtp3", "nf-def": "ninfer-tree15", "nf-ours": "ninfer-requant"}
+# a retry of a setup under another launch setting counts as that setup; nf-* are the names in the NInfer run trees
+# (nf-eng-anchor is the ranked knob set; nf-def, nf-eng and nf-def-anchor are the study's other rows, not listed here)
+ALIASES = {"vllm-mtp3b": "vllm-mtp3", "nf-eng-anchor": "ninfer-tree15", "nf-ours": "ninfer-requant"}
 
 
 def load(path):
