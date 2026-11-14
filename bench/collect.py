@@ -1,6 +1,6 @@
 """Build the page data (results.json, samples.json) from bench/methods.json and the run tree.
 
-usage: python3 bench/collect.py [--runs RUNS_DIR] [--out results/]
+usage: python3 bench/collect.py [--runs RUNS_DIR ...] [--out results/]
 The run tree is what bench/run_4090.sh writes: RUNS_DIR/<timestamp>/<setup>/<rep>/ (agentperf-local result
 directories) next to <timestamp>/run.log and gpus.csv. A setup with no finished full replay is listed as pending, or as
 failed with the reason its log gives. Completion time is the median over full replays (AA reports one run).
@@ -24,8 +24,8 @@ HARDWARE = {
     "system": "NVIDIA GeForce RTX 4090", "memory_gb": 24, "bandwidth_gbs": 1008, "power_limit_w": 450,
     "driver": "570.124.06", "cpu": "Intel Xeon Silver 4210", "shared": "one card of a shared four-card server",
 }
-# a retry of a setup under another launch setting counts as that setup
-ALIASES = {"vllm-mtp3b": "vllm-mtp3"}
+# a retry of a setup under another launch setting counts as that setup; nf-* are the names in the first NInfer run tree
+ALIASES = {"vllm-mtp3b": "vllm-mtp3", "nf-def": "ninfer-tree15", "nf-ours": "ninfer-requant"}
 
 
 def load(path):
@@ -62,10 +62,11 @@ def replay(rep_dir):
     return r, samples
 
 
-def collect(runs_dir):
+def collect(runs_dirs):
     """Finished replays per setup, and the reason for each setup whose latest attempt failed."""
     found, failures = {}, {}
-    for attempt in sorted(runs_dir.iterdir()) if runs_dir and runs_dir.exists() else []:
+    attempts = [a for d in runs_dirs or [] if d.exists() for a in d.iterdir() if a.is_dir()]
+    for attempt in sorted(attempts, key=lambda a: a.name):
         log = (attempt / "run.log").read_text() if (attempt / "run.log").exists() else ""
         for setup in sorted(p for p in attempt.iterdir() if p.is_dir()):
             failures.pop(ALIASES.get(setup.name, setup.name), None)  # a later attempt supersedes an earlier failure
@@ -83,7 +84,7 @@ def collect(runs_dir):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--runs", type=Path)
+    ap.add_argument("--runs", type=Path, nargs="+")
     ap.add_argument("--out", type=Path, default=ROOT / "results")
     a = ap.parse_args()
     found, failures = collect(a.runs)
@@ -97,7 +98,7 @@ def main():
             out.update(status="ok", runs=runs, completion_s=statistics.median(r["completion_s"] for r in runs))
             samples[m["id"]] = {r["run"]: smp for r, smp in reps}
         elif m["id"] in failures:
-            out.update(status="failed", reason=failures[m["id"]])
+            out.update(status="failed", reason=m.get("failed_reason") or failures[m["id"]])
         else:
             out["status"] = "pending"
         methods.append(out)

@@ -33,12 +33,14 @@
 .qwen38-t .qwen38-sys { width: 100%; }
 .qwen38-t .qwen38-num { text-align: right; white-space: nowrap; padding-right: 0; padding-left: 32px; }
 .qwen38-setup, .qwen38-wait { color: var(--muted); }
+.qwen38-nb { white-space: nowrap; }
 
 @media (max-width: 600px) {
   .qwen38-card { padding: 14px 12px; }
   .qwen38-t .qwen38-sys { width: auto; white-space: nowrap; }
   .qwen38-t .qwen38-num { padding-left: 12px; }
   .qwen38-t td.qwen38-wait { white-space: normal; }
+  .qwen38-t .qwen38-setup { white-space: normal; }
   .qwen38-t th:nth-child(n+4), .qwen38-t td:nth-child(n+4) { display: none; }
   .qwen38-heat { grid-template-columns: 116px repeat(var(--n), minmax(96px, 1fr)); min-width: 720px; }
 }

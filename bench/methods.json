@@ -14,7 +14,8 @@
    "weights_source": "unsloth/Qwen3.8-27B-GGUF @ f1bfb127c64f7072bdd2cad55f258b9c8b2910fe",
    "decoding": "MTP",
    "draft": 2,
-   "how": "Artificial Analysis's managed run of its recipe qwen38-27b-q4-k-m-mtp, the one behind its RTX 5090 result"
+   "how": "Artificial Analysis's managed run of its recipe qwen38-27b-q4-k-m-mtp, the one behind its RTX 5090 result",
+   "aa_recipe": true
   },
   {
    "id": "lcpp-dflash7",
@@ -25,7 +26,8 @@
    "weights_source": "unsloth/Qwen3.8-27B-GGUF @ 4ca720788d1e01f1bff70c033e0d0028fd02e502, draft incoai/Qwen3.8-27B-DFlash2-GGUF",
    "decoding": "DFlash",
    "draft": 7,
-   "how": "Artificial Analysis's managed run of its recipe qwen38-27b-ud-q4-k-m-dflash-rtx-spark, the one behind its RTX Spark result"
+   "how": "Artificial Analysis's managed run of its recipe qwen38-27b-ud-q4-k-m-dflash-rtx-spark, the one behind its RTX Spark result",
+   "aa_recipe": true
   },
   {
    "id": "vllm-mtp3",
@@ -37,6 +39,29 @@
    "decoding": "MTP",
    "draft": 3,
    "how": "vLLM launched with the flags Artificial Analysis's tool gives vLLM (one sequence, FP8 KV cache, prefix caching, chunked prefill), run against the attached server"
+  },
+  {
+   "id": "ninfer-tree15",
+   "engine": "NInfer",
+   "engine_url": "https://github.com/zedong-peng/qwen38-4090-decode",
+   "version": "decode-study (jram4/ninfer-4090 70ebb12 + 53 patches)",
+   "weights": "NInfer v3 container",
+   "weights_source": "neroued/Qwen3.8-27B-NInfer @ 1cbd84e7221e51186bd7f093a149912d2489625b",
+   "decoding": "DFlash2 tree",
+   "draft": 15,
+   "how": "ninfer-serve of the decode study with every research knob off, run against the attached server; ignore_eos and the length finish reason come from the study's aa_serve_patch.py"
+  },
+  {
+   "id": "ninfer-requant",
+   "engine": "NInfer",
+   "engine_url": "https://github.com/zedong-peng/qwen38-4090-decode",
+   "version": "decode-study (jram4/ninfer-4090 70ebb12 + 53 patches)",
+   "weights": "study's re-quantized container",
+   "weights_source": "zedongpeng/Qwen3.8-27B-NInfer-4090",
+   "decoding": "DFlash2 tree",
+   "draft": 15,
+   "how": "the decode study's own weights and weight knobs; not ranked (the weights are not the public ones)",
+   "failed_reason": "not supported: a 65,536-token context does not fit"
   }
  ]
 }

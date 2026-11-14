@@ -27,8 +27,8 @@ OURS = "rtx-4090"
 
 
 def best(data):
-    """The fastest RTX 4090 setup that finished: the one the matrix shows."""
-    return min((m for m in data["methods"] if m.get("completion_s")), key=lambda m: m["completion_s"])
+    """The fastest of AA's own serving configurations that finished on the RTX 4090: the one the matrix shows."""
+    return min((m for m in data["methods"] if m.get("aa_recipe") and m.get("completion_s")), key=lambda m: m["completion_s"])
 
 
 FAST, SLOW = (21, 128, 61), (220, 252, 231)  # AA's scale: dark green is faster, on a log scale
@@ -84,11 +84,13 @@ def month(iso):
 
 def note(data, aa):
     w, b = aa["workload"], best(data)
+    day = b["runs"][0]["run"][:8]  # the run tree names an attempt by its start time
+    measured = f"{day[:4]}-{day[4:6]}-{day[6:]}"
     recipe = f'{b["engine"]} {b["version"].split(" ")[0]}, {b["weights"]}, {b["decoding"]} {b["draft"]}'
     return (f'<p class="small qwen38-note">Time to complete the <a href="https://github.com/ArtificialAnalysis/aa-agentperf-local">'
             f'AgentPerf-Local</a> default workload ({w["turns"]} turns, {w["toolCalls"]} tool calls); lower is better. '
             f'The RTX 4090 is ours, run with their tool, settings and serving configuration ({escape(recipe)}), median of three '
-            f'runs, {month(data["updated"])}. The other systems are '
+            f'runs, {month(measured)}. The other systems are '
             f'<a href="{aa["source"]}">Artificial Analysis</a>\'s, retrieved {month(aa["retrieved"])}.</p>')
 
 
@@ -98,7 +100,7 @@ def board(data):
     rows = []
     for i, m in enumerate(ms, 1):
         name = (f'<td class="qwen38-sys"><b>{escape(m["engine"])} {escape(m["version"].split(" ")[0])}</b>'
-                f'<div class="qwen38-setup">{escape(m["weights"])} · {escape(m["decoding"])} {m["draft"]}</div></td>')
+                f'<div class="qwen38-setup">{escape(m["weights"])} · <span class="qwen38-nb">{escape(m["decoding"])} {m["draft"]}</span></div></td>')
         if m.get("completion_s"):
             run = next(r for r in m["runs"] if r["completion_s"] == m["completion_s"])
             mins = m["completion_s"] / 60
