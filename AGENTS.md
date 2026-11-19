@@ -17,7 +17,8 @@
 - The models are the three on AA's page; our runs are Qwen3.8 27B, the only one that fits 24 GB. The NInfer engine of
   the decode study (qwen38-4090-decode, a separate repo) goes on the RTX 4090 leaderboard, measured on the same replay
   on the official weights. No weights are changed to make a setup fit: one that cannot hold the 65,536-token context
-  is listed as not supported (user, 11-14).
+  is listed as not supported (user, 11-14). The study's re-quantized container does fit with the dense verify head
+  (measured 11-19); it stays listed and unranked because its weights are not the public ones.
 - The page is figures only (user, 11-13): the two figures, each with a one-line title and a small note; no prose
   sections. Numbers come from the data through `tools/build_site.py`. The page takes zedongpeng.com's theme (its `site.css`, fonts and header;
   see Theme in the home page repo's AGENTS.md); `site/leaderboard.css` holds only this page's parts, such as the table
