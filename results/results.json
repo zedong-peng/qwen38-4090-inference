@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15",
+ "updated": "2026-11-20",
  "workload": {
   "name": "AA-AgentPerf-Local default replay (agentperf-default-v1)",
   "runner": "agentperf-local 0.3.4",
@@ -194,10 +194,45 @@
    "weights_source": "zedongpeng/Qwen3.8-27B-NInfer-4090",
    "decoding": "DFlash2 tree",
    "draft": 15,
-   "how": "the decode study's own weights and weight knobs; not ranked (the weights are not the public ones). It runs at this context with the dense verify head; the study's REPRODUCE.md has the result",
-   "failed_reason": "not ranked: re-quantized weights",
-   "status": "failed",
-   "reason": "not ranked: re-quantized weights"
+   "how": "the decode study's own weights and weight knobs, with the dense verify head and the same flag; listed, not ranked: only setups on the official weights are ranked",
+   "ranked": false,
+   "status": "ok",
+   "runs": [
+    {
+     "run": "20261119-145301/nf-ours-anchor/1",
+     "launch": null,
+     "ok": true,
+     "completion_s": 247.02544613555074,
+     "output_tps": 294.3627655536386,
+     "ttft_p50_ms": 487.71369457244873,
+     "cached_tokens": 2373587,
+     "uncached_tokens": 205075,
+     "output_tokens": 30883
+    },
+    {
+     "run": "20261119-145301/nf-ours-anchor/2",
+     "launch": null,
+     "ok": true,
+     "completion_s": 248.54161201044917,
+     "output_tps": 290.2058912302322,
+     "ttft_p50_ms": 477.88398154079914,
+     "cached_tokens": 2373587,
+     "uncached_tokens": 205075,
+     "output_tokens": 30883
+    },
+    {
+     "run": "20261119-145301/nf-ours-anchor/3",
+     "launch": null,
+     "ok": true,
+     "completion_s": 241.56192788109183,
+     "output_tps": 319.7200376834435,
+     "ttft_p50_ms": 508.39911215007305,
+     "cached_tokens": 2373587,
+     "uncached_tokens": 205075,
+     "output_tokens": 30883
+    }
+   ],
+   "completion_s": 247.02544613555074
   }
  ]
 }

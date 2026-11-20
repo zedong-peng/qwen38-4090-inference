@@ -60,8 +60,8 @@
    "weights_source": "zedongpeng/Qwen3.8-27B-NInfer-4090",
    "decoding": "DFlash2 tree",
    "draft": 15,
-   "how": "the decode study's own weights and weight knobs; not ranked (the weights are not the public ones). It runs at this context with the dense verify head; the study's REPRODUCE.md has the result",
-   "failed_reason": "not ranked: re-quantized weights"
+   "how": "the decode study's own weights and weight knobs, with the dense verify head and the same flag; listed, not ranked: only setups on the official weights are ranked",
+   "ranked": false
   }
  ]
 }

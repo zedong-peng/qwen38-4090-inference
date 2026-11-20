@@ -25,8 +25,10 @@ HARDWARE = {
     "driver": "570.124.06", "cpu": "Intel Xeon Silver 4210", "shared": "one card of a shared four-card server",
 }
 # a retry of a setup under another launch setting counts as that setup; nf-* are the names in the NInfer run trees
-# (nf-eng-anchor is the ranked knob set; nf-def, nf-eng and nf-def-anchor are the study's other rows, not listed here)
-ALIASES = {"vllm-mtp3b": "vllm-mtp3", "nf-eng-anchor": "ninfer-tree15", "nf-ours": "ninfer-requant"}
+# (nf-eng-anchor is the ranked knob set; nf-ours-anchor, the study's own weights at 65,536 tokens, is listed unranked;
+# nf-def, nf-eng and nf-def-anchor are the study's other rows, not listed here)
+ALIASES = {"vllm-mtp3b": "vllm-mtp3", "nf-eng-anchor": "ninfer-tree15", "nf-ours": "ninfer-requant",
+           "nf-ours-anchor": "ninfer-requant"}
 
 
 def load(path):

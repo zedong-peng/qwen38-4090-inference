@@ -18,7 +18,7 @@ jobs:
         with:
           path: dist
 
-  # Served by GitHub Pages at zedongpeng.com/qwen38-4090-inference/ (the user site's domain).
+  # Served by GitHub Pages at zedongpeng.com/qwen38-4090-inference/ (the user site's domain): a page that forwards to the post.
   deploy:
     needs: build
     runs-on: ubuntu-latest
